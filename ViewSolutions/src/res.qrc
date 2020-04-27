@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+        <file>ViewSolutionsModule/qmldir</file>
+        <file>ViewSolutionsModule/ImageView.qml</file>
+    </qresource>
+</RCC>
