@@ -32,7 +32,7 @@ file(GLOB SOURCE_CPP
 
 )
 
-add_library(${PROJECT_NAME} ${SOURCE_CPP})
+add_library(${PROJECT_NAME} SHARED ${SOURCE_CPP})
 target_link_libraries(${PROJECT_NAME} PUBLIC Qt5::Core Qt5::Quick)
 target_include_directories(${PROJECT_NAME} PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/src")
 

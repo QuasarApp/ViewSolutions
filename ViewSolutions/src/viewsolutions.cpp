@@ -1,7 +1,14 @@
 #include "viewsolutions.h"
 
+#include <QQmlApplicationEngine>
+
 namespace ViewSolutions {
-void init() {
-    return;
+bool init(QQmlApplicationEngine *engine) {
+    if (!engine)
+        return false;
+
+    engine->addImportPath(":/");
+
+    return true;
 }
 }

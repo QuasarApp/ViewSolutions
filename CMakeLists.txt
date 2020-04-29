@@ -16,4 +16,5 @@ endif()
 include(ViewSolutions/CMake/ccache.cmake)
 
 add_subdirectory(ViewSolutions)
+add_subdirectory(Examples)
 

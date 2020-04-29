@@ -3,4 +3,5 @@
         <file>ViewSolutionsModule/qmldir</file>
         <file>ViewSolutionsModule/ImageView.qml</file>
     </qresource>
+    <qresource prefix="/img"/>
 </RCC>
