@@ -25,7 +25,15 @@ file(GLOB SOURCE_CPP
 
 )
 
-add_executable(${PROJECT_NAME} ${SOURCE_CPP})
+if(ANDROID)
+    add_library(${PROJECT_NAME} SHARED ${SOURCE_CPP})
+else()
+    add_executable(${PROJECT_NAME} ${SOURCE_CPP})
+endif()
+
+target_compile_definitions(${PROJECT_NAME}
+  PRIVATE $<$<OR:$<CONFIG:Debug>,$<CONFIG:RelWithDebInfo>>:QT_QML_DEBUG>)
+
 target_link_libraries(${PROJECT_NAME} PRIVATE ViewSolutions)
 target_include_directories(${PROJECT_NAME} PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}/src")
 

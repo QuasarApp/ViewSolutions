@@ -12,7 +12,7 @@ Item {
     property bool presed: false
     property string toolTip: ""
 
-    property color background: Material.foreground
+    property color background: Material.background
     property color borderColor: "#00000000"
 
     signal clicked(var mouse);
@@ -68,7 +68,7 @@ Item {
 
             }
 
-            Text {
+            Label {
                 text: root.text
                 Layout.preferredHeight: root.height * 0.1
                 Layout.fillWidth: true

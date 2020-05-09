@@ -8,7 +8,8 @@ Page {
     ImageView {
         anchors.fill: parent
         soucre:  "qrc:/img/res/LOGO.png"
-        text: "QuasarApp group"
+        text: "QuasarApp"
+        toolTip: "QuasarApp Group"
         anchors.margins: 20
         borderColor: "#00a4e1"
     }
