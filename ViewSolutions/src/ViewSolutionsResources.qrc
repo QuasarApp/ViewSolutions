@@ -2,8 +2,9 @@
     <qresource prefix="/">
         <file>ViewSolutionsModule/qmldir</file>
         <file>ViewSolutionsModule/ImageView.qml</file>
-        <file>ViewSolutionsModule/ViewPortContainer.qml</file>
-        <file>ViewSolutionsModule/ViewPortDelegat.qml</file>
+        <file>ViewSolutionsModule/ViewPortDelegatBase.qml</file>
+        <file>ViewSolutionsModule/Updater.qml</file>
+        <file>ViewSolutionsModule/ViewPortPage.qml</file>
     </qresource>
     <qresource prefix="/img"/>
 </RCC>

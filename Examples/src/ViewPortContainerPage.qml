@@ -6,20 +6,51 @@ import ViewSolutionsModule 1.0
 
 Page {
     id: root
-    ListModel {
-        id: myModel
-        ListElement { type: "Dog"; age: 8 }
-        ListElement { type: "Cat"; age: 5 }
-    }
 
-    ViewPortContainer {
+    ListView {
+        id: viewPort
+        property real globalPos: 0
         anchors.fill: parent
-        viewPortDelegat: ViewPortDelegat {
-            background:  "qrc:/img/res/LOGO.png"
-            anchors.margins: 20
+        delegate: Component {
+            ViewPortPage {
+                viewPortDelegatH: 500
+                scrollPos: viewPort.globalPos
+                source:  modelData
+                viewground: root
+                title: "Test ViewPortPage"
+                text: "Test ViewPortPage. General text and <i>html code</i>"
+            }
         }
 
-        model: myModel
+        ScrollBar.vertical: ScrollBar {
+            onPositionChanged: {
+                viewPort.globalPos = position
+            }
+        }
+
+
+        model: [
+            "qrc:/img/res/LOGO.png",
+            "qrc:/img/res/LOGO-GREAN.png",
+            "qrc:/img/res/LOGO-ORANGE.png",
+            "qrc:/img/res/LOGO-RED.png",
+            "qrc:/img/res/LOGO.png",
+            "qrc:/img/res/LOGO-GREAN.png",
+            "qrc:/img/res/LOGO-ORANGE.png",
+            "qrc:/img/res/LOGO-RED.png",
+            "qrc:/img/res/LOGO.png",
+            "qrc:/img/res/LOGO-GREAN.png",
+            "qrc:/img/res/LOGO-ORANGE.png",
+            "qrc:/img/res/LOGO-RED.png",
+            "qrc:/img/res/LOGO.png",
+            "qrc:/img/res/LOGO-GREAN.png",
+            "qrc:/img/res/LOGO-ORANGE.png",
+            "qrc:/img/res/LOGO-RED.png",
+            "qrc:/img/res/LOGO.png",
+            "qrc:/img/res/LOGO-GREAN.png",
+            "qrc:/img/res/LOGO-ORANGE.png",
+            "qrc:/img/res/LOGO-RED.png",
+        ]
     }
 }
 

@@ -7,5 +7,8 @@
     </qresource>
     <qresource prefix="/img">
         <file>res/LOGO.png</file>
+        <file>res/LOGO-GREAN.png</file>
+        <file>res/LOGO-ORANGE.png</file>
+        <file>res/LOGO-RED.png</file>
     </qresource>
 </RCC>
