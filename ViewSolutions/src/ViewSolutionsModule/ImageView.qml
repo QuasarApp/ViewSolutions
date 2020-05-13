@@ -12,6 +12,9 @@ Item {
     property bool presed: false
     property string toolTip: ""
 
+    property color textColor: Material.color(Material.Grey)
+
+
     property color background: Material.background
     property color borderColor: "#00000000"
 
@@ -72,6 +75,7 @@ Item {
                 text: root.text
                 Layout.preferredHeight: root.height * 0.1
                 Layout.fillWidth: true
+                color: textColor
                 font.pixelSize: root.height * 0.09
                 font.bold: true
                 horizontalAlignment: Text.AlignHCenter
