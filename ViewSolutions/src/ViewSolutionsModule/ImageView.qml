@@ -10,6 +10,7 @@ Item {
     property string text: ""
     property bool hover: false
     property bool presed: false
+
     property string toolTip: ""
 
     property color textColor: Material.color(Material.Grey)
@@ -73,6 +74,7 @@ Item {
 
             Label {
                 text: root.text
+                visible: text.length
                 Layout.preferredHeight: root.height * 0.1
                 Layout.fillWidth: true
                 color: textColor

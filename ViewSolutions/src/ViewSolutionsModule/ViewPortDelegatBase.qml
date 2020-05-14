@@ -61,29 +61,54 @@ Item {
 
     function updateLayout() {
 
-        if (background) {
+
+        if (background !== flickable.backgroundOld) {
+            if (flickable.backgroundOld) {
+                flickable.backgroundOld.destroy()
+            }
+
             background.parent = this;
             background.anchors.fill = this;
             background.z = 0;
+            flickable.backgroundOld = background
         }
 
         flickable.z = 1;
 
-        if (bloor) {
+        if (bloor !== flickable.bloorOld) {
+            if (flickable.bloorOld) {
+                flickable.bloorOld.destroy()
+            }
             bloor.parent = this;
             bloor.anchors.fill = this;
             bloor.z = 2;
+            flickable.bloorOld = bloor
+
         }
 
-        if (content) {
+        if (content !== flickable.contentOld) {
+            if (flickable.contentOld) {
+                flickable.contentOld.destroy()
+            }
             content.parent = this;
             content.anchors.fill = this;
             content.z = 3;
+            flickable.contentOld = content
+
         }
     }
 
     Flickable {
         id: flickable
+
+        property var backgroundOld: Item {
+        }
+        property var bloorOld: Item {
+        }
+        property var contentOld: Item {
+        }
+
+
         contentWidth: viewground.width
         contentHeight: viewground.height
         clip: true

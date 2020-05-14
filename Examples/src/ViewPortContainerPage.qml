@@ -13,7 +13,6 @@ Page {
         anchors.fill: parent
         delegate: Component {
             ViewPortPage {
-                viewPortDelegatH: 500
                 scrollPos: viewPort.globalPos
                 source:  modelData
                 viewground: root
