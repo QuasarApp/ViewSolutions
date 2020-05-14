@@ -14,7 +14,7 @@ ViewPortDelegatBase {
     property int sourceTextPointSize: 20
     property int headerTextPointSize: 32
 
-    property int additionalHeight: getBrCount(text) * sourceText.fontInfo.pixelSize + textMargins
+    property int additionalHeight: getBrCount(text) * sourceText.fontInfo.pixelSize + textMargins * 2
 
     function getBrCount(text) {
         return (text.match(/<br>/g) || []).length;
@@ -30,7 +30,7 @@ ViewPortDelegatBase {
     }
 
     bloor: Rectangle {
-        color: (Material.theme == Material.Dark)? "#55000000": "#55cdcdcd"
+        color: (Material.theme == Material.Dark)? "#99000000": "#99cdcdcd"
         border.color: "#a7777777"
         border.width: 0
         radius: height * 0.05
@@ -54,6 +54,7 @@ ViewPortDelegatBase {
             anchors.top: parent.top
             anchors.left: parent.left
             anchors.right: parent.right
+            anchors.margins: textMargins
 
             layer.effect: DropShadow {
                 verticalOffset: 2
@@ -85,6 +86,8 @@ ViewPortDelegatBase {
                 radius: 1
                 samples: 3
             }
+
+
         }
     }
 
