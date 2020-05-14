@@ -10,6 +10,7 @@ Item {
     property string text: ""
     property bool hover: false
     property bool presed: false
+    property real power: 1.0
 
     property string toolTip: ""
 
@@ -87,47 +88,6 @@ Item {
             anchors.fill: parent
         }
 
-        MouseArea {
-
-            hoverEnabled: true;
-
-            onEntered: {
-                hover = true
-            }
-
-            onExited: {
-                hover = false;
-                privateData.ry = 0
-                privateData.rx = 0
-
-            }
-
-            onMouseXChanged: {
-                const fromCenter = root.width / 2
-                privateData.ry = -((mouse.x - fromCenter) / (fromCenter * 0.05))
-
-            }
-            onMouseYChanged: {
-                const fromCenter = root.height / 2
-
-                privateData.rx = ((mouse.y - fromCenter) / (fromCenter * 0.05))
-            }
-
-            onPressed: {
-                presed = true;
-            }
-
-            onReleased: {
-                presed = false;
-
-                root.clicked(mouse)
-            }
-
-            anchors.fill: parent
-
-        }
-
-
         transform: [
             Rotation {
                 axis { x: 0; y: 0; z: 1 }
@@ -154,5 +114,47 @@ Item {
         delay: 500
 
     }
+
+
+    MouseArea {
+
+        hoverEnabled: true;
+
+        onEntered: {
+            hover = true
+        }
+
+        onExited: {
+            hover = false;
+            privateData.ry = 0
+            privateData.rx = 0
+
+        }
+
+        onMouseXChanged: {
+            const fromCenter = root.width / 2
+            privateData.ry = -((mouse.x - fromCenter) / (fromCenter * 0.05)) * power
+
+        }
+        onMouseYChanged: {
+            const fromCenter = root.height / 2
+
+            privateData.rx = ((mouse.y - fromCenter) / (fromCenter * 0.05)) * power
+        }
+
+        onPressed: {
+            presed = true;
+        }
+
+        onReleased: {
+            presed = false;
+
+            root.clicked(mouse)
+        }
+
+        anchors.fill: parent
+
+    }
+
 
 }

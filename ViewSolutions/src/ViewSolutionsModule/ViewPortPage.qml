@@ -11,7 +11,10 @@ ViewPortDelegatBase {
     property string title: ""
     property string text: ""
     property int textMargins: 10
-    property int additionalHeight: getBrCount(text) * sourceText.fontInfo.pixelSize
+    property int sourceTextPointSize: 20
+    property int headerTextPointSize: 32
+
+    property int additionalHeight: getBrCount(text) * sourceText.fontInfo.pixelSize + textMargins
 
     function getBrCount(text) {
         return (text.match(/<br>/g) || []).length;
@@ -40,7 +43,7 @@ ViewPortDelegatBase {
         Label {
             id: header
             font.bold: true
-            font.pointSize: 32
+            font.pointSize: headerTextPointSize
             text: title;
             horizontalAlignment: Text.AlignHCenter
             verticalAlignment: Text.AlignVCenter
@@ -63,7 +66,7 @@ ViewPortDelegatBase {
         Label {
             id: sourceText
             font.bold: false
-            font.pointSize: 20
+            font.pointSize: sourceTextPointSize
             horizontalAlignment: Text.AlignLeft
             verticalAlignment: Text.AlignVCenter
             text: root.text
