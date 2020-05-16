@@ -32,15 +32,15 @@ QColor ColorPicker::pick(const QImage &img, int density) const {
             A += (pixel & 0xFF000000) >> 24;
             R += (pixel & 0x00FF0000) >> 16;
             G += (pixel & 0x0000FF00) >> 8;
-            B += pixel & 0x000000FF;
+            B +=  pixel & 0x000000FF;
         }
     }
 
-    int count = density * 2;
+    int count = density * density;
     return QColor::fromRgba(((A / count) << 24) |
                             ((R / count) << 16) |
                             ((G / count) << 8) |
-                             B / count);
+                              B / count);
 }
 
 QColor ColorPicker::pick(const QString &img) const {
