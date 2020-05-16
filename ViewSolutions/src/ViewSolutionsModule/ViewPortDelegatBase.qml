@@ -70,7 +70,7 @@ Item {
 
         if (background !== flickable.backgroundOld) {
             if (flickable.backgroundOld) {
-                flickable.backgroundOld.destroy()
+                flickable.backgroundOld.parent = null
             }
 
             background.parent = this;
@@ -83,7 +83,8 @@ Item {
 
         if (bloor !== flickable.bloorOld) {
             if (flickable.bloorOld) {
-                flickable.bloorOld.destroy()
+                flickable.bloorOld.parent = null
+
             }
             bloor.parent = this;
             bloor.anchors.fill = this;
@@ -94,7 +95,8 @@ Item {
 
         if (content !== flickable.contentOld) {
             if (flickable.contentOld) {
-                flickable.contentOld.destroy()
+                flickable.contentOld.parent = null
+
             }
             content.parent = this;
             content.anchors.fill = this;
