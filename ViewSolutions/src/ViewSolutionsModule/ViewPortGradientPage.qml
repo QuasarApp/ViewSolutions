@@ -11,7 +11,7 @@ ViewPortPage {
 
     background: Rectangle {
         color: colorPicker.pick(source)
-        radius: height * 0.05
+        radius: 16
     }
 
     bloor: Rectangle {
@@ -19,7 +19,7 @@ ViewPortPage {
         color: "#00000000"
         border.color: "#" + baseColor
         border.width: 0
-        radius: height * 0.05
+        radius: 16
         clip: true
 
         property var theme: Material.theme
@@ -28,7 +28,7 @@ ViewPortPage {
             rotation: -90
 
             anchors.centerIn: parent
-            radius: width * 0.05
+            radius: 16
             border.width: 4
             border.color: "#" + baseColor
 
