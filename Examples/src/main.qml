@@ -83,6 +83,7 @@ ApplicationWindow {
             model: ListModel {
                 ListElement { title: "ImageView"; source: "qrc:/ImageViewPage.qml" }
                 ListElement { title: "ViewPortContainer"; source: "qrc:/ViewPortContainerPage.qml" }
+                ListElement { title: "ViewPortGradientPage"; source: "qrc:/VPGradientPage.qml" }
 
             }
 

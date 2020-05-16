@@ -2,3 +2,4 @@ module ViewSolutionsModule
 ImageView 1.0 ImageView.qml
 ViewPortDelegatBase 1.0 ViewPortDelegatBase.qml
 ViewPortPage 1.0 ViewPortPage.qml
+ViewPortGradientPage 1.0 ViewPortGradientPage.qml

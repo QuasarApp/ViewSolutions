@@ -17,7 +17,7 @@ Item {
     property color textColor: Material.color(Material.Grey)
 
 
-    property color background: Material.background
+    property color background: colorPicker.pick(soucre)
     property color borderColor: "#00000000"
 
     signal clicked(var mouse);

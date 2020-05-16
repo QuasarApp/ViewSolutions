@@ -12,7 +12,7 @@ namespace ViewSolutions {
 /**
      * @brief init this method import all qml resources to your project.
      */
-    bool init(QQmlApplicationEngine *engine);
+    bool LOGINVIEW_EXPORT init(QQmlApplicationEngine *engine);
 }
 
 #endif // VIEWSOLUTIONS_H

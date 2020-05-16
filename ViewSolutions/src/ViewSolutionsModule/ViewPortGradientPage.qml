@@ -6,43 +6,53 @@ import QtQuick.Controls.Universal 2.14
 import QtGraphicalEffects 1.14
 
 
-ViewPortDelegatBase {
+ViewPortPage {
     id: root
-    property string title: ""
-    property string text: ""
-    property int textMargins: 10
-    property int sourceTextPointSize: 20
-    property int headerTextPointSize: 32
-
-    property int additionalHeight: getBrCount(text) * sourceText.fontInfo.pixelSize + textMargins * 2
-
-    function getBrCount(text) {
-        return (text.match(/<br>/g) || []).length;
-    }
-
-    viewPortDelegatH: header.height + sourceText.paintedHeight + additionalHeight
 
     background: Rectangle {
         color: colorPicker.pick(source)
-        border.color: "#" + baseColor
-        border.width: 4
         radius: height * 0.05
     }
 
     bloor: Rectangle {
-        color: "#77"+ baseColor
+        id: privateRoot
+        color: "#00000000"
         border.color: "#" + baseColor
         border.width: 0
         radius: height * 0.05
+        clip: true
+
+        property var theme: Material.theme
+
+        Rectangle {
+            rotation: -90
+
+            anchors.centerIn: parent
+            radius: width * 0.05
+            border.width: 4
+            border.color: "#" + baseColor
+
+            height: parent.width - privateRoot.border.width / 2
+            width: parent.height - privateRoot.border.width / 2
+
+            gradient: Gradient {
+                GradientStop {
+                    position: 0.50;
+                    color: "#ff"+ baseColor;
+                }
+
+                GradientStop {
+                    position: 1.00;
+                    color: "#33" + baseColor;
+                }
+            }
+        }
+
     }
+    viewPortDelegatH: header.height + sourceText.paintedHeight + additionalHeight
 
     content: Item {
         id: privatePage
-
-        Component.onDestruction: {
-            header.destroy()
-            sourceText.destroy()
-        }
 
         clip: true
         Label {
@@ -75,12 +85,12 @@ ViewPortDelegatBase {
             font.pointSize: sourceTextPointSize
             horizontalAlignment: Text.AlignLeft
             verticalAlignment: Text.AlignVCenter
+            width: parent.width / 2
             text: root.text
             wrapMode: Text.WordWrap
             anchors.bottom: parent.bottom
             anchors.top: header.bottom
             anchors.left: parent.left
-            anchors.right: parent.right
             anchors.horizontalCenter: parent.Center
             anchors.margins: textMargins
 
@@ -95,6 +105,4 @@ ViewPortDelegatBase {
 
         }
     }
-
-
 }

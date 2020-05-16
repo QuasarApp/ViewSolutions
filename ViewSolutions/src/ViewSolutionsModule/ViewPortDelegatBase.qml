@@ -22,6 +22,12 @@ Item {
     property real scrollPos: 0
     property int imageMrgin: 5
 
+    property var theme: Material.theme
+    property string baseLigtColor: "fafafa"
+    property string baseDarkColor: "242424"
+    property string baseColor: (theme === Material.Dark)? baseDarkColor: baseLigtColor
+
+
     property int viewPortDelegatW: 0
     property int viewPortDelegatH: 0
     property var content: Item {
