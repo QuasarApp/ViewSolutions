@@ -43,7 +43,7 @@ ViewPortPage {
 
                 GradientStop {
                     position: 1.00;
-                    color: "#33" + baseColor;
+                    color: "#00" + baseColor;
                 }
             }
         }
@@ -60,6 +60,8 @@ ViewPortPage {
             font.bold: true
             font.pointSize: headerTextPointSize
             text: title;
+            color: fontColor
+
             horizontalAlignment: Text.AlignHCenter
             verticalAlignment: Text.AlignVCenter
             wrapMode: Text.WordWrap
@@ -87,6 +89,8 @@ ViewPortPage {
             verticalAlignment: Text.AlignVCenter
             width: parent.width / 2
             text: root.text
+            color: fontColor
+
             wrapMode: Text.WordWrap
             anchors.bottom: parent.bottom
             anchors.top: header.bottom

@@ -13,6 +13,7 @@ ViewPortDelegatBase {
     property int textMargins: 10
     property int sourceTextPointSize: 20
     property int headerTextPointSize: 32
+    property color fontColor: ( Material.theme === Material.Light)? "#626465" : "#d2d5d8"
 
     property int additionalHeight: getBrCount(text) * sourceText.fontInfo.pixelSize + textMargins * 2
 
@@ -49,6 +50,7 @@ ViewPortDelegatBase {
             id: header
             font.bold: true
             font.pointSize: headerTextPointSize
+            color: fontColor
             text: title;
             horizontalAlignment: Text.AlignHCenter
             verticalAlignment: Text.AlignVCenter
@@ -76,6 +78,8 @@ ViewPortDelegatBase {
             horizontalAlignment: Text.AlignLeft
             verticalAlignment: Text.AlignVCenter
             text: root.text
+            color: fontColor
+
             wrapMode: Text.WordWrap
             anchors.bottom: parent.bottom
             anchors.top: header.bottom
