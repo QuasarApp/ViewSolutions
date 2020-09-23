@@ -5,6 +5,11 @@
 
 class QQmlApplicationEngine;
 
+// Use This macros for init all library resources.
+#define INIT_VIEW_SOLUTIONS(result, engine) \
+    Q_INIT_RESOURCE(ViewSolutionsResources); \
+    result = ViewSolutions::init(engine)
+
 /**
  * @brief the ViewSolutions namespace
  */
