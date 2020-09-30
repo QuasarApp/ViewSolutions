@@ -3,6 +3,8 @@
 #include "colorpicker.h"
 
 #include <QObject>
+
+class QQmlApplicationEngine;
 namespace ViewSolutions {
 
 /**
@@ -14,18 +16,27 @@ class LOGINVIEW_EXPORT QMLColorPicker : public QObject, private ColorPicker
 public:
     explicit QMLColorPicker(QObject *parent = nullptr);
     /**
-     * @brief instance
+     * @brief instance This method return instance object of the QMLColorPicker setvice.
      * @return static instance of this ColorPicker
      */
     static QMLColorPicker* instance();
 
     /**
-     * @brief pick - this is override function for qml
-     * @param img - path to image
+     * @brief pick This is override function for qml
+     * @param img This is path to image
      * @return General color of image
      */
      Q_INVOKABLE QColor pick(const QString &img) const;
 
+    /**
+     * @brief setEngine This method set qml engine for working with image providers.
+     * @param engine This is new engine.
+     */
+    void setEngine(QQmlApplicationEngine *engine);
+
+private:
+
+    QQmlApplicationEngine *_engine = nullptr;
 };
 }
 #endif // QMLCOLORPICKER_H

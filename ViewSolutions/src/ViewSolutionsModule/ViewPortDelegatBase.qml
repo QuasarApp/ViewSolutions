@@ -1,13 +1,14 @@
-import QtQuick 2.14
+import QtQuick 2.15
 import QtQuick.Layouts 1.14
-import QtQuick.Controls 2.14
-import QtQuick.Controls.Material 2.14
-import QtQuick.Controls.Universal 2.14
+import QtQuick.Controls 2.15
+import QtQuick.Controls.Material 2.15
+import QtQuick.Controls.Universal 2.15
 
 Item {
     id: delegateItem
 
     property string source: ""
+    property alias imageSource: image
     property var background: Rectangle {
         border.color: "black"
         anchors.fill: parent

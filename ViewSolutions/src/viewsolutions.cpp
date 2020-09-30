@@ -17,7 +17,10 @@ bool init(QQmlApplicationEngine *engine) {
 
     engine->addImportPath(":/");
 
-    root->setContextProperty("colorPicker", QMLColorPicker::instance());
+    auto picker = QMLColorPicker::instance();
+    picker->setEngine(engine);
+
+    root->setContextProperty("colorPicker", picker);
 
     return true;
 }

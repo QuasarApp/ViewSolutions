@@ -1,15 +1,26 @@
-import QtQuick 2.14
+import QtQuick 2.15
 import QtQuick.Layouts 1.14
-import QtQuick.Controls 2.14
-import QtQuick.Controls.Material 2.14
-import QtQuick.Controls.Universal 2.14
+import QtQuick.Controls 2.15
+import QtQuick.Controls.Material 2.15
+import QtQuick.Controls.Universal 2.15
 import QtGraphicalEffects 1.14
 
 
 ViewPortPage {
     id: root
 
+    Connections {
+        target: imageSource
+
+        onStatusChanged: {
+            if (imageSource.status === Image.Ready) {
+                bacground.color = colorPicker.pick(source);
+            }
+        }
+    }
+
     background: Rectangle {
+        id: bacground
         color: colorPicker.pick(source)
         radius: 16
     }
