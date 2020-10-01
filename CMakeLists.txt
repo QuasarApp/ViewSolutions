@@ -16,5 +16,10 @@ endif()
 include(ViewSolutions/CMake/ccache.cmake)
 
 add_subdirectory(ViewSolutions)
-add_subdirectory(Examples)
+
+if ( NOT DEFINED DISABLE_EXAMPLES )
+    message("DISABLE_EXAMPLES = ${DISABLE_EXAMPLES}")
+    add_subdirectory(Examples)
+endif()
+
 

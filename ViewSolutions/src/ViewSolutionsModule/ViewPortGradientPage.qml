@@ -12,8 +12,8 @@ ViewPortPage {
     Connections {
         target: imageSource
 
-        onStatusChanged: {
-            if (imageSource.status === Image.Ready) {
+        function onStatusChanged(status) {
+            if (status === Image.Ready) {
                 bacground.color = colorPicker.pick(source);
             }
         }
