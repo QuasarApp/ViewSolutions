@@ -6,7 +6,9 @@ import QtQuick.Controls.Universal 2.15
 
 Item {
     id: root
-    property string soucre: ""
+    property string source: ""
+    property alias imagesource: sourceImg
+
     property string text: ""
     property bool hover: false
     property bool presed: false
@@ -17,10 +19,20 @@ Item {
     property color textColor: Material.color(Material.Grey)
 
 
-    property color background: colorPicker.pick(soucre)
+    property color background: colorPicker.pick(source)
     property color borderColor: "#00000000"
 
     signal clicked(var mouse);
+
+    Connections {
+        target: sourceImg
+
+        function onStatusChanged(status) {
+            if (status === Image.Ready) {
+                root.background = colorPicker.pick(source);
+            }
+        }
+    }
 
     Item {
         id: privateData
@@ -62,14 +74,16 @@ Item {
 
         ColumnLayout {
             Image {
-                id: source
-                source: root.soucre
+                id: sourceImg
+                source: root.source
 
                 clip: true
-                fillMode: Image.PreserveAspectFit
+                fillMode: Image.PreserveAspectCrop
                 Layout.fillHeight: true
                 Layout.fillWidth: true
                 Layout.margins: 5
+
+
 
             }
 

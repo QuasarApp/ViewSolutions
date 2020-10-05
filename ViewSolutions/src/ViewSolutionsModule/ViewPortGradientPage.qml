@@ -53,7 +53,7 @@ ViewPortPage {
                 }
 
                 GradientStop {
-                    position: 1.00;
+                    position: 0.70;
                     color: "#00" + baseColor;
                 }
             }
