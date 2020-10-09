@@ -18,6 +18,7 @@ Page {
                 width: viewPort.width
                 title: "Test ViewPortPage"
                 text: "Test ViewPortPage. General text and <i>html code</i>"
+
             }
         }
 

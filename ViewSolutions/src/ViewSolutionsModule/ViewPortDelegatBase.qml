@@ -11,7 +11,6 @@ ViewSolutionsControl {
     property alias imageSource: image
 
     property var viewground: null
-    property real scrollPos: 0
     property int imageMrgin: 5
 
     property var theme: Material.theme
@@ -22,6 +21,8 @@ ViewSolutionsControl {
 
     property int viewPortDelegatW: 0
     property int viewPortDelegatH: 0
+    property real contentX: 0
+    property real contentY: 0
 
     background: Rectangle {
         border.color: "black"
@@ -32,24 +33,11 @@ ViewSolutionsControl {
     width: (viewPortDelegatW)? viewPortDelegatW: (viewground)? viewground.width : 0
     height:  (viewPortDelegatH)? viewPortDelegatH: (viewground)?viewground.height * 0.1 : 0
 
-    onScrollPosChanged: {
-        updatePos();
-    }
-
-    function updatePos() {
-        if (!viewground) {
-            return ;
-        }
-
-        const viewGlobal = viewground.mapToGlobal(0, 0);
-        const img = flickable.mapFromGlobal(viewGlobal.x, viewGlobal.y);
-
-        flickable.contentX = -img.x;
-        flickable.contentY = -img.y;
-    }
 
     Flickable {
         id: flickable
+        contentY: -(parent.contentY - delegateItem.y)
+        contentX: -(parent.contentX - delegateItem.x)
 
         contentWidth: viewground.width
         contentHeight: viewground.height
@@ -62,7 +50,6 @@ ViewSolutionsControl {
 
             fillMode: Image.PreserveAspectFit
             anchors.fill: parent
-
         }
 
         anchors.fill: parent

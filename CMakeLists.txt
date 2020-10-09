@@ -18,6 +18,10 @@ include(ViewSolutions/CMake/ccache.cmake)
 add_subdirectory(ViewSolutions)
 
 if ( NOT DEFINED DISABLE_EXAMPLES )
+    set(DISABLE_EXAMPLES OFF)
+endif()
+
+if ( NOT DISABLE_EXAMPLES )
     message("DISABLE_EXAMPLES = ${DISABLE_EXAMPLES}")
     add_subdirectory(Examples)
 endif()
