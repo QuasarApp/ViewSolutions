@@ -4,20 +4,11 @@ import QtQuick.Controls 2.15
 import QtQuick.Controls.Material 2.15
 import QtQuick.Controls.Universal 2.15
 
-Item {
+ViewSolutionsControl {
     id: delegateItem
 
     property string source: ""
     property alias imageSource: image
-    property var background: Rectangle {
-        border.color: "black"
-        anchors.fill: parent
-        color: "#00000000"
-
-    }
-
-    property var bloor: Item {
-    }
 
     property var viewground: null
     property real scrollPos: 0
@@ -31,20 +22,11 @@ Item {
 
     property int viewPortDelegatW: 0
     property int viewPortDelegatH: 0
-    property var content: Item {
+
+    background: Rectangle {
+        border.color: "black"
         anchors.fill: parent
-    }
-
-    onBackgroundChanged:{
-        updateLayout()
-    }
-
-    onContentChanged:{
-        updateLayout()
-    }
-
-    onBloorChanged:{
-        updateLayout()
+        color: "#00000000"
     }
 
     width: (viewPortDelegatW)? viewPortDelegatW: (viewground)? viewground.width : 0
@@ -66,57 +48,8 @@ Item {
         flickable.contentY = -img.y;
     }
 
-    function updateLayout() {
-
-
-        if (background !== flickable.backgroundOld) {
-            if (flickable.backgroundOld) {
-                flickable.backgroundOld.parent = null
-            }
-
-            background.parent = this;
-            background.anchors.fill = this;
-            background.z = 0;
-            flickable.backgroundOld = background
-        }
-
-        flickable.z = 1;
-
-        if (bloor !== flickable.bloorOld) {
-            if (flickable.bloorOld) {
-                flickable.bloorOld.parent = null
-
-            }
-            bloor.parent = this;
-            bloor.anchors.fill = this;
-            bloor.z = 2;
-            flickable.bloorOld = bloor
-
-        }
-
-        if (content !== flickable.contentOld) {
-            if (flickable.contentOld) {
-                flickable.contentOld.parent = null
-
-            }
-            content.parent = this;
-            content.anchors.fill = this;
-            content.z = 3;
-            flickable.contentOld = content
-
-        }
-    }
-
     Flickable {
         id: flickable
-
-        property var backgroundOld: Item {
-        }
-        property var bloorOld: Item {
-        }
-        property var contentOld: Item {
-        }
-
 
         contentWidth: viewground.width
         contentHeight: viewground.height

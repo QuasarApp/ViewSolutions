@@ -16,6 +16,7 @@ Page {
                 scrollPos: viewPort.globalPos
                 source:  modelData
                 viewground: root
+                height: root.height / 3
                 title: "Test ViewPortPage"
                 text: "Test ViewPortPage. General text and <i>html code</i>"
             }

@@ -1,13 +1,31 @@
 import QtQuick 2.15
-import QtQuick.Layouts 1.14
+import QtQuick.Layouts 1.15
 import QtQuick.Controls 2.15
 import QtQuick.Controls.Material 2.15
 import QtQuick.Controls.Universal 2.15
-import QtGraphicalEffects 1.14
+import QtGraphicalEffects 1.15
 
+ViewSolutionsControl {
 
-ViewPortPage {
     id: root
+
+    property string source: ""
+    property alias imageSource: image
+
+    property var theme: Material.theme
+    property string baseLigtColor: "fafafa"
+    property string baseDarkColor: "242424"
+    property string baseColor: (theme === Material.Dark)? baseDarkColor: baseLigtColor
+    property int margins: 5
+
+    property int textMargins: 10
+    property int sourceTextPointSize: 20
+    property int headerTextPointSize: 32
+
+    property alias title: header.text
+    property alias text: sourceText.text
+    property alias headerFontColor: header.color
+    property alias fontColor: sourceText.color
 
     Connections {
         target: imageSource
@@ -20,46 +38,23 @@ ViewPortPage {
     }
 
     background: Rectangle {
-        color: colorPicker.pick(source)
-        radius: 16
-    }
+        anchors.fill: parent
+        color: colorPicker.pick(root.source);
 
-    bloor: Rectangle {
-        id: privateRoot
-        color: "#00000000"
-        border.color: "#" + baseColor
-        border.width: 0
-        radius: 16
-        clip: true
 
-        property var theme: Material.theme
+        Image {
+            id: image;
+            source: root.source
 
-        Rectangle {
-            rotation: -90
-
-            anchors.centerIn: parent
-            radius: 16
-            border.width: 4
-            border.color: "#" + baseColor
-
-            height: parent.width - privateRoot.border.width / 2
-            width: parent.height - privateRoot.border.width / 2
-
-            gradient: Gradient {
-                GradientStop {
-                    position: 0.50;
-                    color: "#ff"+ baseColor;
-                }
-
-                GradientStop {
-                    position: 0.70;
-                    color: "#00" + baseColor;
-                }
-            }
+            fillMode: Image.PreserveAspectFit
+            anchors.right: parent.right
+            anchors.margins: margins
+            anchors.top: parent.top
+            anchors.bottom: parent.bottom
+            width: (parent.width / 2) - margins * 2
         }
 
     }
-    viewPortDelegatH: header.height + sourceText.paintedHeight + additionalHeight
 
     content: Item {
         id: privatePage
@@ -69,8 +64,6 @@ ViewPortPage {
             id: header
             font.bold: true
             font.pointSize: headerTextPointSize
-            text: title;
-            color: fontColor
 
             horizontalAlignment: Text.AlignHCenter
             verticalAlignment: Text.AlignVCenter
@@ -98,8 +91,6 @@ ViewPortPage {
             horizontalAlignment: Text.AlignLeft
             verticalAlignment: Text.AlignVCenter
             width: parent.width / 2
-            text: root.text
-            color: fontColor
 
             wrapMode: Text.WordWrap
             anchors.bottom: parent.bottom
@@ -115,8 +106,6 @@ ViewPortPage {
                 radius: 1
                 samples: 3
             }
-
-
         }
     }
 }

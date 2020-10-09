@@ -12,23 +12,14 @@ Page {
         property real globalPos: 0
         anchors.fill: parent
         delegate: Component {
-            ViewPortPage {
-                scrollPos: viewPort.globalPos
+            ViewPortStaticGradientPage {
                 source:  modelData
-                viewground: root
                 height: root.height / 3
-
+                width: viewPort.width
                 title: "Test ViewPortPage"
                 text: "Test ViewPortPage. General text and <i>html code</i>"
             }
         }
-
-        ScrollBar.vertical: ScrollBar {
-            onPositionChanged: {
-                viewPort.globalPos = position
-            }
-        }
-
 
         model: [
             "qrc:/img/res/LOGO.png",
@@ -54,5 +45,3 @@ Page {
         ]
     }
 }
-
-

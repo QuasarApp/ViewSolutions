@@ -5,6 +5,7 @@
         <file>qtquickcontrols2.conf</file>
         <file>ViewPortContainerPage.qml</file>
         <file>VPGradientPage.qml</file>
+        <file>VPStaticGradientPage.qml</file>
     </qresource>
     <qresource prefix="/img">
         <file>res/LOGO.png</file>

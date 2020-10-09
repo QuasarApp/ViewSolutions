@@ -5,6 +5,9 @@
         <file>ViewSolutionsModule/ViewPortDelegatBase.qml</file>
         <file>ViewSolutionsModule/ViewPortPage.qml</file>
         <file>ViewSolutionsModule/ViewPortGradientPage.qml</file>
+        <file>ViewSolutionsModule/ViewPortStaticPage.qml</file>
+        <file>ViewSolutionsModule/ViewPortStaticGradientPage.qml</file>
+        <file>ViewSolutionsModule/ViewSolutionsControl.qml</file>
     </qresource>
     <qresource prefix="/img"/>
 </RCC>
