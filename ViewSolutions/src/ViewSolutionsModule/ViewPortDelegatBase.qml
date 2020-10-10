@@ -10,7 +10,8 @@ ViewSolutionsControl {
     property string source: ""
     property alias imageSource: image
 
-    property rect imagePos: null
+    property var viewground: null
+
     property var listView: null
 
     property int imageMrgin: 5
@@ -36,14 +37,16 @@ ViewSolutionsControl {
 
     Flickable {
         id: flickable
-        contentY: -(listView.contentY - delegateItem.y) + imagePos.x
-        contentX: -(listView.contentX - delegateItem.x) + imagePos.y
+        contentY: -(listView.contentY - delegateItem.y + viewground.y)
+        contentX: -(listView.contentX - delegateItem.x + viewground.x)
 
-        contentWidth: imagePos.width
-        contentHeight: imagePos.height
+        onContentXChanged: {
+            console.log(contentX)
+        }
+        contentWidth: 2000//image.width
+        contentHeight: image.height
         clip: true
         interactive: false
-
         Image {
             id: image;
             source: delegateItem.source
@@ -51,8 +54,9 @@ ViewSolutionsControl {
             fillMode: Image.PreserveAspectFit
             x:0
             y:0
-            width: imagePos.width;
-            height: imagePos.height;
+            width: viewground.width;
+            height: viewground.height;
+
         }
 
         anchors.fill: parent

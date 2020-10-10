@@ -11,10 +11,21 @@ Page {
         id: viewPort
         property real globalPos: 0
         anchors.fill: parent
+        Item {
+            id: viewgroundItem
+
+            anchors.right: parent.right
+//            anchors.top: parent.top
+            anchors.bottom: parent.bottom
+            width: parent.width / 2
+            height: parent.height / 2
+        }
+
         delegate: Component {
             ViewPortGradientPage {
                 source:  modelData
-                imagePos: viewPort.layer.sourceRect
+                viewground: viewgroundItem
+
 //                height: root.height / 3
                 title: "Test ViewPortPage"
                 text: "Test ViewPortPage. General text and <i>html code</i>"
@@ -24,14 +35,7 @@ Page {
             }
         }
 
-        Item {
-            id: viewgroundItem
 
-            anchors.right: parent.right
-            anchors.top: parent.top
-            anchors.bottom: parent.bottom
-            width: parent.width / 2
-        }
 
         ScrollBar.vertical: ScrollBar {
         }
