@@ -14,14 +14,23 @@ Page {
         delegate: Component {
             ViewPortGradientPage {
                 source:  modelData
-                viewground: root
-                height: root.height / 3
+                imagePos: viewPort.layer.sourceRect
+//                height: root.height / 3
                 title: "Test ViewPortPage"
                 text: "Test ViewPortPage. General text and <i>html code</i>"
-                contentX: viewPort.contentX
-                contentY: viewPort.contentY
+                width: viewPort.width
+                listView: viewPort
 
             }
+        }
+
+        Item {
+            id: viewgroundItem
+
+            anchors.right: parent.right
+            anchors.top: parent.top
+            anchors.bottom: parent.bottom
+            width: parent.width / 2
         }
 
         ScrollBar.vertical: ScrollBar {

@@ -10,7 +10,9 @@ ViewSolutionsControl {
     property string source: ""
     property alias imageSource: image
 
-    property var viewground: null
+    property rect imagePos: null
+    property var listView: null
+
     property int imageMrgin: 5
 
     property var theme: Material.theme
@@ -21,8 +23,6 @@ ViewSolutionsControl {
 
     property int viewPortDelegatW: 0
     property int viewPortDelegatH: 0
-    property real contentX: 0
-    property real contentY: 0
 
     background: Rectangle {
         border.color: "black"
@@ -30,17 +30,17 @@ ViewSolutionsControl {
         color: "#00000000"
     }
 
-    width: (viewPortDelegatW)? viewPortDelegatW: (viewground)? viewground.width : 0
-    height:  (viewPortDelegatH)? viewPortDelegatH: (viewground)?viewground.height * 0.1 : 0
+    width: (viewPortDelegatW)? viewPortDelegatW: 0
+    height: (viewPortDelegatH)? viewPortDelegatH: 0
 
 
     Flickable {
         id: flickable
-        contentY: -(parent.contentY - delegateItem.y)
-        contentX: -(parent.contentX - delegateItem.x)
+        contentY: -(listView.contentY - delegateItem.y) + imagePos.x
+        contentX: -(listView.contentX - delegateItem.x) + imagePos.y
 
-        contentWidth: viewground.width
-        contentHeight: viewground.height
+        contentWidth: imagePos.width
+        contentHeight: imagePos.height
         clip: true
         interactive: false
 
@@ -49,7 +49,10 @@ ViewSolutionsControl {
             source: delegateItem.source
 
             fillMode: Image.PreserveAspectFit
-            anchors.fill: parent
+            x:0
+            y:0
+            width: imagePos.width;
+            height: imagePos.height;
         }
 
         anchors.fill: parent
