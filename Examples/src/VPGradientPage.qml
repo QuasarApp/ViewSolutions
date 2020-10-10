@@ -15,7 +15,7 @@ Page {
             id: viewgroundItem
 
             anchors.right: parent.right
-//            anchors.top: parent.top
+            anchors.top: parent.top
             anchors.bottom: parent.bottom
             width: parent.width / 2
             height: parent.height / 2
@@ -26,7 +26,6 @@ Page {
                 source:  modelData
                 viewground: viewgroundItem
 
-//                height: root.height / 3
                 title: "Test ViewPortPage"
                 text: "Test ViewPortPage. General text and <i>html code</i>"
                 width: viewPort.width

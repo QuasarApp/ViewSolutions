@@ -48,7 +48,7 @@ ViewPortPage {
             gradient: Gradient {
                 GradientStop {
                     position: 0.50;
-                    color: "#0f"+ baseColor;
+                    color: "#ff"+ baseColor;
                 }
 
                 GradientStop {

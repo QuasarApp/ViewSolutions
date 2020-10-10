@@ -35,6 +35,7 @@ ViewPortDelegatBase {
         border.color: "#" + baseColor
         border.width: 0
         radius: height * 0.05
+
     }
 
     content: Item {

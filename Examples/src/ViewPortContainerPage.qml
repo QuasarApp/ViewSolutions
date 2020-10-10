@@ -14,10 +14,11 @@ Page {
         delegate: Component {
             ViewPortPage {
                 source:  modelData
-                viewground: root
+                viewground: viewPort
+                listView: viewPort
+                width: viewPort.width
+
                 height: root.height / 3
-                contentX: viewPort.contentX
-                contentY: viewPort.contentY
                 title: "Test ViewPortPage"
                 text: "Test ViewPortPage. General text and <i>html code</i>"
             }
