@@ -19,8 +19,8 @@ ViewSolutionsControl {
     property int margins: 5
 
     property int textMargins: 10
-    property int sourceTextPointSize: 20
-    property int headerTextPointSize: 32
+    property int sourceTextPixelSize: 20
+    property int headerTextPixelSize: 32
 
     property alias title: header.text
     property alias text: sourceText.text
@@ -63,7 +63,7 @@ ViewSolutionsControl {
         Label {
             id: header
             font.bold: true
-            font.pointSize: headerTextPointSize
+            font.pixelSize: headerTextPixelSize
 
             horizontalAlignment: Text.AlignHCenter
             verticalAlignment: Text.AlignVCenter
@@ -87,7 +87,7 @@ ViewSolutionsControl {
         Label {
             id: sourceText
             font.bold: false
-            font.pointSize: sourceTextPointSize
+            font.pixelSize: sourceTextPixelSize
             horizontalAlignment: Text.AlignLeft
             verticalAlignment: Text.AlignVCenter
             width: parent.width / 2

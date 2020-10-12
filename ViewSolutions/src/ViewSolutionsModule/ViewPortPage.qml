@@ -11,8 +11,8 @@ ViewPortDelegatBase {
     property string title: ""
     property string text: ""
     property int textMargins: 10
-    property int sourceTextPointSize: 20
-    property int headerTextPointSize: 32
+    property int sourceTextPixelSize: 20
+    property int headerTextPixelSize: 32
     property color fontColor: ( Material.theme === Material.Light)? "#626465" : "#d2d5d8"
 
     property int additionalHeight: getBrCount(text) * sourceText.fontInfo.pixelSize + textMargins * 2
@@ -50,7 +50,7 @@ ViewPortDelegatBase {
         Label {
             id: header
             font.bold: true
-            font.pointSize: headerTextPointSize
+            font.pixelSize: headerTextPixelSize
             color: fontColor
             text: title;
             horizontalAlignment: Text.AlignHCenter
@@ -65,7 +65,7 @@ ViewPortDelegatBase {
             anchors.margins: textMargins
 
             layer.effect: DropShadow {
-                verticalOffset: 2
+                verticalOffset: 0
                 color: "#80000000"
                 radius: 1
                 samples: 3
@@ -75,7 +75,7 @@ ViewPortDelegatBase {
         Label {
             id: sourceText
             font.bold: false
-            font.pointSize: sourceTextPointSize
+            font.pixelSize: sourceTextPixelSize
             horizontalAlignment: Text.AlignLeft
             verticalAlignment: Text.AlignVCenter
             text: root.text
@@ -91,7 +91,7 @@ ViewPortDelegatBase {
 
             layer.enabled: true
             layer.effect: DropShadow {
-                verticalOffset: 2
+                verticalOffset: 0
                 color: "#80000000"
                 radius: 1
                 samples: 3

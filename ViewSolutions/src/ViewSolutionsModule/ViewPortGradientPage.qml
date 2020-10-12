@@ -68,7 +68,7 @@ ViewPortPage {
         Label {
             id: header
             font.bold: true
-            font.pointSize: headerTextPointSize
+            font.pixelSize: headerTextPixelSize
             text: title;
             color: fontColor
 
@@ -84,7 +84,7 @@ ViewPortPage {
             anchors.margins: textMargins
 
             layer.effect: DropShadow {
-                verticalOffset: 2
+                verticalOffset: 0
                 color: "#80000000"
                 radius: 1
                 samples: 3
@@ -94,7 +94,7 @@ ViewPortPage {
         Label {
             id: sourceText
             font.bold: false
-            font.pointSize: sourceTextPointSize
+            font.pixelSize: sourceTextPixelSize
             horizontalAlignment: Text.AlignLeft
             verticalAlignment: Text.AlignVCenter
             width: parent.width / 2
@@ -110,7 +110,7 @@ ViewPortPage {
 
             layer.enabled: true
             layer.effect: DropShadow {
-                verticalOffset: 2
+                verticalOffset: 0
                 color: "#80000000"
                 radius: 1
                 samples: 3
