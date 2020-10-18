@@ -15,13 +15,7 @@ ViewPortDelegatBase {
     property int headerTextPixelSize: 32
     property color fontColor: ( Material.theme === Material.Light)? "#626465" : "#d2d5d8"
 
-    property int additionalHeight: getBrCount(text) * sourceText.fontInfo.pixelSize + textMargins * 2
-
-    function getBrCount(text) {
-        return (text.match(/<br>/g) || []).length;
-    }
-
-    viewPortDelegatH: header.height + sourceText.paintedHeight + additionalHeight
+    viewPortDelegatH: header.paintedHeight + header.anchors.bottomMargin + header.anchors.topMargin + sourceText.paintedHeight + sourceText.anchors.bottomMargin + sourceText.anchors.topMargin
 
     background: Rectangle {
         color: colorPicker.pick(source)
@@ -47,7 +41,7 @@ ViewPortDelegatBase {
         }
 
         clip: true
-        Label {
+        TextEdit {
             id: header
             font.bold: true
             font.pixelSize: headerTextPixelSize
@@ -58,6 +52,9 @@ ViewPortDelegatBase {
             wrapMode: Text.WordWrap
             clip: true
             height: paintedHeight
+
+            selectByMouse: true
+            readOnly: true
 
             anchors.top: parent.top
             anchors.left: parent.left
@@ -72,7 +69,7 @@ ViewPortDelegatBase {
             }
         }
 
-        Label {
+        TextEdit {
             id: sourceText
             font.bold: false
             font.pixelSize: sourceTextPixelSize
@@ -80,6 +77,10 @@ ViewPortDelegatBase {
             verticalAlignment: Text.AlignVCenter
             text: root.text
             color: fontColor
+            textFormat: TextEdit.MarkdownText
+            selectByMouse: true
+
+            readOnly: true
 
             wrapMode: Text.WordWrap
             anchors.bottom: parent.bottom

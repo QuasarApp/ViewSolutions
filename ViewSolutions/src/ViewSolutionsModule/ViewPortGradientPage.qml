@@ -59,13 +59,13 @@ ViewPortPage {
         }
 
     }
-    viewPortDelegatH: header.height + sourceText.paintedHeight + additionalHeight
+    viewPortDelegatH: header.paintedHeight + header.anchors.bottomMargin + header.anchors.topMargin + sourceText.paintedHeight + sourceText.anchors.bottomMargin + sourceText.anchors.topMargin
 
     content: Item {
         id: privatePage
 
         clip: true
-        Label {
+        TextEdit {
             id: header
             font.bold: true
             font.pixelSize: headerTextPixelSize
@@ -83,6 +83,9 @@ ViewPortPage {
             anchors.right: parent.right
             anchors.margins: textMargins
 
+            selectByMouse: true
+            readOnly: true
+
             layer.effect: DropShadow {
                 verticalOffset: 0
                 color: "#80000000"
@@ -91,7 +94,7 @@ ViewPortPage {
             }
         }
 
-        Label {
+        TextEdit {
             id: sourceText
             font.bold: false
             font.pixelSize: sourceTextPixelSize
@@ -100,6 +103,9 @@ ViewPortPage {
             width: parent.width / 2
             text: root.text
             color: fontColor
+            readOnly: true
+            selectByMouse: true
+            textFormat: TextEdit.MarkdownText
 
             wrapMode: Text.WordWrap
             anchors.bottom: parent.bottom
