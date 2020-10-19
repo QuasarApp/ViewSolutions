@@ -35,11 +35,6 @@ ViewPortDelegatBase {
     content: Item {
         id: privatePage
 
-        Component.onDestruction: {
-            header.destroy()
-            sourceText.destroy()
-        }
-
         clip: true
         TextEdit {
             id: header
