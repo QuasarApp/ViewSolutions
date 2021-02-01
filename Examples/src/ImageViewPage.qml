@@ -7,7 +7,7 @@ import ViewSolutionsModule 1.0
 Page {
     ImageView {
         anchors.fill: parent
-        soucre:  "qrc:/img/res/LOGO.png"
+        source:  "qrc:/img/res/LOGO.png"
         text: "QuasarApp"
         toolTip: "QuasarApp Group"
         anchors.margins: 20

@@ -22,9 +22,7 @@ int main(int argc, char *argv[])
 
 
     QQmlApplicationEngine engine;
-    bool fViewSolutionsIsInited;
-    INIT_VIEW_SOLUTIONS(fViewSolutionsIsInited, &engine);
-    if (!fViewSolutionsIsInited) {
+    if (!ViewSolutions::init(&engine)) {
         return -1;
     }
 

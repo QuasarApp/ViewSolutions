@@ -15,6 +15,8 @@ bool init(QQmlApplicationEngine *engine) {
     if (!root)
         return false;
 
+    initResources();
+
     engine->addImportPath(":/");
 
     auto picker = QMLColorPicker::instance();
