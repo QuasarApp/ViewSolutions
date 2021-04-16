@@ -8,7 +8,7 @@ class QQmlApplicationEngine;
 namespace ViewSolutions {
 
 /**
- * @brief The QMLColorPicker class - qml wraper for ColorPicker clas
+ * @brief The QMLColorPicker class - Qml wrapper for ColorPicker class.
  */
 class LOGINVIEW_EXPORT QMLColorPicker : public QObject, private ColorPicker
 {
@@ -17,14 +17,14 @@ public:
     explicit QMLColorPicker(QObject *parent = nullptr);
     /**
      * @brief instance This method return instance object of the QMLColorPicker setvice.
-     * @return static instance of this ColorPicker
+     * @return Static instance of this ColorPicker.
      */
     static QMLColorPicker* instance();
 
     /**
-     * @brief pick This is override function for qml
-     * @param img This is path to image
-     * @return General color of image
+     * @brief pick This is override function for qml.
+     * @param img This is path to image.
+     * @return General color of image.
      */
      Q_INVOKABLE QColor pick(const QString &img) const;
 
