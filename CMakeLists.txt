@@ -28,11 +28,7 @@ if ( NOT DEFINED VIEWSOLUTIONS_EXAMPLES )
     endif()
 endif()
 
-include(CMake/QuasarAppCITargets.cmake)
-include(CMake/ccache.cmake)
-include(CMake/QtUtils.cmake)
-include(CMake/ProjectOut.cmake)
-include(CMake/crossplatform/crossplatform.cmake)
+include(CMake/QuasarApp.cmake)
 
 find_package(QT NAMES Qt6 Qt5 COMPONENTS Core Quick QuickControls2 REQUIRED)
 find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Core Quick QuickControls2 REQUIRED)
