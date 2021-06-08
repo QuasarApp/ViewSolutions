@@ -1,12 +1,16 @@
 # ViewSolutions
+
 View solutions of qml for quasarapp projects
 
+## QML classes:
 
-QML classes:
 #### ImageView
+
 This is animate image viewer 
+
 ##### Example:
-``` qml
+
+```qml
     ImageView {
         anchors.fill: parent
         soucre:  "qrc:/img/images/example.png"
@@ -17,9 +21,12 @@ This is animate image viewer
 ```
 
 #### ViewPortPage
+
 This is animate Delegate viewer for ListView 
+
 ##### Example:
-``` qml
+
+```qml
     ListView {
         id: viewPort
         property real globalPos: 0
