@@ -10,7 +10,7 @@ namespace ViewSolutions {
 /**
  * @brief The QMLColorPicker class - Qml wrapper for ColorPicker class.
  */
-class LOGINVIEW_EXPORT QMLColorPicker : public QObject, private ColorPicker
+class VIEWSOLUTION_EXPORT QMLColorPicker : public QObject, private ColorPicker
 {
     Q_OBJECT
 public:

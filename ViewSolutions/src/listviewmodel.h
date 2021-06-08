@@ -9,7 +9,7 @@ enum class ListViewModelRoles {
     ModelData = Qt::UserRole
 };
 
-class LOGINVIEW_EXPORT ListViewModel: public QAbstractListModel
+class VIEWSOLUTION_EXPORT ListViewModel: public QAbstractListModel
 {
     Q_OBJECT
 public:

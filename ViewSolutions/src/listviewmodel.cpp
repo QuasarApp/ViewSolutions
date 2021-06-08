@@ -77,7 +77,7 @@ void ListViewModel::addSource(QObject* data) {
 }
 
 void ListViewModel::clear(bool fast) {
-    for (auto i : _data) {
+    for (auto i : qAsConst(_data)) {
         if (fast) {
             i->deleteLater();
         } else {

@@ -11,9 +11,9 @@
 #include <QtCore/qglobal.h>
 
 #if defined(VIEW_SOLUTIONS_LIBRARY)
-#  define LOGINVIEW_EXPORT Q_DECL_EXPORT
+#  define VIEWSOLUTION_EXPORT Q_DECL_EXPORT
 #else
-#  define LOGINVIEW_EXPORT Q_DECL_IMPORT
+#  define VIEWSOLUTION_EXPORT Q_DECL_IMPORT
 #endif
 
 

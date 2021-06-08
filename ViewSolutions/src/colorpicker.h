@@ -9,7 +9,7 @@ namespace ViewSolutions {
 /**
  * @brief The ColorPicker class - This class provide methods of get generals colors from images.
  */
-class LOGINVIEW_EXPORT ColorPicker
+class VIEWSOLUTION_EXPORT ColorPicker
 {
 public:
     explicit ColorPicker();
