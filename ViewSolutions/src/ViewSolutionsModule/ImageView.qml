@@ -12,15 +12,18 @@ Item {
     property string text: ""
     property bool hover: false
     property bool presed: false
+    property bool selected: false
+
     property real power: 1.0
 
     property string toolTip: ""
 
     property color textColor: Material.color(Material.Grey)
 
-
     property color background: colorPicker.pick(source)
+    property color selectedColor: "#5de2ff"
     property color borderColor: "#00000000"
+    property color hoverColor: "#00000000"
 
     signal clicked(var mouse);
 
@@ -54,7 +57,7 @@ Item {
         Rectangle {
             id: background
             color: root.background
-            border.color: (root.hover)? root.borderColor: "#00000000"
+            border.color: (root.hover)? root.hoverColor: root.selected? root.selectedColor: "#00000000"
             border.width: 4
             anchors.fill: parent
             radius: border.width * 2
