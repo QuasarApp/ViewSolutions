@@ -16,7 +16,6 @@ int main(int argc, char *argv[])
 {
     QGuiApplication::setApplicationName("ViewSolutionsExample");
     QGuiApplication::setOrganizationName("QuasarApp");
-    QGuiApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
 
     QGuiApplication app(argc, argv);
 
