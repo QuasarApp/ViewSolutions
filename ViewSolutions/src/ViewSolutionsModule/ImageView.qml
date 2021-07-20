@@ -148,22 +148,20 @@ Item {
 
         }
 
-        onMouseXChanged: {
-            const fromCenter = root.width / 2
+        onPositionChanged: (mouse) => {
+            let fromCenter = root.width / 2
             privateData.ry = -((mouse.x - fromCenter) / (fromCenter * 0.05)) * power
 
-        }
-        onMouseYChanged: {
-            const fromCenter = root.height / 2
-
+            fromCenter = root.height / 2
             privateData.rx = ((mouse.y - fromCenter) / (fromCenter * 0.05)) * power
+
         }
 
         onPressed: {
             presed = true;
         }
 
-        onReleased: {
+        onReleased: (mouse) => {
             presed = false;
 
             root.clicked(mouse)
