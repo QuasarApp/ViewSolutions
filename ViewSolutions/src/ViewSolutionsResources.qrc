@@ -8,6 +8,9 @@
         <file>ViewSolutionsModule/ViewPortStaticPage.qml</file>
         <file>ViewSolutionsModule/ViewPortStaticGradientPage.qml</file>
         <file>ViewSolutionsModule/ViewSolutionsControl.qml</file>
+        <file>ViewSolutionsModule/ActivityProcessorHeader.qml</file>
+        <file>ViewSolutionsModule/ActivityProcessor.qml</file>
+        <file>ViewSolutionsModule/ActivityPage.qml</file>
     </qresource>
     <qresource prefix="/img"/>
 </RCC>

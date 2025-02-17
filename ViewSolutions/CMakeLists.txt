@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2018-2021 QuasarApp.
+# Copyright (C) 2018-2025 QuasarApp.
 # Distributed under the lgplv3 software license, see the accompanying
 # Everyone is permitted to copy and distribute verbatim copies
 # of this license document, but changing it is not allowed.
@@ -18,6 +18,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 file(GLOB SOURCE_CPP
     "src/*.cpp"
+    "src/*.h"
     "src/*.qrc"
 
 )
