@@ -24,7 +24,7 @@ namespace ViewSolutions {
  *
  *
  * @note to access to delegate model use Qt::EditRole role: available in qml by delegateModel keyword
- * @example :
+ * **example:** :
  * ```
  * class VariantListModel: public BaseHashModel<QVariant>
 {
