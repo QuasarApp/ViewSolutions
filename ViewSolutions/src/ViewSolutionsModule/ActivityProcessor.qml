@@ -41,26 +41,14 @@ Pane {
                 return ""
             }
 
-            subTitle: {
-                if (root.enableHeader && stackView.currentItem && stackView.currentItem.subTitle) {
-                    return stackView.currentItem.subTitle
-                }
-                return ""
-
-            }
             backButton:  root.enableHeader && stackView.depth > 1 &&  (stackView.currentItem && stackView.currentItem.buttonBack)
-            fullBackButton: root.enableHeader && (stackView.currentItem && stackView.currentItem.isFullBackButton)
 
             closeButton: root.enableHeader && (stackView.currentItem && stackView.currentItem.closeButton)
-            closeButtonBorder: root.enableHeader && (stackView.currentItem && stackView.currentItem.closeButtonBorder)
             titlesAligh: Text.AlignLeft
             onBackClicked: {
-                popItem()
+                root.popItem()
             }
 
-            onCloseClicked: {
-                popupProcessor.close()
-            }
         }
 
         contentItem: StackView {
@@ -68,7 +56,7 @@ Pane {
                     target: (stackView.currentItem && stackView.currentItem.finish)? stackView.currentItem : null
 
                     function onFinish() {
-                        popItem();
+                        root.popItem()
                     }
                 }
 

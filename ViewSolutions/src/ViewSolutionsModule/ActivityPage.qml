@@ -11,10 +11,8 @@ import QtQuick.Controls
 
 Control {
     property string title: ""
-    property string subTitle: ""
 
     // shows the back button with text
-    property bool isFullBackButton: false
     property bool buttonBack: true
 
     // shows close button on the ActivityProcessor header
@@ -38,5 +36,4 @@ Control {
     property var activityCallBack: () => {}
     property bool saveChangesInUnsaved: false
 
-    topPadding: 24
 }
