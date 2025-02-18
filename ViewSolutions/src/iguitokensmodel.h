@@ -37,8 +37,7 @@ class VIEWSOLUTION_EXPORT iGUITokensModel: public QObject, public iModel
     Q_PROPERTY(QColor color_border_primary READ color_border_primary CONSTANT FINAL)
     Q_PROPERTY(QColor color_border_secondary READ color_border_secondary CONSTANT FINAL)
     Q_PROPERTY(QColor color_border_disabled READ color_border_disabled CONSTANT FINAL)
-    Q_PROPERTY(QColor color_devider_dark READ color_devider_dark CONSTANT FINAL)
-    Q_PROPERTY(QColor color_devider_white READ color_devider_white CONSTANT FINAL)
+    Q_PROPERTY(QColor color_devider READ color_devider CONSTANT FINAL)
 
     //states_colors_constants:
     Q_PROPERTY(QColor pressed_focused READ pressed_focused CONSTANT FINAL)
@@ -89,8 +88,7 @@ public:
     virtual QColor color_border_primary() const = 0;
     virtual QColor color_border_secondary() const = 0;
     virtual QColor color_border_disabled() const = 0;
-    virtual QColor color_devider_dark() const = 0;
-    virtual QColor color_devider_white() const = 0;
+    virtual QColor color_devider() const = 0;
 
     virtual QColor pressed_focused() const = 0;
     virtual QColor hover() const = 0;

@@ -5,13 +5,13 @@
 //# of this license document, but changing it is not allowed.
 //#
 
-import QtQuick 2.15
-import QtQuick.Layouts 1.14
-import QtQuick.Controls 2.15
-import QtQuick.Controls.Material 2.15
-import QtQuick.Controls.Universal 2.15
+import QtQuick
+import QtQuick.Layouts
+import QtQuick.Controls
+import QtQuick.Controls.Material
+import QtQuick.Controls.Universal
 
-Item {
+Control {
     id: root
     property string source: ""
     property alias imagesource: sourceImg
@@ -27,7 +27,7 @@ Item {
 
     property color textColor: Material.color(Material.Grey)
 
-    property color background: colorPicker.pick(source)
+    property color backgroundColor: colorPicker.pick(source)
     property color selectedColor: "#5de2ff"
     property color borderColor: "#00000000"
     property color hoverColor: "#00000000"
@@ -39,12 +39,12 @@ Item {
 
         function onStatusChanged(status) {
             if (status === Image.Ready) {
-                root.background = colorPicker.pick(source);
+                root.backgroundColor = colorPicker.pick(source);
             }
         }
     }
 
-    Item {
+    contentItem: Control {
         id: privateData
         property int rootMinSize: Math.min(root.height, root.width)
         anchors.margins: (root.hover && !presed)? rootMinSize * 0.01: rootMinSize * 0.1
@@ -60,13 +60,31 @@ Item {
             }
         }
 
-        anchors.fill: parent
-        Rectangle {
-            id: background
-            color: root.background
+        Behavior on rx {
+            NumberAnimation {
+                easing.type: Easing.OutExpo
+                duration: 550
+            }
+        }
+
+        Behavior on ry {
+            NumberAnimation {
+                easing.type: Easing.OutExpo
+                duration: 550
+            }
+        }
+
+        Behavior on rz {
+            NumberAnimation {
+                easing.type: Easing.OutExpo
+                duration: 550
+            }
+        }
+
+        background: Rectangle {
+            color: root.backgroundColor
             border.color: (root.hover)? root.hoverColor: root.selected? root.selectedColor: "#00000000"
             border.width: 4
-            anchors.fill: parent
             radius: border.width * 2
 
             Behavior on border.color {
@@ -82,16 +100,18 @@ Item {
             }
         }
 
-        ColumnLayout {
+        contentItem: ColumnLayout {
             Image {
                 id: sourceImg
                 source: root.source
 
                 clip: true
                 fillMode: Image.PreserveAspectCrop
+                mipmap: true
+                smooth: true
                 Layout.fillHeight: true
                 Layout.fillWidth: true
-                Layout.margins: 5
+                Layout.margins: 4
 
 
 
@@ -100,16 +120,13 @@ Item {
             Label {
                 text: root.text
                 visible: text.length
-                Layout.preferredHeight: root.height * 0.1
                 Layout.fillWidth: true
-                color: textColor
-                font.pixelSize: root.height * 0.09
-                font.bold: true
+                color: root.textColor
+                font: root.font
                 horizontalAlignment: Text.AlignHCenter
                 verticalAlignment: Text.AlignVCenter
 
             }
-            anchors.fill: parent
         }
 
         transform: [
@@ -145,11 +162,11 @@ Item {
         hoverEnabled: true;
 
         onEntered: {
-            hover = true
+            root.hover = true
         }
 
         onExited: {
-            hover = false;
+            root.hover = false;
             privateData.ry = 0
             privateData.rx = 0
 
@@ -157,19 +174,19 @@ Item {
 
         onPositionChanged: (mouse) => {
             let fromCenter = root.width / 2
-            privateData.ry = -((mouse.x - fromCenter) / (fromCenter * 0.05)) * power
+            privateData.ry = -((mouse.x - fromCenter) / (fromCenter * 0.05)) * root.power
 
             fromCenter = root.height / 2
-            privateData.rx = ((mouse.y - fromCenter) / (fromCenter * 0.05)) * power
+            privateData.rx = ((mouse.y - fromCenter) / (fromCenter * 0.05)) * root.power
 
         }
 
         onPressed: {
-            presed = true;
+            root.presed = true;
         }
 
         onReleased: (mouse) => {
-            presed = false;
+            root.presed = false;
 
             root.clicked(mouse)
         }
