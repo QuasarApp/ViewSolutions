@@ -17,7 +17,6 @@ Control {
 
     // shows close button on the ActivityProcessor header
     property bool closeButton: true
-    property bool closeButtonBorder: false
     // attach to this property link to ActivityProcessor (if is it not to abble atomaticaly)
     property var activityProcessorLink: null
 

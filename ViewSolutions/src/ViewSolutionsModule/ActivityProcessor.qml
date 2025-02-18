@@ -63,8 +63,8 @@ Pane {
                 padding: 0
                 id: stackView
 
-                implicitWidth: stackView.currentItem.implicitWidth
-                implicitHeight: stackView.currentItem.implicitHeight
+                implicitWidth: (stackView.currentItem)? stackView.currentItem.implicitWidth: 0
+                implicitHeight: (stackView.currentItem)? stackView.currentItem.implicitHeight: 0
 
                 property int durationAnimation: 400
                 popEnter: Transition {
