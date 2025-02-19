@@ -16,6 +16,7 @@ Pane {
     property alias initialItem: stackView.initialItem
     property alias currentItem: stackView.currentItem
     property alias titlesAligh: headerView.titlesAligh
+    property alias depth: stackView.depth
     property bool cache: true
     property bool enableHeader: true
 
@@ -52,93 +53,94 @@ Pane {
         }
 
         contentItem: StackView {
-                Connections {
-                    target: (stackView.currentItem && stackView.currentItem.finish)? stackView.currentItem : null
+            id: stackView
 
-                    function onFinish() {
-                        root.popItem()
-                    }
+            Connections {
+                target: (stackView.currentItem && stackView.currentItem.finish)? stackView.currentItem : null
+
+                function onFinish() {
+                    root.popItem()
                 }
+            }
 
-                padding: 0
-                id: stackView
+            padding: 0
 
-                implicitWidth: (stackView.currentItem)? stackView.currentItem.implicitWidth: 0
-                implicitHeight: (stackView.currentItem)? stackView.currentItem.implicitHeight: 0
+            implicitWidth: (stackView.currentItem)? stackView.currentItem.implicitWidth: 0
+            implicitHeight: (stackView.currentItem)? stackView.currentItem.implicitHeight: 0
 
-                property int durationAnimation: 400
-                popEnter: Transition {
-                    ParallelAnimation {
-                        NumberAnimation {
-                            properties: "opacity"
-                            from: 0
-                            to: 1
-                            duration: stackView.durationAnimation
-                        }
-                        NumberAnimation {
-                            properties: "x"
-                            from: (stackView.mirrored ? -1 : 1) * -stackView.width
-                            to: 0
-                            duration: stackView.durationAnimation
-                            easing.type: Easing.OutCubic
-                        }
+            property int durationAnimation: 400
+            popEnter: Transition {
+                ParallelAnimation {
+                    NumberAnimation {
+                        properties: "opacity"
+                        from: 0
+                        to: 1
+                        duration: stackView.durationAnimation
                     }
-                }
-
-                popExit: Transition {
-                    ParallelAnimation {
-                        NumberAnimation {
-                            properties: "opacity"
-                            from: 1
-                            to: 0
-                            duration: stackView.durationAnimation / 2
-                        }
-                        NumberAnimation {
-                            properties: "x"
-                            from: 0
-                            to: (stackView.mirrored ? -1 : 1) * stackView.width
-                            duration: stackView.durationAnimation
-                            easing.type: Easing.OutCubic
-                        }
-                    }
-                }
-
-                pushEnter: Transition {
-                    ParallelAnimation {
-                        NumberAnimation {
-                            properties: "opacity"
-                            from: 0
-                            to: 1
-                            duration: stackView.durationAnimation
-                        }
-                        NumberAnimation {
-                            properties: "x"
-                            from: (stackView.mirrored ? -1 : 1) * stackView.width
-                            to: 0
-                            duration: stackView.durationAnimation
-                            easing.type: Easing.OutCubic
-                        }
-                    }
-                }
-
-                pushExit: Transition {
-                    ParallelAnimation {
-                        NumberAnimation {
-                            properties: "opacity"
-                            from: 1
-                            to: 0
-                            duration: stackView.durationAnimation / 2
-                        }
-                        NumberAnimation {
-                            properties: "x"
-                            from: 0
-                            to: (stackView.mirrored ? -1 : 1) * -stackView.width
-                            duration: stackView.durationAnimation
-                            easing.type: Easing.OutCubic
-                        }
+                    NumberAnimation {
+                        properties: "x"
+                        from: (stackView.mirrored ? -1 : 1) * -stackView.width
+                        to: 0
+                        duration: stackView.durationAnimation
+                        easing.type: Easing.OutCubic
                     }
                 }
             }
+
+            popExit: Transition {
+                ParallelAnimation {
+                    NumberAnimation {
+                        properties: "opacity"
+                        from: 1
+                        to: 0
+                        duration: stackView.durationAnimation / 2
+                    }
+                    NumberAnimation {
+                        properties: "x"
+                        from: 0
+                        to: (stackView.mirrored ? -1 : 1) * stackView.width
+                        duration: stackView.durationAnimation
+                        easing.type: Easing.OutCubic
+                    }
+                }
+            }
+
+            pushEnter: Transition {
+                ParallelAnimation {
+                    NumberAnimation {
+                        properties: "opacity"
+                        from: 0
+                        to: 1
+                        duration: stackView.durationAnimation
+                    }
+                    NumberAnimation {
+                        properties: "x"
+                        from: (stackView.mirrored ? -1 : 1) * stackView.width
+                        to: 0
+                        duration: stackView.durationAnimation
+                        easing.type: Easing.OutCubic
+                    }
+                }
+            }
+
+            pushExit: Transition {
+                ParallelAnimation {
+                    NumberAnimation {
+                        properties: "opacity"
+                        from: 1
+                        to: 0
+                        duration: stackView.durationAnimation / 2
+                    }
+                    NumberAnimation {
+                        properties: "x"
+                        from: 0
+                        to: (stackView.mirrored ? -1 : 1) * -stackView.width
+                        duration: stackView.durationAnimation
+                        easing.type: Easing.OutCubic
+                    }
+                }
+            }
+        }
     }
 
     // create new activity from component with model activityModel, after drop this activity will be called callback function
