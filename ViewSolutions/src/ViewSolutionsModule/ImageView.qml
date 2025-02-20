@@ -10,29 +10,22 @@ import QtQuick.Layouts
 import QtQuick.Controls
 import QtQuick.Controls.Material
 import QtQuick.Controls.Universal
+import QtQuick.Effects
 
-Control {
+AbstractButton {
     id: root
     property string source: ""
     property alias imagesource: sourceImg
-
-    property string text: ""
-    property bool hover: false
-    property bool presed: false
-    property bool selected: false
 
     property real power: 1.0
 
     property string toolTip: ""
 
-    property color textColor: Material.color(Material.Grey)
+    property color textColor: Material.foreground
 
-    property color backgroundColor: colorPicker.pick(source)
-    property color selectedColor: "#5de2ff"
-    property color borderColor: "#00000000"
-    property color hoverColor: "#00000000"
-
-    signal clicked(var mouse);
+    property color backgroundColor: Material.background
+    property color selectedColor: Material.accent
+    property color hoverColor: Material.accent
 
     Connections {
         target: sourceImg
@@ -44,11 +37,20 @@ Control {
         }
     }
 
+    hoverEnabled: true
+
+    opacity: {
+        if (enabled) {
+            return 1
+        }
+
+        return 0.5
+    }
+
     contentItem: Control {
         id: privateData
         property int rootMinSize: Math.min(root.height, root.width)
-        anchors.margins: (root.hover && !presed)? rootMinSize * 0.01: rootMinSize * 0.1
-
+        bottomPadding : 8
         property real rx : 0
         property real ry : 0
         property real rz : 0
@@ -82,16 +84,19 @@ Control {
         }
 
         background: Rectangle {
-            color: root.backgroundColor
-            border.color: (root.hover)? root.hoverColor: root.selected? root.selectedColor: "#00000000"
-            border.width: 4
-            radius: border.width * 2
+            color: {
 
-            Behavior on border.color {
-                ColorAnimation {
-                    duration: 250
+                if (root.hovered) {
+                    return root.hoverColor
                 }
+
+                if (root.checked) {
+                    return root.selectedColor
+                }
+
+                return root.backgroundColor
             }
+            radius: 16
 
             Behavior on color {
                 ColorAnimation {
@@ -101,21 +106,44 @@ Control {
         }
 
         contentItem: ColumnLayout {
-            Image {
-                id: sourceImg
-                source: root.source
+            spacing: 8
 
-                clip: true
-                fillMode: Image.PreserveAspectCrop
-                mipmap: true
-                smooth: true
-                Layout.fillHeight: true
+
+            MultiEffect {
+                id: imgEffect
                 Layout.fillWidth: true
-                Layout.margins: 4
+                Layout.fillHeight: true
 
+                source:             Image {
+                    id: sourceImg
+                    source: root.source
 
+                    clip: true
+                    fillMode: Image.PreserveAspectCrop
 
+                    width: imgEffect.width
+                    height: imgEffect.height
+                }
+
+                maskEnabled: true
+                maskSource: ShaderEffectSource {
+                    sourceItem: Rectangle {
+                        radius: 16
+                        width: imgEffect.width
+                        height: imgEffect.height
+                        color: "Black"
+
+                        Rectangle {
+                            color: "Black"
+
+                            anchors.bottom: parent.bottom
+                            height: 20
+                            width: parent.width
+                        }
+                    }
+                }
             }
+
 
             Label {
                 text: root.text
@@ -150,7 +178,7 @@ Control {
 
     ToolTip {
         parent: root
-        visible: root.hover && text.length
+        visible: root.hovered && text.length
         text: root.toolTip
         delay: 500
 
@@ -158,38 +186,23 @@ Control {
 
 
     MouseArea {
-
+        acceptedButtons: Qt.NoButton
         hoverEnabled: true;
 
-        onEntered: {
-            root.hover = true
-        }
-
         onExited: {
-            root.hover = false;
             privateData.ry = 0
             privateData.rx = 0
 
         }
 
         onPositionChanged: (mouse) => {
-            let fromCenter = root.width / 2
-            privateData.ry = -((mouse.x - fromCenter) / (fromCenter * 0.05)) * root.power
+                               let fromCenter = root.width / 2
+                               privateData.ry = -((mouse.x - fromCenter) / (fromCenter * 0.05)) * root.power
 
-            fromCenter = root.height / 2
-            privateData.rx = ((mouse.y - fromCenter) / (fromCenter * 0.05)) * root.power
+                               fromCenter = root.height / 2
+                               privateData.rx = ((mouse.y - fromCenter) / (fromCenter * 0.05)) * root.power
 
-        }
-
-        onPressed: {
-            root.presed = true;
-        }
-
-        onReleased: (mouse) => {
-            root.presed = false;
-
-            root.clicked(mouse)
-        }
+                           }
 
         anchors.fill: parent
 
