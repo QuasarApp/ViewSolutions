@@ -29,7 +29,7 @@ namespace ViewSolutions {
  * @param engine is QQmlApplicationEngine object.
  * @return gui model storage object.
  */
-QSharedPointer<ModelStorage> init(QQmlApplicationEngine *engine);
+QSharedPointer<ModelStorage> VIEWSOLUTION_EXPORT init(QQmlApplicationEngine *engine);
 }
 
 #endif // VIEWSOLUTIONS_H
