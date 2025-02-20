@@ -9,7 +9,8 @@ import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
 
-RowLayout {
+
+ToolBar {
 
     id: root
     property int titlesAligh: Text.AlignHCenter
@@ -22,30 +23,36 @@ RowLayout {
     signal backClicked()
     signal closeClicked()
 
-    ToolButton {
+    contentItem: RowLayout {
 
-        visible: root.backButton
-        text: "<<"
 
-        onClicked: {
-            root.backClicked()
+        ToolButton {
+
+            visible: root.backButton
+            text: "<<"
+
+            onClicked: {
+                root.backClicked()
+            }
         }
+
+        Text {
+            id: centralTitle
+            text: (root.titleUppercase)? root.title.toUpperCase(): root.title
+            horizontalAlignment: root.titlesAligh
+            Layout.fillWidth: true;
+
+        }
+
+        ToolButton {
+            Layout.alignment: Qt.AlignRight
+            text: "x"
+            onClicked: root.closeClicked()
+            visible: root.closeButton
+
+        }
+
     }
-
-    Text {
-        id: centralTitle
-        text: (root.titleUppercase)? root.title.toUpperCase(): root.title
-        horizontalAlignment: root.titlesAligh
-        Layout.fillWidth: true;
-
-    }
-
-    ToolButton {
-        Layout.alignment: Qt.AlignRight
-        text: "x"
-        onClicked: root.closeClicked()
-        visible: root.closeButton
-
-    }
-
 }
+
+
