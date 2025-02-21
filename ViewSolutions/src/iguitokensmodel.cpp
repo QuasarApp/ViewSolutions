@@ -15,7 +15,11 @@ QString iGUITokensModel::modelId() const {
     return "GUITokens";
 }
 
-QColor &iGUITokensModel::addTransporent(QColor &input, float alpha) const {
+QColor iGUITokensModel::addTransporent(QColor input, float alpha) const {
+    return addTransporentImpl(input, alpha);
+}
+
+QColor &iGUITokensModel::addTransporentImpl(QColor &input, float alpha) const {
     input.setAlphaF(alpha);
     return input;
 }

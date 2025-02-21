@@ -9,13 +9,14 @@
 import QtQuick
 import QtQuick.Controls
 
-Pane {
+Page {
     id: root
 
     // use Comonent delegates only
     property alias initialItem: stackView.initialItem
     property alias currentItem: stackView.currentItem
-    property alias titlesAligh: headerView.titlesAligh
+    property int titlesAligh: Text.AlignLeft
+
     property alias depth: stackView.depth
     property bool cache: true
     property bool enableHeader: true
@@ -25,123 +26,117 @@ Pane {
 
     background: Item{}
 
-    contentItem: Page {
-        id: contentPage
-
-        padding: 0
-        background: Item{}
-
-        header: ActivityProcessorHeader {
-            id: headerView
-            visible: root.enableHeader
-            title: {
-                if (root.enableHeader && stackView.currentItem && stackView.currentItem.title) {
-                    return stackView.currentItem.title
-                }
-
-                return ""
+    header: ActivityProcessorHeader {
+        id: headerView
+        visible: root.enableHeader
+        title: {
+            if (root.enableHeader && stackView.currentItem && stackView.currentItem.title) {
+                return stackView.currentItem.title
             }
 
-            backButton:  root.enableHeader && stackView.depth > 1 &&  (stackView.currentItem && stackView.currentItem.buttonBack)
-
-            closeButton: root.enableHeader && (stackView.currentItem && stackView.currentItem.closeButton)
-            titlesAligh: Text.AlignLeft
-            onBackClicked: {
-                root.popItem()
-            }
-
+            return ""
         }
 
-        contentItem: StackView {
-            id: stackView
+        backButton:  root.enableHeader && stackView.depth > 1 &&  (stackView.currentItem && stackView.currentItem.buttonBack)
 
-            Connections {
-                target: (stackView.currentItem && stackView.currentItem.finish)? stackView.currentItem : null
+        closeButton: root.enableHeader && (stackView.currentItem && stackView.currentItem.closeButton)
+        titlesAligh: root.titlesAligh
+        onBackClicked: {
+            root.popItem()
+        }
 
-                function onFinish() {
-                    root.popItem()
+    }
+
+    contentItem: StackView {
+        id: stackView
+
+        Connections {
+            target: (stackView.currentItem && stackView.currentItem.finish)? stackView.currentItem : null
+
+            function onFinish() {
+                root.popItem()
+            }
+        }
+
+        padding: 0
+
+        implicitWidth: (stackView.currentItem)? stackView.currentItem.implicitWidth: 0
+        implicitHeight: (stackView.currentItem)? stackView.currentItem.implicitHeight: 0
+
+        property int durationAnimation: 400
+        popEnter: Transition {
+            ParallelAnimation {
+                NumberAnimation {
+                    properties: "opacity"
+                    from: 0
+                    to: 1
+                    duration: stackView.durationAnimation
+                }
+                NumberAnimation {
+                    properties: "x"
+                    from: (stackView.mirrored ? -1 : 1) * -stackView.width
+                    to: 0
+                    duration: stackView.durationAnimation
+                    easing.type: Easing.OutCubic
                 }
             }
+        }
 
-            padding: 0
-
-            implicitWidth: (stackView.currentItem)? stackView.currentItem.implicitWidth: 0
-            implicitHeight: (stackView.currentItem)? stackView.currentItem.implicitHeight: 0
-
-            property int durationAnimation: 400
-            popEnter: Transition {
-                ParallelAnimation {
-                    NumberAnimation {
-                        properties: "opacity"
-                        from: 0
-                        to: 1
-                        duration: stackView.durationAnimation
-                    }
-                    NumberAnimation {
-                        properties: "x"
-                        from: (stackView.mirrored ? -1 : 1) * -stackView.width
-                        to: 0
-                        duration: stackView.durationAnimation
-                        easing.type: Easing.OutCubic
-                    }
+        popExit: Transition {
+            ParallelAnimation {
+                NumberAnimation {
+                    properties: "opacity"
+                    from: 1
+                    to: 0
+                    duration: stackView.durationAnimation / 2
+                }
+                NumberAnimation {
+                    properties: "x"
+                    from: 0
+                    to: (stackView.mirrored ? -1 : 1) * stackView.width
+                    duration: stackView.durationAnimation
+                    easing.type: Easing.OutCubic
                 }
             }
+        }
 
-            popExit: Transition {
-                ParallelAnimation {
-                    NumberAnimation {
-                        properties: "opacity"
-                        from: 1
-                        to: 0
-                        duration: stackView.durationAnimation / 2
-                    }
-                    NumberAnimation {
-                        properties: "x"
-                        from: 0
-                        to: (stackView.mirrored ? -1 : 1) * stackView.width
-                        duration: stackView.durationAnimation
-                        easing.type: Easing.OutCubic
-                    }
+        pushEnter: Transition {
+            ParallelAnimation {
+                NumberAnimation {
+                    properties: "opacity"
+                    from: 0
+                    to: 1
+                    duration: stackView.durationAnimation
+                }
+                NumberAnimation {
+                    properties: "x"
+                    from: (stackView.mirrored ? -1 : 1) * stackView.width
+                    to: 0
+                    duration: stackView.durationAnimation
+                    easing.type: Easing.OutCubic
                 }
             }
+        }
 
-            pushEnter: Transition {
-                ParallelAnimation {
-                    NumberAnimation {
-                        properties: "opacity"
-                        from: 0
-                        to: 1
-                        duration: stackView.durationAnimation
-                    }
-                    NumberAnimation {
-                        properties: "x"
-                        from: (stackView.mirrored ? -1 : 1) * stackView.width
-                        to: 0
-                        duration: stackView.durationAnimation
-                        easing.type: Easing.OutCubic
-                    }
+        pushExit: Transition {
+            ParallelAnimation {
+                NumberAnimation {
+                    properties: "opacity"
+                    from: 1
+                    to: 0
+                    duration: stackView.durationAnimation / 2
                 }
-            }
-
-            pushExit: Transition {
-                ParallelAnimation {
-                    NumberAnimation {
-                        properties: "opacity"
-                        from: 1
-                        to: 0
-                        duration: stackView.durationAnimation / 2
-                    }
-                    NumberAnimation {
-                        properties: "x"
-                        from: 0
-                        to: (stackView.mirrored ? -1 : 1) * -stackView.width
-                        duration: stackView.durationAnimation
-                        easing.type: Easing.OutCubic
-                    }
+                NumberAnimation {
+                    properties: "x"
+                    from: 0
+                    to: (stackView.mirrored ? -1 : 1) * -stackView.width
+                    duration: stackView.durationAnimation
+                    easing.type: Easing.OutCubic
                 }
             }
         }
     }
+
 
     // create new activity from component with model activityModel, after drop this activity will be called callback function
     // Note The callback function works only with ActivityPage childs.

@@ -34,10 +34,13 @@ class VIEWSOLUTION_EXPORT iGUITokensModel: public QObject, public iModel
     Q_PROPERTY(QColor color_text_tertiary READ color_text_tertiary CONSTANT FINAL)
 
     Q_PROPERTY(QColor color_text_disabled READ color_text_disabled CONSTANT FINAL)
+
     Q_PROPERTY(QColor color_border_primary READ color_border_primary CONSTANT FINAL)
     Q_PROPERTY(QColor color_border_secondary READ color_border_secondary CONSTANT FINAL)
     Q_PROPERTY(QColor color_border_disabled READ color_border_disabled CONSTANT FINAL)
+
     Q_PROPERTY(QColor color_devider READ color_devider CONSTANT FINAL)
+    Q_PROPERTY(QColor color_background READ color_background CONSTANT FINAL)
 
     //states_colors_constants:
     Q_PROPERTY(QColor pressed_focused READ pressed_focused CONSTANT FINAL)
@@ -89,6 +92,7 @@ public:
     virtual QColor color_border_secondary() const = 0;
     virtual QColor color_border_disabled() const = 0;
     virtual QColor color_devider() const = 0;
+    virtual QColor color_background() const = 0;
 
     virtual QColor pressed_focused() const = 0;
     virtual QColor hover() const = 0;
@@ -125,6 +129,9 @@ public:
 public:
     QString modelId() const;
 
+    Q_INVOKABLE QColor addTransporent(QColor input, float alpha) const;
+
+
 protected:
     /**
      * @brief addTransporent This method add alpha chennel to the color.
@@ -132,7 +139,7 @@ protected:
      * @param alpha alphachennol factor from 0 to 1.
      * @return color with new alpha chennel.
      */
-    QColor& addTransporent(QColor& input, float alpha) const;
+    QColor& addTransporentImpl(QColor& input, float alpha) const;
 };
 }
 #endif // IGUITOKENSMODEL_H
