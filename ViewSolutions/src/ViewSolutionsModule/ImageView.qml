@@ -1,47 +1,56 @@
-import QtQuick 2.15
-import QtQuick.Layouts 1.14
-import QtQuick.Controls 2.15
-import QtQuick.Controls.Material 2.15
-import QtQuick.Controls.Universal 2.15
+//#
+//# Copyright (C) 2020-2025 QuasarApp.
+//# Distributed under the GPLv3 software license, see the accompanying
+//# Everyone is permitted to copy and distribute verbatim copies
+//# of this license document, but changing it is not allowed.
+//#
 
-Item {
+import QtQuick
+import QtQuick.Layouts
+import QtQuick.Controls
+import QtQuick.Controls.Material
+import QtQuick.Controls.Universal
+import QtQuick.Effects
+
+AbstractButton {
     id: root
     property string source: ""
     property alias imagesource: sourceImg
-
-    property string text: ""
-    property bool hover: false
-    property bool presed: false
-    property bool selected: false
 
     property real power: 1.0
 
     property string toolTip: ""
 
-    property color textColor: Material.color(Material.Grey)
+    property color textColor: Material.foreground
 
-    property color background: colorPicker.pick(source)
-    property color selectedColor: "#5de2ff"
-    property color borderColor: "#00000000"
-    property color hoverColor: "#00000000"
-
-    signal clicked(var mouse);
+    property color backgroundColor: Material.background
+    property color selectedColor: Material.accent
+    property color hoverColor: Material.accent
 
     Connections {
         target: sourceImg
 
         function onStatusChanged(status) {
             if (status === Image.Ready) {
-                root.background = colorPicker.pick(source);
+                root.backgroundColor = colorPicker.pick(source);
             }
         }
     }
 
-    Item {
+    hoverEnabled: true
+
+    opacity: {
+        if (enabled) {
+            return 1
+        }
+
+        return 0.5
+    }
+
+    contentItem: Control {
         id: privateData
         property int rootMinSize: Math.min(root.height, root.width)
-        anchors.margins: (root.hover && !presed)? rootMinSize * 0.01: rootMinSize * 0.1
-
+        bottomPadding : 8
         property real rx : 0
         property real ry : 0
         property real rz : 0
@@ -53,20 +62,41 @@ Item {
             }
         }
 
-        anchors.fill: parent
-        Rectangle {
-            id: background
-            color: root.background
-            border.color: (root.hover)? root.hoverColor: root.selected? root.selectedColor: "#00000000"
-            border.width: 4
-            anchors.fill: parent
-            radius: border.width * 2
-
-            Behavior on border.color {
-                ColorAnimation {
-                    duration: 250
-                }
+        Behavior on rx {
+            NumberAnimation {
+                easing.type: Easing.OutExpo
+                duration: 550
             }
+        }
+
+        Behavior on ry {
+            NumberAnimation {
+                easing.type: Easing.OutExpo
+                duration: 550
+            }
+        }
+
+        Behavior on rz {
+            NumberAnimation {
+                easing.type: Easing.OutExpo
+                duration: 550
+            }
+        }
+
+        background: Rectangle {
+            color: {
+
+                if (root.hovered) {
+                    return root.hoverColor
+                }
+
+                if (root.checked) {
+                    return root.selectedColor
+                }
+
+                return root.backgroundColor
+            }
+            radius: 16
 
             Behavior on color {
                 ColorAnimation {
@@ -75,34 +105,56 @@ Item {
             }
         }
 
-        ColumnLayout {
-            Image {
-                id: sourceImg
-                source: root.source
+        contentItem: ColumnLayout {
+            spacing: 8
 
-                clip: true
-                fillMode: Image.PreserveAspectCrop
-                Layout.fillHeight: true
+
+            MultiEffect {
+                id: imgEffect
                 Layout.fillWidth: true
-                Layout.margins: 5
+                Layout.fillHeight: true
 
+                source:             Image {
+                    id: sourceImg
+                    source: root.source
 
+                    clip: true
+                    fillMode: Image.PreserveAspectCrop
 
+                    width: imgEffect.width
+                    height: imgEffect.height
+                }
+
+                maskEnabled: true
+                maskSource: ShaderEffectSource {
+                    sourceItem: Rectangle {
+                        radius: 16
+                        width: imgEffect.width
+                        height: imgEffect.height
+                        color: "Black"
+
+                        Rectangle {
+                            color: "Black"
+
+                            anchors.bottom: parent.bottom
+                            height: 20
+                            width: parent.width
+                        }
+                    }
+                }
             }
+
 
             Label {
                 text: root.text
                 visible: text.length
-                Layout.preferredHeight: root.height * 0.1
                 Layout.fillWidth: true
-                color: textColor
-                font.pixelSize: root.height * 0.09
-                font.bold: true
+                color: root.textColor
+                font: root.font
                 horizontalAlignment: Text.AlignHCenter
                 verticalAlignment: Text.AlignVCenter
 
             }
-            anchors.fill: parent
         }
 
         transform: [
@@ -126,7 +178,7 @@ Item {
 
     ToolTip {
         parent: root
-        visible: root.hover && text.length
+        visible: root.hovered && text.length
         text: root.toolTip
         delay: 500
 
@@ -134,38 +186,23 @@ Item {
 
 
     MouseArea {
-
+        acceptedButtons: Qt.NoButton
         hoverEnabled: true;
 
-        onEntered: {
-            hover = true
-        }
-
         onExited: {
-            hover = false;
             privateData.ry = 0
             privateData.rx = 0
 
         }
 
         onPositionChanged: (mouse) => {
-            let fromCenter = root.width / 2
-            privateData.ry = -((mouse.x - fromCenter) / (fromCenter * 0.05)) * power
+                               let fromCenter = root.width / 2
+                               privateData.ry = -((mouse.x - fromCenter) / (fromCenter * 0.05)) * root.power
 
-            fromCenter = root.height / 2
-            privateData.rx = ((mouse.y - fromCenter) / (fromCenter * 0.05)) * power
+                               fromCenter = root.height / 2
+                               privateData.rx = ((mouse.y - fromCenter) / (fromCenter * 0.05)) * root.power
 
-        }
-
-        onPressed: {
-            presed = true;
-        }
-
-        onReleased: (mouse) => {
-            presed = false;
-
-            root.clicked(mouse)
-        }
+                           }
 
         anchors.fill: parent
 

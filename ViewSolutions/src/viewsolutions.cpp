@@ -1,29 +1,50 @@
+//#
+//# Copyright (C) 2020-2025 QuasarApp.
+//# Distributed under the GPLv3 software license, see the accompanying
+//# Everyone is permitted to copy and distribute verbatim copies
+//# of this license document, but changing it is not allowed.
+//#
+
+#include "variantlistmodel.h"
 #include "viewsolutions.h"
 #include <QQmlContext>
 #include <qmlcolorpicker.h>
 #include <QQmlApplicationEngine>
 #include <QFile>
 #include <QDir>
+#include <modelstorage.h>
 
 namespace ViewSolutions {
-bool init(QQmlApplicationEngine *engine) {
+QSharedPointer<ModelStorage> init(QQmlApplicationEngine *engine) {
 
     if (!engine)
-        return false;
+        return nullptr;
 
     auto root = engine->rootContext();
     if (!root)
-        return false;
+        return nullptr;
 
     initResources();
 
     engine->addImportPath(":/");
 
-    auto picker = QMLColorPicker::instance();
-    picker->setEngine(engine);
 
-    root->setContextProperty("colorPicker", picker);
 
-    return true;
+    auto&& storage = QSharedPointer<ModelStorage>::create(engine);
+    QQmlEngine::setObjectOwnership(storage.get(), QQmlEngine::CppOwnership);
+
+    root->setContextProperty("modelsStorage", storage.get());
+
+    auto&& picker = QSharedPointer<QMLColorPicker>::create();
+    storage->addModel(picker);
+
+    // to-do - remove
+    root->setContextProperty("colorPicker", picker.get());
+
+    qRegisterMetaType<VariantListModel>("VariantListModel");
+
+
+
+    return storage;
 }
 }

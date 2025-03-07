@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2018-2021 QuasarApp.
+# Copyright (C) 2018-2025 QuasarApp.
 # Distributed under the lgplv3 software license, see the accompanying
 # Everyone is permitted to copy and distribute verbatim copies
 # of this license document, but changing it is not allowed.
@@ -14,19 +14,12 @@ if(TARGET ${PROJECT_NAME})
 endif()
 
 
-if ( NOT DEFINED VIEWSOLUTIONS_EXAMPLES )
-    set(VIEWSOLUTIONS_EXAMPLES ON)
-
-    if (DEFINED TARGET_PLATFORM_TOOLCHAIN)
-        if (${TARGET_PLATFORM_TOOLCHAIN} STREQUAL "wasm32")
-            set(VIEWSOLUTIONS_EXAMPLES OFF)
-        endif()
-    endif()
-
-    if (ANDROID)
-        set(VIEWSOLUTIONS_EXAMPLES OFF)
-    endif()
+if (ANDROID OR IOS)
+    option(VIEWSOLUTIONS_EXAMPLES "Build examples" OFF)
+else()
+    option(VIEWSOLUTIONS_EXAMPLES "Build examples" ON)
 endif()
+
 
 include(CMake/QuasarApp.cmake)
 
@@ -36,7 +29,6 @@ find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Core Quick QuickControls2 REQUIRED
 add_subdirectory(ViewSolutions)
 
 if (VIEWSOLUTIONS_EXAMPLES )
-    message("DISABLE_EXAMPLES = ${DISABLE_EXAMPLES}")
     add_subdirectory(Examples)
 endif()
 

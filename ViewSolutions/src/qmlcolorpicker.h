@@ -1,42 +1,43 @@
+//#
+//# Copyright (C) 2020-2025 QuasarApp.
+//# Distributed under the GPLv3 software license, see the accompanying
+//# Everyone is permitted to copy and distribute verbatim copies
+//# of this license document, but changing it is not allowed.
+//#
+
 #ifndef QMLCOLORPICKER_H
 #define QMLCOLORPICKER_H
 #include "colorpicker.h"
 
 #include <QObject>
+#include <imodel.h>
 
-class QQmlApplicationEngine;
 namespace ViewSolutions {
 
 /**
  * @brief The QMLColorPicker class - Qml wrapper for ColorPicker class.
  */
-class VIEWSOLUTION_EXPORT QMLColorPicker : public QObject, private ColorPicker
+class VIEWSOLUTION_EXPORT QMLColorPicker : public QObject, public iModel, private ColorPicker
 {
     Q_OBJECT
 public:
     explicit QMLColorPicker(QObject *parent = nullptr);
-    /**
-     * @brief instance This method return instance object of the QMLColorPicker setvice.
-     * @return Static instance of this ColorPicker.
-     */
-    static QMLColorPicker* instance();
+
 
     /**
      * @brief pick This is override function for qml.
      * @param img This is path to image.
      * @return General color of image.
      */
-     Q_INVOKABLE QColor pick(const QString &img) const;
+    Q_INVOKABLE QColor pick(const QString &img) const;
 
     /**
-     * @brief setEngine This method set qml engine for working with image providers.
-     * @param engine This is new engine.
+     * @brief instance This is singleton instance of QMLColorPicker.
+     * @return
      */
-    void setEngine(QQmlApplicationEngine *engine);
+    QString modelId() const override;
 
-private:
-
-    QQmlApplicationEngine *_engine = nullptr;
 };
+
 }
 #endif // QMLCOLORPICKER_H

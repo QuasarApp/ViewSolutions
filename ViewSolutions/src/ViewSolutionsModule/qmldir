@@ -1,4 +1,7 @@
 module ViewSolutionsModule
+ActivityPage 1.0 ActivityPage.qml
+ActivityProcessor 1.0 ActivityProcessor.qml
+ActivityProcessorHeader 1.0 ActivityProcessorHeader.qml
 ImageView 1.0 ImageView.qml
 ViewPortDelegatBase 1.0 ViewPortDelegatBase.qml
 ViewPortPage 1.0 ViewPortPage.qml
