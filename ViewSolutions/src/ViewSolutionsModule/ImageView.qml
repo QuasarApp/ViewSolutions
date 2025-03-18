@@ -114,7 +114,7 @@ AbstractButton {
                 Layout.fillWidth: true
                 Layout.fillHeight: true
 
-                source:             Image {
+                source: Image {
                     id: sourceImg
                     source: root.source
 
@@ -151,6 +151,7 @@ AbstractButton {
                 Layout.fillWidth: true
                 color: root.textColor
                 font: root.font
+                wrapMode: Text.WordWrap
                 horizontalAlignment: Text.AlignHCenter
                 verticalAlignment: Text.AlignVCenter
 
