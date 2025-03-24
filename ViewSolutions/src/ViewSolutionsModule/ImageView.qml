@@ -26,6 +26,7 @@ AbstractButton {
     property color backgroundColor: Material.background
     property color selectedColor: Material.accent
     property color hoverColor: Material.accent
+    property alias contentData: content.contentItem
 
     Connections {
         target: sourceImg
@@ -50,7 +51,6 @@ AbstractButton {
     contentItem: Control {
         id: privateData
         property int rootMinSize: Math.min(root.height, root.width)
-        bottomPadding : 8
         property real rx : 0
         property real ry : 0
         property real rz : 0
@@ -106,8 +106,7 @@ AbstractButton {
         }
 
         contentItem: ColumnLayout {
-            spacing: 8
-
+            spacing: 0
 
             MultiEffect {
                 id: imgEffect
@@ -144,18 +143,24 @@ AbstractButton {
                 }
             }
 
-
-            Label {
-                text: root.text
-                visible: text.length
+            Control {
+                id: content
                 Layout.fillWidth: true
-                color: root.textColor
-                font: root.font
-                wrapMode: Text.WordWrap
-                horizontalAlignment: Text.AlignHCenter
-                verticalAlignment: Text.AlignVCenter
+                padding: 8
 
+                contentItem: Label {
+                    text: root.text
+                    visible: text.length
+                    Layout.fillWidth: true
+                    color: root.textColor
+                    font: root.font
+                    wrapMode: Text.WordWrap
+                    horizontalAlignment: Text.AlignHCenter
+                    verticalAlignment: Text.AlignVCenter
+
+                }
             }
+
         }
 
         transform: [
