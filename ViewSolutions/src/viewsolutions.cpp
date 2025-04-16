@@ -43,8 +43,6 @@ QSharedPointer<ModelStorage> init(QQmlApplicationEngine *engine) {
 
     qRegisterMetaType<VariantListModel>("VariantListModel");
 
-
-
     return storage;
 }
 }
