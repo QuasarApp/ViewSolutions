@@ -22,7 +22,7 @@ AbstractButton {
     property string toolTip: ""
 
     property color textColor: Material.foreground
-
+    property alias textVisible: content.visible
     property color backgroundColor: Material.background
     property color selectedColor: Material.accent
     property color hoverColor: Material.accent
@@ -134,10 +134,10 @@ AbstractButton {
 
                         Rectangle {
                             color: "Black"
-
                             anchors.bottom: parent.bottom
                             height: 20
                             width: parent.width
+                            visible: content.visible
                         }
                     }
                 }
