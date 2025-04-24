@@ -33,7 +33,7 @@ AbstractButton {
 
         function onStatusChanged(status) {
             if (status === Image.Ready) {
-                root.backgroundColor = colorPicker.pick(source);
+                root.backgroundColor = colorPicker.pick(root.source);
             }
         }
     }
