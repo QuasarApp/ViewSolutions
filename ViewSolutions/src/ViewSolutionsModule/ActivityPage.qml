@@ -15,10 +15,14 @@ Control {
     // shows the back button with text
     property bool buttonBack: true
 
+    // shows the header of the ActivityProcessor (if is it not to abble atomaticaly)
+    property bool headerVisible: true
+
+
     // shows close button on the ActivityProcessor header
     property bool closeButton: true
     // attach to this property link to ActivityProcessor (if is it not to abble atomaticaly)
-    property var activityProcessorLink: null
+    property var activityProcessorLink: (parent && parent.link)? parent.link: null
 
     // emit this signal when you finish work on this page. The ActivityProcessor will inoke pop method.
     signal finish();

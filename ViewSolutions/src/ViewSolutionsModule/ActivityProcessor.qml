@@ -28,7 +28,7 @@ Page {
 
     header: ActivityProcessorHeader {
         id: headerView
-        visible: root.enableHeader
+        visible: root.enableHeader && stackView.currentItem && stackView.currentItem.headerVisible
         title: {
             if (root.enableHeader && stackView.currentItem && stackView.currentItem.title) {
                 return stackView.currentItem.title
@@ -49,6 +49,8 @@ Page {
 
     contentItem: StackView {
         id: stackView
+
+        property var link : root
 
         Connections {
             target: (stackView.currentItem && stackView.currentItem.finish)? stackView.currentItem : null
@@ -194,6 +196,7 @@ Page {
                     && typeof(callback) === "function") {
                 activity.activityCallBack = callback;
             }
+
             return activity;
 
         } else if (component.status === Component.Error) {

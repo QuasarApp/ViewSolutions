@@ -47,15 +47,15 @@ QColor QMLColorPicker::pick(const QString &img) const {
                 return responce;
             }
 
-            if (provider->imageType() & QQmlImageProviderBase::Texture) {
+            if (provider->imageType() == QQmlImageProviderBase::Texture) {
                 return ColorPicker::pick(provider->requestTexture(url, nullptr, {})->image());
             }
 
-            if (provider->imageType() & QQmlImageProviderBase::Pixmap) {
+            if (provider->imageType() == QQmlImageProviderBase::Pixmap) {
                 return ColorPicker::pick(provider->requestPixmap(url, nullptr, {}).toImage());
             }
 
-            if (provider->imageType() & QQmlImageProviderBase::Image) {
+            if (provider->imageType() == QQmlImageProviderBase::Image) {
                 return ColorPicker::pick(provider->requestImage(url, nullptr, {}));
             }
 

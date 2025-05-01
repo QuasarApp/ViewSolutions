@@ -22,17 +22,18 @@ AbstractButton {
     property string toolTip: ""
 
     property color textColor: Material.foreground
-
+    property alias textVisible: content.visible
     property color backgroundColor: Material.background
     property color selectedColor: Material.accent
     property color hoverColor: Material.accent
+    property alias contentData: content.contentItem
 
     Connections {
         target: sourceImg
 
         function onStatusChanged(status) {
             if (status === Image.Ready) {
-                root.backgroundColor = colorPicker.pick(source);
+                root.backgroundColor = colorPicker.pick(root.source);
             }
         }
     }
@@ -50,7 +51,6 @@ AbstractButton {
     contentItem: Control {
         id: privateData
         property int rootMinSize: Math.min(root.height, root.width)
-        bottomPadding : 8
         property real rx : 0
         property real ry : 0
         property real rz : 0
@@ -106,15 +106,14 @@ AbstractButton {
         }
 
         contentItem: ColumnLayout {
-            spacing: 8
-
+            spacing: 0
 
             MultiEffect {
                 id: imgEffect
                 Layout.fillWidth: true
                 Layout.fillHeight: true
 
-                source:             Image {
+                source: Image {
                     id: sourceImg
                     source: root.source
 
@@ -135,26 +134,33 @@ AbstractButton {
 
                         Rectangle {
                             color: "Black"
-
                             anchors.bottom: parent.bottom
                             height: 20
                             width: parent.width
+                            visible: content.visible
                         }
                     }
                 }
             }
 
-
-            Label {
-                text: root.text
-                visible: text.length
+            Control {
+                id: content
                 Layout.fillWidth: true
-                color: root.textColor
-                font: root.font
-                horizontalAlignment: Text.AlignHCenter
-                verticalAlignment: Text.AlignVCenter
+                padding: 8
 
+                contentItem: Label {
+                    text: root.text
+                    visible: text.length
+                    Layout.fillWidth: true
+                    color: root.textColor
+                    font: root.font
+                    wrapMode: Text.WordWrap
+                    horizontalAlignment: Text.AlignHCenter
+                    verticalAlignment: Text.AlignVCenter
+
+                }
             }
+
         }
 
         transform: [
