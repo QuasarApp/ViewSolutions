@@ -151,10 +151,10 @@ AbstractButton {
                 id: content
                 Layout.fillWidth: true
                 padding: 8
+                visible: root.text.length
 
                 contentItem: Label {
                     text: root.text
-                    visible: text.length
                     Layout.fillWidth: true
                     color: root.textColor
                     font: root.font
