@@ -10,3 +10,4 @@ ViewPortStaticPage 1.0 ViewPortStaticPage.qml
 ViewPortStaticGradientPage 1.0 ViewPortStaticGradientPage.qml
 IconOverlay 1.0 IconOverlay.qml
 DragDelegate 1.0 DragDelegate.qml
+FlickablePane 1.0 FlickablePane.qml

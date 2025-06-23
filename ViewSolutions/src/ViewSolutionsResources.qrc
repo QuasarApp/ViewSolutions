@@ -13,6 +13,7 @@
         <file>ViewSolutionsModule/ActivityPage.qml</file>
         <file>ViewSolutionsModule/IconOverlay.qml</file>
         <file>ViewSolutionsModule/DragDelegate.qml</file>
+        <file>ViewSolutionsModule/FlickablePane.qml</file>
     </qresource>
     <qresource prefix="/img"/>
 </RCC>
