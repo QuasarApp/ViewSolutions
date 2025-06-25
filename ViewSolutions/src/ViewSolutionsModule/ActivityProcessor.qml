@@ -279,10 +279,6 @@ Page {
     }
 
     function resetState() {
-        if (cache && stackView.depth < 3) {
-
-            // About limitation: the stackView.pop can't change focus to first element if the elements depth bigger then 2.
-
             while(stackView.depth > 1) {
                 if (!popItem()) {
                     break;
@@ -291,11 +287,23 @@ Page {
             if (stackView.currentItem && typeof(stackView.currentItem.resetState) === "function") {
                 stackView.currentItem.resetState();
             }
+        // if (cache && stackView.depth < 3) {
 
-        } else {
-            stackView.clear()
-            stackView.push(stackView.initialItem)
-        }
+        //     // About limitation: the stackView.pop can't change focus to first element if the elements depth bigger then 2.
+
+        //     while(stackView.depth > 1) {
+        //         if (!popItem()) {
+        //             break;
+        //         }
+        //     }
+        //     if (stackView.currentItem && typeof(stackView.currentItem.resetState) === "function") {
+        //         stackView.currentItem.resetState();
+        //     }
+
+        // } else {
+        //     stackView.clear()
+        //     stackView.push(stackView.initialItem)
+        // }
     }
 
 }

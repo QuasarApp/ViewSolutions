@@ -20,6 +20,8 @@ Flickable {
     property int fade: 0
     id: settingsContentData
 
+    ScrollBar.vertical: ScrollBar { }
+
     boundsBehavior: Flickable.StopAtBounds
     Control {
         id: content
