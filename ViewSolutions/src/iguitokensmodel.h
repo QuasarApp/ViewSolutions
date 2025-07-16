@@ -23,11 +23,11 @@ class VIEWSOLUTION_EXPORT iGUITokensModel: public QObject, public iModel
     Q_OBJECT
 
     // colors contants
-    Q_PROPERTY(QColor color_accent_primary READ color_surface_accent_primary CONSTANT FINAL)
+    Q_PROPERTY(QColor color_accent_primary READ color_accent_primary CONSTANT FINAL)
 
-    Q_PROPERTY(QColor color_accent_secondary READ color_surface_accent_secondary CONSTANT FINAL)
-    Q_PROPERTY(QColor color_accent_error READ color_surface_accent_error CONSTANT FINAL)
-    Q_PROPERTY(QColor color_accent_success READ color_surface_accent_success CONSTANT FINAL)
+    Q_PROPERTY(QColor color_accent_secondary READ color_accent_secondary CONSTANT FINAL)
+    Q_PROPERTY(QColor color_accent_error READ color_accent_error CONSTANT FINAL)
+    Q_PROPERTY(QColor color_accent_success READ color_accent_success CONSTANT FINAL)
 
     Q_PROPERTY(QColor color_text_primary READ color_text_primary CONSTANT FINAL)
     Q_PROPERTY(QColor color_text_secondary READ color_text_secondary CONSTANT FINAL)
@@ -78,10 +78,10 @@ class VIEWSOLUTION_EXPORT iGUITokensModel: public QObject, public iModel
 
 public:
     explicit iGUITokensModel();
-    virtual QColor color_surface_accent_primary() const = 0;
-    virtual QColor color_surface_accent_secondary() const = 0;
-    virtual QColor color_surface_accent_error() const = 0;
-    virtual QColor color_surface_accent_success() const = 0;
+    virtual QColor color_accent_primary() const = 0;
+    virtual QColor color_accent_secondary() const = 0;
+    virtual QColor color_accent_error() const = 0;
+    virtual QColor color_accent_success() const = 0;
 
     virtual QColor color_text_primary() const = 0;
     virtual QColor color_text_secondary() const = 0;
