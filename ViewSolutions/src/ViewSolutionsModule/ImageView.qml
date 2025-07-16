@@ -86,13 +86,17 @@ AbstractButton {
         background: Rectangle {
             color: {
 
-                if (root.hovered) {
-                    return root.hoverColor
+                if (root.enabled) {
+                    if (root.hovered) {
+                        return root.hoverColor
+                    }
+
+                    if (root.checked) {
+                        return root.selectedColor
+                    }
+
                 }
 
-                if (root.checked) {
-                    return root.selectedColor
-                }
 
                 return root.backgroundColor
             }
@@ -150,7 +154,6 @@ AbstractButton {
 
                 contentItem: Label {
                     text: root.text
-                    visible: text.length
                     Layout.fillWidth: true
                     color: root.textColor
                     font: root.font
@@ -202,12 +205,14 @@ AbstractButton {
         }
 
         onPositionChanged: (mouse) => {
-                               let fromCenter = root.width / 2
-                               privateData.ry = -((mouse.x - fromCenter) / (fromCenter * 0.05)) * root.power
+                               if (root.enabled) {
+                                   let fromCenter = root.width / 2
+                                   privateData.ry = -((mouse.x - fromCenter) / (fromCenter * 0.05)) * root.power
 
-                               fromCenter = root.height / 2
-                               privateData.rx = ((mouse.y - fromCenter) / (fromCenter * 0.05)) * root.power
+                                   fromCenter = root.height / 2
+                                   privateData.rx = ((mouse.y - fromCenter) / (fromCenter * 0.05)) * root.power
 
+                               }
                            }
 
         anchors.fill: parent
