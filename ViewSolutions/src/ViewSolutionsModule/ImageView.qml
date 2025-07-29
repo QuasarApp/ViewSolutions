@@ -16,6 +16,7 @@ AbstractButton {
     id: root
     property string source: ""
     property alias imagesource: sourceImg
+    property int  radius: 16
 
     property real power: 1.0
 
@@ -100,7 +101,7 @@ AbstractButton {
 
                 return root.backgroundColor
             }
-            radius: 16
+            radius: root.radius
 
             Behavior on color {
                 ColorAnimation {
@@ -131,7 +132,7 @@ AbstractButton {
                 maskEnabled: true
                 maskSource: ShaderEffectSource {
                     sourceItem: Rectangle {
-                        radius: 16
+                        radius: root.radius
                         width: imgEffect.width
                         height: imgEffect.height
                         color: "Black"
