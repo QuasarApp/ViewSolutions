@@ -5,7 +5,7 @@
 # of this license document, but changing it is not allowed.
 #
 
-cmake_minimum_required(VERSION 3.5)
+cmake_minimum_required(VERSION 3.19)
 
 project(ViewSolutions LANGUAGES CXX)
 if(TARGET ${PROJECT_NAME})
@@ -13,6 +13,7 @@ if(TARGET ${PROJECT_NAME})
   return()
 endif()
 
+option(QT_QML_GENERATE_QMLLS_INI "Generate QML Language Server Support file" ON)
 
 if (ANDROID OR IOS)
     option(VIEWSOLUTIONS_EXAMPLES "Build examples" OFF)
@@ -25,6 +26,10 @@ include(CMake/QuasarApp.cmake)
 
 find_package(QT NAMES Qt6 Qt5 COMPONENTS Core Quick QuickControls2 REQUIRED)
 find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Core Quick QuickControls2 REQUIRED)
+
+qt_standard_project_setup()
+qt_policy(SET QTP0001 NEW)
+qt_policy(SET QTP0004 NEW)
 
 add_subdirectory(ViewSolutions)
 

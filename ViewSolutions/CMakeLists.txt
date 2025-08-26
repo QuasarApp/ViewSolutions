@@ -5,30 +5,43 @@
 # of this license document, but changing it is not allowed.
 #
 
-cmake_minimum_required(VERSION 3.5)
+cmake_minimum_required(VERSION 3.19)
+set(CURRENT_PROJECT "${PROJECT_NAME}")
 
 add_definitions(-DVIEW_SOLUTIONS_LIBRARY)
 
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
-set(CMAKE_AUTOMOC ON)
-set(CMAKE_AUTORCC ON)
-set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 
 file(GLOB SOURCE_CPP
     "src/*.cpp"
     "src/*.h"
-    "src/*.qrc"
 
 )
 
-add_library(${PROJECT_NAME} ${SOURCE_CPP})
-target_link_libraries(${PROJECT_NAME} PUBLIC Qt${QT_VERSION_MAJOR}::Core Qt${QT_VERSION_MAJOR}::Quick Qt${QT_VERSION_MAJOR}::QuickControls2)
-target_include_directories(${PROJECT_NAME} PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/src")
+file(GLOB_RECURSE MODULE_QML_FILES
+    RELATIVE "${CMAKE_CURRENT_SOURCE_DIR}"
+    "ViewSolutions/*.qml"
+)
 
-target_compile_definitions(${PROJECT_NAME}
-  PRIVATE $<$<OR:$<CONFIG:Debug>,$<CONFIG:RelWithDebInfo>>:QT_QML_DEBUG>)
+qt_add_library(${CURRENT_PROJECT} ${SOURCE_CPP})
 
-set(QML_IMPORT_PATH ${QML_IMPORT_PATH} "${CMAKE_CURRENT_SOURCE_DIR}/src" CACHE STRING "" FORCE)
 
+qt_add_qml_module(${CURRENT_PROJECT}
+    URI ViewSolutions
+    VERSION 1.0
+    QML_FILES  ${MODULE_QML_FILES}
+    # RESOURCES ${SOURCE_ASSETS}
+    SOURCES  ${SOURCE_CPP}
+    NO_PLUGIN
+)
+
+target_link_libraries(${CURRENT_PROJECT} PUBLIC Qt${QT_VERSION_MAJOR}::Core Qt${QT_VERSION_MAJOR}::Quick Qt${QT_VERSION_MAJOR}::QuickControls2)
+target_include_directories(${CURRENT_PROJECT} PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/src")
+
+
+if (NOT QML_IMPORT_PATH MATCHES "${CMAKE_CURRENT_BINARY_DIR}/..")
+    set(QML_IMPORT_PATH ${QML_IMPORT_PATH} "${CMAKE_CURRENT_BINARY_DIR}/.." CACHE STRING "update global variable to access to qml from qt creator." FORCE)
+endif()

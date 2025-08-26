@@ -18,7 +18,7 @@ class QQmlApplicationEngine;
 //    Q_INIT_RESOURCE(ViewSolutionsResources); \
 //    result = ViewSolutions::init(engine)
 
-inline void initResources() { Q_INIT_RESOURCE(ViewSolutionsResources); }
+inline void initResources() { /*Q_INIT_RESOURCE(ViewSolutionsResources);*/ }
 /**
  * @brief the ViewSolutions namespace
  */
@@ -29,6 +29,7 @@ namespace ViewSolutions {
  * @param engine is QQmlApplicationEngine object.
  * @return gui model storage object.
  */
+[[nodiscard("The ViewSolutions create model storage space for all QML. This is central model for fast acces to models of your App.") ]]
 QSharedPointer<ModelStorage> VIEWSOLUTION_EXPORT init(QQmlApplicationEngine *engine);
 }
 

@@ -26,10 +26,6 @@ QSharedPointer<ModelStorage> init(QQmlApplicationEngine *engine) {
 
     initResources();
 
-    engine->addImportPath(":/");
-
-
-
     auto&& storage = QSharedPointer<ModelStorage>::create(engine);
     QQmlEngine::setObjectOwnership(storage.get(), QQmlEngine::CppOwnership);
 
