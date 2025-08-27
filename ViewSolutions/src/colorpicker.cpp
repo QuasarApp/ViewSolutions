@@ -54,6 +54,11 @@ QColor ColorPicker::pick(const QString &img) const {
     if (img.left(3).compare("qrc") == 0) {
         return pick(QImage(img.right(img.size() - 3)));
     }
+
+    if (img.left(5).compare("file:") == 0) {
+        return pick(QImage(img.right(img.size() - 5)));
+    }
+
     return pick(QImage(img));
 }
 

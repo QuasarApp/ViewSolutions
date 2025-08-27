@@ -5,6 +5,7 @@
 //# of this license document, but changing it is not allowed.
 //#
 
+pragma ComponentBehavior: Bound
 
 import QtQuick
 import QtQuick.Controls
@@ -169,6 +170,16 @@ Page {
             BusyIndicator {
                 visible: !root.readyToRun && root.busyIndicator
                 running: true
+
+
+                layer.enabled: true
+
+                layer.effect: MultiEffect {
+                    shadowBlur: 1.0
+                    shadowEnabled: true
+                    shadowColor: root.guiTokens.color_accent_primary
+                    shadowScale: 1.0
+                }
             }
 
 
