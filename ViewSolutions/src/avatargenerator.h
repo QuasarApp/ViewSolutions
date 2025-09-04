@@ -11,6 +11,7 @@
 #define AVATARGENERATOR_H
 
 #include <QImage>
+#include "viewsolutions_global.h"
 
 namespace ViewSolutions {
 
@@ -18,7 +19,7 @@ namespace ViewSolutions {
  * @brief The AvatarGenerator class contains function for create default users avatars.
  *
  */
-class AvatarGenerator
+class VIEWSOLUTION_EXPORT AvatarGenerator
 {
 public:
     AvatarGenerator();
