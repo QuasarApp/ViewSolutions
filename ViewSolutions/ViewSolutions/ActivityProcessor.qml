@@ -18,6 +18,8 @@ Page {
     property int titlesAligh: Text.AlignLeft
 
     property alias depth: stackView.depth
+    property alias durationAnimation: stackView.durationAnimation
+
     property bool cache: true
     property bool enableHeader: true
 

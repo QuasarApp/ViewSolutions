@@ -18,7 +18,6 @@ Control {
     // shows the header of the ActivityProcessor (if is it not to abble atomaticaly)
     property bool headerVisible: true
 
-
     // shows close button on the ActivityProcessor header
     property bool closeButton: true
     // attach to this property link to ActivityProcessor (if is it not to abble atomaticaly)
