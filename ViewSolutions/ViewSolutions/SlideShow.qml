@@ -23,7 +23,7 @@ Page {
     property int animationDurattion: 1000
     property bool busyIndicator: true
 
-    property string readyMessage: qsTr("World is ready to play : Press any button to play")
+    property string readyMessage: qsTr("World is ready to play : Press any button")
     property string defaultMessage: qsTr("Generation of a huge world")
     property int prefferedContentWidth: 900
 
