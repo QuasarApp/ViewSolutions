@@ -23,7 +23,7 @@ class VIEWSOLUTION_EXPORT ModelStorage: public QObject, public QEnableSharedFrom
 {
     Q_OBJECT
 public:
-    ModelStorage(QQmlApplicationEngine* engine = nullptr);
+    ModelStorage(QQmlEngine* engine = nullptr);
 
     /**
      * @brief addModel adds new model into storage.
@@ -49,11 +49,11 @@ public:
      * @brief engine returns context qml engine.
      * @return qml engine.
      */
-    QQmlApplicationEngine *engine() const;
+    QQmlEngine *engine() const;
 
 private:
     QHash<QString, QSharedPointer<iModel>> _storage;
-    QQmlApplicationEngine * _engine = nullptr;
+    QQmlEngine * _engine = nullptr;
 };
 
 }

@@ -16,7 +16,7 @@ const QWeakPointer<ModelStorage> &iModel::storage() const {
     return m_storage;
 }
 
-QQmlApplicationEngine *iModel::engine() const {
+QQmlEngine *iModel::engine() const {
     if (auto&& storage = m_storage.lock()) {
         return storage->engine();
     }

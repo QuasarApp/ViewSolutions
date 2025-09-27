@@ -15,7 +15,7 @@
 #include <modelstorage.h>
 
 namespace ViewSolutions {
-QSharedPointer<ModelStorage> init(QQmlApplicationEngine *engine) {
+QSharedPointer<ModelStorage> init(QQmlEngine *engine) {
 
     if (!engine)
         return nullptr;

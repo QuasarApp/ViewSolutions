@@ -30,7 +30,7 @@ namespace ViewSolutions {
  * @return gui model storage object.
  */
 [[nodiscard("The ViewSolutions create model storage space for all QML. This is central model for fast acces to models of your App.") ]]
-QSharedPointer<ModelStorage> VIEWSOLUTION_EXPORT init(QQmlApplicationEngine *engine);
+QSharedPointer<ModelStorage> VIEWSOLUTION_EXPORT init(QQmlEngine *engine);
 }
 
 #endif // VIEWSOLUTIONS_H

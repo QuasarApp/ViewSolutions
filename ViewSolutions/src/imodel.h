@@ -48,7 +48,7 @@ public:
      * so you can use it without any restrictions,
      * but it may be slowly then dirrect access.
      */
-    QQmlApplicationEngine * engine() const;
+    QQmlEngine * engine() const;
 
 protected:
 

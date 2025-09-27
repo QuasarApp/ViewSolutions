@@ -11,7 +11,7 @@
 
 namespace ViewSolutions {
 
-ModelStorage::ModelStorage(QQmlApplicationEngine *engine) {
+ModelStorage::ModelStorage(QQmlEngine *engine) {
     QQmlEngine::setObjectOwnership(this, QQmlEngine::CppOwnership);
     _engine = engine;
 }
@@ -35,7 +35,7 @@ QObject* ModelStorage::getModel(const QString &modeId) const {
     return dynamic_cast<QObject*>(_storage.value(modeId).get());
 }
 
-QQmlApplicationEngine *ModelStorage::engine() const {
+QQmlEngine *ModelStorage::engine() const {
     return _engine;
 }
 }
