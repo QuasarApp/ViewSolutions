@@ -43,11 +43,12 @@ class BaseHashModel: public QAbstractListModel
 {
 
 public:
+
     BaseHashModel(QObject* parent = nullptr): QAbstractListModel(parent) {
 
     }
 
-    int rowCount(const QModelIndex &parent) const override {
+    int rowCount(const QModelIndex &) const override {
         return m_data.size();
     }
 
@@ -112,6 +113,10 @@ public:
         }
 
         return {};
+    }
+
+    DATA get(const KEY& key) {
+        return m_data.value(key);
     }
 
     const QHash<KEY, DATA>& dateList() const {

@@ -16,6 +16,7 @@ AbstractButton {
     id: root
     property string source: ""
     property alias imagesource: sourceImg
+    property alias imagEffect: imgEffect
     property int  radius: 16
 
     property real power: 1.0
