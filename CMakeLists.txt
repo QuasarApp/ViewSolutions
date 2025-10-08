@@ -24,7 +24,7 @@ endif()
 
 include(CMake/QuasarApp.cmake)
 
-find_package(QT NAMES Qt6 Qt5 COMPONENTS Core Quick QuickControls2 REQUIRED)
+find_package(QT NAMES Qt6 COMPONENTS Core Quick QuickControls2 REQUIRED)
 find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Core Quick QuickControls2 REQUIRED)
 
 qt_standard_project_setup()
