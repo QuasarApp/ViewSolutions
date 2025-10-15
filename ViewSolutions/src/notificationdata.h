@@ -31,6 +31,9 @@ public:
         Warning = 1,
         /// This is critical error notifications.
         Error = 2,
+
+        /// This is user defined type of message.
+        Custom = 3,
     };
 
     explicit NotificationData(const QString& title = "",
