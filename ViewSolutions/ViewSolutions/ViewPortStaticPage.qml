@@ -5,12 +5,11 @@
 //# of this license document, but changing it is not allowed.
 //#
 
-import QtQuick 2.15
-import QtQuick.Layouts 1.15
-import QtQuick.Controls 2.15
-import QtQuick.Controls.Material 2.15
-import QtQuick.Controls.Universal 2.15
-import QtGraphicalEffects 1.15
+import QtQuick
+import QtQuick.Layouts
+import QtQuick.Controls
+import QtQuick.Controls.Material
+import QtQuick.Controls.Universal
 
 ViewSolutionsControl {
 
