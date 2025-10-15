@@ -38,6 +38,8 @@ class VIEWSOLUTION_EXPORT NotificationService: public QObject, public iModel
     Q_PROPERTY(int notificationsCount READ notificationsCount NOTIFY countNotificationsChanged)
 
 public:
+    explicit NotificationService(QObject *ptr = nullptr);
+
     /**
      * @brief Notify This method return data of the last notify message.
      * @return return data of the last notify message.
@@ -170,7 +172,6 @@ signals:
 
 private:
 
-    explicit NotificationService(QObject *ptr = nullptr);
 
 
     QHash<int, Listner> _listners;
