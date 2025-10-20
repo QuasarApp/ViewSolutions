@@ -134,6 +134,11 @@ public:
     Q_INVOKABLE void showHistory();
 
     /**
+     * @brief notificationHiden this method should invoked every time when the current notification is hiden, automaticaly or by user.
+     */
+    Q_INVOKABLE void notificationHiden();
+
+    /**
      * @brief notificationsCount - This method used for return count of history notifications.
      * @return count of history notifications.
      */

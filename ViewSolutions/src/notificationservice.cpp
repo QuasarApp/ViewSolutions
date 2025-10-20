@@ -117,10 +117,13 @@ void NotificationService::showHistory() {
     emit sigShowHistory();
 }
 
+void NotificationService::notificationHiden() {
+    _notify = NotificationData{};
+}
+
 int NotificationService::notificationsCount() const {
     return  _history->rowCount({});
 }
-
 
 QString ViewSolutions::NotificationService::modelId() const {
     return "NotificationService";
