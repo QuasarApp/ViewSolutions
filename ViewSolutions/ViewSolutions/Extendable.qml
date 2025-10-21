@@ -22,6 +22,22 @@ Control {
     property alias extended: extendetArea.visible
     property int animationDuration: 600
 
+    Behavior on height {
+
+        NumberAnimation {
+            easing.type: Easing.OutExpo
+            duration: root.animationDuration
+        }
+    }
+
+    Behavior on width {
+        enabled: root.flow === GridLayout.LeftToRight
+        NumberAnimation {
+            easing.type: Easing.OutExpo
+            duration: root.animationDuration
+        }
+    }
+
     contentItem: GridLayout {
         id: columnLayout
         columnSpacing: 0
@@ -33,21 +49,6 @@ Control {
             padding: 0
             Layout.alignment: Qt.AlignCenter
 
-            Behavior on implicitHeight {
-
-                NumberAnimation {
-                    easing.type: Easing.OutExpo
-                    duration: root.animationDuration
-                }
-            }
-
-            Behavior on implicitWidth {
-                enabled: root.flow === GridLayout.LeftToRight
-                NumberAnimation {
-                    easing.type: Easing.OutExpo
-                    duration: root.animationDuration
-                }
-            }
 
         }
 
@@ -56,23 +57,6 @@ Control {
             padding: 0
             id: mainButton
 
-            Behavior on implicitHeight {
-
-                NumberAnimation {
-                    easing.type: Easing.OutExpo
-                    duration: root.animationDuration
-
-                }
-            }
-
-            Behavior on implicitWidth {
-                enabled: root.flow === GridLayout.LeftToRight
-                NumberAnimation {
-                    easing.type: Easing.OutExpo
-                    duration: root.animationDuration
-
-                }
-            }
         }
     }
 }
