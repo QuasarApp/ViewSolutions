@@ -122,6 +122,7 @@ AbstractButton {
                 source: Image {
                     id: sourceImg
                     source: root.source
+                    mipmap: true
 
                     clip: true
                     fillMode: Image.PreserveAspectCrop

@@ -22,40 +22,61 @@ Control {
     property alias extended: extendetArea.visible
     property int animationDuration: 600
 
-    Behavior on height {
-
-        NumberAnimation {
-            easing.type: Easing.OutExpo
-            duration: root.animationDuration
-        }
-    }
-
-    Behavior on width {
-        enabled: root.flow === GridLayout.LeftToRight
-        NumberAnimation {
-            easing.type: Easing.OutExpo
-            duration: root.animationDuration
-        }
-    }
-
     contentItem: GridLayout {
         id: columnLayout
         columnSpacing: 0
         rowSpacing: 0
 
         Control {
-            id: extendetArea
-            clip: true
-            padding: 0
             Layout.alignment: Qt.AlignCenter
-
-
-        }
-
-        Control {
-            Layout.alignment: Qt.AlignCenter
+            Layout.maximumWidth: root.implicitWidth - root.rightPadding - root.leftPadding
             padding: 0
             id: mainButton
+
+
+            Behavior on implicitHeight {
+                enabled: root.flow !== GridLayout.LeftToRight
+
+                NumberAnimation {
+                    easing.type: Easing.OutExpo
+                    duration: root.animationDuration
+                }
+            }
+
+            Behavior on implicitWidth {
+                enabled: root.flow === GridLayout.LeftToRight
+                NumberAnimation {
+                    easing.type: Easing.OutExpo
+                    duration: root.animationDuration
+                }
+            }
+        }
+
+
+        Control {
+            id: extendetArea
+            clip: true
+            visible: false
+            padding: 0
+            Layout.alignment: Qt.AlignCenter
+            Layout.maximumWidth: root.implicitWidth - root.rightPadding - root.leftPadding
+
+            Behavior on implicitHeight {
+                enabled: root.flow !== GridLayout.LeftToRight
+
+                NumberAnimation {
+                    easing.type: Easing.OutExpo
+                    duration: root.animationDuration
+                }
+            }
+
+            Behavior on implicitWidth {
+                enabled: root.flow === GridLayout.LeftToRight
+                NumberAnimation {
+                    easing.type: Easing.OutExpo
+                    duration: root.animationDuration
+                }
+            }
 
         }
     }
