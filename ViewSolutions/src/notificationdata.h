@@ -26,7 +26,7 @@ public:
      */
     enum Type {
         /// This is message for general notification.
-        Normal,
+        Normal = 0,
         /// This is warning notification.
         Warning = 1,
         /// This is critical error notifications.
