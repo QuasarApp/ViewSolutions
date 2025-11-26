@@ -13,6 +13,7 @@
 #include <QFile>
 #include <QDir>
 #include <modelstorage.h>
+#include <stacktextmodel.h>
 
 namespace ViewSolutions {
 QSharedPointer<ModelStorage> init(QQmlEngine *engine) {
@@ -37,7 +38,9 @@ QSharedPointer<ModelStorage> init(QQmlEngine *engine) {
     // to-do - remove
     root->setContextProperty("colorPicker", picker.get());
 
-    qRegisterMetaType<VariantListModel>("VariantListModel");
+    qmlRegisterType<VariantListModel>("ViewSolutions", 1, 0, "VariantListModel");
+    qmlRegisterType<StackTextModel>("ViewSolutions", 1, 0, "StackTextModel");
+
 
     return storage;
 }
