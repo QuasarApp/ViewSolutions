@@ -21,7 +21,7 @@ Control {
     property alias text: model.fullText;
     property alias delimiter: model.delimiter
     property alias delegate: contentList.delegate
-
+    readonly property bool isFinished: contentList.currentIndex >= contentList.count - 1
 
     contentItem: ColumnLayout {
         ListView {
@@ -36,8 +36,6 @@ Control {
             model: StackTextModel {
                 id: model;
             }
-
-
         }
 
         ToolButton {
