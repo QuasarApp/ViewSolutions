@@ -26,7 +26,7 @@ Control {
     contentItem: ColumnLayout {
         ListView {
             id: contentList
-
+            currentIndex: 0
             interactive: false
             // snapMode: ListView.SnapOneItem
             boundsBehavior:Flickable.StopAtBounds
