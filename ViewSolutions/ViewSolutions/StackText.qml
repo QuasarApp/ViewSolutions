@@ -35,6 +35,10 @@ Control {
 
             model: StackTextModel {
                 id: model;
+
+                onFullTextChanged: {
+                    contentList.currentIndex = 0;
+                }
             }
         }
 

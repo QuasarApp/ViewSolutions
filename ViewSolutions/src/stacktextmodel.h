@@ -10,6 +10,7 @@
 #define STACKTEXTMODEL_H
 
 #include <QStringListModel>
+#include <qregularexpression.h>
 #include "viewsolutions_global.h"
 
 /**
@@ -63,7 +64,7 @@ signals:
 private:
 
     QString _fullText;
-    QString _delimiter = "\n";
+    QRegularExpression _delimiter = QRegularExpression("([.?!;]+)");
 
     // QAbstractItemModel interface
 public:

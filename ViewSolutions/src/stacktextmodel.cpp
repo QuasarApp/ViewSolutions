@@ -22,23 +22,42 @@ void StackTextModel::setFullText(const QString &newFullText) {
 }
 
 QString StackTextModel::delimiter() const {
-    return _delimiter;
+    return _delimiter.pattern();
 }
 
 void StackTextModel::setDelimiter(const QString &newDelimiter) {
-    if (_delimiter == newDelimiter)
+    if (_delimiter.pattern() == newDelimiter)
         return;
-    _delimiter = newDelimiter;
+    _delimiter.setPattern(newDelimiter);
     updateText();
     emit delimiterChanged();
 }
 
 void StackTextModel::updateText() {
-    QStringList lines = _fullText.split(_delimiter, Qt::SkipEmptyParts);
+    QStringList lines;
+    QString line;
+
+    int delimeterIdx = _fullText.indexOf(_delimiter);
+    int lastIdx = -1;
+    while (delimeterIdx >= 0) {
+        line = _fullText.mid(lastIdx + 1, delimeterIdx - lastIdx);
+        lastIdx = delimeterIdx;
+        delimeterIdx = _fullText.indexOf(_delimiter, lastIdx + 1);
+
+        if (line.size()) {
+            lines += line;
+        }
+
+    }
+
+    // take last string.
+    line = _fullText.mid(lastIdx + 1, delimeterIdx);
+    if (line.size()) {
+        lines += line;
+    }
+
     setStringList(lines);
 }
-
-
 
 QHash<int, QByteArray> StackTextModel::roleNames() const {
     QHash<int, QByteArray> roles;
