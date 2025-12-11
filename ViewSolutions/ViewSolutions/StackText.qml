@@ -23,6 +23,12 @@ Control {
     property alias delegate: contentList.delegate
     readonly property bool isFinished: contentList.currentIndex >= contentList.count - 1
 
+    function next() {
+        if (nextButton.visible) {
+            nextButton.click()
+        }
+    }
+
     contentItem: ColumnLayout {
         ListView {
             id: contentList
