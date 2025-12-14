@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2018-2024 QuasarApp.
+ * Copyright (C) 2018-2025 QuasarApp.
  * Distributed under the GPLv3 software license, see the accompanying
  * Everyone is permitted to copy and distribute verbatim copies
  * of this license document, but changing it is not allowed.
@@ -118,7 +118,7 @@ void NotificationService::showHistory() {
 }
 
 void NotificationService::notificationHiden() {
-    _notify = NotificationData{};
+    setUiIsDisplay(false);
 }
 
 int NotificationService::notificationsCount() const {
@@ -127,6 +127,30 @@ int NotificationService::notificationsCount() const {
 
 QString ViewSolutions::NotificationService::modelId() const {
     return "NotificationService";
+}
+
+bool NotificationService::uiIsDisplay() const {
+    return _uiIsDisplay && time(0) - _lastDisplayTime < _uiTimeOut;
+}
+
+void NotificationService::setUiIsDisplay(bool newUiIsDisplay) {
+    if (_uiIsDisplay == newUiIsDisplay)
+        return;
+
+    if (_uiIsDisplay) {
+        _lastDisplayTime = time(0);
+    }
+
+    _uiIsDisplay = newUiIsDisplay;
+    emit uiIsDisplayChanged();
+}
+
+int NotificationService::uiTimeOut() const {
+    return _uiTimeOut;
+}
+
+void NotificationService::setUiTimeOut(int newUiTimeOut) {
+    _uiTimeOut = newUiTimeOut;
 }
 
 }

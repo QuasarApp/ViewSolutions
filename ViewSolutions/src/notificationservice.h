@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2018-2024 QuasarApp.
+ * Copyright (C) 2018-2025 QuasarApp.
  * Distributed under the GPLv3 software license, see the accompanying
  * Everyone is permitted to copy and distribute verbatim copies
  * of this license document, but changing it is not allowed.
@@ -32,6 +32,7 @@ class VIEWSOLUTION_EXPORT NotificationService: public QObject, public iModel
 
     Q_PROPERTY(NotificationData notify READ notify NOTIFY notifyChanged)
     Q_PROPERTY(NotificationData question READ question NOTIFY questionChanged)
+    Q_PROPERTY(bool uiIsDisplay READ uiIsDisplay WRITE setUiIsDisplay NOTIFY uiIsDisplayChanged FINAL)
 
     Q_PROPERTY(QObject* history READ history NOTIFY notifyChanged)
 
@@ -150,6 +151,16 @@ public:
 public:
     QString modelId() const override;
 
+    bool uiIsDisplay() const;
+    void setUiIsDisplay(bool newUiIsDisplay);
+
+    /**
+     * @brief uiTimeOut this is maximu time that notify service can be loked fo display.
+     * @return
+     */
+    int uiTimeOut() const;
+    void setUiTimeOut(int newUiTimeOut);
+
 signals:
     /**
      * @brief notifyChanged This signal emited whet the notificator (Ths object) received a new notification message.
@@ -175,6 +186,8 @@ signals:
 
     void countNotificationsChanged();
 
+    void uiIsDisplayChanged();
+
 private:
 
 
@@ -182,6 +195,10 @@ private:
     QHash<int, Listner> _listners;
     NotificationData _question;
     NotificationData _notify;
+    bool _uiIsDisplay = false;
+    int _uiTimeOut = 60;
+    int _lastDisplayTime = 0;
+
     HistoryNotificationsModel* _history = nullptr;
 
 
