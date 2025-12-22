@@ -64,7 +64,7 @@ signals:
 private:
 
     QString _fullText;
-    QRegularExpression _delimiter = QRegularExpression("([.?!;]+)");
+    QRegularExpression _delimiter = QRegularExpression("([?!;]+)");
 
     // QAbstractItemModel interface
 public:
