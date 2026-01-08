@@ -29,6 +29,8 @@ AbstractButton {
     property color selectedColor: Material.accent
     property color hoverColor: Material.accent
     property alias contentData: content.contentItem
+    property alias contentPadding: content.padding
+
 
     Connections {
         target: sourceImg
@@ -122,7 +124,8 @@ AbstractButton {
                 source: Image {
                     id: sourceImg
                     source: root.source
-                    mipmap: true
+                    mipmap: false
+                    sourceSize: Qt.size(imgEffect.width, imgEffect.height)
 
                     clip: true
                     fillMode: Image.PreserveAspectCrop
