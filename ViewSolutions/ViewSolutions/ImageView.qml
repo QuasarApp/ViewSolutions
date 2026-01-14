@@ -202,7 +202,8 @@ AbstractButton {
 
     MouseArea {
         acceptedButtons: Qt.NoButton
-        hoverEnabled: true;
+        hoverEnabled: root.power > 0;
+        enabled: root.power > 0;
 
         onExited: {
             privateData.ry = 0
