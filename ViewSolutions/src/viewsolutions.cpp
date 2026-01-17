@@ -33,6 +33,7 @@ QSharedPointer<ModelStorage> init(QQmlEngine *engine) {
     root->setContextProperty("modelsStorage", storage.get());
 
     auto&& picker = QSharedPointer<QMLColorPicker>::create();
+    picker->setAlpha(false);
     storage->addModel(picker);
 
     // to-do - remove

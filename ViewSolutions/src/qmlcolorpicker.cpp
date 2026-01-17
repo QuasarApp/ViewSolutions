@@ -40,7 +40,7 @@ QColor QMLColorPicker::pick(const QString &img) const {
                     return {};
                 }
 
-                QColor responce = ColorPicker::pick(textureFacrory->image());
+                QColor responce = ColorPicker::pick(textureFacrory->image(), 5, _alpha);
 
                 delete textureFacrory;
 
@@ -48,15 +48,15 @@ QColor QMLColorPicker::pick(const QString &img) const {
             }
 
             if (provider->imageType() == QQmlImageProviderBase::Texture) {
-                return ColorPicker::pick(provider->requestTexture(url, nullptr, {})->image());
+                return ColorPicker::pick(provider->requestTexture(url, nullptr, {})->image(), 5, _alpha);
             }
 
             if (provider->imageType() == QQmlImageProviderBase::Pixmap) {
-                return ColorPicker::pick(provider->requestPixmap(url, nullptr, {}).toImage());
+                return ColorPicker::pick(provider->requestPixmap(url, nullptr, {}).toImage(), 5, _alpha);
             }
 
             if (provider->imageType() == QQmlImageProviderBase::Image) {
-                return ColorPicker::pick(provider->requestImage(url, nullptr, {}));
+                return ColorPicker::pick(provider->requestImage(url, nullptr, {}), 5, _alpha);
             }
 
             return {};
@@ -64,11 +64,24 @@ QColor QMLColorPicker::pick(const QString &img) const {
 
     }
 
-    return ColorPicker::pick(img);
+    return ColorPicker::pick(img, _alpha);
 }
 
 QString QMLColorPicker::modelId() const {
     return "ColorPicker";
+}
+
+bool QMLColorPicker::alpha() const
+{
+    return _alpha;
+}
+
+void QMLColorPicker::setAlpha(bool newAlpha)
+{
+    if (_alpha == newAlpha)
+        return;
+    _alpha = newAlpha;
+    emit alphaChanged();
 }
 
 }
