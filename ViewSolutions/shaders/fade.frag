@@ -5,19 +5,24 @@ layout(std140, binding = 0) uniform buf {
     mat4 qt_Matrix;
     float qt_Opacity;
 
-    vec2 leftRightFadeStart;
-    vec2 leftRightFadeEnd;
+    float leftFadePx;
+    float rightFadePx;
+
+    float leftFadePaddingPx;
+    float rightFadePaddingPx;
+
+    float widthSource;
 };
-layout(binding = 1) uniform sampler2D src;
+layout(binding = 1) uniform sampler2D source;
 
 void main() {
-    vec4 tex = texture(src, coord);
+    vec4 tex = texture(source, coord);
 
-    float leftFade = smoothstep(leftRightFadeEnd.x, leftRightFadeStart.x, coord.x);
+    float leftFade = max(0.0, min(1.0, (widthSource * coord.x - leftFadePaddingPx) / leftFadePx));
 
-    float rightFade = smoothstep(leftRightFadeEnd.y, leftRightFadeStart.y, 1.0 - coord.x);
+    float rightFade = max(0.0, min(1.0, (widthSource * (1 - coord.x) - rightFadePaddingPx) / rightFadePx));
 
     float alpha = leftFade * rightFade;
 
-    fragColor = tex * qt_Opacity * alpha;
+    fragColor = tex * alpha;
 }
