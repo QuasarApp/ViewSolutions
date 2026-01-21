@@ -10,12 +10,14 @@ namespace ViewSolutions {
 
 NotificationData::NotificationData(const QString &title,
                                    const QString &text,
-                                   const QString &img, int type) {
+                                   const QString &img,
+                                   int type) {
 
     _text = text;
     _title = title;
     _img = img;
     _type = type;
+    _time = time(0);
 }
 
 QString NotificationData::text() const {
@@ -42,7 +44,8 @@ bool NotificationData::operator ==(const NotificationData &righ) {
     return _title == righ._title &&
             _text == righ._text &&
             _img == righ._img &&
-            _type == righ._type;
+            _type == righ._type &&
+            _time == righ._time;
 }
 
 bool NotificationData::operator !=(const NotificationData &righ) {
@@ -63,6 +66,15 @@ QString NotificationData::getDefaultImage(const int code) const {
     default:
         return "";
     }
+}
+
+int NotificationData::getTime() const
+{
+    return _time;
+}
+
+void NotificationData::setTime(int newTime) {
+    _time = newTime;
 }
 
 int NotificationData::type() const {

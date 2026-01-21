@@ -87,6 +87,9 @@ public:
     bool operator ==(const NotificationData &righ);
     bool operator !=(const NotificationData &righ);
 
+    int getTime() const;
+    void setTime(int newTime);
+
 private:
     QString getDefaultImage(const int code) const;
 
@@ -94,6 +97,7 @@ private:
     QString _img;
     QString _title;
     int _type;
+    int _time = 0;
 
 };
 }

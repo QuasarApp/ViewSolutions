@@ -20,7 +20,8 @@ class VIEWSOLUTION_EXPORT HistoryNotificationsModel : public QAbstractListModel
         Icon = Qt::UserRole + 1,
         Title,
         Message,
-        Type
+        Type,
+        Time
     };
 
 public:

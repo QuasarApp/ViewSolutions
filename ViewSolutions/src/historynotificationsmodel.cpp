@@ -32,6 +32,8 @@ QVariant HistoryNotificationsModel::data(const QModelIndex &index, int role) con
         return notificationsList.at(index.row()).text();
     case Type:
         return notificationsList.at(index.row()).type();
+    case Time:
+        return notificationsList.at(index.row()).getTime();
     default:
         break;
     }
@@ -44,6 +46,7 @@ QHash<int, QByteArray> HistoryNotificationsModel::roleNames() const {
     roles[Title]   = "title";
     roles[Message] = "text";
     roles[Type]    = "type";
+    roles[Time]    = "msgTime";
     return roles;
 }
 
