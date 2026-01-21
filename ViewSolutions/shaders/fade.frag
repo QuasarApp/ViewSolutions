@@ -24,5 +24,5 @@ void main() {
 
     float alpha = leftFade * rightFade;
 
-    fragColor = tex * alpha;
+    fragColor = tex * alpha * qt_Opacity ;
 }
