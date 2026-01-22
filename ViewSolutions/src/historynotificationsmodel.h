@@ -21,7 +21,9 @@ class VIEWSOLUTION_EXPORT HistoryNotificationsModel : public QAbstractListModel
         Title,
         Message,
         Type,
-        Time
+        Time,
+        FilterHuck0,
+        FilterHuck1
     };
 
 public:

@@ -40,6 +40,7 @@ class VIEWSOLUTION_EXPORT NotificationService: public QObject, public iModel
 
 public:
     explicit NotificationService(QObject *ptr = nullptr);
+    ~NotificationService();
 
     /**
      * @brief Notify This method return data of the last notify message.
@@ -145,14 +146,29 @@ public:
      */
     Q_INVOKABLE int notificationsCount() const;
 
-    ~NotificationService();
 
     // iModel interface
 public:
     QString modelId() const override;
 
+    /**
+     * @brief uiIsDisplay this method return true if notify service is display now.
+     * @return true if notify service is display now.
+     */
     bool uiIsDisplay() const;
+
+    /**
+     * @brief setUiIsDisplay this method used for set notify service display state.
+     * @param newUiIsDisplay - new display state.
+     */
     void setUiIsDisplay(bool newUiIsDisplay);
+
+    /**
+     * @brief setHistory this method used for set history list.
+     * @param historyList - list of history notifications.
+     */
+    void setHistory(const QList<ViewSolutions::NotificationData> &historyList);
+
 
     /**
      * @brief uiTimeOut this is maximu time that notify service can be loked fo display.

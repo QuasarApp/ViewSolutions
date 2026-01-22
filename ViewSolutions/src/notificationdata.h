@@ -90,6 +90,12 @@ public:
     int getTime() const;
     void setTime(int newTime);
 
+    int filterHuck0() const;
+    void setFilterHuck0(int newFilterHuck0);
+
+    int filterHuck1() const;
+    void setFilterHuck1(int newFilterHuck1);
+
 private:
     QString getDefaultImage(const int code) const;
 
@@ -98,6 +104,8 @@ private:
     QString _title;
     int _type;
     int _time = 0;
+    int _filterHuck0 = 0;
+    int _filterHuck1 = 0;
 
 };
 }

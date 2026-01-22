@@ -145,6 +145,10 @@ void NotificationService::setUiIsDisplay(bool newUiIsDisplay) {
     emit uiIsDisplayChanged();
 }
 
+void NotificationService::setHistory(const QList<NotificationData> &historyList) {
+    _history->setHistory(historyList);
+}
+
 int NotificationService::uiTimeOut() const {
     return _uiTimeOut;
 }
