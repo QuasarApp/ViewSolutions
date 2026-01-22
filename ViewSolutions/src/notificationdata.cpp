@@ -77,6 +77,22 @@ void NotificationData::setTime(int newTime) {
     _time = newTime;
 }
 
+int NotificationData::filterHuck0() const {
+    return _filterHuck0;
+}
+
+void NotificationData::setFilterHuck0(int newFilterHuck0) {
+    _filterHuck0 = newFilterHuck0;
+}
+
+int NotificationData::filterHuck1() const {
+    return _filterHuck1;
+}
+
+void NotificationData::setFilterHuck1(int newFilterHuck1) {
+    _filterHuck1 = newFilterHuck1;
+}
+
 int NotificationData::type() const {
     return _type;
 }
