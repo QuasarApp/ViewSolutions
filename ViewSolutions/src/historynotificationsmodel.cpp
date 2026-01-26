@@ -23,21 +23,23 @@ QVariant HistoryNotificationsModel::data(const QModelIndex &index, int role) con
     if(index.row() < 0 || index.row() >= notificationsList.count())
         return QVariant();
 
+    auto& value = notificationsList.at(index.row());
+
     switch (role) {
     case Icon:
-         return notificationsList.at(index.row()).img();
+         return value.img();
     case Title:
-        return notificationsList.at(index.row()).title();
+        return value.title();
     case Message:
-        return notificationsList.at(index.row()).text();
+        return value.text();
     case Type:
-        return notificationsList.at(index.row()).type();
+        return value.type();
     case Time:
-        return notificationsList.at(index.row()).getTime();
+        return value.getTime();
     case FilterHuck0:
-        return notificationsList.at(index.row()).filterHuck0();
+        return value.filterHuck0();
     case FilterHuck1:
-        return notificationsList.at(index.row()).filterHuck1();
+        return value.filterHuck1();
     default:
         break;
     }
