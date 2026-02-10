@@ -203,7 +203,7 @@ Page {
 
         } else if (component.status === Component.Error) {
             // Error Handling
-            console.log("Error loading component:", component.errorString());
+            console.error("Error loading component:", component.errorString());
         }
     }
 
@@ -237,7 +237,7 @@ Page {
 
         } else if (component.status === Component.Error) {
             // Error Handling
-            console.log("Error loading component:", component.errorString());
+            console.error("Error loading component:", component.errorString());
         }
     }
 
