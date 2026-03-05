@@ -106,6 +106,15 @@ AbstractButton {
             }
             radius: root.radius
 
+            border.width: {
+                if (root.focus) {
+                    return 2;
+                }
+
+                return 0;
+            }
+            border.color: hoverColor
+
             Behavior on color {
                 ColorAnimation {
                     duration: 250
