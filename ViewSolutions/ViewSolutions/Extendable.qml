@@ -29,7 +29,6 @@ Control {
 
         Control {
             Layout.alignment: Qt.AlignCenter
-            Layout.maximumWidth: root.implicitWidth - root.rightPadding - root.leftPadding
             padding: 0
             id: mainButton
 
@@ -59,7 +58,6 @@ Control {
             visible: false
             padding: 0
             Layout.alignment: Qt.AlignCenter
-            Layout.maximumWidth: root.implicitWidth - root.rightPadding - root.leftPadding
 
             Behavior on implicitHeight {
                 enabled: root.flow !== GridLayout.LeftToRight
