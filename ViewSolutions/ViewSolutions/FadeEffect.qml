@@ -16,7 +16,13 @@ ShaderEffect {
     property real leftFadePaddingPx: 2;
     property real rightFadePaddingPx: 2;
 
+    property real topFadePx: 0;
+    property real bottomFadePx: 0;
+    property real topFadePaddingPx: 0;
+    property real bottomFadePaddingPx: 0;
+
     required property real widthSource;
+    required property real heightSource;
 
     fragmentShader: "qrc:/uieffects/shaders/fade.frag.qsb"
     vertexShader: "qrc:/uieffects/shaders/fade.vert.qsb"
