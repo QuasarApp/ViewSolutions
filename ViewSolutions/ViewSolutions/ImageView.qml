@@ -113,7 +113,7 @@ AbstractButton {
 
                 return 0;
             }
-            border.color: hoverColor
+            border.color: root.hoverColor
 
             Behavior on color {
                 ColorAnimation {
