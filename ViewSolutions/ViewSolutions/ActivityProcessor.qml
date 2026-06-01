@@ -180,7 +180,7 @@ Page {
         if (component.status === Component.Ready) {
 
 
-            var activity = component.createObject(stackView);
+            let activity = component.createObject(stackView);
             if (activity === null) {
                 // Error Handling
                 console.error("Error creating Activity object");
@@ -220,7 +220,7 @@ Page {
 
         if (component.status === Component.Ready) {
 
-            var activity = component.createObject(stackView, properties);
+            let activity = component.createObject(stackView, properties);
             if (activity === null) {
                 // Error Handling
                 console.error("Error creating Activity object");
@@ -263,7 +263,7 @@ Page {
     }
 
     function popItem() {
-        let actionRequire = stackView.currentItem && stackView.currentItem.requireAction && stackView.currentItem.requireAction();
+        const actionRequire = stackView.currentItem && stackView.currentItem.requireAction && stackView.currentItem.requireAction();
 
         if (actionRequire) {
             return false;
@@ -272,7 +272,7 @@ Page {
         var item = stackView.pop();
         if (item) {
             if (item.activityCallBack) {
-                item.activityCallBack()
+                item.activityCallBack(item)
             }
             item.destroy(1000);
         }
@@ -289,23 +289,6 @@ Page {
             if (stackView.currentItem && typeof(stackView.currentItem.resetState) === "function") {
                 stackView.currentItem.resetState();
             }
-        // if (cache && stackView.depth < 3) {
-
-        //     // About limitation: the stackView.pop can't change focus to first element if the elements depth bigger then 2.
-
-        //     while(stackView.depth > 1) {
-        //         if (!popItem()) {
-        //             break;
-        //         }
-        //     }
-        //     if (stackView.currentItem && typeof(stackView.currentItem.resetState) === "function") {
-        //         stackView.currentItem.resetState();
-        //     }
-
-        // } else {
-        //     stackView.clear()
-        //     stackView.push(stackView.initialItem)
-        // }
     }
 
 }
