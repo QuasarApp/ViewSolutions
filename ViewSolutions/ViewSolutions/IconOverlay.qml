@@ -4,6 +4,7 @@
 //# Everyone is permitted to copy and distribute verbatim copies
 //# of this license document, but changing it is not allowed.
 //#
+pragma ComponentBehavior: Bound
 
 
 import QtQuick
@@ -13,8 +14,8 @@ import QtQuick.Effects
 Image {
 
     id: root
-    property alias color: effect.colorizationColor
-    property alias colorization: effect.colorization
+    property color color: "White"
+    property real colorization: 1
 
     sourceSize.width: root.width
     sourceSize.height: root.height
@@ -22,7 +23,8 @@ Image {
     layer.enabled: true
     layer.effect : MultiEffect {
         id: effect
-        colorization: 1
+        colorizationColor: root.color
+        colorization: root.colorization
 
     }
 }
