@@ -10,20 +10,19 @@ import QtQuick
 import QtQuick.Controls
 import QtQuick.Effects
 
-Control {
+Image {
+
     id: root
-    property alias source: image.source
     property alias color: effect.colorizationColor
     property alias colorization: effect.colorization
 
-    contentItem: Image {
-        id: image
+    sourceSize.width: root.width
+    sourceSize.height: root.height
 
-        MultiEffect {
-            id: effect
-            anchors.fill: image
-            colorization: 1
+    layer.enabled: true
+    layer.effect : MultiEffect {
+        id: effect
+        colorization: 1
 
-        }
     }
 }
