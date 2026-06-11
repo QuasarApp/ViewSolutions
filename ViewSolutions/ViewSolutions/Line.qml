@@ -12,6 +12,7 @@ Item {
 
     property alias sourceRect: line
 
+
     Rectangle {
         id: line
         x: root.pointAX
