@@ -20,9 +20,19 @@ ShaderEffect {
     property real bottomFadePx: 0;
     property real topFadePaddingPx: 0;
     property real bottomFadePaddingPx: 0;
+    property alias animationEnabled: animation.running
+    property real cycleTimeSec: 1
+
+    property real time: animation.elapsedTime * cycleTimeSec
+    property vector2d animationDirection: Qt.vector2d(1,1);
 
     required property real widthSource;
     required property real heightSource;
+
+    FrameAnimation {
+        id: animation
+        running: false;
+    }
 
     fragmentShader: "qrc:/uieffects/shaders/fade.frag.qsb"
     vertexShader: "qrc:/uieffects/shaders/fade.vert.qsb"

@@ -4,6 +4,8 @@ layout(location = 0) out vec4 fragColor;
 layout(std140, binding = 0) uniform buf {
     mat4 qt_Matrix;
     float qt_Opacity;
+    float time;
+    vec2 animationDirection;
 
     float leftFadePx;
     float rightFadePx;
@@ -35,6 +37,15 @@ void main() {
     float bottomFade = max(0.0, min(1.0, (heightSource * (1 - coord.y) - bottomFadePaddingPx) / bottomFadePx));
 
     float alpha = 1;
+
+    if (time > 0) {
+        if (animationDirection.x != 0)
+            alpha *= (sin(coord.x * animationDirection.x + time) + 1) * 0.5;
+
+        if (animationDirection.y != 0)
+            alpha *= (sin(coord.y * animationDirection.y + time) + 1) * 0.5;
+
+    }
 
     if (widthSource > 0) {
         alpha *= leftFade * rightFade;
