@@ -16,6 +16,7 @@ Image {
     id: root
     property color color: "White"
     property real colorization: 1
+    fillMode: Image.PreserveAspectFit
 
     sourceSize.width: root.width
     sourceSize.height: root.height
