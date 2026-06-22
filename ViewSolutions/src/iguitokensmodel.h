@@ -1,5 +1,5 @@
 //#
-//# Copyright (C) 2024-2025 QuasarApp.
+//# Copyright (C) 2024-2026 QuasarApp.
 //# Distributed under the GPLv3 software license, see the accompanying
 //# Everyone is permitted to copy and distribute verbatim copies
 //# of this license document, but changing it is not allowed.
@@ -24,6 +24,7 @@ class VIEWSOLUTION_EXPORT iGUITokensModel: public QObject, public iModel
 
     // colors contants
     Q_PROPERTY(QColor color_accent_primary READ color_accent_primary CONSTANT FINAL)
+    Q_PROPERTY(QColor color_accent_primary_focus READ color_accent_primary_focus CONSTANT FINAL)
 
     Q_PROPERTY(QColor color_accent_secondary READ color_accent_secondary CONSTANT FINAL)
     Q_PROPERTY(QColor color_accent_error READ color_accent_error CONSTANT FINAL)
@@ -79,6 +80,8 @@ class VIEWSOLUTION_EXPORT iGUITokensModel: public QObject, public iModel
 public:
     explicit iGUITokensModel();
     virtual QColor color_accent_primary() const = 0;
+    virtual QColor color_accent_primary_focus() const = 0;
+
     virtual QColor color_accent_secondary() const = 0;
     virtual QColor color_accent_error() const = 0;
     virtual QColor color_accent_success() const = 0;

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2018-2024 QuasarApp.
+ * Copyright (C) 2018-2026 QuasarApp.
  * Distributed under the GPLv3 software license, see the accompanying
  * Everyone is permitted to copy and distribute verbatim copies
  * of this license document, but changing it is not allowed.
@@ -32,12 +32,16 @@ class VIEWSOLUTION_EXPORT NotificationService: public QObject, public iModel
 
     Q_PROPERTY(NotificationData notify READ notify NOTIFY notifyChanged)
     Q_PROPERTY(NotificationData question READ question NOTIFY questionChanged)
+    Q_PROPERTY(bool uiIsDisplay READ uiIsDisplay WRITE setUiIsDisplay NOTIFY uiIsDisplayChanged FINAL)
 
     Q_PROPERTY(QObject* history READ history NOTIFY notifyChanged)
 
     Q_PROPERTY(int notificationsCount READ notificationsCount NOTIFY countNotificationsChanged)
 
 public:
+    explicit NotificationService(QObject *ptr = nullptr);
+    ~NotificationService();
+
     /**
      * @brief Notify This method return data of the last notify message.
      * @return return data of the last notify message.
@@ -132,16 +136,46 @@ public:
     Q_INVOKABLE void showHistory();
 
     /**
+     * @brief notificationHiden this method should invoked every time when the current notification is hiden, automaticaly or by user.
+     */
+    Q_INVOKABLE void notificationHiden();
+
+    /**
      * @brief notificationsCount - This method used for return count of history notifications.
      * @return count of history notifications.
      */
     Q_INVOKABLE int notificationsCount() const;
 
-    ~NotificationService();
 
     // iModel interface
 public:
     QString modelId() const override;
+
+    /**
+     * @brief uiIsDisplay this method return true if notify service is display now.
+     * @return true if notify service is display now.
+     */
+    bool uiIsDisplay() const;
+
+    /**
+     * @brief setUiIsDisplay this method used for set notify service display state.
+     * @param newUiIsDisplay - new display state.
+     */
+    void setUiIsDisplay(bool newUiIsDisplay);
+
+    /**
+     * @brief setHistory this method used for set history list.
+     * @param historyList - list of history notifications.
+     */
+    void setHistory(const QList<ViewSolutions::NotificationData> &historyList);
+
+
+    /**
+     * @brief uiTimeOut this is maximu time that notify service can be loked fo display.
+     * @return
+     */
+    int uiTimeOut() const;
+    void setUiTimeOut(int newUiTimeOut);
 
 signals:
     /**
@@ -168,14 +202,19 @@ signals:
 
     void countNotificationsChanged();
 
+    void uiIsDisplayChanged();
+
 private:
 
-    explicit NotificationService(QObject *ptr = nullptr);
 
 
     QHash<int, Listner> _listners;
     NotificationData _question;
     NotificationData _notify;
+    bool _uiIsDisplay = false;
+    int _uiTimeOut = 60;
+    int _lastDisplayTime = 0;
+
     HistoryNotificationsModel* _history = nullptr;
 
 
