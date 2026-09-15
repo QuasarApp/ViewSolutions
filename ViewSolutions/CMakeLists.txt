@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2018-2025 QuasarApp.
+# Copyright (C) 2018-2026 QuasarApp.
 # Distributed under the lgplv3 software license, see the accompanying
 # Everyone is permitted to copy and distribute verbatim copies
 # of this license document, but changing it is not allowed.
@@ -21,6 +21,14 @@ file(GLOB SOURCE_CPP
 
 )
 
+file(GLOB SHADERS_CPP
+    RELATIVE "${CMAKE_CURRENT_SOURCE_DIR}"
+
+    "shaders/*.frag"
+    "shaders/*.vert"
+
+)
+
 file(GLOB_RECURSE SOURCE_ASSETS
     RELATIVE "${CMAKE_CURRENT_SOURCE_DIR}"
     "assets/*"
@@ -34,6 +42,13 @@ file(GLOB_RECURSE MODULE_QML_FILES
 
 qt_add_library(${CURRENT_PROJECT} ${SOURCE_CPP})
 
+# available under qrc:/uieffects/shaders/shaderName.frag.qsb
+qt6_add_shaders(${CURRENT_PROJECT} "uieffects"
+    PREFIX
+        "/uieffects"
+    FILES
+        ${SHADERS_CPP}
+)
 
 qt_add_qml_module(${CURRENT_PROJECT}
     URI ViewSolutions

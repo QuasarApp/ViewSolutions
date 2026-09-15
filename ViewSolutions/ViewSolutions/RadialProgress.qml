@@ -4,9 +4,10 @@ Canvas {
     id: root
     property real progress: 0.7
     property real lineWidth: 16
+    required property var guiTokens
 
-    property color color: tokensModel.color_surface_accent_primary
-    property color backgroundColor: tokensModel.color_border_secondary
+    property color color: guiTokens.color_surface_accent_primary
+    property color backgroundColor: guiTokens.color_border_secondary
 
     height: implicitHeight
     width: implicitWidth
