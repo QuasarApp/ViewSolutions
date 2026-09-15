@@ -22,6 +22,9 @@ class VIEWSOLUTION_EXPORT iGUITokensModel: public QObject, public iModel
 {
     Q_OBJECT
 
+    QML_NAMED_ELEMENT("GUITokens")
+    QML_UNCREATABLE("Abstract class")
+
     // colors contants
     Q_PROPERTY(QColor color_accent_primary READ color_accent_primary CONSTANT FINAL)
     Q_PROPERTY(QColor color_accent_primary_focus READ color_accent_primary_focus CONSTANT FINAL)
