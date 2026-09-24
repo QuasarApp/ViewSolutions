@@ -12,14 +12,14 @@ import QtQuick.Controls.Material
 import QtQuick.Controls.Universal
 import QtQuick.Effects
 
-AbstractButton {
+Control {
     id: root
     property string source: ""
+    property string text: ""
+
     property alias imagesource: sourceImg
     property alias imagEffect: imgEffect
     property int  radius: 16
-
-    property real power: 1.0
 
     property string toolTip: ""
 
@@ -58,34 +58,6 @@ AbstractButton {
         property real rx : 0
         property real ry : 0
         property real rz : 0
-
-        Behavior on anchors.margins {
-            NumberAnimation {
-                easing.type: Easing.OutExpo
-                duration: 550
-            }
-        }
-
-        Behavior on rx {
-            NumberAnimation {
-                easing.type: Easing.OutExpo
-                duration: 550
-            }
-        }
-
-        Behavior on ry {
-            NumberAnimation {
-                easing.type: Easing.OutExpo
-                duration: 550
-            }
-        }
-
-        Behavior on rz {
-            NumberAnimation {
-                easing.type: Easing.OutExpo
-                duration: 550
-            }
-        }
 
         background: Rectangle {
             color: {
@@ -180,24 +152,6 @@ AbstractButton {
             }
 
         }
-
-        transform: [
-            Rotation {
-                axis { x: 0; y: 0; z: 1 }
-                origin { x: root.width / 2; y: root.height / 2; z: 0 }
-                angle: privateData.rz
-            },
-            Rotation {
-                axis { x: 0; y: 1; z: 0 }
-                origin { x: root.width / 2; y: root.height / 2; z: 0 }
-                angle: privateData.ry
-            },
-            Rotation {
-                axis { x: 1; y: 0; z: 0 }
-                origin { x: root.width / 2; y: root.height / 2; z: 0 }
-                angle: privateData.rx
-            }
-        ]
     }
 
     ToolTip {
@@ -205,33 +159,6 @@ AbstractButton {
         visible: root.hovered && text.length
         text: root.toolTip
         delay: 500
-
-    }
-
-
-    MouseArea {
-        acceptedButtons: Qt.NoButton
-        hoverEnabled: root.power > 0;
-        enabled: root.power > 0;
-
-        onExited: {
-            privateData.ry = 0
-            privateData.rx = 0
-
-        }
-
-        onPositionChanged: (mouse) => {
-                               if (root.enabled) {
-                                   let fromCenter = root.width / 2
-                                   privateData.ry = -((mouse.x - fromCenter) / (fromCenter * 0.05)) * root.power
-
-                                   fromCenter = root.height / 2
-                                   privateData.rx = ((mouse.y - fromCenter) / (fromCenter * 0.05)) * root.power
-
-                               }
-                           }
-
-        anchors.fill: parent
 
     }
 

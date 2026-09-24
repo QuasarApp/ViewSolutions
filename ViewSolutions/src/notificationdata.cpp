@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2018-2025 QuasarApp.
+ * Copyright (C) 2018-2026 QuasarApp.
  * Distributed under the GPLv3 software license, see the accompanying
  * Everyone is permitted to copy and distribute verbatim copies
  * of this license document, but changing it is not allowed.
@@ -10,12 +10,14 @@ namespace ViewSolutions {
 
 NotificationData::NotificationData(const QString &title,
                                    const QString &text,
-                                   const QString &img, int type) {
+                                   const QString &img,
+                                   int type) {
 
     _text = text;
     _title = title;
     _img = img;
     _type = type;
+    _time = time(0);
 }
 
 QString NotificationData::text() const {
@@ -42,7 +44,8 @@ bool NotificationData::operator ==(const NotificationData &righ) {
     return _title == righ._title &&
             _text == righ._text &&
             _img == righ._img &&
-            _type == righ._type;
+            _type == righ._type &&
+            _time == righ._time;
 }
 
 bool NotificationData::operator !=(const NotificationData &righ) {
@@ -63,6 +66,31 @@ QString NotificationData::getDefaultImage(const int code) const {
     default:
         return "";
     }
+}
+
+int NotificationData::getTime() const
+{
+    return _time;
+}
+
+void NotificationData::setTime(int newTime) {
+    _time = newTime;
+}
+
+int NotificationData::filterHuck0() const {
+    return _filterHuck0;
+}
+
+void NotificationData::setFilterHuck0(int newFilterHuck0) {
+    _filterHuck0 = newFilterHuck0;
+}
+
+int NotificationData::filterHuck1() const {
+    return _filterHuck1;
+}
+
+void NotificationData::setFilterHuck1(int newFilterHuck1) {
+    _filterHuck1 = newFilterHuck1;
 }
 
 int NotificationData::type() const {

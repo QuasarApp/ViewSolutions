@@ -1,5 +1,5 @@
 //#
-//# Copyright (C) 2020-2025 QuasarApp.
+//# Copyright (C) 2020-2026 QuasarApp.
 //# Distributed under the GPLv3 software license, see the accompanying
 //# Everyone is permitted to copy and distribute verbatim copies
 //# of this license document, but changing it is not allowed.
@@ -43,11 +43,12 @@ class BaseHashModel: public QAbstractListModel
 {
 
 public:
+
     BaseHashModel(QObject* parent = nullptr): QAbstractListModel(parent) {
 
     }
 
-    int rowCount(const QModelIndex &parent) const override {
+    int rowCount(const QModelIndex &) const override {
         return m_data.size();
     }
 
@@ -112,6 +113,10 @@ public:
         }
 
         return {};
+    }
+
+    DATA get(const KEY& key) {
+        return m_data.value(key);
     }
 
     const QHash<KEY, DATA>& dateList() const {
