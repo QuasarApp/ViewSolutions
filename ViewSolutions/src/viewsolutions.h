@@ -12,13 +12,11 @@
 #include "viewsolutions_global.h"
 
 class QQmlApplicationEngine;
+extern void qml_register_types_ViewSolutions();
 
-//// Use This macros for init all library resources.
-//#define INIT_VIEW_SOLUTIONS(result, engine) \
-//    Q_INIT_RESOURCE(ViewSolutionsResources); \
-//    result = ViewSolutions::init(engine)
-
-inline void initResources() { /*Q_INIT_RESOURCE(ViewSolutionsResources);*/ }
+inline void initResources() {
+    qml_register_types_ViewSolutions();
+}
 /**
  * @brief the ViewSolutions namespace
  */
