@@ -30,10 +30,12 @@ Control {
     property color hoverColor: Material.accent
     property alias contentData: content.contentItem
     property alias contentPadding: content.padding
+    property bool pickColor: true
 
 
     Connections {
         target: sourceImg
+        enabled: root.pickColor
 
         function onStatusChanged(status) {
             if (status === Image.Ready) {
