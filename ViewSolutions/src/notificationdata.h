@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2018-2024 QuasarApp.
+ * Copyright (C) 2018-2026 QuasarApp.
  * Distributed under the GPLv3 software license, see the accompanying
  * Everyone is permitted to copy and distribute verbatim copies
  * of this license document, but changing it is not allowed.
@@ -26,11 +26,14 @@ public:
      */
     enum Type {
         /// This is message for general notification.
-        Normal,
+        Normal = 0,
         /// This is warning notification.
         Warning = 1,
         /// This is critical error notifications.
         Error = 2,
+
+        /// This is user defined type of message.
+        Custom = 3,
     };
 
     explicit NotificationData(const QString& title = "",
@@ -84,6 +87,15 @@ public:
     bool operator ==(const NotificationData &righ);
     bool operator !=(const NotificationData &righ);
 
+    int getTime() const;
+    void setTime(int newTime);
+
+    int filterHuck0() const;
+    void setFilterHuck0(int newFilterHuck0);
+
+    int filterHuck1() const;
+    void setFilterHuck1(int newFilterHuck1);
+
 private:
     QString getDefaultImage(const int code) const;
 
@@ -91,6 +103,9 @@ private:
     QString _img;
     QString _title;
     int _type;
+    int _time = 0;
+    int _filterHuck0 = 0;
+    int _filterHuck1 = 0;
 
 };
 }

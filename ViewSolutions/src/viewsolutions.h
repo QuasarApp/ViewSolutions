@@ -1,5 +1,5 @@
 //#
-//# Copyright (C) 2020-2025 QuasarApp.
+//# Copyright (C) 2020-2026 QuasarApp.
 //# Distributed under the GPLv3 software license, see the accompanying
 //# Everyone is permitted to copy and distribute verbatim copies
 //# of this license document, but changing it is not allowed.
@@ -12,13 +12,11 @@
 #include "viewsolutions_global.h"
 
 class QQmlApplicationEngine;
+extern void qml_register_types_ViewSolutions();
 
-//// Use This macros for init all library resources.
-//#define INIT_VIEW_SOLUTIONS(result, engine) \
-//    Q_INIT_RESOURCE(ViewSolutionsResources); \
-//    result = ViewSolutions::init(engine)
-
-inline void initResources() { /*Q_INIT_RESOURCE(ViewSolutionsResources);*/ }
+inline void initResources() {
+    qml_register_types_ViewSolutions();
+}
 /**
  * @brief the ViewSolutions namespace
  */

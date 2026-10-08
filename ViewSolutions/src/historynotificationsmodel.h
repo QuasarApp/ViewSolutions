@@ -1,5 +1,5 @@
 //#
-//# Copyright (C) 2020-2025 QuasarApp.
+//# Copyright (C) 2020-2026 QuasarApp.
 //# Distributed under the GPLv3 software license, see the accompanying
 //# Everyone is permitted to copy and distribute verbatim copies
 //# of this license document, but changing it is not allowed.
@@ -20,7 +20,10 @@ class VIEWSOLUTION_EXPORT HistoryNotificationsModel : public QAbstractListModel
         Icon = Qt::UserRole + 1,
         Title,
         Message,
-        Type
+        Type,
+        Time,
+        FilterHuck0,
+        FilterHuck1
     };
 
 public:

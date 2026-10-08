@@ -1,5 +1,5 @@
 //#
-//# Copyright (C) 2020-2025 QuasarApp.
+//# Copyright (C) 2020-2026 QuasarApp.
 //# Distributed under the GPLv3 software license, see the accompanying
 //# Everyone is permitted to copy and distribute verbatim copies
 //# of this license document, but changing it is not allowed.
@@ -20,6 +20,8 @@ namespace ViewSolutions {
 class VIEWSOLUTION_EXPORT QMLColorPicker : public QObject, public iModel, private ColorPicker
 {
     Q_OBJECT
+    Q_PROPERTY(bool alpha READ alpha WRITE setAlpha NOTIFY alphaChanged FINAL)
+
 public:
     explicit QMLColorPicker(QObject *parent = nullptr);
 
@@ -36,6 +38,25 @@ public:
      * @return
      */
     QString modelId() const override;
+
+    /**
+     * @brief alpha the alpha swith display color picer mod to alpha mode. in this mode picker will calculate alpha channel also with RGB hannels.
+     *  set to false to disable calculate alpha hannel.
+     * @return
+     */
+    bool alpha() const;
+
+    /**
+     * @brief setAlpha set new value of alpha mode.
+     * @param newAlpha new value
+     */
+    void setAlpha(bool newAlpha);
+
+signals:
+    void alphaChanged();
+
+private:
+    bool _alpha = true;
 
 };
 

@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2018-2025 QuasarApp.
+# Copyright (C) 2018-2026 QuasarApp.
 # Distributed under the lgplv3 software license, see the accompanying
 # Everyone is permitted to copy and distribute verbatim copies
 # of this license document, but changing it is not allowed.
@@ -30,6 +30,8 @@ find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Core Quick QuickControls2 REQUIRED
 qt_standard_project_setup()
 qt_policy(SET QTP0001 NEW)
 qt_policy(SET QTP0004 NEW)
+
+
 
 add_subdirectory(ViewSolutions)
 
