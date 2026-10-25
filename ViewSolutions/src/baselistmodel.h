@@ -8,12 +8,13 @@
 #ifndef BASELISTMODEL_H
 #define BASELISTMODEL_H
 
+#include "viewsolutions_global.h"
 #include <QAbstractItemModel>
 #include <QQmlEngine>
 
 namespace ViewSolutions {
 
-class __PrvateBaseListModel : public QAbstractListModel{
+class VIEWSOLUTION_EXPORT __PrvateBaseListModel : public QAbstractListModel{
     Q_OBJECT
 protected:
     __PrvateBaseListModel(QObject* parent = nullptr): QAbstractListModel(parent){}
