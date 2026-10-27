@@ -15,8 +15,8 @@ import ViewSolutionsModule 1.0
 ImageView {
 
     anchors.fill: parent
-    soucre:  "qrc:/img/images/example.png"
-    text: "exampele"
+    source:  "qrc:/img/images/example.png"
+    text: "example"
     anchors.margins: 100
     borderColor: "red"
 }

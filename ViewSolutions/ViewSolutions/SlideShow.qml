@@ -25,7 +25,7 @@ Page {
 
     property string readyMessage: qsTr("World is ready to play : Press any button")
     property string defaultMessage: qsTr("Generation of a huge world")
-    property int prefferedContentWidth: 900
+    property int preferredContentWidth: 900
 
     signal ready();
 
@@ -46,7 +46,7 @@ Page {
             opacity: 0
 
             Layout.alignment: Qt.AlignHCenter
-            Layout.preferredWidth: root.prefferedContentWidth
+            Layout.preferredWidth: root.preferredContentWidth
             Layout.fillHeight: true
 
 

@@ -20,7 +20,7 @@ class ModelStorage;
 
 /**
  * @brief The iModel class is base model for GUI models. Works with @a ModelStorage.
- *  All models after adding can get access to any othe models that located on same storage object.
+ *  All models after adding can get access to any other models that located on same storage object.
  */
 class VIEWSOLUTION_EXPORT iModel
 {
@@ -46,7 +46,7 @@ public:
      * @note can be return nullptr if the models system initialized without qml engine.
      * @note this method convert weak pointer to shared pointer,
      * so you can use it without any restrictions,
-     * but it may be slowly then dirrect access.
+     * but it may be slower than direct access.
      */
     QQmlEngine * engine() const;
 

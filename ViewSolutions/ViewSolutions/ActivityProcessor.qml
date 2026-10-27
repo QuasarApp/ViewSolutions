@@ -12,10 +12,10 @@ import QtQuick.Controls
 Page {
     id: root
 
-    // use Comonent delegates only
+    // use Component delegates only
     property alias initialItem: stackView.initialItem
     property alias currentItem: stackView.currentItem
-    property int titlesAligh: Text.AlignLeft
+    property int titlesAlign: Text.AlignLeft
 
     property alias depth: stackView.depth
     property alias durationAnimation: stackView.durationAnimation
@@ -42,7 +42,7 @@ Page {
         backButton:  root.enableHeader && stackView.depth > 1 &&  (stackView.currentItem && stackView.currentItem.buttonBack)
 
         closeButton: root.enableHeader && (stackView.currentItem && stackView.currentItem.closeButton)
-        titlesAligh: root.titlesAligh
+        titlesAlign: root.titlesAlign
         onBackClicked: {
             root.popItem()
         }
@@ -143,7 +143,7 @@ Page {
 
 
     // create new activity from component with model activityModel, after drop this activity will be called callback function
-    // Note The callback function works only with ActivityPage childs.
+    // Note The callback function works only with ActivityPage children.
     function newActivityFromComponent(component, activityModel, callback) {
         var activity = component.createObject(stackView);
         if (activity === null) {
@@ -167,7 +167,7 @@ Page {
     }
 
     // create new activity from file with model activityModel, after drop this activity will be called callback function
-    // Note The callback function works only with ActivityPage childs.
+    // Note The callback function works only with ActivityPage children.
     function newActivity(viewFile, activityModel, callback) {
 
         if (!viewFile || !viewFile.length) {
@@ -207,8 +207,8 @@ Page {
         }
     }
 
-    // create new activity from file with custom propery list "properties", after drop this activity will be called callback function
-    // Note The callback function works only with ActivityPage childs.
+    // create new activity from file with custom property list "properties", after drop this activity will be called callback function
+    // Note The callback function works only with ActivityPage children.
     function newActivityWithProp(viewFile, properties, callback) {
 
         if (!viewFile || !viewFile.length) {
@@ -241,8 +241,8 @@ Page {
         }
     }
 
-    // create new activity from component with custom propery list "properties", after drop this activity will be called callback function
-    // Note The callback function works only with ActivityPage childs.
+    // create new activity from component with custom property list "properties", after drop this activity will be called callback function
+    // Note The callback function works only with ActivityPage children.
     function newActivityFromComponentWithProp(component, properties, callback) {
 
         var activity = component.createObject(stackView, properties);
