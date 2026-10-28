@@ -24,6 +24,9 @@ endif()
 
 include(CMake/QuasarApp.cmake)
 
+updateGitVarsWithHash("c8f0b3222d1811e3467a2fa46645c720e31b2860")
+set(VIEWSOLUTIONS_VERSION 1.0.${GIT_COMMIT_COUNT_FROM}.${GIT_COMMIT_HASH})
+
 find_package(QT NAMES Qt6 COMPONENTS Core Quick QuickControls2 REQUIRED)
 find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Core Quick QuickControls2 REQUIRED)
 
@@ -39,4 +42,5 @@ endif()
 
 
 initAll()
+configure_file_in(${PROJECT_NAME} ${CMAKE_CURRENT_SOURCE_DIR}/doxygen.conf)
 addDoc(${PROJECT_NAME} ${CMAKE_CURRENT_SOURCE_DIR}/doxygen.conf)
