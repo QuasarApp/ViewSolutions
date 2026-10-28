@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2018-2024 QuasarApp.
+ * Copyright (C) 2018-2026 QuasarApp.
  * Distributed under the GPLv3 software license, see the accompanying
  * Everyone is permitted to copy and distribute verbatim copies
  * of this license document, but changing it is not allowed.
@@ -18,45 +18,41 @@ Item {
 
     readonly property var history: model.history
 
-    Metrix {
-        id: metrix
-    }
-
     NotificationForm {
         id: notyfyView
-        titleText : msg.title();
-        text: (msg)? msg.text(): "";
-        img: (msg && msg.img().length)? msg.img(): getDefaultImage((msg)? msg.type(): 0);
-        type: (msg)? msg.type(): 0;
+        titleText : root.msg.title();
+        text: (root.msg)? root.msg.text(): "";
+        img: (root.msg && root.msg.img().length)? root.msg.img(): getDefaultImage((root.msg)? root.msg.type(): 0);
+        type: (root.msg)? root.msg.type(): 0;
 
         x: parent.width - width - margin;
         y: margin;
 
-        width: Math.min(6 * metrix.pt, root.width);
+        width: Math.min(440, root.width);
 
     }
 
     YesNoQuestion {
         id: questionMsgBox
-        titleText : qst.title();
-        text: (qst)? qst.text(): "";
-        img: (qst && qst.img().length)? qst.img(): defImg;
+        titleText : root.qst.title();
+        text: (root.qst)? root.qst.text(): "";
+        img: (root.qst && root.qst.img().length)? root.qst.img(): defImg;
         type: 0;
 
         x: parent.width / 2  - width / 2;
         y: parent.height / 2 - height / 2;
 
-        width: Math.min(6 * metrix.pt, root.width);
+        width: Math.min(440, root.width);
 
         onAccepted: {
-            if (model) {
-                model.questionComplete(true, qst.type())
+            if (root.model) {
+                root.model.questionComplete(true, root.qst.type())
             }
         }
 
         onRejected: {
-            if (model) {
-                model.questionComplete(false, qst.type())
+            if (root.model) {
+                root.model.questionComplete(false, root.qst.type())
             }
         }
     }
@@ -83,7 +79,7 @@ Item {
     }
 
     Connections {
-        target: model
+        target: root.model
         function onSigShowHistory() {
             history.open()
         }

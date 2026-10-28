@@ -1,5 +1,5 @@
 //#
-//# Copyright (C) 2024-2025 QuasarApp.
+//# Copyright (C) 2024-2026 QuasarApp.
 //# Distributed under the GPLv3 software license, see the accompanying
 //# Everyone is permitted to copy and distribute verbatim copies
 //# of this license document, but changing it is not allowed.
@@ -16,14 +16,18 @@
 namespace ViewSolutions {
 
 /**
- * @brief The Tokens class is general global instanke of all QML constans used in the App.
+ * @brief The Tokens class is general global instance of all QML constants used in the App.
  */
 class VIEWSOLUTION_EXPORT iGUITokensModel: public QObject, public iModel
 {
     Q_OBJECT
 
-    // colors contants
+    QML_NAMED_ELEMENT(GUITokens)
+    QML_UNCREATABLE("Abstract class")
+
+    // colors constants
     Q_PROPERTY(QColor color_accent_primary READ color_accent_primary CONSTANT FINAL)
+    Q_PROPERTY(QColor color_accent_primary_focus READ color_accent_primary_focus CONSTANT FINAL)
 
     Q_PROPERTY(QColor color_accent_secondary READ color_accent_secondary CONSTANT FINAL)
     Q_PROPERTY(QColor color_accent_error READ color_accent_error CONSTANT FINAL)
@@ -39,7 +43,7 @@ class VIEWSOLUTION_EXPORT iGUITokensModel: public QObject, public iModel
     Q_PROPERTY(QColor color_border_secondary READ color_border_secondary CONSTANT FINAL)
     Q_PROPERTY(QColor color_border_disabled READ color_border_disabled CONSTANT FINAL)
 
-    Q_PROPERTY(QColor color_devider READ color_devider CONSTANT FINAL)
+    Q_PROPERTY(QColor color_divider READ color_divider CONSTANT FINAL)
     Q_PROPERTY(QColor color_background READ color_background CONSTANT FINAL)
 
     //states_colors_constants:
@@ -71,14 +75,16 @@ class VIEWSOLUTION_EXPORT iGUITokensModel: public QObject, public iModel
     Q_PROPERTY(QFont font_title_large READ font_title_large CONSTANT FINAL)
     Q_PROPERTY(QFont font_title_x_large READ font_title_x_large CONSTANT FINAL)
     Q_PROPERTY(QFont font_title_uppercase READ font_title_uppercase CONSTANT FINAL)
-    Q_PROPERTY(QFont font_botton_1 READ font_botton_1 CONSTANT FINAL)
-    Q_PROPERTY(QFont font_botton_2 READ font_botton_2 CONSTANT FINAL)
+    Q_PROPERTY(QFont font_button_1 READ font_button_1 CONSTANT FINAL)
+    Q_PROPERTY(QFont font_button_2 READ font_button_2 CONSTANT FINAL)
     Q_PROPERTY(QFont font_bubble READ font_bubble CONSTANT FINAL)
 
 
 public:
     explicit iGUITokensModel();
     virtual QColor color_accent_primary() const = 0;
+    virtual QColor color_accent_primary_focus() const = 0;
+
     virtual QColor color_accent_secondary() const = 0;
     virtual QColor color_accent_error() const = 0;
     virtual QColor color_accent_success() const = 0;
@@ -91,7 +97,7 @@ public:
     virtual QColor color_border_primary() const = 0;
     virtual QColor color_border_secondary() const = 0;
     virtual QColor color_border_disabled() const = 0;
-    virtual QColor color_devider() const = 0;
+    virtual QColor color_divider() const = 0;
     virtual QColor color_background() const = 0;
 
     virtual QColor pressed_focused() const = 0;
@@ -121,25 +127,25 @@ public:
     virtual QFont font_title_large() const = 0;
     virtual QFont font_title_x_large() const = 0;
     virtual QFont font_title_uppercase() const = 0;
-    virtual QFont font_botton_1() const = 0;
-    virtual QFont font_botton_2() const = 0;
+    virtual QFont font_button_1() const = 0;
+    virtual QFont font_button_2() const = 0;
     virtual QFont font_bubble() const = 0;
 
     // iModel interface
 public:
     QString modelId() const;
 
-    Q_INVOKABLE QColor addTransporent(QColor input, float alpha) const;
+    Q_INVOKABLE QColor addTransparent(QColor input, float alpha) const;
 
 
 protected:
     /**
-     * @brief addTransporent This method add alpha chennel to the color.
+     * @brief addTransparent This method add alpha channel to the color.
      * @param input input link to color
-     * @param alpha alphachennol factor from 0 to 1.
-     * @return color with new alpha chennel.
+     * @param alpha alpha channel factor from 0 to 1.
+     * @return color with new alpha channel.
      */
-    QColor& addTransporentImpl(QColor& input, float alpha) const;
+    QColor& addTransparentImpl(QColor& input, float alpha) const;
 };
 }
 #endif // IGUITOKENSMODEL_H

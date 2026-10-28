@@ -1,5 +1,5 @@
 //#
-//# Copyright (C) 2020-2025 QuasarApp.
+//# Copyright (C) 2020-2026 QuasarApp.
 //# Distributed under the GPLv3 software license, see the accompanying
 //# Everyone is permitted to copy and distribute verbatim copies
 //# of this license document, but changing it is not allowed.
@@ -30,7 +30,7 @@ Control {
     property var resetState: () => {}
 
     // this is lambda function with required action of this page.
-    // If is it not null then MainActivityProcessor will execute this action and forbide distroy this UI.
+    // If is it not null then MainActivityProcessor will execute this action and forbid destroy this UI.
     property var requireAction: null
 
     // This is call back function, If this function exists its will be called before pop object from main activity, but if requireAction is null.

@@ -1,5 +1,5 @@
 //#
-//# Copyright (C) 2020-2025 QuasarApp.
+//# Copyright (C) 2020-2026 QuasarApp.
 //# Distributed under the GPLv3 software license, see the accompanying
 //# Everyone is permitted to copy and distribute verbatim copies
 //# of this license document, but changing it is not allowed.
@@ -12,10 +12,10 @@ import QtQuick.Controls
 Page {
     id: root
 
-    // use Comonent delegates only
+    // use Component delegates only
     property alias initialItem: stackView.initialItem
     property alias currentItem: stackView.currentItem
-    property int titlesAligh: Text.AlignLeft
+    property int titlesAlign: Text.AlignLeft
 
     property alias depth: stackView.depth
     property alias durationAnimation: stackView.durationAnimation
@@ -42,7 +42,7 @@ Page {
         backButton:  root.enableHeader && stackView.depth > 1 &&  (stackView.currentItem && stackView.currentItem.buttonBack)
 
         closeButton: root.enableHeader && (stackView.currentItem && stackView.currentItem.closeButton)
-        titlesAligh: root.titlesAligh
+        titlesAlign: root.titlesAlign
         onBackClicked: {
             root.popItem()
         }
@@ -143,7 +143,7 @@ Page {
 
 
     // create new activity from component with model activityModel, after drop this activity will be called callback function
-    // Note The callback function works only with ActivityPage childs.
+    // Note The callback function works only with ActivityPage children.
     function newActivityFromComponent(component, activityModel, callback) {
         var activity = component.createObject(stackView);
         if (activity === null) {
@@ -167,7 +167,7 @@ Page {
     }
 
     // create new activity from file with model activityModel, after drop this activity will be called callback function
-    // Note The callback function works only with ActivityPage childs.
+    // Note The callback function works only with ActivityPage children.
     function newActivity(viewFile, activityModel, callback) {
 
         if (!viewFile || !viewFile.length) {
@@ -180,7 +180,7 @@ Page {
         if (component.status === Component.Ready) {
 
 
-            var activity = component.createObject(stackView);
+            let activity = component.createObject(stackView);
             if (activity === null) {
                 // Error Handling
                 console.error("Error creating Activity object");
@@ -203,12 +203,12 @@ Page {
 
         } else if (component.status === Component.Error) {
             // Error Handling
-            console.log("Error loading component:", component.errorString());
+            console.error("Error loading component:", component.errorString());
         }
     }
 
-    // create new activity from file with custom propery list "properties", after drop this activity will be called callback function
-    // Note The callback function works only with ActivityPage childs.
+    // create new activity from file with custom property list "properties", after drop this activity will be called callback function
+    // Note The callback function works only with ActivityPage children.
     function newActivityWithProp(viewFile, properties, callback) {
 
         if (!viewFile || !viewFile.length) {
@@ -220,7 +220,7 @@ Page {
 
         if (component.status === Component.Ready) {
 
-            var activity = component.createObject(stackView, properties);
+            let activity = component.createObject(stackView, properties);
             if (activity === null) {
                 // Error Handling
                 console.error("Error creating Activity object");
@@ -237,12 +237,12 @@ Page {
 
         } else if (component.status === Component.Error) {
             // Error Handling
-            console.log("Error loading component:", component.errorString());
+            console.error("Error loading component:", component.errorString());
         }
     }
 
-    // create new activity from component with custom propery list "properties", after drop this activity will be called callback function
-    // Note The callback function works only with ActivityPage childs.
+    // create new activity from component with custom property list "properties", after drop this activity will be called callback function
+    // Note The callback function works only with ActivityPage children.
     function newActivityFromComponentWithProp(component, properties, callback) {
 
         var activity = component.createObject(stackView, properties);
@@ -263,7 +263,7 @@ Page {
     }
 
     function popItem() {
-        let actionRequire = stackView.currentItem && stackView.currentItem.requireAction && stackView.currentItem.requireAction();
+        const actionRequire = stackView.currentItem && stackView.currentItem.requireAction && stackView.currentItem.requireAction();
 
         if (actionRequire) {
             return false;
@@ -272,7 +272,7 @@ Page {
         var item = stackView.pop();
         if (item) {
             if (item.activityCallBack) {
-                item.activityCallBack()
+                item.activityCallBack(item)
             }
             item.destroy(1000);
         }
@@ -289,23 +289,6 @@ Page {
             if (stackView.currentItem && typeof(stackView.currentItem.resetState) === "function") {
                 stackView.currentItem.resetState();
             }
-        // if (cache && stackView.depth < 3) {
-
-        //     // About limitation: the stackView.pop can't change focus to first element if the elements depth bigger then 2.
-
-        //     while(stackView.depth > 1) {
-        //         if (!popItem()) {
-        //             break;
-        //         }
-        //     }
-        //     if (stackView.currentItem && typeof(stackView.currentItem.resetState) === "function") {
-        //         stackView.currentItem.resetState();
-        //     }
-
-        // } else {
-        //     stackView.clear()
-        //     stackView.push(stackView.initialItem)
-        // }
     }
 
 }

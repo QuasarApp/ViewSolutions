@@ -1,5 +1,5 @@
 //#
-//# Copyright (C) 2020-2025 QuasarApp.
+//# Copyright (C) 2020-2026 QuasarApp.
 //# Distributed under the GPLv3 software license, see the accompanying
 //# Everyone is permitted to copy and distribute verbatim copies
 //# of this license document, but changing it is not allowed.
@@ -8,15 +8,16 @@
 #ifndef BASELISTMODEL_H
 #define BASELISTMODEL_H
 
+#include "viewsolutions_global.h"
 #include <QAbstractItemModel>
 #include <QQmlEngine>
 
 namespace ViewSolutions {
 
-class __PrvateBaseListModel : public QAbstractListModel{
+class VIEWSOLUTION_EXPORT __PrivateBaseListModel : public QAbstractListModel{
     Q_OBJECT
 protected:
-    __PrvateBaseListModel(QObject* parent = nullptr): QAbstractListModel(parent){}
+    __PrivateBaseListModel(QObject* parent = nullptr): QAbstractListModel(parent){}
 signals:
     void listDateChanged();
 };
@@ -50,11 +51,11 @@ public:
  * ```
  */
 template<class TYPE>
-class BaseListModel: public __PrvateBaseListModel
+class BaseListModel: public __PrivateBaseListModel
 {
 
 public:
-    BaseListModel(QObject* parent = nullptr): __PrvateBaseListModel(parent) {
+    BaseListModel(QObject* parent = nullptr): __PrivateBaseListModel(parent) {
 
     }
 

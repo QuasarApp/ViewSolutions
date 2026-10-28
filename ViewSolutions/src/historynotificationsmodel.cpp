@@ -1,5 +1,5 @@
 //#
-//# Copyright (C) 2020-2025 QuasarApp.
+//# Copyright (C) 2020-2026 QuasarApp.
 //# Distributed under the GPLv3 software license, see the accompanying
 //# Everyone is permitted to copy and distribute verbatim copies
 //# of this license document, but changing it is not allowed.
@@ -23,15 +23,23 @@ QVariant HistoryNotificationsModel::data(const QModelIndex &index, int role) con
     if(index.row() < 0 || index.row() >= notificationsList.count())
         return QVariant();
 
+    auto& value = notificationsList.at(index.row());
+
     switch (role) {
     case Icon:
-         return notificationsList.at(index.row()).img();
+         return value.img();
     case Title:
-        return notificationsList.at(index.row()).title();
+        return value.title();
     case Message:
-        return notificationsList.at(index.row()).text();
+        return value.text();
     case Type:
-        return notificationsList.at(index.row()).type();
+        return value.type();
+    case Time:
+        return value.getTime();
+    case FilterHuck0:
+        return value.filterHuck0();
+    case FilterHuck1:
+        return value.filterHuck1();
     default:
         break;
     }
@@ -44,6 +52,10 @@ QHash<int, QByteArray> HistoryNotificationsModel::roleNames() const {
     roles[Title]   = "title";
     roles[Message] = "text";
     roles[Type]    = "type";
+    roles[Time]    = "msgTime";
+    roles[FilterHuck0] = "filterHuck0";
+    roles[FilterHuck1] = "filterHuck1";
+
     return roles;
 }
 

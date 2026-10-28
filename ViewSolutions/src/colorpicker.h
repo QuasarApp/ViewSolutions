@@ -1,5 +1,5 @@
 //#
-//# Copyright (C) 2020-2025 QuasarApp.
+//# Copyright (C) 2020-2026 QuasarApp.
 //# Distributed under the GPLv3 software license, see the accompanying
 //# Everyone is permitted to copy and distribute verbatim copies
 //# of this license document, but changing it is not allowed.
@@ -36,14 +36,14 @@ public:
      * @param density Count of checked pixels on one plane and planes count, default 5.
      * @return General color of image.
      */
-    QColor pick(const QImage &img, int density = 5) const;
+    QColor pick(const QImage &img, int density = 5, bool alpha = true) const;
 
     /**
      * @brief pick This is override function for qml.
      * @param img Path to image.
      * @return General color of image.
      */
-     QColor pick(const QString &img) const;
+     QColor pick(const QString &img, bool alpha = true) const;
 
 };
 }

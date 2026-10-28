@@ -1,5 +1,5 @@
 //#
-//# Copyright (C) 2020-2025 QuasarApp.
+//# Copyright (C) 2020-2026 QuasarApp.
 //# Distributed under the GPLv3 software license, see the accompanying
 //# Everyone is permitted to copy and distribute verbatim copies
 //# of this license document, but changing it is not allowed.
@@ -16,6 +16,7 @@ AbstractButton {
     id: root
     property string source: ""
     property alias imagesource: sourceImg
+    property alias imagEffect: imgEffect
     property int  radius: 16
 
     property real power: 1.0
@@ -28,6 +29,8 @@ AbstractButton {
     property color selectedColor: Material.accent
     property color hoverColor: Material.accent
     property alias contentData: content.contentItem
+    property alias contentPadding: content.padding
+
 
     Connections {
         target: sourceImg
@@ -103,6 +106,15 @@ AbstractButton {
             }
             radius: root.radius
 
+            border.width: {
+                if (root.focus) {
+                    return 2;
+                }
+
+                return 0;
+            }
+            border.color: root.hoverColor
+
             Behavior on color {
                 ColorAnimation {
                     duration: 250
@@ -121,6 +133,8 @@ AbstractButton {
                 source: Image {
                     id: sourceImg
                     source: root.source
+                    mipmap: false
+                    sourceSize: Qt.size(imgEffect.width, imgEffect.height)
 
                     clip: true
                     fillMode: Image.PreserveAspectCrop
@@ -197,7 +211,8 @@ AbstractButton {
 
     MouseArea {
         acceptedButtons: Qt.NoButton
-        hoverEnabled: true;
+        hoverEnabled: root.power > 0;
+        enabled: root.power > 0;
 
         onExited: {
             privateData.ry = 0
