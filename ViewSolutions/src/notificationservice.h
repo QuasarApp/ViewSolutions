@@ -25,6 +25,40 @@ using Listner = std::function<void(bool accept)>;
 
 /**
  * @brief The NotificationService class. This class used for working with notify.
+ *
+ * This service displays notifications and questions on the main application
+ * window and stores all sent notifications in a history model
+ * (see @a HistoryNotificationsModel).
+ *
+ * The service is a singleton - use the @a getService method to access it.
+ *
+ * Example:
+ * ```cpp
+ * // Show a notification:
+ * ViewSolutions::NotificationService::getService()->setNotify("Title", "Message");
+ *
+ * // Ask a question and wait for the user answer:
+ * ViewSolutions::NotificationService::getService()->setQuestion(
+ *     [](bool accept) {
+ *         if (accept)
+ *             qDebug() << "User accepted";
+ *     },
+ *     "Are you sure?");
+ * ```
+ *
+ * In QML the service is used by the NotificationServiceView component,
+ * it must be exposed as the `notificationService` context property:
+ * ```cpp
+ * engine.rootContext()->setContextProperty("notificationService",
+ *                                          ViewSolutions::NotificationService::getService());
+ * ```
+ * ```qml
+ * import ViewSolutions
+ *
+ * Item {
+ *     ViewSolutions.NotificationServiceView {}
+ * }
+ * ```
  */
 class VIEWSOLUTION_EXPORT NotificationService: public QObject, public iModel
 {
@@ -162,10 +196,22 @@ signals:
      */
     void questionCompleted(bool accepted, int questionCode);
 
+    /**
+     * @brief historyListChanged This signal is emitted when the notification
+     * history list was changed.
+     */
     void historyListChanged();
 
+    /**
+     * @brief sigShowHistory This signal is emitted when the notification
+     * history view should be shown (see showHistory).
+     */
     void sigShowHistory();
 
+    /**
+     * @brief countNotificationsChanged This signal is emitted when the
+     * count of history notifications was changed.
+     */
     void countNotificationsChanged();
 
 private:

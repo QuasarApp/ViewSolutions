@@ -16,7 +16,31 @@
 namespace ViewSolutions {
 
 /**
- * @brief The Tokens class is general global instanke of all QML constans used in the App.
+ * @brief The iGUITokensModel class is general global instanse of all QML constans used in the App.
+ *
+ * This abstract model provides the design tokens (color and font constants)
+ * of the application to QML. It is an abstract class: all pure virtual
+ * token functions must be implemented by a subclass.
+ *
+ * After the model is added to the @a ModelStorage, the tokens are available
+ * in QML through the `modelsStorage.getModel("GUITokens")` call.
+ *
+ * Example of a tokens implementation:
+ * ```cpp
+ * class MyTokens: public ViewSolutions::iGUITokensModel
+ * {
+ *     Q_OBJECT
+ *
+ * public:
+ *     explicit MyTokens(): iGUITokensModel() {}
+ *
+ * protected:
+ *     // Implement all pure virtual token functions, for example:
+ *     QColor color_accent_primary() const override { return QColor("#FF0000"); }
+ *     QFont font_title_1() const override { return QFont("Arial", 12); }
+ *     // ... and all other token functions
+ * };
+ * ```
  */
 class VIEWSOLUTION_EXPORT iGUITokensModel: public QObject, public iModel
 {

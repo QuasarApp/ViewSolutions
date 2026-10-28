@@ -12,8 +12,17 @@
 namespace ViewSolutions {
 
 /**
- * @brief The NotificationData class view data for NotificationServiceView. This class contains a structure with notification data.
-
+ * @brief The NotificationData class view data for NotificationServiceView.
+ * This class contains a structure with notification data.
+ *
+ * Example:
+ * ```cpp
+ * ViewSolutions::NotificationData data("Title", "Message", ":/res/icon.png",
+ *                                     ViewSolutions::NotificationData::Warning);
+ *
+ * const QString title = data.title();
+ * const QString text = data.text();
+ * ```
  */
 class VIEWSOLUTION_EXPORT NotificationData
 {
@@ -33,6 +42,13 @@ public:
         Error = 2,
     };
 
+    /**
+     * @brief NotificationData creates a new notification data object.
+     * @param title is the title of the notification.
+     * @param text is the message of the notification.
+     * @param img is the url of the notification image.
+     * @param type is the type code of the notification (see Type enum).
+     */
     explicit NotificationData(const QString& title = "",
                               const QString& text = "",
                               const QString& img = "",
