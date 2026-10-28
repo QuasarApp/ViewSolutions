@@ -1,0 +1,11 @@
+<map id="ViewSolutions::__PrvateBaseListModel" name="ViewSolutions::__PrvateBaseListModel">
+<area shape="rect" id="Node000001" title=" " alt="" coords="125,119,327,199"/>
+<area shape="rect" id="Node000003" href="$classViewSolutions_1_1BaseListModel.html" title=" " alt="" coords="5,247,215,427"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="195,212,171,248,166,245,190,209"/>
+<area shape="rect" id="Node000005" href="$classViewSolutions_1_1BaseListModel.html" title="The BaseListModel class is base class of all GUI list models." alt="" coords="239,247,448,427"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="262,209,286,245,282,248,257,211"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="155,5,297,71"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="229,85,229,118,223,118,223,85"/>
+<area shape="rect" id="Node000004" href="$classViewSolutions_1_1VariantListModel.html" title="The VariantListModel class is universal implementation for all atomic types." alt="" coords="19,475,201,555"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="113,440,113,475,107,475,107,440"/>
+</map>

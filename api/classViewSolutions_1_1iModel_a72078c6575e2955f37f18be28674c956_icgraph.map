@@ -1,0 +1,7 @@
+<map id="ViewSolutions::iModel::engine" name="ViewSolutions::iModel::engine">
+<area shape="rect" id="Node000001" title="engine returns qml engine." alt="" coords="277,37,444,77"/>
+<area shape="rect" id="Node000002" href="$classViewSolutions_1_1iModel.html#a15a2afa3d60bd90f3c150827d612cec5" title="modelId returns text model id. override this method to provide access to model in qml or other models..." alt="" coords="34,5,201,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="263,47,201,39,201,34,264,42"/>
+<area shape="rect" id="Node000003" href="$classViewSolutions_1_1QMLColorPicker.html#ab5e341c5f8bc2b9afd0c85ef49dc6264" title="pick This is override function for qml." alt="" coords="5,69,229,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="264,73,230,77,229,72,263,67"/>
+</map>

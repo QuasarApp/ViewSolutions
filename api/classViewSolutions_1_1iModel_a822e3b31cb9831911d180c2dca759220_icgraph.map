@@ -1,0 +1,5 @@
+<map id="ViewSolutions::iModel::initStorage" name="ViewSolutions::iModel::initStorage">
+<area shape="rect" id="Node000001" title="initStorage This method is called by storage object after adding model to storage." alt="" coords="220,5,387,45"/>
+<area shape="rect" id="Node000002" href="$classViewSolutions_1_1iModel.html#a15a2afa3d60bd90f3c150827d612cec5" title="modelId returns text model id. override this method to provide access to model in qml or other models..." alt="" coords="5,5,172,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="206,28,172,28,172,23,206,23"/>
+</map>

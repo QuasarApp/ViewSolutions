@@ -1,0 +1,5 @@
+<map id="ViewSolutions::NotificationData::img" name="ViewSolutions::NotificationData::img">
+<area shape="rect" id="Node000001" title="img This method return url to image of a question/notification object if url is empty then return def..." alt="" coords="5,5,203,45"/>
+<area shape="rect" id="Node000002" href="$classViewSolutions_1_1NotificationData.html#a608b6be2a7c881b6cf6c680798eb8ca8" title="imgSrc This method return url to image of a question/notification object." alt="" coords="251,5,448,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="203,23,237,23,237,28,203,28"/>
+</map>

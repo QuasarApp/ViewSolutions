@@ -1,0 +1,21 @@
+<map id="ViewSolutions/src/modelstorage.h" name="ViewSolutions/src/modelstorage.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="321,5,564,31"/>
+<area shape="rect" id="Node000002" href="$imodel_8h.html" title=" " alt="" coords="261,79,339,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="421,33,337,75,334,70,419,28"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="363,79,429,104"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="437,32,413,69,409,66,433,30"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="453,79,528,104"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="453,30,478,66,473,69,448,33"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="552,79,675,104"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="471,28,574,71,572,76,469,33"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,152,181,177"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="268,107,141,150,139,145,266,101"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="206,152,277,177"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="292,106,261,143,257,140,288,103"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="301,152,416,177"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="312,103,343,140,339,143,308,106"/>
+<area shape="rect" id="Node000006" href="$viewsolutions__global_8h.html" title=" " alt="" coords="440,152,611,177"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="337,101,477,145,475,150,335,107"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="460,225,591,251"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="528,178,528,212,523,212,523,178"/>
+</map>

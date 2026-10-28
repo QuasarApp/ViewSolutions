@@ -1,0 +1,20 @@
+var searchData=
+[
+  ['clear_0',['clear',['../classViewSolutions_1_1ListViewModel.html#a3d6e6ce2dc2a30f58123a007361bafeb',1,'ViewSolutions::ListViewModel']]],
+  ['clearallhistory_1',['clearAllHistory',['../classViewSolutions_1_1HistoryNotificationsModel.html#a1ce58099f7c9f1820d88b29b35824fb5',1,'ViewSolutions::HistoryNotificationsModel']]],
+  ['color_5faccent_5ferror_2',['color_accent_error',['../classViewSolutions_1_1iGUITokensModel.html#acecd21e565862b0d392035af7a599e1f',1,'ViewSolutions::iGUITokensModel']]],
+  ['color_5faccent_5fprimary_3',['color_accent_primary',['../classViewSolutions_1_1iGUITokensModel.html#aa2bb42417ea971239e0062990f158b5b',1,'ViewSolutions::iGUITokensModel']]],
+  ['color_5faccent_5fsecondary_4',['color_accent_secondary',['../classViewSolutions_1_1iGUITokensModel.html#ace7295ede3e6a2468c2128877fd8726a',1,'ViewSolutions::iGUITokensModel']]],
+  ['color_5faccent_5fsuccess_5',['color_accent_success',['../classViewSolutions_1_1iGUITokensModel.html#a620e41c86c870a8a561b0219c74b6822',1,'ViewSolutions::iGUITokensModel']]],
+  ['color_5fbackground_6',['color_background',['../classViewSolutions_1_1iGUITokensModel.html#a7d8368f6416977cd6aebfef79125b23b',1,'ViewSolutions::iGUITokensModel']]],
+  ['color_5fborder_5fdisabled_7',['color_border_disabled',['../classViewSolutions_1_1iGUITokensModel.html#aa9c73b62ddb37b28635bb28e6aca9a58',1,'ViewSolutions::iGUITokensModel']]],
+  ['color_5fborder_5fprimary_8',['color_border_primary',['../classViewSolutions_1_1iGUITokensModel.html#a2eb8b0f4e05bea2e5e182493e8265ca2',1,'ViewSolutions::iGUITokensModel']]],
+  ['color_5fborder_5fsecondary_9',['color_border_secondary',['../classViewSolutions_1_1iGUITokensModel.html#a409ca45b9ef3511531cff82332aeff53',1,'ViewSolutions::iGUITokensModel']]],
+  ['color_5fdevider_10',['color_devider',['../classViewSolutions_1_1iGUITokensModel.html#a8d4120feaaca5f8b25f1ad7cd491d4e0',1,'ViewSolutions::iGUITokensModel']]],
+  ['color_5ftext_5fdisabled_11',['color_text_disabled',['../classViewSolutions_1_1iGUITokensModel.html#a0848e01ab240e1ed785d82f7fbf8cc6c',1,'ViewSolutions::iGUITokensModel']]],
+  ['color_5ftext_5fprimary_12',['color_text_primary',['../classViewSolutions_1_1iGUITokensModel.html#a9b2390e7c3c332d8e5b0079084f1f7c7',1,'ViewSolutions::iGUITokensModel']]],
+  ['color_5ftext_5fsecondary_13',['color_text_secondary',['../classViewSolutions_1_1iGUITokensModel.html#ab79c8203c3526a2755ea81e1b4e440bc',1,'ViewSolutions::iGUITokensModel']]],
+  ['color_5ftext_5ftertiary_14',['color_text_tertiary',['../classViewSolutions_1_1iGUITokensModel.html#ae158747736cc64b9962d5a84b9a4f90a',1,'ViewSolutions::iGUITokensModel']]],
+  ['colorpicker_15',['ColorPicker',['../classViewSolutions_1_1ColorPicker.html#aebfa2a9463d5e35a62fdca5f92597ea4',1,'ViewSolutions::ColorPicker']]],
+  ['countnotificationschanged_16',['countNotificationsChanged',['../classViewSolutions_1_1NotificationService.html#a518b8841d34137afa693a18f87ee9410',1,'ViewSolutions::NotificationService']]]
+];

@@ -1,0 +1,16 @@
+<map id="ViewSolutions::ListViewModel::external" name="ViewSolutions::ListViewModel::external">
+<area shape="rect" id="Node000001" title=" " alt="" coords="801,86,1019,126"/>
+<area shape="rect" id="Node000002" href="$classViewSolutions_1_1ListViewModel.html#a10793ae188030286b0f6aa519c3038ec" title=" " alt="" coords="5,32,223,72"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="851,83,804,65,753,49,619,22,514,10,407,11,271,23,198,35,197,29,270,18,407,6,514,4,620,16,754,44,805,59,853,78"/>
+<area shape="rect" id="Node000003" href="$classViewSolutions_1_1ListViewModel.html#a513c461abd02f6c9cbff07ac07009989" title=" " alt="" coords="271,32,488,72"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="809,85,753,76,615,63,488,57,488,52,616,58,754,71,810,80"/>
+<area shape="rect" id="Node000004" href="$classViewSolutions_1_1ListViewModel.html#a86dd2bc82b28d800595102741897001d" title=" " alt="" coords="536,86,753,126"/>
+<area shape="poly" id="edge4_Node000001_Node000004" title=" " alt="" coords="788,108,753,108,753,103,788,103"/>
+<area shape="rect" id="Node000005" href="$classViewSolutions_1_1ListViewModel.html#a6d9446f159034be4845e52610f4f0b8d" title=" " alt="" coords="536,150,753,190"/>
+<area shape="poly" id="edge7_Node000001_Node000005" title=" " alt="" coords="814,131,729,152,727,147,813,126"/>
+<area shape="rect" id="Node000006" href="$classViewSolutions_1_1ListViewModel.html#ac916b33e19550038beac151104d69598" title=" " alt="" coords="536,214,753,254"/>
+<area shape="poly" id="edge8_Node000001_Node000006" title=" " alt="" coords="872,135,818,171,754,204,724,216,722,211,752,199,815,166,869,131"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="257,55,223,55,223,50,257,50"/>
+<area shape="poly" id="edge5_Node000004_Node000002" title=" " alt="" coords="522,106,400,99,270,87,201,75,202,70,271,82,401,94,522,100"/>
+<area shape="poly" id="edge6_Node000004_Node000003" title=" " alt="" coords="531,85,479,75,480,70,532,80"/>
+</map>

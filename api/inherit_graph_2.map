@@ -1,0 +1,19 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="Node000000" href="$classViewSolutions_1_1ColorPicker.html" title="The ColorPicker class &#45; This class provide methods of get generals colors from images." alt="" coords="5,5,200,31"/>
+<area shape="rect" id="Node000001" href="$classViewSolutions_1_1QMLColorPicker.html" title="The QMLColorPicker class &#45; Qml wrapper for ColorPicker class." alt="" coords="248,5,472,31"/>
+<area shape="poly" id="edge8_Node000000_Node000001" title=" " alt="" coords="214,15,248,15,248,21,214,21"/>
+<area shape="rect" id="Node000002" href="$classViewSolutions_1_1iModel.html" title="The iModel class is base model for GUI models. Works with ModelStorage. All models after adding can g..." alt="" coords="19,63,186,88"/>
+<area shape="poly" id="edge10_Node000002_Node000001" title=" " alt="" coords="173,57,302,28,303,33,174,62"/>
+<area shape="rect" id="Node000003" href="$classViewSolutions_1_1NotificationService.html" title="The NotificationService class. This class used for working with notify." alt="" coords="261,55,459,95"/>
+<area shape="poly" id="edge9_Node000002_Node000003" title=" " alt="" coords="200,73,261,73,261,78,200,78"/>
+<area shape="rect" id="Node000007" href="$classViewSolutions_1_1iGUITokensModel.html" title="The Tokens class is general global instanke of all QML constans used in the App." alt="" coords="263,119,457,159"/>
+<area shape="poly" id="edge11_Node000002_Node000007" title=" " alt="" coords="169,89,279,117,278,122,167,94"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="12,184,193,209"/>
+<area shape="rect" id="Node000005" href="$classViewSolutions_1_1ModelStorage.html" title="The ModelStorage class main model storage object. Provide access to all models in the application." alt="" coords="254,184,466,209"/>
+<area shape="poly" id="edge12_Node000006_Node000005" title=" " alt="" coords="207,194,254,194,254,199,207,199"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="65,120,140,145"/>
+<area shape="poly" id="edge15_Node000004_Node000001" title=" " alt="" coords="152,119,176,109,198,97,213,84,221,69,230,55,247,41,275,28,277,33,249,46,234,58,226,72,217,87,202,101,178,114,154,124"/>
+<area shape="poly" id="edge14_Node000004_Node000003" title=" " alt="" coords="153,119,269,93,270,98,154,124"/>
+<area shape="poly" id="edge16_Node000004_Node000007" title=" " alt="" coords="154,131,262,134,262,139,154,137"/>
+<area shape="poly" id="edge13_Node000004_Node000005" title=" " alt="" coords="154,144,249,169,302,181,301,187,247,174,152,149"/>
+</map>

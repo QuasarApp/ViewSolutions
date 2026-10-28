@@ -1,0 +1,8 @@
+<map id="ViewSolutions::iGUITokensModel::addTransporentImpl" name="ViewSolutions::iGUITokensModel::addTransporentImpl">
+<area shape="rect" id="Node000001" title="addTransporent This method add alpha chennel to the color." alt="" coords="491,35,689,75"/>
+<area shape="rect" id="Node000002" href="$classViewSolutions_1_1iGUITokensModel.html#a18f61ecaa21e8f82b2504546d03c9a65" title=" " alt="" coords="248,5,443,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="477,44,443,40,443,34,478,39"/>
+<area shape="rect" id="Node000003" href="$classViewSolutions_1_1iGUITokensModel.html#afd0e05a6dd0a3b50186f450b0930c989" title=" " alt="" coords="5,35,200,75"/>
+<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="477,60,443,60,248,60,200,59,200,54,248,55,443,55,477,54"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="235,41,201,46,200,40,234,36"/>
+</map>

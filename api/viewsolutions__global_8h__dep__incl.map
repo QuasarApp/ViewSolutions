@@ -1,0 +1,54 @@
+<map id="ViewSolutions/src/viewsolutions_global.h" name="ViewSolutions/src/viewsolutions_global.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="814,5,1045,45"/>
+<area shape="rect" id="Node000002" href="$avatargenerator_8h.html" title=" " alt="" coords="155,93,413,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="801,45,378,96,378,91,800,40"/>
+<area shape="rect" id="Node000004" href="$colorpicker_8h.html" title=" " alt="" coords="578,93,801,119"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="860,52,725,96,724,91,858,47"/>
+<area shape="rect" id="Node000009" href="$imodel_8h.html" title=" " alt="" coords="989,93,1187,119"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="981,49,1066,91,1063,96,978,54"/>
+<area shape="rect" id="Node000015" href="$viewsolutions_8h.html" title=" " alt="" coords="461,240,704,265"/>
+<area shape="poly" id="edge29_Node000001_Node000015" title=" " alt="" coords="921,59,906,91,886,128,860,164,827,194,799,211,768,225,705,243,704,238,766,220,796,207,824,190,856,160,881,125,901,89,916,57"/>
+<area shape="rect" id="Node000018" href="$listviewmodel_8h.html" title=" " alt="" coords="2071,93,2316,119"/>
+<area shape="poly" id="edge21_Node000001_Node000018" title=" " alt="" coords="1059,32,2070,94,2070,100,1058,37"/>
+<area shape="rect" id="Node000020" href="$notificationdata_8h.html" title=" " alt="" coords="1526,93,1781,119"/>
+<area shape="poly" id="edge23_Node000001_Node000020" title=" " alt="" coords="1059,38,1548,91,1547,96,1058,43"/>
+<area shape="rect" id="Node000003" href="$avatargenerator_8cpp.html" title=" " alt="" coords="5,167,277,192"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="250,127,166,169,163,164,248,122"/>
+<area shape="rect" id="Node000005" href="$colorpicker_8cpp.html" title=" " alt="" coords="302,167,541,192"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="633,125,465,169,464,164,632,120"/>
+<area shape="rect" id="Node000006" href="$qmlcolorpicker_8h.html" title=" " alt="" coords="565,167,813,192"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="692,132,692,167,687,167,687,132"/>
+<area shape="rect" id="Node000007" href="$qmlcolorpicker_8cpp.html" title=" " alt="" coords="174,240,437,265"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="615,197,368,243,367,237,614,192"/>
+<area shape="rect" id="Node000008" href="$viewsolutions_8cpp.html" title=" " alt="" coords="453,313,712,339"/>
+<area shape="poly" id="edge7_Node000006_Node000008" title=" " alt="" coords="558,196,304,222,205,234,163,242,158,253,163,264,181,278,208,290,281,307,367,317,453,322,453,327,366,322,280,312,206,295,179,282,159,267,153,253,160,238,204,229,304,217,557,191"/>
+<area shape="poly" id="edge20_Node000009_Node000006" title=" " alt="" coords="1011,124,754,169,753,164,1010,118"/>
+<area shape="rect" id="Node000010" href="$iguitokensmodel_8h.html" title=" " alt="" coords="1205,167,1467,192"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="1142,120,1297,164,1295,169,1140,125"/>
+<area shape="rect" id="Node000012" href="$imodel_8cpp.html" title=" " alt="" coords="1061,240,1275,265"/>
+<area shape="poly" id="edge11_Node000009_Node000012" title=" " alt="" coords="1113,126,1130,144,1145,165,1161,205,1169,239,1164,240,1156,207,1140,168,1126,148,1109,130"/>
+<area shape="rect" id="Node000013" href="$modelstorage_8h.html" title=" " alt="" coords="888,167,1131,192"/>
+<area shape="poly" id="edge12_Node000009_Node000013" title=" " alt="" coords="1067,130,1024,168,1020,164,1063,126"/>
+<area shape="rect" id="Node000016" href="$notificationservice_8h.html" title=" " alt="" coords="1599,240,1873,265"/>
+<area shape="poly" id="edge18_Node000009_Node000016" title=" " alt="" coords="1201,117,1335,136,1479,164,1607,202,1708,237,1706,242,1606,207,1478,169,1334,141,1201,122"/>
+<area shape="rect" id="Node000011" href="$iguitokensmodel_8cpp.html" title=" " alt="" coords="1299,240,1575,265"/>
+<area shape="poly" id="edge10_Node000010_Node000011" title=" " alt="" coords="1365,198,1422,238,1419,242,1362,202"/>
+<area shape="poly" id="edge15_Node000013_Node000008" title=" " alt="" coords="1016,206,1015,237,1010,253,1001,267,981,281,953,293,881,310,797,320,712,326,712,320,796,315,880,305,952,288,978,277,997,263,1005,251,1010,237,1011,206"/>
+<area shape="poly" id="edge13_Node000013_Node000012" title=" " alt="" coords="1048,195,1143,237,1141,242,1046,200"/>
+<area shape="rect" id="Node000014" href="$modelstorage_8cpp.html" title=" " alt="" coords="728,240,987,265"/>
+<area shape="poly" id="edge14_Node000013_Node000014" title=" " alt="" coords="974,200,883,242,881,237,972,195"/>
+<area shape="poly" id="edge16_Node000013_Node000015" title=" " alt="" coords="928,197,652,243,651,237,927,192"/>
+<area shape="poly" id="edge17_Node000015_Node000008" title=" " alt="" coords="585,279,585,313,580,313,580,279"/>
+<area shape="rect" id="Node000017" href="$notificationservice_8cpp.html" title=" " alt="" coords="1592,313,1880,339"/>
+<area shape="poly" id="edge19_Node000016_Node000017" title=" " alt="" coords="1739,279,1739,313,1733,313,1733,279"/>
+<area shape="rect" id="Node000019" href="$listviewmodel_8cpp.html" title=" " alt="" coords="2230,167,2490,192"/>
+<area shape="poly" id="edge22_Node000018_Node000019" title=" " alt="" coords="2234,122,2334,164,2332,169,2232,126"/>
+<area shape="poly" id="edge28_Node000020_Node000016" title=" " alt="" coords="1620,128,1601,142,1585,157,1578,174,1582,191,1597,207,1615,220,1656,237,1654,242,1612,225,1593,211,1578,193,1573,173,1581,154,1598,138,1617,123"/>
+<area shape="rect" id="Node000021" href="$historynotificationsmodel_8h.html" title=" " alt="" coords="1593,167,1911,192"/>
+<area shape="poly" id="edge24_Node000020_Node000021" title=" " alt="" coords="1682,124,1737,164,1734,169,1678,129"/>
+<area shape="rect" id="Node000023" href="$notificationdata_8cpp.html" title=" " alt="" coords="1935,167,2206,192"/>
+<area shape="poly" id="edge27_Node000020_Node000023" title=" " alt="" coords="1734,118,2004,164,2003,169,1733,124"/>
+<area shape="poly" id="edge26_Node000021_Node000016" title=" " alt="" coords="1749,206,1741,240,1736,239,1744,205"/>
+<area shape="rect" id="Node000022" href="$historynotificationsmodel_8cpp.html" title=" " alt="" coords="1897,240,2231,265"/>
+<area shape="poly" id="edge25_Node000021_Node000022" title=" " alt="" coords="1816,192,2014,237,2013,242,1815,198"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="ViewSolutions::ColorPicker::pick" name="ViewSolutions::ColorPicker::pick">
+<area shape="rect" id="Node000001" title="pick Get color from point." alt="" coords="277,37,472,77"/>
+<area shape="rect" id="Node000002" href="$classViewSolutions_1_1ColorPicker.html#abf9a2584b9f3d9bd37b2a7cef33b62fb" title="pick This is override function for qml." alt="" coords="20,5,215,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="263,46,215,40,215,35,264,41"/>
+<area shape="rect" id="Node000003" href="$classViewSolutions_1_1QMLColorPicker.html#ab5e341c5f8bc2b9afd0c85ef49dc6264" title="pick This is override function for qml." alt="" coords="5,69,229,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="264,74,230,78,229,73,263,68"/>
+</map>

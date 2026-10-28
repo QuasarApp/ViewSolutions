@@ -1,0 +1,5 @@
+<map id="ViewSolutions::iModel::engine" name="ViewSolutions::iModel::engine">
+<area shape="rect" id="Node000001" title="engine returns qml engine." alt="" coords="5,5,172,45"/>
+<area shape="rect" id="Node000002" href="$classViewSolutions_1_1iModel.html#ad54954eb0b4f240dd2892b3e1a316df4" title="storage returns storage object. this method return context of the model&#39;s storage." alt="" coords="220,5,387,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="173,23,206,23,206,28,173,28"/>
+</map>

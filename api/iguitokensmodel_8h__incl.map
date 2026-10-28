@@ -1,0 +1,21 @@
+<map id="ViewSolutions/src/iguitokensmodel.h" name="ViewSolutions/src/iguitokensmodel.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="311,5,572,31"/>
+<area shape="rect" id="Node000002" href="$imodel_8h.html" title=" " alt="" coords="261,79,339,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="420,33,336,75,334,70,417,28"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="364,79,431,104"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="436,32,414,68,409,66,432,30"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="455,79,515,104"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="451,30,473,66,469,68,446,32"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="540,79,615,104"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="464,28,544,70,542,75,462,33"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,152,181,177"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="268,107,141,150,139,145,266,101"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="206,152,277,177"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="292,106,261,143,257,140,288,103"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="301,152,416,177"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="312,103,343,140,339,143,308,106"/>
+<area shape="rect" id="Node000006" href="$viewsolutions__global_8h.html" title=" " alt="" coords="440,152,611,177"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="337,101,477,145,475,150,335,107"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="460,225,591,251"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="528,178,528,212,523,212,523,178"/>
+</map>

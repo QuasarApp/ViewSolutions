@@ -1,0 +1,5 @@
+<map id="ViewSolutions::ColorPicker" name="ViewSolutions::ColorPicker">
+<area shape="rect" id="Node000001" title="The ColorPicker class &#45; This class provide methods of get generals colors from images." alt="" coords="20,5,207,131"/>
+<area shape="rect" id="Node000002" href="$classViewSolutions_1_1QMLColorPicker.html" title="The QMLColorPicker class &#45; Qml wrapper for ColorPicker class." alt="" coords="5,179,221,284"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="116,145,116,178,111,178,111,145"/>
+</map>

@@ -1,0 +1,26 @@
+var classViewSolutions_1_1NotificationService =
+[
+    [ "~NotificationService", "classViewSolutions_1_1NotificationService.html#a9e97e7cb320ab9bfb0b71442cfbf3913", null ],
+    [ "countNotificationsChanged", "classViewSolutions_1_1NotificationService.html#a518b8841d34137afa693a18f87ee9410", null ],
+    [ "history", "classViewSolutions_1_1NotificationService.html#a9981e24d4277989e74a9129e481fa42e", null ],
+    [ "historyListChanged", "classViewSolutions_1_1NotificationService.html#ae637221f525d5debc4a42ab7a59e5ac5", null ],
+    [ "modelId", "classViewSolutions_1_1NotificationService.html#aec8b96b7366dc2e55f896f472d3e9ca7", null ],
+    [ "notificationsCount", "classViewSolutions_1_1NotificationService.html#a9b1eb68ed8ebe6d84175f7b6e522f735", null ],
+    [ "notify", "classViewSolutions_1_1NotificationService.html#addf95ef7410a041531697172508131fb", null ],
+    [ "notifyChanged", "classViewSolutions_1_1NotificationService.html#a00fe90f63d77bacb4c8e07cd2c4cd5f9", null ],
+    [ "question", "classViewSolutions_1_1NotificationService.html#a86a307a75980167dfe42d7c7f29b6f32", null ],
+    [ "questionChanged", "classViewSolutions_1_1NotificationService.html#a35905f66dc4d5c285e5bbc5baefd63e2", null ],
+    [ "questionComplete", "classViewSolutions_1_1NotificationService.html#a76a39b3b93e898e0630ec41704554155", null ],
+    [ "questionCompleted", "classViewSolutions_1_1NotificationService.html#aaeca12d3f52c027e37bcac03f3dd4ea1", null ],
+    [ "setNotify", "classViewSolutions_1_1NotificationService.html#a0fd597eed27af55423158d60bfa9a70c", null ],
+    [ "setNotify", "classViewSolutions_1_1NotificationService.html#a8b6f37ceb8636aa9c64e2edd4b83a095", null ],
+    [ "setQuestion", "classViewSolutions_1_1NotificationService.html#a721577f8d230b6faf7410aa2bd2d3491", null ],
+    [ "setQuestion", "classViewSolutions_1_1NotificationService.html#af8533b98b6f7011bd6cf7f6eb8c2c38e", null ],
+    [ "setQuestion", "classViewSolutions_1_1NotificationService.html#a144f7c2a1412964502c9afa9f6011c44", null ],
+    [ "showHistory", "classViewSolutions_1_1NotificationService.html#aaec698c0a62538e476dd19a4dc7aed22", null ],
+    [ "sigShowHistory", "classViewSolutions_1_1NotificationService.html#a2ec0667c76982103dd2b0d670b88ef12", null ],
+    [ "history", "classViewSolutions_1_1NotificationService.html#a960eab769962d3bd90d56cd2cd24aea6", null ],
+    [ "notificationsCount", "classViewSolutions_1_1NotificationService.html#a4b255d60f5b5eb442837ec1ebf3d1f9e", null ],
+    [ "notify", "classViewSolutions_1_1NotificationService.html#a7e316529383ae0bd3dfc020b893a2ac0", null ],
+    [ "question", "classViewSolutions_1_1NotificationService.html#a59e2eb9cce55523d9c9bd122d06f5984", null ]
+];

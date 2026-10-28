@@ -1,0 +1,9 @@
+<map id="ViewSolutions::NotificationService::setNotify" name="ViewSolutions::NotificationService::setNotify">
+<area shape="rect" id="Node000001" title="setNotify This method set new notify message for user. When notify changed on main application window..." alt="" coords="5,29,203,69"/>
+<area shape="rect" id="Node000002" href="$classViewSolutions_1_1NotificationService.html#a0fd597eed27af55423158d60bfa9a70c" title="setNotify This method add new notification message of application." alt="" coords="251,29,448,69"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="203,47,237,47,237,52,203,52"/>
+<area shape="poly" id="edge4_Node000002_Node000002" title=" " alt="" coords="304,30,301,20,308,10,325,5,349,3,378,6,393,13,391,18,376,11,349,8,326,10,311,15,306,21,309,28"/>
+<area shape="rect" id="Node000003" href="$classViewSolutions_1_1NotificationService.html#a00fe90f63d77bacb4c8e07cd2c4cd5f9" title="notifyChanged This signal emited whet the notificator (Ths object) received a new notification messag..." alt="" coords="496,29,693,69"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="448,47,482,47,482,52,448,52"/>
+<area shape="poly" id="edge3_Node000003_Node000003" title=" " alt="" coords="549,30,546,20,554,10,570,5,595,3,623,6,639,13,636,18,622,11,595,8,571,10,557,15,551,21,554,28"/>
+</map>

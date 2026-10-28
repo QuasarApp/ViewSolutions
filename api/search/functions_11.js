@@ -1,0 +1,14 @@
+var searchData=
+[
+  ['setbykey_0',['setByKey',['../classViewSolutions_1_1BaseHashModel.html#ae9a333cb91859952fae32d6f776f69fd',1,'ViewSolutions::BaseHashModel']]],
+  ['setcode_1',['setCode',['../classViewSolutions_1_1NotificationData.html#aa1c48d56053813f6e4741773e0d5fa41',1,'ViewSolutions::NotificationData']]],
+  ['setdatalist_2',['setDataList',['../classViewSolutions_1_1BaseHashModel.html#ac0c0d95cd00e1bef394725918c6991dc',1,'ViewSolutions::BaseHashModel::setDataList()'],['../classViewSolutions_1_1BaseListModel.html#ab9b729e7ce6ef0a3528cfacf56f67ed5',1,'ViewSolutions::BaseListModel::setDataList()']]],
+  ['setexternalsource_3',['setExternalSource',['../classViewSolutions_1_1ListViewModel.html#a6d9446f159034be4845e52610f4f0b8d',1,'ViewSolutions::ListViewModel']]],
+  ['sethistory_4',['setHistory',['../classViewSolutions_1_1HistoryNotificationsModel.html#a011e371452708b1b9d55c7de752ebc1f',1,'ViewSolutions::HistoryNotificationsModel']]],
+  ['setnotify_5',['setNotify',['../classViewSolutions_1_1NotificationService.html#a0fd597eed27af55423158d60bfa9a70c',1,'ViewSolutions::NotificationService::setNotify(const NotificationData &amp;notify)'],['../classViewSolutions_1_1NotificationService.html#a8b6f37ceb8636aa9c64e2edd4b83a095',1,'ViewSolutions::NotificationService::setNotify(const QString &amp;title=&quot;&quot;, const QString &amp;text=&quot;&quot;, const QString &amp;img=&quot;&quot;, int type=NotificationData::Normal)']]],
+  ['setquestion_6',['setQuestion',['../classViewSolutions_1_1NotificationService.html#a721577f8d230b6faf7410aa2bd2d3491',1,'ViewSolutions::NotificationService::setQuestion(const Listner &amp;listner, const NotificationData &amp;question)'],['../classViewSolutions_1_1NotificationService.html#a144f7c2a1412964502c9afa9f6011c44',1,'ViewSolutions::NotificationService::setQuestion(QObject *listnerObject, const QString &amp;listnerMethod, const QString &amp;title=&quot;&quot;, const QString &amp;text=&quot;&quot;, const QString &amp;img=&quot;&quot;, int code=0)'],['../classViewSolutions_1_1NotificationService.html#af8533b98b6f7011bd6cf7f6eb8c2c38e',1,'ViewSolutions::NotificationService::setQuestion(const Listner &amp;listner, const QString &amp;title=&quot;&quot;, const QString &amp;text=&quot;&quot;, const QString &amp;img=&quot;&quot;, int code=0)']]],
+  ['setsource_7',['setSource',['../classViewSolutions_1_1ListViewModel.html#ac916b33e19550038beac151104d69598',1,'ViewSolutions::ListViewModel']]],
+  ['showhistory_8',['showHistory',['../classViewSolutions_1_1NotificationService.html#aaec698c0a62538e476dd19a4dc7aed22',1,'ViewSolutions::NotificationService']]],
+  ['sigshowhistory_9',['sigShowHistory',['../classViewSolutions_1_1NotificationService.html#a2ec0667c76982103dd2b0d670b88ef12',1,'ViewSolutions::NotificationService']]],
+  ['storage_10',['storage',['../classViewSolutions_1_1iModel.html#ad54954eb0b4f240dd2892b3e1a316df4',1,'ViewSolutions::iModel']]]
+];

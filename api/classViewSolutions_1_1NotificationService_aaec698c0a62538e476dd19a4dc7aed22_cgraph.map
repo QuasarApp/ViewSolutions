@@ -1,0 +1,7 @@
+<map id="ViewSolutions::NotificationService::showHistory" name="ViewSolutions::NotificationService::showHistory">
+<area shape="rect" id="Node000001" title="showHistory &#45; This method used for emit signal by which show notification menu." alt="" coords="5,29,203,69"/>
+<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="58,30,56,20,63,10,79,5,104,3,133,6,148,13,146,18,131,11,104,8,80,10,66,15,61,21,63,28"/>
+<area shape="rect" id="Node000002" href="$classViewSolutions_1_1NotificationService.html#a2ec0667c76982103dd2b0d670b88ef12" title=" " alt="" coords="251,29,448,69"/>
+<area shape="poly" id="edge2_Node000001_Node000002" title=" " alt="" coords="203,47,237,47,237,52,203,52"/>
+<area shape="poly" id="edge3_Node000002_Node000002" title=" " alt="" coords="304,30,301,20,308,10,325,5,349,3,378,6,393,13,391,18,376,11,349,8,326,10,311,15,306,21,309,28"/>
+</map>

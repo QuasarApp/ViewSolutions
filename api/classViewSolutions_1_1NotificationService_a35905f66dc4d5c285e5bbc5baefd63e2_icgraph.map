@@ -1,0 +1,11 @@
+<map id="ViewSolutions::NotificationService::questionChanged" name="ViewSolutions::NotificationService::questionChanged">
+<area shape="rect" id="Node000001" title="questionChanged This signal emited whet the notificator (Ths object) received a new question message." alt="" coords="496,37,693,77"/>
+<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="636,26,622,19,595,16,571,18,557,23,551,29,554,36,549,38,546,28,554,18,570,13,595,11,623,14,639,21"/>
+<area shape="rect" id="Node000002" href="$classViewSolutions_1_1NotificationService.html#a721577f8d230b6faf7410aa2bd2d3491" title="setQuestion This method sets information of the users question." alt="" coords="251,37,448,77"/>
+<area shape="poly" id="edge2_Node000001_Node000002" title=" " alt="" coords="482,60,448,60,448,55,482,55"/>
+<area shape="poly" id="edge3_Node000002_Node000002" title=" " alt="" coords="391,26,376,19,349,16,326,18,311,23,306,29,309,36,304,38,301,28,308,18,325,13,349,11,378,14,393,21"/>
+<area shape="rect" id="Node000003" href="$classViewSolutions_1_1NotificationService.html#af8533b98b6f7011bd6cf7f6eb8c2c38e" title="setQuestion This method set new question for user. When question changed on main application windows ..." alt="" coords="5,5,203,45"/>
+<area shape="poly" id="edge4_Node000002_Node000003" title=" " alt="" coords="237,45,202,41,203,36,237,40"/>
+<area shape="rect" id="Node000004" href="$classViewSolutions_1_1NotificationService.html#a144f7c2a1412964502c9afa9f6011c44" title="setQuestion This method set new question for user. When question changed on main application windows ..." alt="" coords="5,69,203,109"/>
+<area shape="poly" id="edge5_Node000002_Node000004" title=" " alt="" coords="237,75,203,79,202,74,237,69"/>
+</map>
