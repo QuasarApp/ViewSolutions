@@ -6,10 +6,10 @@
 <area shape="poly" id="edge10_Node000002_Node000001" title=" " alt="" coords="173,57,302,28,303,33,174,62"/>
 <area shape="rect" id="Node000003" href="$classViewSolutions_1_1NotificationService.html" title="The NotificationService class. This class used for working with notify." alt="" coords="261,55,459,95"/>
 <area shape="poly" id="edge9_Node000002_Node000003" title=" " alt="" coords="200,73,261,73,261,78,200,78"/>
-<area shape="rect" id="Node000007" href="$classViewSolutions_1_1iGUITokensModel.html" title="The Tokens class is general global instanke of all QML constans used in the App." alt="" coords="263,119,457,159"/>
+<area shape="rect" id="Node000007" href="$classViewSolutions_1_1iGUITokensModel.html" title="The iGUITokensModel class is general global instanse of all QML constans used in the App." alt="" coords="263,119,457,159"/>
 <area shape="poly" id="edge11_Node000002_Node000007" title=" " alt="" coords="169,89,279,117,278,122,167,94"/>
 <area shape="rect" id="Node000006" title=" " alt="" coords="12,184,193,209"/>
-<area shape="rect" id="Node000005" href="$classViewSolutions_1_1ModelStorage.html" title="The ModelStorage class main model storage object. Provide access to all models in the application." alt="" coords="254,184,466,209"/>
+<area shape="rect" id="Node000005" href="$classViewSolutions_1_1ModelStorage.html" title="The ModelStorage class is the main model storage object." alt="" coords="254,184,466,209"/>
 <area shape="poly" id="edge12_Node000006_Node000005" title=" " alt="" coords="207,194,254,194,254,199,207,199"/>
 <area shape="rect" id="Node000004" title=" " alt="" coords="65,120,140,145"/>
 <area shape="poly" id="edge15_Node000004_Node000001" title=" " alt="" coords="152,119,176,109,198,97,213,84,221,69,230,55,247,41,275,28,277,33,249,46,234,58,226,72,217,87,202,101,178,114,154,124"/>

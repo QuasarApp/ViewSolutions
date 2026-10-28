@@ -27,7 +27,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">ViewSolutions<span id="projectnumber">&#160;1.0.98.d8b9fd2</span>
+   <div id="projectname">ViewSolutions<span id="projectnumber">&#160;1.0.100.30ae2aa</span>
    </div>
    <div id="projectbrief">View solutions of qml for quasarapp projects</div>
   </td>
@@ -115,7 +115,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('classViewSolut
 </div><!--header-->
 <div class="contents">
 
-<p>The <a class="el" href="classViewSolutions_1_1ModelStorage.html" title="The ModelStorage class main model storage object. Provide access to all models in the application.">ModelStorage</a> class main model storage object. Provide access to all models in the application.  
+<p>The <a class="el" href="classViewSolutions_1_1ModelStorage.html" title="The ModelStorage class is the main model storage object.">ModelStorage</a> class is the main model storage object.  
  <a href="#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="modelstorage_8h_source.html">modelstorage.h</a>&gt;</code></p>
@@ -124,7 +124,7 @@ Inheritance diagram for ViewSolutions::ModelStorage:</div>
 <div class="dyncontent">
 <div class="center"><img src="classViewSolutions_1_1ModelStorage__inherit__graph.png" border="0" usemap="#aViewSolutions_1_1ModelStorage_inherit__map" loading="lazy" alt="Inheritance graph"/></div>
 <map name="aViewSolutions_1_1ModelStorage_inherit__map" id="aViewSolutions_1_1ModelStorage_inherit__map">
-<area shape="rect" title="The ModelStorage class main model storage object. Provide access to all models in the application." alt="" coords="9,133,213,279"/>
+<area shape="rect" title="The ModelStorage class is the main model storage object." alt="" coords="9,133,213,279"/>
 <area shape="rect" title=" " alt="" coords="5,13,72,78"/>
 <area shape="poly" title=" " alt="" coords="61,89,81,132,76,134,56,92"/>
 <area shape="rect" title=" " alt="" coords="96,5,269,85"/>
@@ -136,7 +136,7 @@ Collaboration diagram for ViewSolutions::ModelStorage:</div>
 <div class="dyncontent">
 <div class="center"><img src="classViewSolutions_1_1ModelStorage__coll__graph.png" border="0" usemap="#aViewSolutions_1_1ModelStorage_coll__map" loading="lazy" alt="Collaboration graph"/></div>
 <map name="aViewSolutions_1_1ModelStorage_coll__map" id="aViewSolutions_1_1ModelStorage_coll__map">
-<area shape="rect" title="The ModelStorage class main model storage object. Provide access to all models in the application." alt="" coords="9,133,213,279"/>
+<area shape="rect" title="The ModelStorage class is the main model storage object." alt="" coords="9,133,213,279"/>
 <area shape="rect" title=" " alt="" coords="5,13,72,78"/>
 <area shape="poly" title=" " alt="" coords="61,89,81,132,76,134,56,92"/>
 <area shape="rect" title=" " alt="" coords="96,5,269,85"/>
@@ -153,13 +153,27 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:af3614695d2589d7d33cb0dee12474abe"><td class="mdescLeft">&#160;</td><td class="mdescRight">getModel This method isible on The QML and using for gettings required GUI models.  <br /></td></tr>
 <tr class="memitem:a6953e8bdd93a6520f7242f5081600511" id="r_a6953e8bdd93a6520f7242f5081600511"><td class="memTemplParams" colspan="2">template&lt;class Type&gt; </td></tr>
 <tr class="memitem:a6953e8bdd93a6520f7242f5081600511 template"><td class="memItemLeft">QSharedPointer&lt; Type &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a6953e8bdd93a6520f7242f5081600511">get</a> (const QString &amp;modeId) const</td></tr>
+<tr class="memdesc:a6953e8bdd93a6520f7242f5081600511"><td class="mdescLeft">&#160;</td><td class="mdescRight">get returns a typed shared pointer to the model with the given id.  <br /></td></tr>
 <tr class="memitem:a72840f6fe60c7af12e71a521c6b39012" id="r_a72840f6fe60c7af12e71a521c6b39012"><td class="memItemLeft">QQmlEngine *&#160;</td><td class="memItemRight"><a class="el" href="#a72840f6fe60c7af12e71a521c6b39012">engine</a> () const</td></tr>
 <tr class="memdesc:a72840f6fe60c7af12e71a521c6b39012"><td class="mdescLeft">&#160;</td><td class="mdescRight">engine returns context qml engine.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>The <a class="el" href="classViewSolutions_1_1ModelStorage.html" title="The ModelStorage class main model storage object. Provide access to all models in the application.">ModelStorage</a> class main model storage object. Provide access to all models in the application. </p>
-
-<p class="definition">Definition at line <a class="el" href="modelstorage_8h_source.html#l00022">22</a> of file <a class="el" href="modelstorage_8h_source.html">modelstorage.h</a>.</p>
+<div class="textblock"><p>The <a class="el" href="classViewSolutions_1_1ModelStorage.html" title="The ModelStorage class is the main model storage object.">ModelStorage</a> class is the main model storage object. </p>
+<p>It provides access to all models in the application. Models that are added to the storage get access to the QML engine and can find any other model that is located in the same storage.</p>
+<p>Example: </p><div class="fragment"><div class="line"><span class="keyword">auto</span> models = QSharedPointer&lt;ViewSolutions::ModelStorage&gt;::create(&amp;<a class="code hl_function" href="#a72840f6fe60c7af12e71a521c6b39012">engine</a>);</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> notify = QSharedPointer&lt;ViewSolutions::NotificationService&gt;::create();</div>
+<div class="line">models-&gt;addModel(notify);</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Access a model from C++:</span></div>
+<div class="line"><span class="keyword">auto</span> service = models-&gt;get&lt;<a class="code hl_class" href="classViewSolutions_1_1NotificationService.html">ViewSolutions::NotificationService</a>&gt;(<span class="stringliteral">&quot;NotificationService&quot;</span>);</div>
+<div class="ttc" id="aclassViewSolutions_1_1ModelStorage_html_a72840f6fe60c7af12e71a521c6b39012"><div class="ttname"><a href="#a72840f6fe60c7af12e71a521c6b39012">ViewSolutions::ModelStorage::engine</a></div><div class="ttdeci">QQmlEngine * engine() const</div><div class="ttdoc">engine returns context qml engine.</div><div class="ttdef"><b>Definition</b> <a href="modelstorage_8cpp_source.html#l00038">modelstorage.cpp:38</a></div></div>
+<div class="ttc" id="aclassViewSolutions_1_1NotificationService_html"><div class="ttname"><a href="classViewSolutions_1_1NotificationService.html">ViewSolutions::NotificationService</a></div><div class="ttdoc">The NotificationService class. This class used for working with notify.</div><div class="ttdef"><b>Definition</b> <a href="notificationservice_8h_source.html#l00063">notificationservice.h:64</a></div></div>
+</div><!-- fragment --><p>In QML the storage is available as the <span class="tt">modelsStorage</span> context property (set by <a class="el" href="namespaceViewSolutions.html#a249933ed1822a57b6982f08bcd462e17" title="init this method import all qml resources to your project and creates the central model storage of th...">ViewSolutions::init</a>): </p><div class="fragment"><div class="line">Item {</div>
+<div class="line">    property var picker: modelsStorage.getModel(&quot;ColorPicker&quot;)</div>
+<div class="line">}</div>
+</div><!-- fragment --> 
+<p class="definition">Definition at line <a class="el" href="modelstorage_8h_source.html#l00045">45</a> of file <a class="el" href="modelstorage_8h_source.html">modelstorage.h</a>.</p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a6cc3649820f026a3ade7473a83fcd215" name="a6cc3649820f026a3ade7473a83fcd215"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6cc3649820f026a3ade7473a83fcd215">&#9670;&#160;</a></span>ModelStorage()</h2>
@@ -277,13 +291,28 @@ template&lt;class Type&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="modelstorage_8h_source.html#l00044">44</a> of file <a class="el" href="modelstorage_8h_source.html">modelstorage.h</a>.</p>
+<p>get returns a typed shared pointer to the model with the given id. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">Type</td><td>is the expected type of the model. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">modeId</td><td>is the id of the required model. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>shared pointer to the model, nullptr if the model does not exist or does not match the expected type. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="modelstorage_8h_source.html#l00074">74</a> of file <a class="el" href="modelstorage_8h_source.html">modelstorage.h</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classViewSolutions_1_1ModelStorage_a6953e8bdd93a6520f7242f5081600511_icgraph.png" border="0" usemap="#aclassViewSolutions_1_1ModelStorage_a6953e8bdd93a6520f7242f5081600511_icgraph" loading="lazy" alt=""/></div>
 <map name="aclassViewSolutions_1_1ModelStorage_a6953e8bdd93a6520f7242f5081600511_icgraph" id="aclassViewSolutions_1_1ModelStorage_a6953e8bdd93a6520f7242f5081600511_icgraph">
-<area shape="rect" title=" " alt="" coords="265,13,507,38"/>
+<area shape="rect" title="get returns a typed shared pointer to the model with the given id." alt="" coords="265,13,507,38"/>
 <area shape="rect" href="classViewSolutions_1_1ModelStorage.html#af3614695d2589d7d33cb0dee12474abe" title="getModel This method isible on The QML and using for gettings required GUI models." alt="" coords="5,5,217,45"/>
 <area shape="poly" title=" " alt="" coords="252,28,217,28,217,23,252,23"/>
 </map>
@@ -322,7 +351,7 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="classViewSolutions_1_1ModelStorage_af3614695d2589d7d33cb0dee12474abe_cgraph.png" border="0" usemap="#aclassViewSolutions_1_1ModelStorage_af3614695d2589d7d33cb0dee12474abe_cgraph" loading="lazy" alt=""/></div>
 <map name="aclassViewSolutions_1_1ModelStorage_af3614695d2589d7d33cb0dee12474abe_cgraph" id="aclassViewSolutions_1_1ModelStorage_af3614695d2589d7d33cb0dee12474abe_cgraph">
 <area shape="rect" title="getModel This method isible on The QML and using for gettings required GUI models." alt="" coords="5,5,217,45"/>
-<area shape="rect" href="classViewSolutions_1_1ModelStorage.html#a6953e8bdd93a6520f7242f5081600511" title=" " alt="" coords="265,13,507,38"/>
+<area shape="rect" href="classViewSolutions_1_1ModelStorage.html#a6953e8bdd93a6520f7242f5081600511" title="get returns a typed shared pointer to the model with the given id." alt="" coords="265,13,507,38"/>
 <area shape="poly" title=" " alt="" coords="217,23,252,23,252,28,217,28"/>
 </map>
 </div>

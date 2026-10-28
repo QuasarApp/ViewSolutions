@@ -27,7 +27,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">ViewSolutions<span id="projectnumber">&#160;1.0.98.d8b9fd2</span>
+   <div id="projectname">ViewSolutions<span id="projectnumber">&#160;1.0.100.30ae2aa</span>
    </div>
    <div id="projectbrief">View solutions of qml for quasarapp projects</div>
   </td>
@@ -115,13 +115,16 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('classViewSolut
 </div><!--header-->
 <div class="contents">
 
+<p>The <a class="el" href="classViewSolutions_1_1ListViewModel.html" title="The ListViewModel class provides a QML list model with QObject data.">ListViewModel</a> class provides a QML list model with QObject data.  
+ <a href="#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="listviewmodel_8h_source.html">listviewmodel.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for ViewSolutions::ListViewModel:</div>
 <div class="dyncontent">
 <div class="center"><img src="classViewSolutions_1_1ListViewModel__inherit__graph.png" border="0" usemap="#aViewSolutions_1_1ListViewModel_inherit__map" loading="lazy" alt="Inheritance graph"/></div>
 <map name="aViewSolutions_1_1ListViewModel_inherit__map" id="aViewSolutions_1_1ListViewModel_inherit__map">
-<area shape="rect" title=" " alt="" coords="5,119,215,364"/>
+<area shape="rect" title="The ListViewModel class provides a QML list model with QObject data." alt="" coords="5,119,215,364"/>
 <area shape="rect" title=" " alt="" coords="39,5,181,71"/>
 <area shape="poly" title=" " alt="" coords="113,84,113,118,107,118,107,84"/>
 </map>
@@ -131,7 +134,7 @@ Collaboration diagram for ViewSolutions::ListViewModel:</div>
 <div class="dyncontent">
 <div class="center"><img src="classViewSolutions_1_1ListViewModel__coll__graph.png" border="0" usemap="#aViewSolutions_1_1ListViewModel_coll__map" loading="lazy" alt="Collaboration graph"/></div>
 <map name="aViewSolutions_1_1ListViewModel_coll__map" id="aViewSolutions_1_1ListViewModel_coll__map">
-<area shape="rect" title=" " alt="" coords="5,119,215,364"/>
+<area shape="rect" title="The ListViewModel class provides a QML list model with QObject data." alt="" coords="5,119,215,364"/>
 <area shape="rect" title=" " alt="" coords="39,5,181,71"/>
 <area shape="poly" title=" " alt="" coords="113,84,113,118,107,118,107,84"/>
 </map>
@@ -145,14 +148,41 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a513c461abd02f6c9cbff07ac07009989" id="r_a513c461abd02f6c9cbff07ac07009989"><td class="memItemLeft">QVariant&#160;</td><td class="memItemRight"><a class="el" href="#a513c461abd02f6c9cbff07ac07009989">data</a> (const QModelIndex &amp;index, int role) const</td></tr>
 <tr class="memitem:a0701aa1e00f186b38281a3bf1eccd474" id="r_a0701aa1e00f186b38281a3bf1eccd474"><td class="memItemLeft">QHash&lt; int, QByteArray &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a0701aa1e00f186b38281a3bf1eccd474">roleNames</a> () const</td></tr>
 <tr class="memitem:a6d9446f159034be4845e52610f4f0b8d" id="r_a6d9446f159034be4845e52610f4f0b8d"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a6d9446f159034be4845e52610f4f0b8d">setExternalSource</a> (const QList&lt; QObject * &gt; *newData)</td></tr>
+<tr class="memdesc:a6d9446f159034be4845e52610f4f0b8d"><td class="mdescLeft">&#160;</td><td class="mdescRight">setExternalSource sets a new external data list. The model does not take ownership of the list content.  <br /></td></tr>
 <tr class="memitem:ac916b33e19550038beac151104d69598" id="r_ac916b33e19550038beac151104d69598"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ac916b33e19550038beac151104d69598">setSource</a> (const QList&lt; QObject * &gt; &amp;newData)</td></tr>
+<tr class="memdesc:ac916b33e19550038beac151104d69598"><td class="mdescLeft">&#160;</td><td class="mdescRight">setSource sets a new internal data list. The model takes ownership of the list content.  <br /></td></tr>
 <tr class="memitem:a10793ae188030286b0f6aa519c3038ec" id="r_a10793ae188030286b0f6aa519c3038ec"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a10793ae188030286b0f6aa519c3038ec">addSource</a> (QObject *data)</td></tr>
+<tr class="memdesc:a10793ae188030286b0f6aa519c3038ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">addSource adds one new QObject to the data list.  <br /></td></tr>
 <tr class="memitem:a3d6e6ce2dc2a30f58123a007361bafeb" id="r_a3d6e6ce2dc2a30f58123a007361bafeb"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a3d6e6ce2dc2a30f58123a007361bafeb">clear</a> (bool fast=false)</td></tr>
+<tr class="memdesc:a3d6e6ce2dc2a30f58123a007361bafeb"><td class="mdescLeft">&#160;</td><td class="mdescRight">clear removes all data from the model and deletes the objects of the internal data list.  <br /></td></tr>
 <tr class="memitem:a2381095426a269615983b53aa187cbe6" id="r_a2381095426a269615983b53aa187cbe6"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a2381095426a269615983b53aa187cbe6">external</a> () const</td></tr>
+<tr class="memdesc:a2381095426a269615983b53aa187cbe6"><td class="mdescLeft">&#160;</td><td class="mdescRight">external returns true if the model uses an external data list.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="listviewmodel_8h_source.html#l00019">19</a> of file <a class="el" href="listviewmodel_8h_source.html">listviewmodel.h</a>.</p>
+<div class="textblock"><p>The <a class="el" href="classViewSolutions_1_1ListViewModel.html" title="The ListViewModel class provides a QML list model with QObject data.">ListViewModel</a> class provides a QML list model with QObject data. </p>
+<p>The model can be filled with an internal list of QObject pointers or with an external list. In the external case the model does not own the data, the data must stay valid while the model is in use.</p>
+<p>The model exposes one role: <span class="tt">modelData</span> (see <a class="el" href="namespaceViewSolutions.html#af1f09aa632b04876adc990092ce6fbc6aceea85535f82a1d80febb8488e986d88" title="The Qt::UserRole role. Returns the QObject data of the list item.">ListViewModelRoles::ModelData</a>).</p>
+<p>Example: </p><div class="fragment"><div class="line"><a class="code hl_class" href="classViewSolutions_1_1ListViewModel.html">ViewSolutions::ListViewModel</a> model;</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Internal data list (owned by the model):</span></div>
+<div class="line">model.<a class="code hl_function" href="#a10793ae188030286b0f6aa519c3038ec">addSource</a>(myObject);</div>
+<div class="line">model.<a class="code hl_function" href="#ac916b33e19550038beac151104d69598">setSource</a>({object1, object2});</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// External data list (not owned by the model):</span></div>
+<div class="line">QList&lt;QObject*&gt; externalList = {object1, object2};</div>
+<div class="line">model.<a class="code hl_function" href="#a6d9446f159034be4845e52610f4f0b8d">setExternalSource</a>(&amp;externalList);</div>
+<div class="ttc" id="aclassViewSolutions_1_1ListViewModel_html"><div class="ttname"><a href="classViewSolutions_1_1ListViewModel.html">ViewSolutions::ListViewModel</a></div><div class="ttdoc">The ListViewModel class provides a QML list model with QObject data.</div><div class="ttdef"><b>Definition</b> <a href="listviewmodel_8h_source.html#l00056">listviewmodel.h:57</a></div></div>
+<div class="ttc" id="aclassViewSolutions_1_1ListViewModel_html_a10793ae188030286b0f6aa519c3038ec"><div class="ttname"><a href="#a10793ae188030286b0f6aa519c3038ec">ViewSolutions::ListViewModel::addSource</a></div><div class="ttdeci">void addSource(QObject *data)</div><div class="ttdoc">addSource adds one new QObject to the data list.</div><div class="ttdef"><b>Definition</b> <a href="listviewmodel_8cpp_source.html#l00076">listviewmodel.cpp:76</a></div></div>
+<div class="ttc" id="aclassViewSolutions_1_1ListViewModel_html_a6d9446f159034be4845e52610f4f0b8d"><div class="ttname"><a href="#a6d9446f159034be4845e52610f4f0b8d">ViewSolutions::ListViewModel::setExternalSource</a></div><div class="ttdeci">void setExternalSource(const QList&lt; QObject * &gt; *newData)</div><div class="ttdoc">setExternalSource sets a new external data list. The model does not take ownership of the list conten...</div><div class="ttdef"><b>Definition</b> <a href="listviewmodel_8cpp_source.html#l00046">listviewmodel.cpp:46</a></div></div>
+<div class="ttc" id="aclassViewSolutions_1_1ListViewModel_html_ac916b33e19550038beac151104d69598"><div class="ttname"><a href="#ac916b33e19550038beac151104d69598">ViewSolutions::ListViewModel::setSource</a></div><div class="ttdeci">void setSource(const QList&lt; QObject * &gt; &amp;newData)</div><div class="ttdoc">setSource sets a new internal data list. The model takes ownership of the list content.</div><div class="ttdef"><b>Definition</b> <a href="listviewmodel_8cpp_source.html#l00059">listviewmodel.cpp:59</a></div></div>
+</div><!-- fragment --><p>QML usage: </p><div class="fragment"><div class="line">ListView {</div>
+<div class="line">    model: listViewModel</div>
+<div class="line">    delegate: Item {</div>
+<div class="line">        property var data: modelData</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+</div><!-- fragment --> 
+<p class="definition">Definition at line <a class="el" href="listviewmodel_8h_source.html#l00056">56</a> of file <a class="el" href="listviewmodel_8h_source.html">listviewmodel.h</a>.</p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a7e4eae8fb1006dabf9c89746149cc4da" name="a7e4eae8fb1006dabf9c89746149cc4da"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7e4eae8fb1006dabf9c89746149cc4da">&#9670;&#160;</a></span>ListViewModel()</h2>
@@ -195,7 +225,7 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="classViewSolutions_1_1ListViewModel_a8905a8133fe0c9c45a18d06cfe67dfa3_cgraph.png" border="0" usemap="#aclassViewSolutions_1_1ListViewModel_a8905a8133fe0c9c45a18d06cfe67dfa3_cgraph" loading="lazy" alt=""/></div>
 <map name="aclassViewSolutions_1_1ListViewModel_a8905a8133fe0c9c45a18d06cfe67dfa3_cgraph" id="aclassViewSolutions_1_1ListViewModel_a8905a8133fe0c9c45a18d06cfe67dfa3_cgraph">
 <area shape="rect" title=" " alt="" coords="5,5,223,45"/>
-<area shape="rect" href="classViewSolutions_1_1ListViewModel.html#a3d6e6ce2dc2a30f58123a007361bafeb" title=" " alt="" coords="271,5,488,45"/>
+<area shape="rect" href="classViewSolutions_1_1ListViewModel.html#a3d6e6ce2dc2a30f58123a007361bafeb" title="clear removes all data from the model and deletes the objects of the internal data list." alt="" coords="271,5,488,45"/>
 <area shape="poly" title=" " alt="" coords="223,23,257,23,257,28,223,28"/>
 </map>
 </div>
@@ -218,16 +248,24 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
+<p>addSource adds one new QObject to the data list. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td>is the new data object. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 <p class="definition">Definition at line <a class="el" href="listviewmodel_8cpp_source.html#l00076">76</a> of file <a class="el" href="listviewmodel_8cpp_source.html">listviewmodel.cpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classViewSolutions_1_1ListViewModel_a10793ae188030286b0f6aa519c3038ec_cgraph.png" border="0" usemap="#aclassViewSolutions_1_1ListViewModel_a10793ae188030286b0f6aa519c3038ec_cgraph" loading="lazy" alt=""/></div>
 <map name="aclassViewSolutions_1_1ListViewModel_a10793ae188030286b0f6aa519c3038ec_cgraph" id="aclassViewSolutions_1_1ListViewModel_a10793ae188030286b0f6aa519c3038ec_cgraph">
-<area shape="rect" title=" " alt="" coords="5,63,223,103"/>
+<area shape="rect" title="addSource adds one new QObject to the data list." alt="" coords="5,63,223,103"/>
 <area shape="rect" href="classViewSolutions_1_1ListViewModel.html#a513c461abd02f6c9cbff07ac07009989" title=" " alt="" coords="271,5,488,45"/>
 <area shape="poly" title=" " alt="" coords="207,60,272,46,273,51,208,65"/>
-<area shape="rect" href="classViewSolutions_1_1ListViewModel.html#a2381095426a269615983b53aa187cbe6" title=" " alt="" coords="801,59,1019,99"/>
+<area shape="rect" href="classViewSolutions_1_1ListViewModel.html#a2381095426a269615983b53aa187cbe6" title="external returns true if the model uses an external data list." alt="" coords="801,59,1019,99"/>
 <area shape="poly" title=" " alt="" coords="223,94,333,105,466,114,610,116,753,108,813,99,814,104,754,113,610,121,466,119,333,111,223,100"/>
 <area shape="rect" href="classViewSolutions_1_1ListViewModel.html#a86dd2bc82b28d800595102741897001d" title=" " alt="" coords="536,59,753,99"/>
 <area shape="poly" title=" " alt="" coords="223,79,522,77,522,82,223,85"/>
@@ -254,14 +292,22 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
+<p>clear removes all data from the model and deletes the objects of the internal data list. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fast</td><td>if true the objects are deleted with deleteLater, otherwise they are deleted directly. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 <p class="definition">Definition at line <a class="el" href="listviewmodel_8cpp_source.html#l00086">86</a> of file <a class="el" href="listviewmodel_8cpp_source.html">listviewmodel.cpp</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classViewSolutions_1_1ListViewModel_a3d6e6ce2dc2a30f58123a007361bafeb_icgraph.png" border="0" usemap="#aclassViewSolutions_1_1ListViewModel_a3d6e6ce2dc2a30f58123a007361bafeb_icgraph" loading="lazy" alt=""/></div>
 <map name="aclassViewSolutions_1_1ListViewModel_a3d6e6ce2dc2a30f58123a007361bafeb_icgraph" id="aclassViewSolutions_1_1ListViewModel_a3d6e6ce2dc2a30f58123a007361bafeb_icgraph">
-<area shape="rect" title=" " alt="" coords="271,37,488,77"/>
-<area shape="rect" href="classViewSolutions_1_1ListViewModel.html#ac916b33e19550038beac151104d69598" title=" " alt="" coords="5,5,223,45"/>
+<area shape="rect" title="clear removes all data from the model and deletes the objects of the internal data list." alt="" coords="271,37,488,77"/>
+<area shape="rect" href="classViewSolutions_1_1ListViewModel.html#ac916b33e19550038beac151104d69598" title="setSource sets a new internal data list. The model takes ownership of the list content." alt="" coords="5,5,223,45"/>
 <area shape="poly" title=" " alt="" coords="257,45,222,41,223,36,257,40"/>
 <area shape="rect" href="classViewSolutions_1_1ListViewModel.html#a8905a8133fe0c9c45a18d06cfe67dfa3" title=" " alt="" coords="5,69,223,109"/>
 <area shape="poly" title=" " alt="" coords="257,75,223,79,222,74,257,69"/>
@@ -296,7 +342,7 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="classViewSolutions_1_1ListViewModel_a513c461abd02f6c9cbff07ac07009989_cgraph.png" border="0" usemap="#aclassViewSolutions_1_1ListViewModel_a513c461abd02f6c9cbff07ac07009989_cgraph" loading="lazy" alt=""/></div>
 <map name="aclassViewSolutions_1_1ListViewModel_a513c461abd02f6c9cbff07ac07009989_cgraph" id="aclassViewSolutions_1_1ListViewModel_a513c461abd02f6c9cbff07ac07009989_cgraph">
 <area shape="rect" title=" " alt="" coords="5,5,223,45"/>
-<area shape="rect" href="classViewSolutions_1_1ListViewModel.html#a2381095426a269615983b53aa187cbe6" title=" " alt="" coords="536,5,753,45"/>
+<area shape="rect" href="classViewSolutions_1_1ListViewModel.html#a2381095426a269615983b53aa187cbe6" title="external returns true if the model uses an external data list." alt="" coords="536,5,753,45"/>
 <area shape="poly" title=" " alt="" coords="223,20,271,19,488,19,522,19,522,25,488,24,271,24,223,25"/>
 <area shape="rect" href="classViewSolutions_1_1ListViewModel.html#a86dd2bc82b28d800595102741897001d" title=" " alt="" coords="271,33,488,73"/>
 <area shape="poly" title=" " alt="" coords="223,34,257,38,257,43,223,39"/>
@@ -309,7 +355,7 @@ Here is the caller graph for this function:</div>
 <div class="center"><img src="classViewSolutions_1_1ListViewModel_a513c461abd02f6c9cbff07ac07009989_icgraph.png" border="0" usemap="#aclassViewSolutions_1_1ListViewModel_a513c461abd02f6c9cbff07ac07009989_icgraph" loading="lazy" alt=""/></div>
 <map name="aclassViewSolutions_1_1ListViewModel_a513c461abd02f6c9cbff07ac07009989_icgraph" id="aclassViewSolutions_1_1ListViewModel_a513c461abd02f6c9cbff07ac07009989_icgraph">
 <area shape="rect" title=" " alt="" coords="271,5,488,45"/>
-<area shape="rect" href="classViewSolutions_1_1ListViewModel.html#a10793ae188030286b0f6aa519c3038ec" title=" " alt="" coords="5,5,223,45"/>
+<area shape="rect" href="classViewSolutions_1_1ListViewModel.html#a10793ae188030286b0f6aa519c3038ec" title="addSource adds one new QObject to the data list." alt="" coords="5,5,223,45"/>
 <area shape="poly" title=" " alt="" coords="257,28,223,28,223,23,257,23"/>
 </map>
 </div>
@@ -331,22 +377,25 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
+<p>external returns true if the model uses an external data list. </p>
+<dl class="section return"><dt>Returns</dt><dd>true if the model uses an external data list. </dd></dl>
+
 <p class="definition">Definition at line <a class="el" href="listviewmodel_8cpp_source.html#l00098">98</a> of file <a class="el" href="listviewmodel_8cpp_source.html">listviewmodel.cpp</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classViewSolutions_1_1ListViewModel_a2381095426a269615983b53aa187cbe6_icgraph.png" border="0" usemap="#aclassViewSolutions_1_1ListViewModel_a2381095426a269615983b53aa187cbe6_icgraph" loading="lazy" alt=""/></div>
 <map name="aclassViewSolutions_1_1ListViewModel_a2381095426a269615983b53aa187cbe6_icgraph" id="aclassViewSolutions_1_1ListViewModel_a2381095426a269615983b53aa187cbe6_icgraph">
-<area shape="rect" title=" " alt="" coords="801,86,1019,126"/>
-<area shape="rect" href="classViewSolutions_1_1ListViewModel.html#a10793ae188030286b0f6aa519c3038ec" title=" " alt="" coords="5,32,223,72"/>
+<area shape="rect" title="external returns true if the model uses an external data list." alt="" coords="801,86,1019,126"/>
+<area shape="rect" href="classViewSolutions_1_1ListViewModel.html#a10793ae188030286b0f6aa519c3038ec" title="addSource adds one new QObject to the data list." alt="" coords="5,32,223,72"/>
 <area shape="poly" title=" " alt="" coords="851,83,804,65,753,49,619,22,514,10,407,11,271,23,198,35,197,29,270,18,407,6,514,4,620,16,754,44,805,59,853,78"/>
 <area shape="rect" href="classViewSolutions_1_1ListViewModel.html#a513c461abd02f6c9cbff07ac07009989" title=" " alt="" coords="271,32,488,72"/>
 <area shape="poly" title=" " alt="" coords="809,85,753,76,615,63,488,57,488,52,616,58,754,71,810,80"/>
 <area shape="rect" href="classViewSolutions_1_1ListViewModel.html#a86dd2bc82b28d800595102741897001d" title=" " alt="" coords="536,86,753,126"/>
 <area shape="poly" title=" " alt="" coords="788,108,753,108,753,103,788,103"/>
-<area shape="rect" href="classViewSolutions_1_1ListViewModel.html#a6d9446f159034be4845e52610f4f0b8d" title=" " alt="" coords="536,150,753,190"/>
+<area shape="rect" href="classViewSolutions_1_1ListViewModel.html#a6d9446f159034be4845e52610f4f0b8d" title="setExternalSource sets a new external data list. The model does not take ownership of the list conten..." alt="" coords="536,150,753,190"/>
 <area shape="poly" title=" " alt="" coords="814,131,729,152,727,147,813,126"/>
-<area shape="rect" href="classViewSolutions_1_1ListViewModel.html#ac916b33e19550038beac151104d69598" title=" " alt="" coords="536,214,753,254"/>
+<area shape="rect" href="classViewSolutions_1_1ListViewModel.html#ac916b33e19550038beac151104d69598" title="setSource sets a new internal data list. The model takes ownership of the list content." alt="" coords="536,214,753,254"/>
 <area shape="poly" title=" " alt="" coords="872,135,818,171,754,204,724,216,722,211,752,199,815,166,869,131"/>
 <area shape="poly" title=" " alt="" coords="257,55,223,55,223,50,257,50"/>
 <area shape="poly" title=" " alt="" coords="522,106,400,99,270,87,201,75,202,70,271,82,401,94,522,100"/>
@@ -397,7 +446,7 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="classViewSolutions_1_1ListViewModel_a86dd2bc82b28d800595102741897001d_cgraph.png" border="0" usemap="#aclassViewSolutions_1_1ListViewModel_a86dd2bc82b28d800595102741897001d_cgraph" loading="lazy" alt=""/></div>
 <map name="aclassViewSolutions_1_1ListViewModel_a86dd2bc82b28d800595102741897001d_cgraph" id="aclassViewSolutions_1_1ListViewModel_a86dd2bc82b28d800595102741897001d_cgraph">
 <area shape="rect" title=" " alt="" coords="5,5,223,45"/>
-<area shape="rect" href="classViewSolutions_1_1ListViewModel.html#a2381095426a269615983b53aa187cbe6" title=" " alt="" coords="271,5,488,45"/>
+<area shape="rect" href="classViewSolutions_1_1ListViewModel.html#a2381095426a269615983b53aa187cbe6" title="external returns true if the model uses an external data list." alt="" coords="271,5,488,45"/>
 <area shape="poly" title=" " alt="" coords="223,23,257,23,257,28,223,28"/>
 </map>
 </div>
@@ -407,7 +456,7 @@ Here is the caller graph for this function:</div>
 <div class="center"><img src="classViewSolutions_1_1ListViewModel_a86dd2bc82b28d800595102741897001d_icgraph.png" border="0" usemap="#aclassViewSolutions_1_1ListViewModel_a86dd2bc82b28d800595102741897001d_icgraph" loading="lazy" alt=""/></div>
 <map name="aclassViewSolutions_1_1ListViewModel_a86dd2bc82b28d800595102741897001d_icgraph" id="aclassViewSolutions_1_1ListViewModel_a86dd2bc82b28d800595102741897001d_icgraph">
 <area shape="rect" title=" " alt="" coords="536,5,753,45"/>
-<area shape="rect" href="classViewSolutions_1_1ListViewModel.html#a10793ae188030286b0f6aa519c3038ec" title=" " alt="" coords="5,5,223,45"/>
+<area shape="rect" href="classViewSolutions_1_1ListViewModel.html#a10793ae188030286b0f6aa519c3038ec" title="addSource adds one new QObject to the data list." alt="" coords="5,5,223,45"/>
 <area shape="poly" title=" " alt="" coords="522,25,488,24,271,24,223,25,223,20,271,19,488,19,522,19"/>
 <area shape="rect" href="classViewSolutions_1_1ListViewModel.html#a513c461abd02f6c9cbff07ac07009989" title=" " alt="" coords="271,33,488,73"/>
 <area shape="poly" title=" " alt="" coords="523,41,488,45,488,39,522,36"/>
@@ -432,14 +481,22 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
+<p>setExternalSource sets a new external data list. The model does not take ownership of the list content. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">newData</td><td>is pointer to the new external data list. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 <p class="definition">Definition at line <a class="el" href="listviewmodel_8cpp_source.html#l00046">46</a> of file <a class="el" href="listviewmodel_8cpp_source.html">listviewmodel.cpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classViewSolutions_1_1ListViewModel_a6d9446f159034be4845e52610f4f0b8d_cgraph.png" border="0" usemap="#aclassViewSolutions_1_1ListViewModel_a6d9446f159034be4845e52610f4f0b8d_cgraph" loading="lazy" alt=""/></div>
 <map name="aclassViewSolutions_1_1ListViewModel_a6d9446f159034be4845e52610f4f0b8d_cgraph" id="aclassViewSolutions_1_1ListViewModel_a6d9446f159034be4845e52610f4f0b8d_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,223,45"/>
-<area shape="rect" href="classViewSolutions_1_1ListViewModel.html#a2381095426a269615983b53aa187cbe6" title=" " alt="" coords="271,5,488,45"/>
+<area shape="rect" title="setExternalSource sets a new external data list. The model does not take ownership of the list conten..." alt="" coords="5,5,223,45"/>
+<area shape="rect" href="classViewSolutions_1_1ListViewModel.html#a2381095426a269615983b53aa187cbe6" title="external returns true if the model uses an external data list." alt="" coords="271,5,488,45"/>
 <area shape="poly" title=" " alt="" coords="223,23,257,23,257,28,223,28"/>
 </map>
 </div>
@@ -461,16 +518,24 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
+<p>setSource sets a new internal data list. The model takes ownership of the list content. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">newData</td><td>is the new internal data list. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 <p class="definition">Definition at line <a class="el" href="listviewmodel_8cpp_source.html#l00059">59</a> of file <a class="el" href="listviewmodel_8cpp_source.html">listviewmodel.cpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classViewSolutions_1_1ListViewModel_ac916b33e19550038beac151104d69598_cgraph.png" border="0" usemap="#aclassViewSolutions_1_1ListViewModel_ac916b33e19550038beac151104d69598_cgraph" loading="lazy" alt=""/></div>
 <map name="aclassViewSolutions_1_1ListViewModel_ac916b33e19550038beac151104d69598_cgraph" id="aclassViewSolutions_1_1ListViewModel_ac916b33e19550038beac151104d69598_cgraph">
-<area shape="rect" title=" " alt="" coords="5,37,223,77"/>
-<area shape="rect" href="classViewSolutions_1_1ListViewModel.html#a3d6e6ce2dc2a30f58123a007361bafeb" title=" " alt="" coords="271,5,488,45"/>
+<area shape="rect" title="setSource sets a new internal data list. The model takes ownership of the list content." alt="" coords="5,37,223,77"/>
+<area shape="rect" href="classViewSolutions_1_1ListViewModel.html#a3d6e6ce2dc2a30f58123a007361bafeb" title="clear removes all data from the model and deletes the objects of the internal data list." alt="" coords="271,5,488,45"/>
 <area shape="poly" title=" " alt="" coords="223,42,257,37,258,43,223,47"/>
-<area shape="rect" href="classViewSolutions_1_1ListViewModel.html#a2381095426a269615983b53aa187cbe6" title=" " alt="" coords="271,69,488,109"/>
+<area shape="rect" href="classViewSolutions_1_1ListViewModel.html#a2381095426a269615983b53aa187cbe6" title="external returns true if the model uses an external data list." alt="" coords="271,69,488,109"/>
 <area shape="poly" title=" " alt="" coords="223,68,258,72,257,77,223,73"/>
 </map>
 </div>

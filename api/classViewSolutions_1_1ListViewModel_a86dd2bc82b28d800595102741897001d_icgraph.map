@@ -1,6 +1,6 @@
 <map id="ViewSolutions::ListViewModel::rowCount" name="ViewSolutions::ListViewModel::rowCount">
 <area shape="rect" id="Node000001" title=" " alt="" coords="536,5,753,45"/>
-<area shape="rect" id="Node000002" href="$classViewSolutions_1_1ListViewModel.html#a10793ae188030286b0f6aa519c3038ec" title=" " alt="" coords="5,5,223,45"/>
+<area shape="rect" id="Node000002" href="$classViewSolutions_1_1ListViewModel.html#a10793ae188030286b0f6aa519c3038ec" title="addSource adds one new QObject to the data list." alt="" coords="5,5,223,45"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="522,25,488,24,271,24,223,25,223,20,271,19,488,19,522,19"/>
 <area shape="rect" id="Node000003" href="$classViewSolutions_1_1ListViewModel.html#a513c461abd02f6c9cbff07ac07009989" title=" " alt="" coords="271,33,488,73"/>
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="523,41,488,45,488,39,522,36"/>

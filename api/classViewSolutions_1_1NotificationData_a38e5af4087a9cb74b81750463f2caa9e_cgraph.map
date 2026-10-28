@@ -1,5 +1,5 @@
 <map id="ViewSolutions::NotificationData::NotificationData" name="ViewSolutions::NotificationData::NotificationData">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,101,203,141"/>
+<area shape="rect" id="Node000001" title="NotificationData creates a new notification data object." alt="" coords="5,101,203,141"/>
 <area shape="rect" id="Node000002" href="$classViewSolutions_1_1NotificationData.html#a415d2401db8749a0b32873faa1a80296" title="img This method return url to image of a question/notification object if url is empty then return def..." alt="" coords="251,5,448,45"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="147,99,250,55,270,47,272,52,252,60,149,104"/>
 <area shape="rect" id="Node000004" href="$classViewSolutions_1_1NotificationData.html#a98c151be63c1ccc2ba243adec8c56030" title="text This method return main text message of a question/notification object." alt="" coords="251,69,448,109"/>

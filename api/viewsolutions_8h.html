@@ -27,7 +27,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">ViewSolutions<span id="projectnumber">&#160;1.0.98.d8b9fd2</span>
+   <div id="projectname">ViewSolutions<span id="projectnumber">&#160;1.0.100.30ae2aa</span>
    </div>
    <div id="projectbrief">View solutions of qml for quasarapp projects</div>
   </td>
@@ -161,13 +161,14 @@ This graph shows which files directly or indirectly include this file:</div>
 <tr class="heading"><td colspan="2"><h2 id="header-namespaces" class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:ViewSolutions" id="r_ViewSolutions"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="namespaceViewSolutions.html">ViewSolutions</a></td></tr>
-<tr class="memdesc:namespaceViewSolutions"><td class="mdescLeft">&#160;</td><td class="mdescRight">the <a class="el" href="namespaceViewSolutions.html" title="the ViewSolutions namespace">ViewSolutions</a> namespace <br /></td></tr>
+<tr class="memdesc:namespaceViewSolutions"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="namespaceViewSolutions.html" title="The ViewSolutions namespace.">ViewSolutions</a> namespace. <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:ac574253826b0b2a23c4c9bcf2ec89f62" id="r_ac574253826b0b2a23c4c9bcf2ec89f62"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ac574253826b0b2a23c4c9bcf2ec89f62">initResources</a> ()</td></tr>
+<tr class="memdesc:ac574253826b0b2a23c4c9bcf2ec89f62"><td class="mdescLeft">&#160;</td><td class="mdescRight">initResources loads the QML resources of the <a class="el" href="namespaceViewSolutions.html" title="The ViewSolutions namespace.">ViewSolutions</a> module.  <br /></td></tr>
 <tr class="memitem:a249933ed1822a57b6982f08bcd462e17" id="r_a249933ed1822a57b6982f08bcd462e17"><td class="memItemLeft">QSharedPointer&lt; <a class="el" href="classViewSolutions_1_1ModelStorage.html">ModelStorage</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="namespaceViewSolutions.html#a249933ed1822a57b6982f08bcd462e17">ViewSolutions::init</a> (QQmlEngine *engine)</td></tr>
-<tr class="memdesc:a249933ed1822a57b6982f08bcd462e17"><td class="mdescLeft">&#160;</td><td class="mdescRight">init this method import all qml resources to your project.  <br /></td></tr>
+<tr class="memdesc:a249933ed1822a57b6982f08bcd462e17"><td class="mdescLeft">&#160;</td><td class="mdescRight">init this method import all qml resources to your project and creates the central model storage of the application.  <br /></td></tr>
 </table>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
 <a id="ac574253826b0b2a23c4c9bcf2ec89f62" name="ac574253826b0b2a23c4c9bcf2ec89f62"></a>
@@ -193,13 +194,17 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="viewsolutions_8h_source.html#l00021">21</a> of file <a class="el" href="viewsolutions_8h_source.html">viewsolutions.h</a>.</p>
+<p>initResources loads the QML resources of the <a class="el" href="namespaceViewSolutions.html" title="The ViewSolutions namespace.">ViewSolutions</a> module. </p>
+<p>This method is called automatically by <em class="arg">init</em>. A manual call is only required if the host application loads the resources on its own.</p>
+<p>Example: </p><div class="fragment"><div class="line">ViewSolutions::initResources();</div>
+</div><!-- fragment --> 
+<p class="definition">Definition at line <a class="el" href="viewsolutions_8h_source.html#l00032">32</a> of file <a class="el" href="viewsolutions_8h_source.html">viewsolutions.h</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="viewsolutions_8h_ac574253826b0b2a23c4c9bcf2ec89f62_cgraph.png" border="0" usemap="#aviewsolutions_8h_ac574253826b0b2a23c4c9bcf2ec89f62_cgraph" loading="lazy" alt=""/></div>
 <map name="aviewsolutions_8h_ac574253826b0b2a23c4c9bcf2ec89f62_cgraph" id="aviewsolutions_8h_ac574253826b0b2a23c4c9bcf2ec89f62_cgraph">
-<area shape="rect" title=" " alt="" coords="5,29,116,55"/>
+<area shape="rect" title="initResources loads the QML resources of the ViewSolutions module." alt="" coords="5,29,116,55"/>
 <area shape="poly" title=" " alt="" coords="41,30,38,21,40,12,48,5,61,3,76,6,83,14,79,18,73,11,61,8,50,10,44,14,43,20,46,28"/>
 </map>
 </div>
@@ -208,9 +213,9 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="viewsolutions_8h_ac574253826b0b2a23c4c9bcf2ec89f62_icgraph.png" border="0" usemap="#aviewsolutions_8h_ac574253826b0b2a23c4c9bcf2ec89f62_icgraph" loading="lazy" alt=""/></div>
 <map name="aviewsolutions_8h_ac574253826b0b2a23c4c9bcf2ec89f62_icgraph" id="aviewsolutions_8h_ac574253826b0b2a23c4c9bcf2ec89f62_icgraph">
-<area shape="rect" title=" " alt="" coords="196,29,307,55"/>
+<area shape="rect" title="initResources loads the QML resources of the ViewSolutions module." alt="" coords="196,29,307,55"/>
 <area shape="poly" title=" " alt="" coords="282,19,273,11,251,8,233,10,224,15,222,20,227,28,222,31,216,21,220,11,232,5,251,3,275,6,285,15"/>
-<area shape="rect" href="namespaceViewSolutions.html#a249933ed1822a57b6982f08bcd462e17" title="init this method import all qml resources to your project." alt="" coords="5,29,148,55"/>
+<area shape="rect" href="namespaceViewSolutions.html#a249933ed1822a57b6982f08bcd462e17" title="init this method import all qml resources to your project and creates the central model storage of th..." alt="" coords="5,29,148,55"/>
 <area shape="poly" title=" " alt="" coords="182,45,148,45,148,39,182,39"/>
 <area shape="poly" title=" " alt="" coords="107,19,98,11,77,8,58,10,49,15,47,20,52,28,48,31,42,21,45,11,57,5,77,3,101,6,111,15"/>
 </map>

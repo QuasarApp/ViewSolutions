@@ -27,7 +27,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">ViewSolutions<span id="projectnumber">&#160;1.0.98.d8b9fd2</span>
+   <div id="projectname">ViewSolutions<span id="projectnumber">&#160;1.0.100.30ae2aa</span>
    </div>
    <div id="projectbrief">View solutions of qml for quasarapp projects</div>
   </td>
@@ -190,6 +190,7 @@ This graph shows which files directly or indirectly include this file:</div>
 <tr class="heading"><td colspan="2"><h2 id="header-define-members" class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
 <tr class="memitem:a3d9c07b0fef7a1bec2bb3c751cb801c6" id="r_a3d9c07b0fef7a1bec2bb3c751cb801c6"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a3d9c07b0fef7a1bec2bb3c751cb801c6">VIEWSOLUTION_EXPORT</a>&#160;&#160;&#160;Q_DECL_IMPORT</td></tr>
+<tr class="memdesc:a3d9c07b0fef7a1bec2bb3c751cb801c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">VIEWSOLUTION_EXPORT marks a symbol as part of the public <a class="el" href="namespaceViewSolutions.html" title="The ViewSolutions namespace.">ViewSolutions</a> API.  <br /></td></tr>
 </table>
 <a name="doc-define-members" id="doc-define-members"></a><h2 id="header-doc-define-members" class="groupheader">Macro Definition Documentation</h2>
 <a id="a3d9c07b0fef7a1bec2bb3c751cb801c6" name="a3d9c07b0fef7a1bec2bb3c751cb801c6"></a>
@@ -204,7 +205,16 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="viewsolutions__global_8h_source.html#l00016">16</a> of file <a class="el" href="viewsolutions__global_8h_source.html">viewsolutions_global.h</a>.</p>
+<p>VIEWSOLUTION_EXPORT marks a symbol as part of the public <a class="el" href="namespaceViewSolutions.html" title="The ViewSolutions namespace.">ViewSolutions</a> API. </p>
+<p>When the <a class="el" href="namespaceViewSolutions.html" title="The ViewSolutions namespace.">ViewSolutions</a> shared library is built (VIEW_SOLUTIONS_LIBRARY is defined) the macro expands to Q_DECL_EXPORT, otherwise to Q_DECL_IMPORT for consuming applications.</p>
+<p>Example: </p><div class="fragment"><div class="line"><span class="keyword">class </span><a class="code hl_define" href="#a3d9c07b0fef7a1bec2bb3c751cb801c6">VIEWSOLUTION_EXPORT</a> ColorPicker</div>
+<div class="line">{</div>
+<div class="line"><span class="keyword">public</span>:</div>
+<div class="line">    <span class="keyword">explicit</span> ColorPicker();</div>
+<div class="line">};</div>
+<div class="ttc" id="aviewsolutions__global_8h_html_a3d9c07b0fef7a1bec2bb3c751cb801c6"><div class="ttname"><a href="#a3d9c07b0fef7a1bec2bb3c751cb801c6">VIEWSOLUTION_EXPORT</a></div><div class="ttdeci">#define VIEWSOLUTION_EXPORT</div><div class="ttdoc">VIEWSOLUTION_EXPORT marks a symbol as part of the public ViewSolutions API.</div><div class="ttdef"><b>Definition</b> <a href="viewsolutions__global_8h_source.html#l00033">viewsolutions_global.h:33</a></div></div>
+</div><!-- fragment --> 
+<p class="definition">Definition at line <a class="el" href="viewsolutions__global_8h_source.html#l00033">33</a> of file <a class="el" href="viewsolutions__global_8h_source.html">viewsolutions_global.h</a>.</p>
 
 </div>
 </div>

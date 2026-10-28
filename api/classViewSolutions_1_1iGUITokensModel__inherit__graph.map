@@ -1,5 +1,5 @@
 <map id="ViewSolutions::iGUITokensModel" name="ViewSolutions::iGUITokensModel">
-<area shape="rect" id="Node000001" title="The Tokens class is general global instanke of all QML constans used in the App." alt="" coords="9,219,204,719"/>
+<area shape="rect" id="Node000001" title="The iGUITokensModel class is general global instanse of all QML constans used in the App." alt="" coords="9,219,204,719"/>
 <area shape="rect" id="Node000002" title=" " alt="" coords="5,55,72,121"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="49,134,65,218,59,219,44,135"/>
 <area shape="rect" id="Node000003" href="$classViewSolutions_1_1iModel.html" title="The iModel class is base model for GUI models. Works with ModelStorage. All models after adding can g..." alt="" coords="97,5,255,171"/>

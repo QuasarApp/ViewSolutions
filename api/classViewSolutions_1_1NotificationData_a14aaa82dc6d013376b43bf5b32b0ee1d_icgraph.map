@@ -1,6 +1,6 @@
 <map id="ViewSolutions::NotificationData::title" name="ViewSolutions::NotificationData::title">
 <area shape="rect" id="Node000001" title="title This method return title of a question/notification object." alt="" coords="741,5,939,45"/>
-<area shape="rect" id="Node000002" href="$classViewSolutions_1_1NotificationData.html#a38e5af4087a9cb74b81750463f2caa9e" title=" " alt="" coords="496,5,693,45"/>
+<area shape="rect" id="Node000002" href="$classViewSolutions_1_1NotificationData.html#a38e5af4087a9cb74b81750463f2caa9e" title="NotificationData creates a new notification data object." alt="" coords="496,5,693,45"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="727,28,693,28,693,23,727,23"/>
 <area shape="rect" id="Node000003" href="$classViewSolutions_1_1NotificationData.html#af8240b8b2ae03a2056ccf464401acf77" title=" " alt="" coords="5,5,203,45"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="482,25,448,24,251,24,203,25,203,20,251,19,448,19,482,19"/>

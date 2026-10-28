@@ -27,7 +27,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">ViewSolutions<span id="projectnumber">&#160;1.0.98.d8b9fd2</span>
+   <div id="projectname">ViewSolutions<span id="projectnumber">&#160;1.0.100.30ae2aa</span>
    </div>
    <div id="projectbrief">View solutions of qml for quasarapp projects</div>
   </td>
@@ -115,7 +115,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('classViewSolut
 </div><!--header-->
 <div class="contents">
 
-<p>The <a class="el" href="classViewSolutions_1_1BaseListModel.html" title="The BaseListModel class is base class of all GUI list models.">BaseListModel</a> class is base class of all GUI list models.  
+<p>The <a class="el" href="classViewSolutions_1_1BaseListModel.html" title="The BaseListModel class is the base class of all GUI list models.">BaseListModel</a> class is the base class of all GUI list models.  
  <a href="#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="baselistmodel_8h_source.html">baselistmodel.h</a>&gt;</code></p>
@@ -124,8 +124,8 @@ Inheritance diagram for ViewSolutions::BaseListModel&lt; TYPE &gt;:</div>
 <div class="dyncontent">
 <div class="center"><img src="classViewSolutions_1_1BaseListModel__inherit__graph.png" border="0" usemap="#aViewSolutions_1_1BaseListModel_3_01TYPE_01_4_inherit__map" loading="lazy" alt="Inheritance graph"/></div>
 <map name="aViewSolutions_1_1BaseListModel_3_01TYPE_01_4_inherit__map" id="aViewSolutions_1_1BaseListModel_3_01TYPE_01_4_inherit__map">
-<area shape="rect" title="The BaseListModel class is base class of all GUI list models." alt="" coords="5,247,215,427"/>
-<area shape="rect" href="classViewSolutions_1_1____PrvateBaseListModel.html" title=" " alt="" coords="9,119,211,199"/>
+<area shape="rect" title="The BaseListModel class is the base class of all GUI list models." alt="" coords="5,247,215,427"/>
+<area shape="rect" href="classViewSolutions_1_1____PrvateBaseListModel.html" title="The __PrvateBaseListModel class is the private QObject base class of the BaseListModel template." alt="" coords="9,119,211,199"/>
 <area shape="poly" title=" " alt="" coords="113,213,113,247,107,247,107,213"/>
 <area shape="rect" title=" " alt="" coords="39,5,181,71"/>
 <area shape="poly" title=" " alt="" coords="113,85,113,118,107,118,107,85"/>
@@ -136,8 +136,8 @@ Collaboration diagram for ViewSolutions::BaseListModel&lt; TYPE &gt;:</div>
 <div class="dyncontent">
 <div class="center"><img src="classViewSolutions_1_1BaseListModel__coll__graph.png" border="0" usemap="#aViewSolutions_1_1BaseListModel_3_01TYPE_01_4_coll__map" loading="lazy" alt="Collaboration graph"/></div>
 <map name="aViewSolutions_1_1BaseListModel_3_01TYPE_01_4_coll__map" id="aViewSolutions_1_1BaseListModel_3_01TYPE_01_4_coll__map">
-<area shape="rect" title="The BaseListModel class is base class of all GUI list models." alt="" coords="5,247,215,427"/>
-<area shape="rect" href="classViewSolutions_1_1____PrvateBaseListModel.html" title=" " alt="" coords="9,119,211,199"/>
+<area shape="rect" title="The BaseListModel class is the base class of all GUI list models." alt="" coords="5,247,215,427"/>
+<area shape="rect" href="classViewSolutions_1_1____PrvateBaseListModel.html" title="The __PrvateBaseListModel class is the private QObject base class of the BaseListModel template." alt="" coords="9,119,211,199"/>
 <area shape="poly" title=" " alt="" coords="113,213,113,247,107,247,107,213"/>
 <area shape="rect" title=" " alt="" coords="39,5,181,71"/>
 <area shape="poly" title=" " alt="" coords="113,85,113,118,107,118,107,85"/>
@@ -163,32 +163,48 @@ Additional Inherited Members</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;class TYPE&gt;<br />
-class ViewSolutions::BaseListModel&lt; TYPE &gt;</div><p>The <a class="el" href="classViewSolutions_1_1BaseListModel.html" title="The BaseListModel class is base class of all GUI list models.">BaseListModel</a> class is base class of all GUI list models. </p>
+class ViewSolutions::BaseListModel&lt; TYPE &gt;</div><p>The <a class="el" href="classViewSolutions_1_1BaseListModel.html" title="The BaseListModel class is the base class of all GUI list models.">BaseListModel</a> class is the base class of all GUI list models. </p>
+<p>A <a class="el" href="classViewSolutions_1_1BaseListModel.html" title="The BaseListModel class is the base class of all GUI list models.">BaseListModel</a> stores its items in a simple list and exposes them to QML as a list model. The list of all items is also available in QML through the <span class="tt">listDate</span> property (see the BASE_LIST_MODEL_DATA_PROPERTY macro).</p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">TYPE</td><td>- is main stored delegate model of all list items. </td></tr>
+    <tr><td class="paramname">TYPE</td><td>- is main stored delegate model of all list items.</td></tr>
   </table>
   </dd>
 </dl>
-<p>Conceptions and using rooles</p><ul>
-<li>All models should provides delegate models base of qobject</li>
-<li>If model require fast solution just implement BaseListModel&lt;int&gt; model</li>
+<p>Concepts and usage rules:</p><ul>
+<li>All models should provide delegate models based on QObject</li>
+<li>If the model requires a fast solution, just implement a BaseListModel&lt;int&gt; model</li>
 </ul>
-<dl class="section note"><dt>Note</dt><dd>to access to delegate model use Qt::EditRole role: available in qml by delegateModel keyword <b>example:</b> : <div class="fragment"><div class="line">   <span class="keyword">class </span><a class="code hl_class" href="classViewSolutions_1_1VariantListModel.html">VariantListModel</a>: <span class="keyword">public</span> <a class="code hl_function" href="#ae94d0d6c9394b424c0ecd994cce5215f">BaseListModel</a>&lt;QVariant&gt;</div>
+<dl class="section note"><dt>Note</dt><dd>To access the delegate model use the Qt::EditRole role: it is available in QML by the <span class="tt">delegateModel</span> keyword.</dd></dl>
+<p>Example of a model based on the <a class="el" href="classViewSolutions_1_1BaseListModel.html" title="The BaseListModel class is the base class of all GUI list models.">BaseListModel</a>: </p><div class="fragment"><div class="line"><span class="keyword">class </span><a class="code hl_class" href="classViewSolutions_1_1VariantListModel.html">VariantListModel</a>: <span class="keyword">public</span> <a class="code hl_class" href="classViewSolutions_1_1BaseListModel.html">ViewSolutions::BaseListModel</a>&lt;QVariant&gt;</div>
 <div class="line">{</div>
 <div class="line">    Q_OBJECT</div>
 <div class="line">    <a class="code hl_define" href="baselistmodel_8h.html#af5eb430237d2989e333f7d3ec823308b">BASE_LIST_MODEL_DATA_PROPERTY</a>(QVariant)</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">public</span>:</div>
-<div class="line">    <a class="code hl_class" href="classViewSolutions_1_1VariantListModel.html">VariantListModel</a>(QObject* ptr = <span class="keyword">nullptr</span>): <a class="code hl_function" href="#ae94d0d6c9394b424c0ecd994cce5215f">BaseListModel</a>&lt;QVariant&gt;(ptr){};</div>
+<div class="line">    <a class="code hl_class" href="classViewSolutions_1_1VariantListModel.html">VariantListModel</a>(QObject* ptr = <span class="keyword">nullptr</span>):</div>
+<div class="line">        <a class="code hl_namespace" href="namespaceViewSolutions.html">ViewSolutions</a>::<a class="code hl_function" href="#ae94d0d6c9394b424c0ecd994cce5215f">BaseListModel</a>&lt;QVariant&gt;(ptr) {}</div>
 <div class="line">};</div>
+<div class="ttc" id="abaselistmodel_8h_html_af5eb430237d2989e333f7d3ec823308b"><div class="ttname"><a href="baselistmodel_8h.html#af5eb430237d2989e333f7d3ec823308b">BASE_LIST_MODEL_DATA_PROPERTY</a></div><div class="ttdeci">#define BASE_LIST_MODEL_DATA_PROPERTY(Type)</div><div class="ttdef"><b>Definition</b> <a href="baselistmodel_8h_source.html#l00033">baselistmodel.h:33</a></div></div>
+<div class="ttc" id="aclassViewSolutions_1_1BaseListModel_html"><div class="ttname"><a href="classViewSolutions_1_1BaseListModel.html">ViewSolutions::BaseListModel</a></div><div class="ttdoc">The BaseListModel class is the base class of all GUI list models.</div><div class="ttdef"><b>Definition</b> <a href="baselistmodel_8h_source.html#l00086">baselistmodel.h:87</a></div></div>
+<div class="ttc" id="aclassViewSolutions_1_1BaseListModel_html_ae94d0d6c9394b424c0ecd994cce5215f"><div class="ttname"><a href="#ae94d0d6c9394b424c0ecd994cce5215f">ViewSolutions::BaseListModel::BaseListModel</a></div><div class="ttdeci">BaseListModel(QObject *parent=nullptr)</div><div class="ttdef"><b>Definition</b> <a href="baselistmodel_8h_source.html#l00090">baselistmodel.h:90</a></div></div>
+<div class="ttc" id="aclassViewSolutions_1_1VariantListModel_html"><div class="ttname"><a href="classViewSolutions_1_1VariantListModel.html">ViewSolutions::VariantListModel</a></div><div class="ttdoc">The VariantListModel class is universal implementation for all atomic types.</div><div class="ttdef"><b>Definition</b> <a href="variantlistmodel_8h_source.html#l00024">variantlistmodel.h:25</a></div></div>
+<div class="ttc" id="anamespaceViewSolutions_html"><div class="ttname"><a href="namespaceViewSolutions.html">ViewSolutions</a></div><div class="ttdoc">The ViewSolutions namespace.</div><div class="ttdef"><b>Definition</b> <a href="avatargenerator_8cpp_source.html#l00014">avatargenerator.cpp:14</a></div></div>
+</div><!-- fragment --><p>C++ usage: </p><div class="fragment"><div class="line"><a class="code hl_class" href="classViewSolutions_1_1VariantListModel.html">VariantListModel</a> model;</div>
+<div class="line"> </div>
+<div class="line">QList&lt;QVariant&gt; items;</div>
+<div class="line">items &lt;&lt; <span class="stringliteral">&quot;one&quot;</span> &lt;&lt; <span class="stringliteral">&quot;two&quot;</span> &lt;&lt; <span class="stringliteral">&quot;three&quot;</span>;</div>
+<div class="line">model.<a class="code hl_function" href="#ab9b729e7ce6ef0a3528cfacf56f67ed5">setDataList</a>(items);</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">const</span> QList&lt;QVariant&gt;&amp; values = model.<a class="code hl_function" href="#aab48d445ce0a2d51f361f060aad69dcc">dateList</a>();</div>
+<div class="ttc" id="aclassViewSolutions_1_1BaseListModel_html_aab48d445ce0a2d51f361f060aad69dcc"><div class="ttname"><a href="#aab48d445ce0a2d51f361f060aad69dcc">ViewSolutions::BaseListModel::dateList</a></div><div class="ttdeci">Q_INVOKABLE const QList&lt; TYPE &gt; &amp; dateList() const</div><div class="ttdef"><b>Definition</b> <a href="baselistmodel_8h_source.html#l00166">baselistmodel.h:166</a></div></div>
+<div class="ttc" id="aclassViewSolutions_1_1BaseListModel_html_ab9b729e7ce6ef0a3528cfacf56f67ed5"><div class="ttname"><a href="#ab9b729e7ce6ef0a3528cfacf56f67ed5">ViewSolutions::BaseListModel::setDataList</a></div><div class="ttdeci">Q_INVOKABLE void setDataList(const QList&lt; TYPE &gt; &amp;newData)</div><div class="ttdoc">setDataList sets new date of model, and reset all model;</div><div class="ttdef"><b>Definition</b> <a href="baselistmodel_8h_source.html#l00136">baselistmodel.h:136</a></div></div>
+</div><!-- fragment --><p>QML usage (after the model was registered as context property): </p><div class="fragment"><div class="line">ListView {</div>
+<div class="line">    model: variantListModel</div>
+<div class="line">    delegate: Text { text: delegateModel }</div>
 <div class="line">}</div>
-<div class="ttc" id="abaselistmodel_8h_html_af5eb430237d2989e333f7d3ec823308b"><div class="ttname"><a href="baselistmodel_8h.html#af5eb430237d2989e333f7d3ec823308b">BASE_LIST_MODEL_DATA_PROPERTY</a></div><div class="ttdeci">#define BASE_LIST_MODEL_DATA_PROPERTY(Type)</div><div class="ttdef"><b>Definition</b> <a href="baselistmodel_8h_source.html#l00025">baselistmodel.h:25</a></div></div>
-<div class="ttc" id="aclassViewSolutions_1_1BaseListModel_html_ae94d0d6c9394b424c0ecd994cce5215f"><div class="ttname"><a href="#ae94d0d6c9394b424c0ecd994cce5215f">ViewSolutions::BaseListModel::BaseListModel</a></div><div class="ttdeci">BaseListModel(QObject *parent=nullptr)</div><div class="ttdef"><b>Definition</b> <a href="baselistmodel_8h_source.html#l00057">baselistmodel.h:57</a></div></div>
-<div class="ttc" id="aclassViewSolutions_1_1VariantListModel_html"><div class="ttname"><a href="classViewSolutions_1_1VariantListModel.html">ViewSolutions::VariantListModel</a></div><div class="ttdoc">The VariantListModel class is universal implementation for all atomic types.</div><div class="ttdef"><b>Definition</b> <a href="variantlistmodel_8h_source.html#l00012">variantlistmodel.h:13</a></div></div>
-</div><!-- fragment --> </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="baselistmodel_8h_source.html#l00053">53</a> of file <a class="el" href="baselistmodel_8h_source.html">baselistmodel.h</a>.</p>
+</div><!-- fragment --> 
+<p class="definition">Definition at line <a class="el" href="baselistmodel_8h_source.html#l00086">86</a> of file <a class="el" href="baselistmodel_8h_source.html">baselistmodel.h</a>.</p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ae94d0d6c9394b424c0ecd994cce5215f" name="ae94d0d6c9394b424c0ecd994cce5215f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae94d0d6c9394b424c0ecd994cce5215f">&#9670;&#160;</a></span>BaseListModel()</h2>
@@ -215,7 +231,7 @@ template&lt;class TYPE&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="baselistmodel_8h_source.html#l00057">57</a> of file <a class="el" href="baselistmodel_8h_source.html">baselistmodel.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="baselistmodel_8h_source.html#l00090">90</a> of file <a class="el" href="baselistmodel_8h_source.html">baselistmodel.h</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -259,7 +275,7 @@ template&lt;class TYPE&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="baselistmodel_8h_source.html#l00071">71</a> of file <a class="el" href="baselistmodel_8h_source.html">baselistmodel.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="baselistmodel_8h_source.html#l00104">104</a> of file <a class="el" href="baselistmodel_8h_source.html">baselistmodel.h</a>.</p>
 
 </div>
 </div>
@@ -288,7 +304,7 @@ template&lt;class TYPE&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="baselistmodel_8h_source.html#l00133">133</a> of file <a class="el" href="baselistmodel_8h_source.html">baselistmodel.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="baselistmodel_8h_source.html#l00166">166</a> of file <a class="el" href="baselistmodel_8h_source.html">baselistmodel.h</a>.</p>
 
 </div>
 </div>
@@ -317,7 +333,7 @@ template&lt;class TYPE&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="baselistmodel_8h_source.html#l00065">65</a> of file <a class="el" href="baselistmodel_8h_source.html">baselistmodel.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="baselistmodel_8h_source.html#l00098">98</a> of file <a class="el" href="baselistmodel_8h_source.html">baselistmodel.h</a>.</p>
 
 </div>
 </div>
@@ -346,7 +362,7 @@ template&lt;class TYPE&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="baselistmodel_8h_source.html#l00061">61</a> of file <a class="el" href="baselistmodel_8h_source.html">baselistmodel.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="baselistmodel_8h_source.html#l00094">94</a> of file <a class="el" href="baselistmodel_8h_source.html">baselistmodel.h</a>.</p>
 
 </div>
 </div>
@@ -383,7 +399,7 @@ template&lt;class TYPE&gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="baselistmodel_8h_source.html#l00103">103</a> of file <a class="el" href="baselistmodel_8h_source.html">baselistmodel.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="baselistmodel_8h_source.html#l00136">136</a> of file <a class="el" href="baselistmodel_8h_source.html">baselistmodel.h</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">

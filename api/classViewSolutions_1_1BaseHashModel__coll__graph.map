@@ -1,5 +1,5 @@
 <map id="ViewSolutions::BaseHashModel&lt; KEY, DATA &gt;" name="ViewSolutions::BaseHashModel&lt; KEY, DATA &gt;">
-<area shape="rect" id="Node000001" title="The BaseHashModel class is base class of all GUI list models." alt="" coords="5,119,224,359"/>
+<area shape="rect" id="Node000001" title="The BaseHashModel class is the base class of all GUI hash models." alt="" coords="5,119,224,359"/>
 <area shape="rect" id="Node000002" title=" " alt="" coords="44,5,185,71"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="117,84,117,119,112,119,112,84"/>
 </map>

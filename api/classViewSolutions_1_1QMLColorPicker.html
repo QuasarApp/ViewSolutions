@@ -27,7 +27,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">ViewSolutions<span id="projectnumber">&#160;1.0.98.d8b9fd2</span>
+   <div id="projectname">ViewSolutions<span id="projectnumber">&#160;1.0.100.30ae2aa</span>
    </div>
    <div id="projectbrief">View solutions of qml for quasarapp projects</div>
   </td>
@@ -154,7 +154,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ab5e341c5f8bc2b9afd0c85ef49dc6264" id="r_ab5e341c5f8bc2b9afd0c85ef49dc6264"><td class="memItemLeft">Q_INVOKABLE QColor&#160;</td><td class="memItemRight"><a class="el" href="#ab5e341c5f8bc2b9afd0c85ef49dc6264">pick</a> (const QString &amp;img) const</td></tr>
 <tr class="memdesc:ab5e341c5f8bc2b9afd0c85ef49dc6264"><td class="mdescLeft">&#160;</td><td class="mdescRight">pick This is override function for qml.  <br /></td></tr>
 <tr class="memitem:aa72b5c67fc1baee8a33e3c7de7090be9" id="r_aa72b5c67fc1baee8a33e3c7de7090be9"><td class="memItemLeft">QString&#160;</td><td class="memItemRight"><a class="el" href="#aa72b5c67fc1baee8a33e3c7de7090be9">modelId</a> () const override</td></tr>
-<tr class="memdesc:aa72b5c67fc1baee8a33e3c7de7090be9"><td class="mdescLeft">&#160;</td><td class="mdescRight">instance This is singleton instance of <a class="el" href="classViewSolutions_1_1QMLColorPicker.html" title="The QMLColorPicker class - Qml wrapper for ColorPicker class.">QMLColorPicker</a>.  <br /></td></tr>
+<tr class="memdesc:aa72b5c67fc1baee8a33e3c7de7090be9"><td class="mdescLeft">&#160;</td><td class="mdescRight">modelId This method returns the model id of the <a class="el" href="classViewSolutions_1_1QMLColorPicker.html" title="The QMLColorPicker class - Qml wrapper for ColorPicker class.">QMLColorPicker</a>.  <br /></td></tr>
 <tr class="inherit_header pub_methods_classViewSolutions_1_1iModel"><td colspan="2">Public Member Functions inherited from <a class="el" href="classViewSolutions_1_1iModel.html">ViewSolutions::iModel</a></td></tr>
 <tr class="memitem:a1acefc5c15a9562c38c8128be7431fd4 pub_methods_classViewSolutions_1_1iModel" id="r_a1acefc5c15a9562c38c8128be7431fd4"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="classViewSolutions_1_1iModel.html#a1acefc5c15a9562c38c8128be7431fd4">iModel</a> ()=default</td></tr>
 <tr class="memitem:a170f91326e6afd07b8e821caab2060fe pub_methods_classViewSolutions_1_1iModel" id="r_a170f91326e6afd07b8e821caab2060fe"><td class="memItemLeft">virtual&#160;</td><td class="memItemRight"><a class="el" href="classViewSolutions_1_1iModel.html#a170f91326e6afd07b8e821caab2060fe">~iModel</a> ()=default</td></tr>
@@ -171,8 +171,13 @@ Additional Inherited Members</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The <a class="el" href="classViewSolutions_1_1QMLColorPicker.html" title="The QMLColorPicker class - Qml wrapper for ColorPicker class.">QMLColorPicker</a> class - Qml wrapper for <a class="el" href="classViewSolutions_1_1ColorPicker.html" title="The ColorPicker class - This class provide methods of get generals colors from images.">ColorPicker</a> class. </p>
-
-<p class="definition">Definition at line <a class="el" href="qmlcolorpicker_8h_source.html#l00020">20</a> of file <a class="el" href="qmlcolorpicker_8h_source.html">qmlcolorpicker.h</a>.</p>
+<p>This model is registered in the model storage by <a class="el" href="namespaceViewSolutions.html#a249933ed1822a57b6982f08bcd462e17" title="init this method import all qml resources to your project and creates the central model storage of th...">ViewSolutions::init</a> and is also available in QML as the <span class="tt">colorPicker</span> context property.</p>
+<p>Example: </p><div class="fragment"><div class="line">Item {</div>
+<div class="line">    // General color of an image:</div>
+<div class="line">    property var color: colorPicker.pick(&quot;qrc:/res/icon.png&quot;)</div>
+<div class="line">}</div>
+</div><!-- fragment --> 
+<p class="definition">Definition at line <a class="el" href="qmlcolorpicker_8h_source.html#l00031">31</a> of file <a class="el" href="qmlcolorpicker_8h_source.html">qmlcolorpicker.h</a>.</p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a231c6fc04950cb9d262876e8f7901f86" name="a231c6fc04950cb9d262876e8f7901f86"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a231c6fc04950cb9d262876e8f7901f86">&#9670;&#160;</a></span>QMLColorPicker()</h2>
@@ -225,8 +230,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>instance This is singleton instance of <a class="el" href="classViewSolutions_1_1QMLColorPicker.html" title="The QMLColorPicker class - Qml wrapper for ColorPicker class.">QMLColorPicker</a>. </p>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+<p>modelId This method returns the model id of the <a class="el" href="classViewSolutions_1_1QMLColorPicker.html" title="The QMLColorPicker class - Qml wrapper for ColorPicker class.">QMLColorPicker</a>. </p>
+<dl class="section return"><dt>Returns</dt><dd>model id of the color picker. </dd></dl>
 
 <p>Implements <a class="el" href="classViewSolutions_1_1iModel.html#a15a2afa3d60bd90f3c150827d612cec5">ViewSolutions::iModel</a>.</p>
 

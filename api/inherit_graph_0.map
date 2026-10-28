@@ -1,16 +1,16 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
 <area shape="rect" id="Node000000" title=" " alt="" coords="5,106,155,131"/>
-<area shape="rect" id="Node000001" href="$classViewSolutions_1_1BaseHashModel.html" title="The BaseHashModel class is base class of all GUI list models." alt="" coords="215,5,441,45"/>
+<area shape="rect" id="Node000001" href="$classViewSolutions_1_1BaseHashModel.html" title="The BaseHashModel class is the base class of all GUI hash models." alt="" coords="215,5,441,45"/>
 <area shape="poly" id="edge1_Node000000_Node000001" title=" " alt="" coords="114,97,155,75,202,55,238,43,240,48,204,60,158,80,117,101"/>
-<area shape="rect" id="Node000002" href="$classViewSolutions_1_1HistoryNotificationsModel.html" title=" " alt="" coords="203,69,453,109"/>
+<area shape="rect" id="Node000002" href="$classViewSolutions_1_1HistoryNotificationsModel.html" title="The HistoryNotificationsModel class stores the history of all sent notification messages." alt="" coords="203,69,453,109"/>
 <area shape="poly" id="edge2_Node000000_Node000002" title=" " alt="" coords="168,106,202,102,203,107,169,111"/>
-<area shape="rect" id="Node000003" href="$classViewSolutions_1_1ListViewModel.html" title=" " alt="" coords="219,134,437,159"/>
+<area shape="rect" id="Node000003" href="$classViewSolutions_1_1ListViewModel.html" title="The ListViewModel class provides a QML list model with QObject data." alt="" coords="219,134,437,159"/>
 <area shape="poly" id="edge3_Node000000_Node000003" title=" " alt="" coords="169,126,219,132,219,137,168,131"/>
-<area shape="rect" id="Node000004" href="$classViewSolutions_1_1____PrvateBaseListModel.html" title=" " alt="" coords="223,184,433,224"/>
+<area shape="rect" id="Node000004" href="$classViewSolutions_1_1____PrvateBaseListModel.html" title="The __PrvateBaseListModel class is the private QObject base class of the BaseListModel template." alt="" coords="223,184,433,224"/>
 <area shape="poly" id="edge4_Node000000_Node000004" title=" " alt="" coords="121,135,204,168,246,181,245,186,202,173,119,139"/>
 <area shape="rect" id="Node000005" href="$classViewSolutions_1_1BaseListModel.html" title=" " alt="" coords="501,152,719,192"/>
 <area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="447,188,501,182,502,187,447,193"/>
-<area shape="rect" id="Node000007" href="$classViewSolutions_1_1BaseListModel.html" title="The BaseListModel class is base class of all GUI list models." alt="" coords="501,216,719,256"/>
+<area shape="rect" id="Node000007" href="$classViewSolutions_1_1BaseListModel.html" title="The BaseListModel class is the base class of all GUI list models." alt="" coords="501,216,719,256"/>
 <area shape="poly" id="edge7_Node000004_Node000007" title=" " alt="" coords="447,215,502,221,501,226,447,220"/>
 <area shape="rect" id="Node000006" href="$classViewSolutions_1_1VariantListModel.html" title="The VariantListModel class is universal implementation for all atomic types." alt="" coords="767,152,957,192"/>
 <area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="732,169,766,169,766,175,732,175"/>

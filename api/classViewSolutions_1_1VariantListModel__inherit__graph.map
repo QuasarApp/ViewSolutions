@@ -2,7 +2,7 @@
 <area shape="rect" id="Node000001" title="The VariantListModel class is universal implementation for all atomic types." alt="" coords="19,475,201,555"/>
 <area shape="rect" id="Node000002" href="$classViewSolutions_1_1BaseListModel.html" title=" " alt="" coords="5,247,215,427"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="113,440,113,475,107,475,107,440"/>
-<area shape="rect" id="Node000003" href="$classViewSolutions_1_1____PrvateBaseListModel.html" title=" " alt="" coords="9,119,211,199"/>
+<area shape="rect" id="Node000003" href="$classViewSolutions_1_1____PrvateBaseListModel.html" title="The __PrvateBaseListModel class is the private QObject base class of the BaseListModel template." alt="" coords="9,119,211,199"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="113,213,113,247,107,247,107,213"/>
 <area shape="rect" id="Node000004" title=" " alt="" coords="39,5,181,71"/>
 <area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="113,85,113,118,107,118,107,85"/>

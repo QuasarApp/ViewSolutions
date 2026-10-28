@@ -1,5 +1,5 @@
 <map id="ViewSolutions::ModelStorage::getModel" name="ViewSolutions::ModelStorage::getModel">
 <area shape="rect" id="Node000001" title="getModel This method isible on The QML and using for gettings required GUI models." alt="" coords="5,5,217,45"/>
-<area shape="rect" id="Node000002" href="$classViewSolutions_1_1ModelStorage.html#a6953e8bdd93a6520f7242f5081600511" title=" " alt="" coords="265,13,507,38"/>
+<area shape="rect" id="Node000002" href="$classViewSolutions_1_1ModelStorage.html#a6953e8bdd93a6520f7242f5081600511" title="get returns a typed shared pointer to the model with the given id." alt="" coords="265,13,507,38"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="217,23,252,23,252,28,217,28"/>
 </map>

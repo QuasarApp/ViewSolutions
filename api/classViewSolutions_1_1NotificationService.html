@@ -27,7 +27,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">ViewSolutions<span id="projectnumber">&#160;1.0.98.d8b9fd2</span>
+   <div id="projectname">ViewSolutions<span id="projectnumber">&#160;1.0.100.30ae2aa</span>
    </div>
    <div id="projectbrief">View solutions of qml for quasarapp projects</div>
   </td>
@@ -153,8 +153,11 @@ Signals</h2></td></tr>
 <tr class="memitem:aaeca12d3f52c027e37bcac03f3dd4ea1" id="r_aaeca12d3f52c027e37bcac03f3dd4ea1"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#aaeca12d3f52c027e37bcac03f3dd4ea1">questionCompleted</a> (bool accepted, int questionCode)</td></tr>
 <tr class="memdesc:aaeca12d3f52c027e37bcac03f3dd4ea1"><td class="mdescLeft">&#160;</td><td class="mdescRight">questionCompleted This signal emited when youser clcik any buttons on question popup.  <br /></td></tr>
 <tr class="memitem:ae637221f525d5debc4a42ab7a59e5ac5" id="r_ae637221f525d5debc4a42ab7a59e5ac5"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ae637221f525d5debc4a42ab7a59e5ac5">historyListChanged</a> ()</td></tr>
+<tr class="memdesc:ae637221f525d5debc4a42ab7a59e5ac5"><td class="mdescLeft">&#160;</td><td class="mdescRight">historyListChanged This signal is emitted when the notification history list was changed.  <br /></td></tr>
 <tr class="memitem:a2ec0667c76982103dd2b0d670b88ef12" id="r_a2ec0667c76982103dd2b0d670b88ef12"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a2ec0667c76982103dd2b0d670b88ef12">sigShowHistory</a> ()</td></tr>
+<tr class="memdesc:a2ec0667c76982103dd2b0d670b88ef12"><td class="mdescLeft">&#160;</td><td class="mdescRight">sigShowHistory This signal is emitted when the notification history view should be shown (see showHistory).  <br /></td></tr>
 <tr class="memitem:a518b8841d34137afa693a18f87ee9410" id="r_a518b8841d34137afa693a18f87ee9410"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a518b8841d34137afa693a18f87ee9410">countNotificationsChanged</a> ()</td></tr>
+<tr class="memdesc:a518b8841d34137afa693a18f87ee9410"><td class="mdescLeft">&#160;</td><td class="mdescRight">countNotificationsChanged This signal is emitted when the count of history notifications was changed.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -211,8 +214,31 @@ Additional Inherited Members</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The <a class="el" href="classViewSolutions_1_1NotificationService.html" title="The NotificationService class. This class used for working with notify.">NotificationService</a> class. This class used for working with notify. </p>
-
-<p class="definition">Definition at line <a class="el" href="notificationservice_8h_source.html#l00029">29</a> of file <a class="el" href="notificationservice_8h_source.html">notificationservice.h</a>.</p>
+<p>This service displays notifications and questions on the main application window and stores all sent notifications in a history model (see <em class="arg"><a class="el" href="classViewSolutions_1_1HistoryNotificationsModel.html" title="The HistoryNotificationsModel class stores the history of all sent notification messages.">HistoryNotificationsModel</a></em>).</p>
+<p>The service is a singleton - use the <em class="arg">getService</em> method to access it.</p>
+<p>Example: </p><div class="fragment"><div class="line"><span class="comment">// Show a notification:</span></div>
+<div class="line"><a class="code hl_function" href="#aca431419f7b4fbb34bd00de1f8d5c2cc">ViewSolutions::NotificationService::getService</a>()-&gt;<a class="code hl_function" href="#a0fd597eed27af55423158d60bfa9a70c">setNotify</a>(<span class="stringliteral">&quot;Title&quot;</span>, <span class="stringliteral">&quot;Message&quot;</span>);</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Ask a question and wait for the user answer:</span></div>
+<div class="line"><a class="code hl_function" href="#aca431419f7b4fbb34bd00de1f8d5c2cc">ViewSolutions::NotificationService::getService</a>()-&gt;<a class="code hl_function" href="#a721577f8d230b6faf7410aa2bd2d3491">setQuestion</a>(</div>
+<div class="line">    [](<span class="keywordtype">bool</span> accept) {</div>
+<div class="line">        <span class="keywordflow">if</span> (accept)</div>
+<div class="line">            qDebug() &lt;&lt; <span class="stringliteral">&quot;User accepted&quot;</span>;</div>
+<div class="line">    },</div>
+<div class="line">    <span class="stringliteral">&quot;Are you sure?&quot;</span>);</div>
+<div class="ttc" id="aclassViewSolutions_1_1NotificationService_html_a0fd597eed27af55423158d60bfa9a70c"><div class="ttname"><a href="#a0fd597eed27af55423158d60bfa9a70c">ViewSolutions::NotificationService::setNotify</a></div><div class="ttdeci">void setNotify(const NotificationData &amp;notify)</div><div class="ttdoc">setNotify This method add new notification message of application.</div><div class="ttdef"><b>Definition</b> <a href="notificationservice_8cpp_source.html#l00035">notificationservice.cpp:35</a></div></div>
+<div class="ttc" id="aclassViewSolutions_1_1NotificationService_html_a721577f8d230b6faf7410aa2bd2d3491"><div class="ttname"><a href="#a721577f8d230b6faf7410aa2bd2d3491">ViewSolutions::NotificationService::setQuestion</a></div><div class="ttdeci">int setQuestion(const Listner &amp;listner, const NotificationData &amp;question)</div><div class="ttdoc">setQuestion This method sets information of the users question.</div><div class="ttdef"><b>Definition</b> <a href="notificationservice_8cpp_source.html#l00044">notificationservice.cpp:44</a></div></div>
+<div class="ttc" id="aclassViewSolutions_1_1NotificationService_html_aca431419f7b4fbb34bd00de1f8d5c2cc"><div class="ttname"><a href="#aca431419f7b4fbb34bd00de1f8d5c2cc">ViewSolutions::NotificationService::getService</a></div><div class="ttdeci">static NotificationService * getService()</div><div class="ttdoc">getService This method return instance to notify service.</div><div class="ttdef"><b>Definition</b> <a href="notificationservice_8cpp_source.html#l00107">notificationservice.cpp:107</a></div></div>
+</div><!-- fragment --><p>In QML the service is used by the NotificationServiceView component, it must be exposed as the <span class="tt">notificationService</span> context property: </p><div class="fragment"><div class="line"><a class="code hl_function" href="classViewSolutions_1_1iModel.html#a72078c6575e2955f37f18be28674c956">engine</a>.rootContext()-&gt;setContextProperty(<span class="stringliteral">&quot;notificationService&quot;</span>,</div>
+<div class="line">                                         <a class="code hl_function" href="#aca431419f7b4fbb34bd00de1f8d5c2cc">ViewSolutions::NotificationService::getService</a>());</div>
+<div class="ttc" id="aclassViewSolutions_1_1iModel_html_a72078c6575e2955f37f18be28674c956"><div class="ttname"><a href="classViewSolutions_1_1iModel.html#a72078c6575e2955f37f18be28674c956">ViewSolutions::iModel::engine</a></div><div class="ttdeci">QQmlEngine * engine() const</div><div class="ttdoc">engine returns qml engine.</div><div class="ttdef"><b>Definition</b> <a href="imodel_8cpp_source.html#l00019">imodel.cpp:19</a></div></div>
+</div><!-- fragment --> <div class="fragment"><div class="line">import ViewSolutions</div>
+<div class="line"> </div>
+<div class="line">Item {</div>
+<div class="line">    ViewSolutions.NotificationServiceView {}</div>
+<div class="line">}</div>
+</div><!-- fragment --> 
+<p class="definition">Definition at line <a class="el" href="notificationservice_8h_source.html#l00063">63</a> of file <a class="el" href="notificationservice_8h_source.html">notificationservice.h</a>.</p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a9e97e7cb320ab9bfb0b71442cfbf3913" name="a9e97e7cb320ab9bfb0b71442cfbf3913"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9e97e7cb320ab9bfb0b71442cfbf3913">&#9670;&#160;</a></span>~NotificationService()</h2>
@@ -274,12 +300,14 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>countNotificationsChanged This signal is emitted when the count of history notifications was changed. </p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classViewSolutions_1_1NotificationService_a518b8841d34137afa693a18f87ee9410_cgraph.png" border="0" usemap="#aclassViewSolutions_1_1NotificationService_a518b8841d34137afa693a18f87ee9410_cgraph" loading="lazy" alt=""/></div>
 <map name="aclassViewSolutions_1_1NotificationService_a518b8841d34137afa693a18f87ee9410_cgraph" id="aclassViewSolutions_1_1NotificationService_a518b8841d34137afa693a18f87ee9410_cgraph">
-<area shape="rect" title=" " alt="" coords="5,29,259,69"/>
+<area shape="rect" title="countNotificationsChanged This signal is emitted when the count of history notifications was changed." alt="" coords="5,29,259,69"/>
 <area shape="poly" title=" " alt="" coords="85,30,82,20,90,10,106,5,132,3,161,6,177,13,175,18,160,11,132,8,107,10,93,15,87,21,90,28"/>
 </map>
 </div>
@@ -288,7 +316,7 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classViewSolutions_1_1NotificationService_a518b8841d34137afa693a18f87ee9410_icgraph.png" border="0" usemap="#aclassViewSolutions_1_1NotificationService_a518b8841d34137afa693a18f87ee9410_icgraph" loading="lazy" alt=""/></div>
 <map name="aclassViewSolutions_1_1NotificationService_a518b8841d34137afa693a18f87ee9410_icgraph" id="aclassViewSolutions_1_1NotificationService_a518b8841d34137afa693a18f87ee9410_icgraph">
-<area shape="rect" title=" " alt="" coords="5,29,259,69"/>
+<area shape="rect" title="countNotificationsChanged This signal is emitted when the count of history notifications was changed." alt="" coords="5,29,259,69"/>
 <area shape="poly" title=" " alt="" coords="175,18,160,11,132,8,107,10,93,15,87,21,90,28,85,30,82,20,90,10,106,5,132,3,161,6,177,13"/>
 </map>
 </div>
@@ -387,12 +415,14 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>historyListChanged This signal is emitted when the notification history list was changed. </p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classViewSolutions_1_1NotificationService_ae637221f525d5debc4a42ab7a59e5ac5_cgraph.png" border="0" usemap="#aclassViewSolutions_1_1NotificationService_ae637221f525d5debc4a42ab7a59e5ac5_cgraph" loading="lazy" alt=""/></div>
 <map name="aclassViewSolutions_1_1NotificationService_ae637221f525d5debc4a42ab7a59e5ac5_cgraph" id="aclassViewSolutions_1_1NotificationService_ae637221f525d5debc4a42ab7a59e5ac5_cgraph">
-<area shape="rect" title=" " alt="" coords="5,29,208,69"/>
+<area shape="rect" title="historyListChanged This signal is emitted when the notification history list was changed." alt="" coords="5,29,208,69"/>
 <area shape="poly" title=" " alt="" coords="68,30,66,20,72,11,86,5,107,3,130,6,143,13,141,18,129,11,107,8,87,10,76,15,71,21,74,28"/>
 </map>
 </div>
@@ -401,7 +431,7 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classViewSolutions_1_1NotificationService_ae637221f525d5debc4a42ab7a59e5ac5_icgraph.png" border="0" usemap="#aclassViewSolutions_1_1NotificationService_ae637221f525d5debc4a42ab7a59e5ac5_icgraph" loading="lazy" alt=""/></div>
 <map name="aclassViewSolutions_1_1NotificationService_ae637221f525d5debc4a42ab7a59e5ac5_icgraph" id="aclassViewSolutions_1_1NotificationService_ae637221f525d5debc4a42ab7a59e5ac5_icgraph">
-<area shape="rect" title=" " alt="" coords="5,29,208,69"/>
+<area shape="rect" title="historyListChanged This signal is emitted when the notification history list was changed." alt="" coords="5,29,208,69"/>
 <area shape="poly" title=" " alt="" coords="141,18,129,11,107,8,87,10,76,15,71,21,74,28,68,30,66,20,72,11,86,5,107,3,130,6,143,13"/>
 </map>
 </div>
@@ -1045,7 +1075,7 @@ Here is the call graph for this function:</div>
 <map name="aclassViewSolutions_1_1NotificationService_aaec698c0a62538e476dd19a4dc7aed22_cgraph" id="aclassViewSolutions_1_1NotificationService_aaec698c0a62538e476dd19a4dc7aed22_cgraph">
 <area shape="rect" title="showHistory &#45; This method used for emit signal by which show notification menu." alt="" coords="5,29,203,69"/>
 <area shape="poly" title=" " alt="" coords="58,30,56,20,63,10,79,5,104,3,133,6,148,13,146,18,131,11,104,8,80,10,66,15,61,21,63,28"/>
-<area shape="rect" href="classViewSolutions_1_1NotificationService.html#a2ec0667c76982103dd2b0d670b88ef12" title=" " alt="" coords="251,29,448,69"/>
+<area shape="rect" href="classViewSolutions_1_1NotificationService.html#a2ec0667c76982103dd2b0d670b88ef12" title="sigShowHistory This signal is emitted when the notification history view should be shown (see showHis..." alt="" coords="251,29,448,69"/>
 <area shape="poly" title=" " alt="" coords="203,47,237,47,237,52,203,52"/>
 <area shape="poly" title=" " alt="" coords="304,30,301,20,308,10,325,5,349,3,378,6,393,13,391,18,376,11,349,8,326,10,311,15,306,21,309,28"/>
 </map>
@@ -1084,12 +1114,14 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>sigShowHistory This signal is emitted when the notification history view should be shown (see showHistory). </p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classViewSolutions_1_1NotificationService_a2ec0667c76982103dd2b0d670b88ef12_cgraph.png" border="0" usemap="#aclassViewSolutions_1_1NotificationService_a2ec0667c76982103dd2b0d670b88ef12_cgraph" loading="lazy" alt=""/></div>
 <map name="aclassViewSolutions_1_1NotificationService_a2ec0667c76982103dd2b0d670b88ef12_cgraph" id="aclassViewSolutions_1_1NotificationService_a2ec0667c76982103dd2b0d670b88ef12_cgraph">
-<area shape="rect" title=" " alt="" coords="5,29,203,69"/>
+<area shape="rect" title="sigShowHistory This signal is emitted when the notification history view should be shown (see showHis..." alt="" coords="5,29,203,69"/>
 <area shape="poly" title=" " alt="" coords="67,30,65,20,70,11,84,5,104,3,127,6,140,13,137,18,126,11,104,8,85,10,74,15,70,21,72,28"/>
 </map>
 </div>
@@ -1098,7 +1130,7 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classViewSolutions_1_1NotificationService_a2ec0667c76982103dd2b0d670b88ef12_icgraph.png" border="0" usemap="#aclassViewSolutions_1_1NotificationService_a2ec0667c76982103dd2b0d670b88ef12_icgraph" loading="lazy" alt=""/></div>
 <map name="aclassViewSolutions_1_1NotificationService_a2ec0667c76982103dd2b0d670b88ef12_icgraph" id="aclassViewSolutions_1_1NotificationService_a2ec0667c76982103dd2b0d670b88ef12_icgraph">
-<area shape="rect" title=" " alt="" coords="251,29,448,69"/>
+<area shape="rect" title="sigShowHistory This signal is emitted when the notification history view should be shown (see showHis..." alt="" coords="251,29,448,69"/>
 <area shape="poly" title=" " alt="" coords="391,18,376,11,349,8,326,10,311,15,306,21,309,28,304,30,301,20,308,10,325,5,349,3,378,6,393,13"/>
 <area shape="rect" href="classViewSolutions_1_1NotificationService.html#aaec698c0a62538e476dd19a4dc7aed22" title="showHistory &#45; This method used for emit signal by which show notification menu." alt="" coords="5,29,203,69"/>
 <area shape="poly" title=" " alt="" coords="237,52,203,52,203,47,237,47"/>
@@ -1129,7 +1161,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="notificationservice_8h_source.html#l00036">36</a> of file <a class="el" href="notificationservice_8h_source.html">notificationservice.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="notificationservice_8h_source.html#l00070">70</a> of file <a class="el" href="notificationservice_8h_source.html">notificationservice.h</a>.</p>
 
 </div>
 </div>
@@ -1153,7 +1185,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="notificationservice_8h_source.html#l00038">38</a> of file <a class="el" href="notificationservice_8h_source.html">notificationservice.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="notificationservice_8h_source.html#l00072">72</a> of file <a class="el" href="notificationservice_8h_source.html">notificationservice.h</a>.</p>
 
 </div>
 </div>
@@ -1177,7 +1209,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="notificationservice_8h_source.html#l00033">33</a> of file <a class="el" href="notificationservice_8h_source.html">notificationservice.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="notificationservice_8h_source.html#l00067">67</a> of file <a class="el" href="notificationservice_8h_source.html">notificationservice.h</a>.</p>
 
 </div>
 </div>
@@ -1201,7 +1233,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="notificationservice_8h_source.html#l00034">34</a> of file <a class="el" href="notificationservice_8h_source.html">notificationservice.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="notificationservice_8h_source.html#l00068">68</a> of file <a class="el" href="notificationservice_8h_source.html">notificationservice.h</a>.</p>
 
 </div>
 </div>
