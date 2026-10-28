@@ -21,6 +21,31 @@ class ModelStorage;
 /**
  * @brief The iModel class is base model for GUI models. Works with @a ModelStorage.
  *  All models after adding can get access to any othe models that located on same storage object.
+ *
+ * To create a new model implement the iModel interface. Every model must
+ * provide a unique model id with the @a modelId method.
+ *
+ * Example:
+ * ```cpp
+ * class MyModel: public QObject, public ViewSolutions::iModel
+ * {
+ *     Q_OBJECT
+ * public:
+ *     explicit MyModel(): QObject() {}
+ *
+ *     // iModel interface
+ *     QString modelId() const override { return "myModel"; }
+ * };
+ * ```
+ *
+ * Register the model in the model storage:
+ * ```cpp
+ * auto model = QSharedPointer<MyModel>::create();
+ * models->addModel(model); // models is a ViewSolutions::ModelStorage object
+ *
+ * // Access another model from inside MyModel:
+ * auto other = storage().lock()->get<MyOtherModel>("otherModel");
+ * ```
  */
 class VIEWSOLUTION_EXPORT iModel
 {

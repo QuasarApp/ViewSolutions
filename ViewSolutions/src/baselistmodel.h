@@ -13,6 +13,14 @@
 
 namespace ViewSolutions {
 
+/**
+ * @brief The __PrvateBaseListModel class is the private QObject base class
+ * of the @a BaseListModel template.
+ *
+ * This class is not intended to be used directly. It exists only to make
+ * the Q_OBJECT macro (and its signals) available to the BaseListModel
+ * template class, which cannot use Q_OBJECT itself.
+ */
 class __PrvateBaseListModel : public QAbstractListModel{
     Q_OBJECT
 protected:
@@ -27,26 +35,51 @@ Q_PROPERTY(QList<Type> listDate READ dateList WRITE setDataList NOTIFY listDateC
 
 
 /**
+ * @brief The BaseListModel class is the base class of all GUI list models.
+ *
+ * A BaseListModel stores its items in a simple list and exposes them to QML
+ * as a list model. The list of all items is also available in QML through
+ * the `listDate` property (see the BASE_LIST_MODEL_DATA_PROPERTY macro).
+ *
  * @tparam TYPE - is main stored delegate model of all list items.
- * @brief The BaseListModel class is base class of all GUI list models
  *
- * Conceptions and using rooles
- * * All models should provides delegate models base of qobject
- * * If model require fast solution just implement BaseListModel<int> model
+ * Concepts and usage rules:
+ *  - All models should provide delegate models based on QObject
+ *  - If the model requires a fast solution, just implement a BaseListModel<int> model
  *
+ * @note To access the delegate model use the Qt::EditRole role:
+ *       it is available in QML by the `delegateModel` keyword.
  *
- * @note to access to delegate model use Qt::EditRole role: available in qml by delegateModel keyword
- * **example:** :
+ * Example of a model based on the BaseListModel:
+ * ```cpp
+ * class VariantListModel: public ViewSolutions::BaseListModel<QVariant>
+ * {
+ *     Q_OBJECT
+ *     BASE_LIST_MODEL_DATA_PROPERTY(QVariant)
+ *
+ * public:
+ *     VariantListModel(QObject* ptr = nullptr):
+ *         ViewSolutions::BaseListModel<QVariant>(ptr) {}
+ * };
  * ```
- * class VariantListModel: public BaseListModel<QVariant>
-{
-    Q_OBJECT
-    BASE_LIST_MODEL_DATA_PROPERTY(QVariant)
-
-public:
-    VariantListModel(QObject* ptr = nullptr): BaseListModel<QVariant>(ptr){};
-};
-}
+ *
+ * C++ usage:
+ * ```cpp
+ * VariantListModel model;
+ *
+ * QList<QVariant> items;
+ * items << "one" << "two" << "three";
+ * model.setDataList(items);
+ *
+ * const QList<QVariant>& values = model.dateList();
+ * ```
+ *
+ * QML usage (after the model was registered as context property):
+ * ```qml
+ * ListView {
+ *     model: variantListModel
+ *     delegate: Text { text: delegateModel }
+ * }
  * ```
  */
 template<class TYPE>

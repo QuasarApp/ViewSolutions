@@ -16,6 +16,17 @@ namespace ViewSolutions {
 
 /**
  * @brief The QMLColorPicker class - Qml wrapper for ColorPicker class.
+ *
+ * This model is registered in the model storage by ViewSolutions::init and
+ * is also available in QML as the `colorPicker` context property.
+ *
+ * Example:
+ * ```qml
+ * Item {
+ *     // General color of an image:
+ *     property var color: colorPicker.pick("qrc:/res/icon.png")
+ * }
+ * ```
  */
 class VIEWSOLUTION_EXPORT QMLColorPicker : public QObject, public iModel, private ColorPicker
 {
@@ -32,8 +43,8 @@ public:
     Q_INVOKABLE QColor pick(const QString &img) const;
 
     /**
-     * @brief instance This is singleton instance of QMLColorPicker.
-     * @return
+     * @brief modelId This method returns the model id of the QMLColorPicker.
+     * @return model id of the color picker.
      */
     QString modelId() const override;
 

@@ -10,6 +10,23 @@
 
 #include <QtCore/qglobal.h>
 
+/**
+ * @brief VIEWSOLUTION_EXPORT marks a symbol as part of the public
+ * ViewSolutions API.
+ *
+ * When the ViewSolutions shared library is built (VIEW_SOLUTIONS_LIBRARY
+ * is defined) the macro expands to Q_DECL_EXPORT, otherwise to
+ * Q_DECL_IMPORT for consuming applications.
+ *
+ * Example:
+ * ```cpp
+ * class VIEWSOLUTION_EXPORT ColorPicker
+ * {
+ * public:
+ *     explicit ColorPicker();
+ * };
+ * ```
+ */
 #if defined(VIEW_SOLUTIONS_LIBRARY)
 #  define VIEWSOLUTION_EXPORT Q_DECL_EXPORT
 #else
