@@ -107,7 +107,7 @@ BasePopUp {
                     close();
                 }
 
-                if (autoClosePasused) {
+                if (autoClosePaused) {
                     autocloseResume()
                 } else {
                     autoclosePause();

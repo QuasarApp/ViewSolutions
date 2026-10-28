@@ -22,7 +22,7 @@ class VIEWSOLUTION_EXPORT NotificationData
 public:
 
     /**
-     * @brief The Type enum This enum contatins all available types of the notification messages.
+     * @brief The Type enum This enum contains all available types of the notification messages.
      */
     enum Type {
         /// This is message for general notification.
@@ -84,8 +84,8 @@ public:
      */
     void setCode(int code);
 
-    bool operator ==(const NotificationData &righ);
-    bool operator !=(const NotificationData &righ);
+    bool operator ==(const NotificationData &right);
+    bool operator !=(const NotificationData &right);
 
     int getTime() const;
     void setTime(int newTime);

@@ -28,13 +28,13 @@ public:
     /**
      * @brief addModel adds new model into storage.
      * @param model is model object.
-     * @return true if model added succesfful, if model alredy exists or model is invalid return false.
+     * @return true if model added successfully, if model already exists or model is invalid return false.
      * @note All valid models should be inherited from QObject, and inited using a QSharedPointer::create() method.
      */
     bool addModel(const QSharedPointer<iModel>& model);
 
     /**
-     * @brief getModel This method isible on The QML and using for gettings required GUI models.
+     * @brief getModel This method is visible on QML and using for getting required GUI models.
      * @param modeId This is id of required model.
      * @return model raw pointer.
      */

@@ -15,8 +15,8 @@ import ViewSolutionsModule 1.0
 ImageView {
 
     anchors.fill: parent
-    soucre:  "qrc:/img/images/example.png"
-    text: "exampele"
+    source:  "qrc:/img/images/example.png"
+    text: "example"
     anchors.margins: 100
     borderColor: "red"
 }
@@ -77,7 +77,7 @@ Simple Qml notification service for qml applications.
   ```cmake
     include(QmlNotyfyService)
   ```
- * Rebuild yuor project
+ * Rebuild your project
 
 
 
@@ -88,7 +88,7 @@ Simple Qml notification service for qml applications.
  * git submodule update --init --recursive
  * Add the rule for build QmlNotyfyService
  * Add INCLUDEPATH and LIBS for your build system 
- * Rebuild yuor project
+ * Rebuild your project
 
 
 ## Using
@@ -130,11 +130,11 @@ Simple Qml notification service for qml applications.
      QmlNotificationService::init();
      auto service = QmlNotificationService::NotificationService::getService();
 
-     QmlNotificationService::Listner listner = [] (bool accepted) {
+     QmlNotificationService::Listener listener = [] (bool accepted) {
                             // your action here.
      };
 
-     service->setQuestion(listner, "title", "some text");
+     service->setQuestion(listener, "title", "some text");
 
      
  }

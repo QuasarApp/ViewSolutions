@@ -34,17 +34,17 @@ QColor QMLColorPicker::pick(const QString &img) const {
 
             if (provider->imageType() & QQmlImageProviderBase::ImageResponse) {
                 auto async = static_cast<QQuickAsyncImageProvider*>(provider);
-                auto textureFacrory = async->requestImageResponse(url, {})->textureFactory();
+                auto textureFactory = async->requestImageResponse(url, {})->textureFactory();
 
-                if (!textureFacrory) {
+                if (!textureFactory) {
                     return {};
                 }
 
-                QColor responce = ColorPicker::pick(textureFacrory->image(), 5, _alpha);
+                QColor response = ColorPicker::pick(textureFactory->image(), 5, _alpha);
 
-                delete textureFacrory;
+                delete textureFactory;
 
-                return responce;
+                return response;
             }
 
             if (provider->imageType() == QQmlImageProviderBase::Texture) {

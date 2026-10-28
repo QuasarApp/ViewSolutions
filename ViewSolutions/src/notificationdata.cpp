@@ -40,16 +40,16 @@ QString NotificationData::title() const {
     return _title;
 }
 
-bool NotificationData::operator ==(const NotificationData &righ) {
-    return _title == righ._title &&
-            _text == righ._text &&
-            _img == righ._img &&
-            _type == righ._type &&
-            _time == righ._time;
+bool NotificationData::operator ==(const NotificationData &right) {
+    return _title == right._title &&
+            _text == right._text &&
+            _img == right._img &&
+            _type == right._type &&
+            _time == right._time;
 }
 
-bool NotificationData::operator !=(const NotificationData &righ) {
-    return !operator==(righ);
+bool NotificationData::operator !=(const NotificationData &right) {
+    return !operator==(right);
 }
 
 QString NotificationData::getDefaultImage(const int code) const {

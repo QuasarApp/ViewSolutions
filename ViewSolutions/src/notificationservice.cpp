@@ -41,24 +41,24 @@ void NotificationService::setNotify(const NotificationData& notify) {
     emit notifyChanged();
 }
 
-int NotificationService::setQuestion(const Listner& listner, const NotificationData &question) {
+int NotificationService::setQuestion(const Listener& listener, const NotificationData &question) {
 
     _question = question;
     int questionCode = rand();
     _question.setCode(questionCode);
     emit questionChanged();
 
-    _listners[questionCode] = listner;
+    _listeners[questionCode] = listener;
 
     return _question.type();
 }
 
 void NotificationService::questionComplete(bool accepted, int code) {
 
-    if (_listners.contains(code)) {
-        auto listner = _listners.value(code);
-        listner(accepted);
-        _listners.remove(code);
+    if (_listeners.contains(code)) {
+        auto listener = _listeners.value(code);
+        listener(accepted);
+        _listeners.remove(code);
     }
 
     emit questionCompleted(accepted, code);
@@ -73,34 +73,34 @@ void NotificationService::setNotify(const QString &title,
                                static_cast<NotificationData::Type>(type)));
 }
 
-int NotificationService::setQuestion(QObject *listnerObject,
-                                     const QString &listnerMethod,
+int NotificationService::setQuestion(QObject *listenerObject,
+                                     const QString &listenerMethod,
                                      const QString &title,
                                      const QString &text,
                                      const QString &img,
                                      int code) {
 
-    Listner listner = [listnerObject, listnerMethod](bool accept) {
+    Listener listener = [listenerObject, listenerMethod](bool accept) {
 
-        const QByteArray stringData = listnerMethod.toLatin1();
+        const QByteArray stringData = listenerMethod.toLatin1();
         char method[100];
         method[qMin(99, stringData.size())] = '\0';
         std::copy(stringData.constBegin(), stringData.constBegin() + qMin(99, stringData.size()), method);
 
-        QMetaObject::invokeMethod(listnerObject, method,
+        QMetaObject::invokeMethod(listenerObject, method,
                                   Qt::QueuedConnection, Q_ARG(bool, accept));
     };
 
-    return setQuestion(listner, NotificationData(title, text, img, code));
+    return setQuestion(listener, NotificationData(title, text, img, code));
 }
 
-int NotificationService::setQuestion(const Listner& listner,
+int NotificationService::setQuestion(const Listener& listener,
                                      const QString &title,
                                      const QString &text,
                                      const QString &img,
                                      int code) {
 
-    return setQuestion(listner, NotificationData(title, text, img, code));
+    return setQuestion(listener, NotificationData(title, text, img, code));
 }
 
 
@@ -117,7 +117,7 @@ void NotificationService::showHistory() {
     emit sigShowHistory();
 }
 
-void NotificationService::notificationHiden() {
+void NotificationService::notificationHidden() {
     setUiIsDisplay(false);
 }
 

@@ -22,16 +22,16 @@ Dialog {
     property int margin : 0
     property color backgroundColor: Material.background
 
-    property alias autoClosePasused: progressAnimation.paused
+    property alias autoClosePaused: progressAnimation.paused
 
     background: Item {
-        id: bacground
+        id: background
 
         Rectangle{
             anchors.fill: parent
             id: backCorner
             color: backgroundColor
-            radius: metrix.mm
+            radius: matrix.mm
         }
     }
 

@@ -30,7 +30,7 @@ Control {
     property var resetState: () => {}
 
     // this is lambda function with required action of this page.
-    // If is it not null then MainActivityProcessor will execute this action and forbide distroy this UI.
+    // If is it not null then MainActivityProcessor will execute this action and forbid destroy this UI.
     property var requireAction: null
 
     // This is call back function, If this function exists its will be called before pop object from main activity, but if requireAction is null.
