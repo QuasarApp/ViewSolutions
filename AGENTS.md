@@ -170,24 +170,53 @@ gh pr create \
 ### Test infrastructure
 
 This repository has no unit-test suite: the QML components are exercised by
-the consuming applications (Ecliptica) and by the `Examples/` app. The only
-CI in the repo is `deploy-docs.yml` (publishes the documentation).
+the consuming applications (Ecliptica) and by the `Examples/` app. The
+`initAll()` call (QuasarApp CMake layer) still registers the standard `test`
+aggregate target — it is **empty** here (no suite is registered via
+`addTests`), so `cmake --build build --target test` is a no-op. The only CI
+in the repo is `deploy-docs.yml` (publishes the documentation; it does not
+build the code).
 
-### Running the tests from CMake
+### Running the tests from CMake (via a consuming project)
 
-There is no suite to run. Verification of a change = configure + build this
-repository (library + examples), then build a consumer project:
+There is nothing to run in this repository — verification of a change is a
+build, and it runs from CMake: configure + build this repository (library +
+examples), then build a consumer project against the changed module. The
+natural consumer is Ecliptica, which builds the module in-tree
+(`add_subdirectory(submodules/ViewSolutions)` — `Ecliptica/CMakeLists.txt:96`):
 
 ```sh
+# 1. this repository: module + examples, green
 cmake -B build -G Ninja -DCMAKE_PREFIX_PATH=/opt/Qt/6.10.3/gcc_64 \
+  -DCMAKE_BUILD_TYPE=Debug
+cmake --build build --parallel 16
+
+# 2. in a sibling Ecliptica clone: point the ViewSolutions submodule at
+#    your branch, then configure + build the game. Ecliptica's full
+#    toolchain applies (Qt 6.10.3 + Quick3D module set, SDL3, Vulkan — see
+#    Ecliptica/AGENTS.md); the SDL3 root (the directory containing
+#    include/SDL3 and lib/cmake/SDL3) goes on CMAKE_PREFIX_PATH as well
+git -C submodules/ViewSolutions fetch origin <task-branch>
+git -C submodules/ViewSolutions checkout <task-branch>
+cmake -B build -G Ninja \
+  -DCMAKE_PREFIX_PATH=/opt/Qt/6.10.3/gcc_64;<SDL3-root> \
   -DCMAKE_BUILD_TYPE=Debug
 cmake --build build --parallel 16
 ```
 
 ### Smoke tests — the most important testing step
 
-The smoke test is: configure + build the `ViewSolutions` module and the
-examples green (Debug), and a consumer project (Ecliptica) still compiles
-against the changed module. The QML runtime behavior is then checked by
-running the example app. A red build in any consumer is a smoke-test
-failure for this repository.
+The smoke test is the most important testing step of this project: a fast,
+headless, CMake-runnable proof that the changed module still builds — both
+standalone and inside its consumer. No display is needed at any point:
+
+1. Configure + build **this repository** green (Debug): the `ViewSolutions`
+   module and the `ViewSolutionsExamples` app.
+2. Build the **consumer (Ecliptica)** against the changed module (its
+   `ViewSolutions` submodule pointed at your branch, as above).
+
+A red build in either step is a smoke-test failure for this repository and
+blocks the merge — because Ecliptica's UI imports `ViewSolutionsModule`, a
+regression here is a regression in the game. The QML runtime behavior is an
+extra, manual check on top of the smoke test: run the example app on a
+display (see Build).
