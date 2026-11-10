@@ -203,20 +203,3 @@ cmake -B build -G Ninja \
   -DCMAKE_BUILD_TYPE=Debug
 cmake --build build --parallel 16
 ```
-
-### Smoke tests — the most important testing step
-
-The smoke test is the most important testing step of this project: a fast,
-headless, CMake-runnable proof that the changed module still builds — both
-standalone and inside its consumer. No display is needed at any point:
-
-1. Configure + build **this repository** green (Debug): the `ViewSolutions`
-   module and the `ViewSolutionsExamples` app.
-2. Build the **consumer (Ecliptica)** against the changed module (its
-   `ViewSolutions` submodule pointed at your branch, as above).
-
-A red build in either step is a smoke-test failure for this repository and
-blocks the merge — because Ecliptica's UI imports `ViewSolutionsModule`, a
-regression here is a regression in the game. The QML runtime behavior is an
-extra, manual check on top of the smoke test: run the example app on a
-display (see Build).
