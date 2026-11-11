@@ -1,9 +1,9 @@
 <map id="ViewSolutions/src/notificationdata.h" name="ViewSolutions/src/notificationdata.h">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,260,31"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="22,79,97,104"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="122,33,83,71,79,67,119,29"/>
-<area shape="rect" id="Node000003" href="$viewsolutions__global_8h.html" title=" " alt="" coords="121,79,291,104"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="147,29,186,67,182,71,143,33"/>
-<area shape="rect" id="Node000004" title=" " alt="" coords="141,152,271,177"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="209,104,209,138,203,138,203,104"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,260,33"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="24,81,97,109"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="118,36,86,72,82,68,121,31"/>
+<area shape="rect" id="Node000003" href="$viewsolutions__global_8h.html" title=" " alt="" coords="121,81,291,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="146,31,185,69,179,70,145,36"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="141,157,271,184"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="208,107,208,142,204,140,204,111"/>
 </map>
