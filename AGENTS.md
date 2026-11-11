@@ -8,7 +8,7 @@ ViewSolutions is the shared QML view layer of the QuasarApp project group:
 reusable QML components (the animated `ImageView`, color picker, models,
 avatar generator) consumed by QuasarApp applications.
 
-- **Language:** C++17 + Qt (Core, Quick, QuickControls2) + QML
+- **Language:** C++ (library: C++23, examples: C++17) + Qt (Core, Quick, QuickControls2) + QML
 - **Build system:** CMake ≥ 3.19 (typically with Ninja)
 - **License:** LGPLv3
 
@@ -20,13 +20,13 @@ avatar generator) consumed by QuasarApp applications.
 | `Examples/` | example app (built with `VIEWSOLUTIONS_EXAMPLES=ON`) |
 | `res/` | shared resources |
 | `CMake/` | the QuasarApp CMake layer (`QuasarApp/CMake` submodule) |
-| `Docs/`, `mkdocs.yml` | documentation (→ `quasarapp.github.io/ViewSolutions`) |
+| `README.md`, `doxygen.conf.in`, `mkdocs.yml` | documentation (→ `quasarapp.github.io/ViewSolutions`) |
 
 ### Architecture
 
 - One QML module library (`ViewSolutions`) plus a C++ side (models/helpers)
   registered into the module; consumers add `add_subdirectory(ViewSolutions)`
-  and `import ViewSolutionsModule 1.0`.
+  and `import ViewSolutions 1.0`.
 - The QuasarApp CMake layer (`initAll()`) provides the `test` / `doc` /
   `deploy` / `release` targets.
 
@@ -37,7 +37,7 @@ avatar generator) consumed by QuasarApp applications.
 | Tool | Version / notes |
 |---|---|
 | CMake | ≥ 3.19 |
-| Compiler | C++17 |
+| Compiler | C++23 (library), C++17 (examples) |
 | Qt | 6.10.3 (Core, Quick, QuickControls2) |
 | Ninja | preferred generator |
 | CQtDeployer | `cqtdeployer` on `PATH`, required by the `deploy`/`release` targets |
@@ -63,7 +63,7 @@ desktop with a display to see the components.
 
 CMake options (top level):
 
-- `VIEWSOLUTIONS_EXAMPLES` — build the examples (default `ON`; forced `OFF` on Android/iOS)
+- `VIEWSOLUTIONS_EXAMPLES` — build the examples (default `ON`, `OFF` on Android/iOS)
 - `QT_QML_GENERATE_QMLLS_INI` — generate QML LSP support (default `ON`)
 
 ### Branching, labels and pull requests (workflow for AI agents)
@@ -110,7 +110,7 @@ with `gh pr view <number> --json number,url,mergeable` before reporting it.
 
 ### Documentation rules
 
-- `Docs/` + `mkdocs.yml` publish the QML reference to
+- `README.md` + `doxygen.conf.in` + `mkdocs.yml` publish the documentation to
   `quasarapp.github.io/ViewSolutions` — a component change and its docs ship
   in the same PR.
 - A new QML component ships **with** an example in `Examples/`, never in a
