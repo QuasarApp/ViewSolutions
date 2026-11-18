@@ -15,7 +15,7 @@
 namespace ViewSolutions {
 
 /**
- * @brief The __PrvateBaseListModel class is the private QObject base class
+ * @brief The __PrivateBaseListModel class is the private QObject base class
  * of the @a BaseListModel template.
  *
  * This class is not intended to be used directly. It exists only to make
