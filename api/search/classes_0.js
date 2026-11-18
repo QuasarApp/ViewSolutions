@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['_5f_5fprvatebaselistmodel_0',['__PrvateBaseListModel',['../classViewSolutions_1_1____PrvateBaseListModel.html',1,'ViewSolutions']]]
+  ['_5f_5fprivatebaselistmodel_0',['__PrivateBaseListModel',['../classViewSolutions_1_1____PrivateBaseListModel.html',1,'ViewSolutions']]]
 ];

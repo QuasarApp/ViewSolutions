@@ -1,7 +1,9 @@
 <map id="ViewSolutions::VariantListModel" name="ViewSolutions::VariantListModel">
-<area shape="rect" id="Node000001" title="The VariantListModel class is universal implementation for all atomic types." alt="" coords="18,375,198,464"/>
-<area shape="rect" id="Node000002" href="$classViewSolutions_1_1BaseListModel.html" title=" " alt="" coords="5,126,211,327"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="110,339,111,376,106,374,107,344"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="25,5,191,78"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="109,90,111,126,106,126,108,95"/>
+<area shape="rect" id="Node000001" title="The VariantListModel class is universal implementation for all atomic types." alt="" coords="18,512,198,601"/>
+<area shape="rect" id="Node000002" href="$classViewSolutions_1_1BaseListModel.html" title=" " alt="" coords="5,263,211,464"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="110,477,111,513,106,512,107,481"/>
+<area shape="rect" id="Node000003" href="$classViewSolutions_1_1____PrivateBaseListModel.html" title="The __PrvateBaseListModel class is the private QObject base class of the BaseListModel template." alt="" coords="12,126,204,215"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="109,228,111,263,106,263,108,233"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="39,5,177,78"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="108,90,111,126,106,125,108,96"/>
 </map>

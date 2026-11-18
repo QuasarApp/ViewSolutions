@@ -1,7 +1,7 @@
 var annotated_dup =
 [
     [ "ViewSolutions", "namespaceViewSolutions.html", [
-      [ "__PrvateBaseListModel", "classViewSolutions_1_1____PrvateBaseListModel.html", "classViewSolutions_1_1____PrvateBaseListModel" ],
+      [ "__PrivateBaseListModel", "classViewSolutions_1_1____PrivateBaseListModel.html", "classViewSolutions_1_1____PrivateBaseListModel" ],
       [ "AvatarGenerator", "classViewSolutions_1_1AvatarGenerator.html", "classViewSolutions_1_1AvatarGenerator" ],
       [ "BaseHashModel", "classViewSolutions_1_1BaseHashModel.html", "classViewSolutions_1_1BaseHashModel" ],
       [ "BaseListModel", "classViewSolutions_1_1BaseListModel.html", "classViewSolutions_1_1BaseListModel" ],
