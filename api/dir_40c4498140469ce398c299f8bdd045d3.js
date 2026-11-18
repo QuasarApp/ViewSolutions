@@ -23,6 +23,8 @@ var dir_40c4498140469ce398c299f8bdd045d3 =
     [ "notificationservice.h", "notificationservice_8h.html", "notificationservice_8h" ],
     [ "qmlcolorpicker.cpp", "qmlcolorpicker_8cpp.html", null ],
     [ "qmlcolorpicker.h", "qmlcolorpicker_8h.html", "qmlcolorpicker_8h" ],
+    [ "stacktextmodel.cpp", "stacktextmodel_8cpp.html", null ],
+    [ "stacktextmodel.h", "stacktextmodel_8h.html", "stacktextmodel_8h" ],
     [ "variantlistmodel.h", "variantlistmodel_8h.html", "variantlistmodel_8h" ],
     [ "viewsolutions.cpp", "viewsolutions_8cpp.html", "viewsolutions_8cpp" ],
     [ "viewsolutions.h", "viewsolutions_8h.html", "viewsolutions_8h" ],

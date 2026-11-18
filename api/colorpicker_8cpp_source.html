@@ -27,7 +27,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">ViewSolutions<span id="projectnumber">&#160;1.0.106.5750bc8</span>
+   <div id="projectname">ViewSolutions<span id="projectnumber">&#160;1.0.164.321088c</span>
    </div>
    <div id="projectbrief">View solutions of qml for quasarapp projects</div>
   </td>
@@ -115,7 +115,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('colorpicker_8c
 </div><!--header-->
 <div class="contents">
 <a href="colorpicker_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">//#</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">//# Copyright (C) 2020-2025 QuasarApp.</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">//# Copyright (C) 2020-2026 QuasarApp.</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">//# Distributed under the GPLv3 software license, see the accompanying</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">//# Everyone is permitted to copy and distribute verbatim copies</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">//# of this license document, but changing it is not allowed.</span></div>
@@ -141,7 +141,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('colorpicker_8c
 </div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
 <div class="foldopen" id="foldopen00023" data-start="{" data-end="}">
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="classViewSolutions_1_1ColorPicker.html#a02f07672ffecada46f63cec0d13a2efd">   23</a></span>QColor <a class="code hl_function" href="classViewSolutions_1_1ColorPicker.html#a483972df366852550aa0a631e7344252">ColorPicker::pick</a>(<span class="keyword">const</span> QImage &amp;img, <span class="keywordtype">int</span> density)<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="classViewSolutions_1_1ColorPicker.html#a2c47cafba96859b3635fd69156c369c2">   23</a></span>QColor <a class="code hl_function" href="classViewSolutions_1_1ColorPicker.html#a483972df366852550aa0a631e7344252">ColorPicker::pick</a>(<span class="keyword">const</span> QImage &amp;img, <span class="keywordtype">int</span> density, <span class="keywordtype">bool</span> alpha)<span class="keyword"> const </span>{</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keywordtype">int</span> stepX = img.width() / density;</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keywordtype">int</span> stepY = img.height() / density;</div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
@@ -154,39 +154,60 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('colorpicker_8c
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        G = 0,</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        B = 0;</div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> x = stepX - 1; x &lt; img.width(); x += stepX) {</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> y = stepY - 1; y &lt; img.height(); y += stepY) {</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>            <span class="keywordtype">int</span> pixel = img.pixel(x, y);</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>            A += (pixel &amp; 0xFF000000) &gt;&gt; 24;</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>            R += (pixel &amp; 0x00FF0000) &gt;&gt; 16;</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>            G += (pixel &amp; 0x0000FF00) &gt;&gt; 8;</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>            B +=  pixel &amp; 0x000000FF;</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        }</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    }</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keywordtype">int</span> count = 0;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> x = stepX - 1; x &lt; img.width(); x += stepX) {</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> y = stepY - 1; y &lt; img.height(); y += stepY) {</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>            <span class="keywordtype">int</span> pixel = img.pixel(x, y);</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>            <span class="keywordtype">int</span> Atmp = (pixel &amp; 0xFF000000) &gt;&gt; 24;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>            <span class="keywordflow">if</span> (Atmp &gt; 0) {</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>                A += Atmp;</div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <span class="keywordtype">int</span> count = density * density;</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <span class="keywordflow">return</span> QColor::fromRgba(((A / count) &lt;&lt; 24) |</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>                            ((R / count) &lt;&lt; 16) |</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>                            ((G / count) &lt;&lt; 8) |</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>                              B / count);</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>}</div>
-</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>                R += (pixel &amp; 0x00FF0000) &gt;&gt; 16;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>                G += (pixel &amp; 0x0000FF00) &gt;&gt; 8;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>                B +=  pixel &amp; 0x000000FF;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>                count++;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>            }</div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
-<div class="foldopen" id="foldopen00053" data-start="{" data-end="}">
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="classViewSolutions_1_1ColorPicker.html#abf9a2584b9f3d9bd37b2a7cef33b62fb">   53</a></span>QColor <a class="code hl_function" href="classViewSolutions_1_1ColorPicker.html#a483972df366852550aa0a631e7344252">ColorPicker::pick</a>(<span class="keyword">const</span> QString &amp;img)<span class="keyword"> const </span>{</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="keywordflow">if</span> (img.left(3).compare(<span class="stringliteral">&quot;qrc&quot;</span>) == 0) {</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="classViewSolutions_1_1ColorPicker.html#a483972df366852550aa0a631e7344252">pick</a>(QImage(img.right(img.size() - 3)));</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    }</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <span class="keywordflow">if</span> (img.left(5).compare(<span class="stringliteral">&quot;file:&quot;</span>) == 0) {</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="classViewSolutions_1_1ColorPicker.html#a483972df366852550aa0a631e7344252">pick</a>(QImage(img.right(img.size() - 5)));</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    }</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="classViewSolutions_1_1ColorPicker.html#a483972df366852550aa0a631e7344252">pick</a>(QImage(img));</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>}</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        }</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    }</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    <span class="keywordflow">if</span> (count &lt;= 0) {</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        <span class="keywordflow">return</span> QColor::fromRgb(0);</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    }</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <span class="keywordflow">if</span> (!alpha) {</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        <span class="keywordflow">return</span> QColor::fromRgba((255 &lt;&lt; 24) |</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>                                ((R / count) &lt;&lt; 16) |</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>                                ((G / count) &lt;&lt; 8) |</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>                                B / count);</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    }</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    <span class="keywordflow">return</span> QColor::fromRgba(((A / count) &lt;&lt; 24) |</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>                            ((R / count) &lt;&lt; 16) |</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>                            ((G / count) &lt;&lt; 8) |</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>                              B / count);</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>}</div>
 </div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>}</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
+<div class="foldopen" id="foldopen00074" data-start="{" data-end="}">
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno"><a class="line" href="classViewSolutions_1_1ColorPicker.html#ad4e6e81af622e541b988c540268b05ef">   74</a></span>QColor <a class="code hl_function" href="classViewSolutions_1_1ColorPicker.html#a483972df366852550aa0a631e7344252">ColorPicker::pick</a>(<span class="keyword">const</span> QString &amp;img, <span class="keywordtype">bool</span> alpha)<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    <span class="keywordflow">if</span> (img.left(3).compare(<span class="stringliteral">&quot;qrc&quot;</span>) == 0) {</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="classViewSolutions_1_1ColorPicker.html#a483972df366852550aa0a631e7344252">pick</a>(QImage(img.right(img.size() - 3)), 5, alpha);</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    }</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span> </div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    <span class="keywordflow">if</span> (img.left(5).compare(<span class="stringliteral">&quot;file:&quot;</span>) == 0) {</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="classViewSolutions_1_1ColorPicker.html#a483972df366852550aa0a631e7344252">pick</a>(QImage(img.right(img.size() - 5)), 5, alpha);</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    }</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="classViewSolutions_1_1ColorPicker.html#a483972df366852550aa0a631e7344252">pick</a>(QImage(img), 5, alpha);</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>}</div>
+</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>}</div>
 <div class="ttc" id="aclassViewSolutions_1_1ColorPicker_html_a483972df366852550aa0a631e7344252"><div class="ttname"><a href="classViewSolutions_1_1ColorPicker.html#a483972df366852550aa0a631e7344252">ViewSolutions::ColorPicker::pick</a></div><div class="ttdeci">QColor pick(int x, int y, const QImage &amp;img) const</div><div class="ttdoc">pick Get color from point.</div><div class="ttdef"><b>Definition</b> <a href="#l00019">colorpicker.cpp:19</a></div></div>
 <div class="ttc" id="aclassViewSolutions_1_1ColorPicker_html_aebfa2a9463d5e35a62fdca5f92597ea4"><div class="ttname"><a href="classViewSolutions_1_1ColorPicker.html#aebfa2a9463d5e35a62fdca5f92597ea4">ViewSolutions::ColorPicker::ColorPicker</a></div><div class="ttdeci">ColorPicker()</div><div class="ttdef"><b>Definition</b> <a href="#l00015">colorpicker.cpp:15</a></div></div>
 <div class="ttc" id="acolorpicker_8h_html"><div class="ttname"><a href="colorpicker_8h.html">colorpicker.h</a></div></div>

@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['history_0',['history',['../classViewSolutions_1_1NotificationService.html#a960eab769962d3bd90d56cd2cd24aea6',1,'ViewSolutions::NotificationService']]],
-  ['hover_1',['hover',['../classViewSolutions_1_1iGUITokensModel.html#a23d924277a074a9683aa4abe879e8be3',1,'ViewSolutions::iGUITokensModel']]]
+  ['delimiter_0',['delimiter',['../classStackTextModel.html#a4c8a517dd0b25330fb8baab795af619d',1,'StackTextModel']]]
 ];

@@ -27,7 +27,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">ViewSolutions<span id="projectnumber">&#160;1.0.106.5750bc8</span>
+   <div id="projectname">ViewSolutions<span id="projectnumber">&#160;1.0.164.321088c</span>
    </div>
    <div id="projectbrief">View solutions of qml for quasarapp projects</div>
   </td>
@@ -115,7 +115,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('qmlcolorpicker
 </div><!--header-->
 <div class="contents">
 <a href="qmlcolorpicker_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">//#</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">//# Copyright (C) 2020-2025 QuasarApp.</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">//# Copyright (C) 2020-2026 QuasarApp.</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">//# Distributed under the GPLv3 software license, see the accompanying</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">//# Everyone is permitted to copy and distribute verbatim copies</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">//# of this license document, but changing it is not allowed.</span></div>
@@ -134,23 +134,38 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('qmlcolorpicker
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="classViewSolutions_1_1QMLColorPicker.html">   31</a></span><span class="keyword">class </span><a class="code hl_define" href="viewsolutions__global_8h.html#a3d9c07b0fef7a1bec2bb3c751cb801c6">VIEWSOLUTION_EXPORT</a> <a class="code hl_function" href="classViewSolutions_1_1QMLColorPicker.html#a231c6fc04950cb9d262876e8f7901f86">QMLColorPicker</a> : <span class="keyword">public</span> QObject, <span class="keyword">public</span> <a class="code hl_function" href="classViewSolutions_1_1iModel.html#a1acefc5c15a9562c38c8128be7431fd4">iModel</a>, <span class="keyword">private</span> <a class="code hl_function" href="classViewSolutions_1_1ColorPicker.html#aebfa2a9463d5e35a62fdca5f92597ea4">ColorPicker</a></div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>{</div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    Q_OBJECT</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="keyword">explicit</span> <a class="code hl_function" href="classViewSolutions_1_1QMLColorPicker.html#a231c6fc04950cb9d262876e8f7901f86">QMLColorPicker</a>(QObject *parent = <span class="keyword">nullptr</span>);</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span></div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    Q_INVOKABLE QColor <a class="code hl_function" href="classViewSolutions_1_1QMLColorPicker.html#ab5e341c5f8bc2b9afd0c85ef49dc6264">pick</a>(<span class="keyword">const</span> QString &amp;img) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span></div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    QString <a class="code hl_function" href="classViewSolutions_1_1QMLColorPicker.html#aa72b5c67fc1baee8a33e3c7de7090be9">modelId</a>() <span class="keyword">const override</span>;</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>};</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="classViewSolutions_1_1QMLColorPicker.html#ade3c7953062bd895fd8d6b8f024ad208">   34</a></span>    Q_PROPERTY(<span class="keywordtype">bool</span> <a class="code hl_property" href="classViewSolutions_1_1QMLColorPicker.html#ade3c7953062bd895fd8d6b8f024ad208">alpha</a> READ <a class="code hl_property" href="classViewSolutions_1_1QMLColorPicker.html#ade3c7953062bd895fd8d6b8f024ad208">alpha</a> WRITE <a class="code hl_function" href="classViewSolutions_1_1QMLColorPicker.html#a1941e5779c4fbf283649919d36a9c921">setAlpha</a> NOTIFY <a class="code hl_signal" href="classViewSolutions_1_1QMLColorPicker.html#a7d682dfdae8670c362462c657319a22d">alphaChanged</a> FINAL)</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="keyword">explicit</span> <a class="code hl_function" href="classViewSolutions_1_1QMLColorPicker.html#a231c6fc04950cb9d262876e8f7901f86">QMLColorPicker</a>(QObject *parent = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    Q_INVOKABLE QColor <a class="code hl_function" href="classViewSolutions_1_1QMLColorPicker.html#ab5e341c5f8bc2b9afd0c85ef49dc6264">pick</a>(<span class="keyword">const</span> QString &amp;img) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    QString <a class="code hl_function" href="classViewSolutions_1_1QMLColorPicker.html#aa72b5c67fc1baee8a33e3c7de7090be9">modelId</a>() <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <span class="keywordtype">bool</span> <a class="code hl_property" href="classViewSolutions_1_1QMLColorPicker.html#ade3c7953062bd895fd8d6b8f024ad208">alpha</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span></div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classViewSolutions_1_1QMLColorPicker.html#a1941e5779c4fbf283649919d36a9c921">setAlpha</a>(<span class="keywordtype">bool</span> newAlpha);</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>signals:</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="classViewSolutions_1_1QMLColorPicker.html#a7d682dfdae8670c362462c657319a22d">   67</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="classViewSolutions_1_1QMLColorPicker.html#a7d682dfdae8670c362462c657319a22d">alphaChanged</a>();</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    <span class="keywordtype">bool</span> _alpha = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>};</div>
 </div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>}</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="preprocessor">#endif </span><span class="comment">// QMLCOLORPICKER_H</span></div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>}</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span><span class="preprocessor">#endif </span><span class="comment">// QMLCOLORPICKER_H</span></div>
 <div class="ttc" id="aclassViewSolutions_1_1ColorPicker_html_aebfa2a9463d5e35a62fdca5f92597ea4"><div class="ttname"><a href="classViewSolutions_1_1ColorPicker.html#aebfa2a9463d5e35a62fdca5f92597ea4">ViewSolutions::ColorPicker::ColorPicker</a></div><div class="ttdeci">ColorPicker()</div><div class="ttdef"><b>Definition</b> <a href="colorpicker_8cpp_source.html#l00015">colorpicker.cpp:15</a></div></div>
+<div class="ttc" id="aclassViewSolutions_1_1QMLColorPicker_html_a1941e5779c4fbf283649919d36a9c921"><div class="ttname"><a href="classViewSolutions_1_1QMLColorPicker.html#a1941e5779c4fbf283649919d36a9c921">ViewSolutions::QMLColorPicker::setAlpha</a></div><div class="ttdeci">void setAlpha(bool newAlpha)</div><div class="ttdoc">setAlpha set new value of alpha mode.</div><div class="ttdef"><b>Definition</b> <a href="qmlcolorpicker_8cpp_source.html#l00079">qmlcolorpicker.cpp:79</a></div></div>
 <div class="ttc" id="aclassViewSolutions_1_1QMLColorPicker_html_a231c6fc04950cb9d262876e8f7901f86"><div class="ttname"><a href="classViewSolutions_1_1QMLColorPicker.html#a231c6fc04950cb9d262876e8f7901f86">ViewSolutions::QMLColorPicker::QMLColorPicker</a></div><div class="ttdeci">QMLColorPicker(QObject *parent=nullptr)</div><div class="ttdef"><b>Definition</b> <a href="qmlcolorpicker_8cpp_source.html#l00015">qmlcolorpicker.cpp:15</a></div></div>
+<div class="ttc" id="aclassViewSolutions_1_1QMLColorPicker_html_a7d682dfdae8670c362462c657319a22d"><div class="ttname"><a href="classViewSolutions_1_1QMLColorPicker.html#a7d682dfdae8670c362462c657319a22d">ViewSolutions::QMLColorPicker::alphaChanged</a></div><div class="ttdeci">void alphaChanged()</div></div>
 <div class="ttc" id="aclassViewSolutions_1_1QMLColorPicker_html_aa72b5c67fc1baee8a33e3c7de7090be9"><div class="ttname"><a href="classViewSolutions_1_1QMLColorPicker.html#aa72b5c67fc1baee8a33e3c7de7090be9">ViewSolutions::QMLColorPicker::modelId</a></div><div class="ttdeci">QString modelId() const override</div><div class="ttdoc">modelId This method returns the model id of the QMLColorPicker.</div><div class="ttdef"><b>Definition</b> <a href="qmlcolorpicker_8cpp_source.html#l00070">qmlcolorpicker.cpp:70</a></div></div>
 <div class="ttc" id="aclassViewSolutions_1_1QMLColorPicker_html_ab5e341c5f8bc2b9afd0c85ef49dc6264"><div class="ttname"><a href="classViewSolutions_1_1QMLColorPicker.html#ab5e341c5f8bc2b9afd0c85ef49dc6264">ViewSolutions::QMLColorPicker::pick</a></div><div class="ttdeci">Q_INVOKABLE QColor pick(const QString &amp;img) const</div><div class="ttdoc">pick This is override function for qml.</div><div class="ttdef"><b>Definition</b> <a href="qmlcolorpicker_8cpp_source.html#l00020">qmlcolorpicker.cpp:20</a></div></div>
+<div class="ttc" id="aclassViewSolutions_1_1QMLColorPicker_html_ade3c7953062bd895fd8d6b8f024ad208"><div class="ttname"><a href="classViewSolutions_1_1QMLColorPicker.html#ade3c7953062bd895fd8d6b8f024ad208">ViewSolutions::QMLColorPicker::alpha</a></div><div class="ttdeci">bool alpha</div><div class="ttdef"><b>Definition</b> <a href="#l00034">qmlcolorpicker.h:34</a></div></div>
 <div class="ttc" id="aclassViewSolutions_1_1iModel_html_a1acefc5c15a9562c38c8128be7431fd4"><div class="ttname"><a href="classViewSolutions_1_1iModel.html#a1acefc5c15a9562c38c8128be7431fd4">ViewSolutions::iModel::iModel</a></div><div class="ttdeci">iModel()=default</div></div>
 <div class="ttc" id="acolorpicker_8h_html"><div class="ttname"><a href="colorpicker_8h.html">colorpicker.h</a></div></div>
 <div class="ttc" id="aimodel_8h_html"><div class="ttname"><a href="imodel_8h.html">imodel.h</a></div></div>

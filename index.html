@@ -558,8 +558,8 @@
 <span class="nx">ImageView</span> <span class="p">{</span>
 
     <span class="k">anchors.fill:</span> <span class="nx">parent</span>
-    <span class="k">soucre:</span>  <span class="s2">&quot;qrc:/img/images/example.png&quot;</span>
-    <span class="k">text:</span> <span class="s2">&quot;exampele&quot;</span>
+    <span class="k">source:</span>  <span class="s2">&quot;qrc:/img/images/example.png&quot;</span>
+    <span class="k">text:</span> <span class="s2">&quot;example&quot;</span>
     <span class="k">anchors.margins:</span> <span class="mi">100</span>
     <span class="k">borderColor:</span> <span class="s2">&quot;red&quot;</span>
 <span class="p">}</span>
@@ -609,7 +609,7 @@
 <li>Include in your CMakeLists.txt file the main CMakeLists.txt file of QSimpleQmlNotify library
   <div class="highlight"><pre><span></span><code><span class="w">  </span><span class="nb">include</span><span class="p">(</span><span class="s">QmlNotyfyService</span><span class="p">)</span>
 </code></pre></div></li>
-<li>Rebuild yuor project</li>
+<li>Rebuild your project</li>
 </ul>
 <h3 id="for-other-build-system">For other build system<a class="headerlink" href="#for-other-build-system" title="Permanent link">&para;</a></h3>
 <ul>
@@ -618,7 +618,7 @@
 <li>git submodule update --init --recursive</li>
 <li>Add the rule for build QmlNotyfyService</li>
 <li>Add INCLUDEPATH and LIBS for your build system </li>
-<li>Rebuild yuor project</li>
+<li>Rebuild your project</li>
 </ul>
 <h2 id="using">Using<a class="headerlink" href="#using" title="Permanent link">&para;</a></h2>
 <h3 id="notification">Notification<a class="headerlink" href="#notification" title="Permanent link">&para;</a></h3>
@@ -646,11 +646,11 @@
 <span class="w">     </span><span class="n">QmlNotificationService</span><span class="o">::</span><span class="n">init</span><span class="p">();</span>
 <span class="w">     </span><span class="k">auto</span><span class="w"> </span><span class="n">service</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">QmlNotificationService</span><span class="o">::</span><span class="n">NotificationService</span><span class="o">::</span><span class="n">getService</span><span class="p">();</span>
 
-<span class="w">     </span><span class="n">QmlNotificationService</span><span class="o">::</span><span class="n">Listner</span><span class="w"> </span><span class="n">listner</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[]</span><span class="w"> </span><span class="p">(</span><span class="kt">bool</span><span class="w"> </span><span class="n">accepted</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">     </span><span class="n">QmlNotificationService</span><span class="o">::</span><span class="n">Listener</span><span class="w"> </span><span class="n">listener</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[]</span><span class="w"> </span><span class="p">(</span><span class="kt">bool</span><span class="w"> </span><span class="n">accepted</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">                            </span><span class="c1">// your action here.</span>
 <span class="w">     </span><span class="p">};</span>
 
-<span class="w">     </span><span class="n">service</span><span class="o">-&gt;</span><span class="n">setQuestion</span><span class="p">(</span><span class="n">listner</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;title&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;some text&quot;</span><span class="p">);</span>
+<span class="w">     </span><span class="n">service</span><span class="o">-&gt;</span><span class="n">setQuestion</span><span class="p">(</span><span class="n">listener</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;title&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;some text&quot;</span><span class="p">);</span>
 
 
 <span class="w"> </span><span class="p">}</span>

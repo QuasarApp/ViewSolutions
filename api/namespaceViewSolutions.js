@@ -14,7 +14,7 @@ var namespaceViewSolutions =
     [ "NotificationService", "classViewSolutions_1_1NotificationService.html", "classViewSolutions_1_1NotificationService" ],
     [ "QMLColorPicker", "classViewSolutions_1_1QMLColorPicker.html", "classViewSolutions_1_1QMLColorPicker" ],
     [ "VariantListModel", "classViewSolutions_1_1VariantListModel.html", "classViewSolutions_1_1VariantListModel" ],
-    [ "Listner", "namespaceViewSolutions.html#a6281915c5562ebf08ef28a16648a2fd4", null ],
+    [ "Listener", "namespaceViewSolutions.html#a7e009da0522da533affe19ea382cc476", null ],
     [ "ListViewModelRoles", "namespaceViewSolutions.html#af1f09aa632b04876adc990092ce6fbc6", [
       [ "ModelData", "namespaceViewSolutions.html#af1f09aa632b04876adc990092ce6fbc6aceea85535f82a1d80febb8488e986d88", null ]
     ] ],

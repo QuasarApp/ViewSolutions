@@ -1,4 +1,7 @@
 <map id="initResources" name="initResources">
-<area shape="rect" id="Node000001" title="initResources loads the QML resources of the ViewSolutions module." alt="" coords="5,29,115,57"/>
-<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="40,28,37,20,39,11,47,5,60,3,73,5,82,14,76,14,71,10,60,8,49,10,44,14,42,20,45,29"/>
+<area shape="rect" id="Node000001" title="initResources loads the QML resources of the ViewSolutions module." alt="" coords="5,38,115,66"/>
+<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="29,38,24,29,28,19,40,13,60,11,81,14,94,22,88,23,79,19,60,16,42,18,32,23,30,29,34,37"/>
+<area shape="rect" id="Node000002" href="$viewsolutions_8h.html#a10509ab1d5ebfa6837106185299b0b19" title=" " alt="" coords="163,29,309,74"/>
+<area shape="poly" id="edge2_Node000001_Node000002" title=" " alt="" coords="115,49,150,51,144,52,115,54"/>
+<area shape="poly" id="edge3_Node000002_Node000002" title=" " alt="" coords="202,27,201,19,206,10,218,5,236,3,255,5,268,14,262,13,253,10,236,8,220,10,210,14,206,21,206,30"/>
 </map>

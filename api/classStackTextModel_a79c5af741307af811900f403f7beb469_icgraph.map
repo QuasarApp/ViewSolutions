@@ -1,0 +1,7 @@
+<map id="StackTextModel::updateText" name="StackTextModel::updateText">
+<area shape="rect" id="Node000001" title="updateText updates internal model data from fullText and delimiter." alt="" coords="267,32,471,60"/>
+<area shape="rect" id="Node000002" href="$classStackTextModel.html#ae6dfed78686ffcab1bec03d51fbe3924" title="setDelimiter sets new delimiter for split fullText into lines." alt="" coords="5,5,219,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="249,34,219,33,219,28,254,33"/>
+<area shape="rect" id="Node000003" href="$classStackTextModel.html#ac0fd45ccf25deac2912f1b77ca16ea35" title=" " alt="" coords="11,57,213,85"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="249,58,214,64,213,59,254,57"/>
+</map>

@@ -1,0 +1,11 @@
+<map id="ViewSolutions/src/stacktextmodel.h" name="ViewSolutions/src/stacktextmodel.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="114,5,368,33"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,81,138,109"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="209,36,117,77,114,72,212,31"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="162,81,320,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="242,31,243,66,238,64,239,36"/>
+<area shape="rect" id="Node000004" href="$viewsolutions__global_8h.html" title=" " alt="" coords="344,81,514,109"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="275,31,384,74,379,76,274,36"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="364,157,494,184"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="431,107,431,143,427,139,427,111"/>
+</map>

@@ -1,0 +1,10 @@
+<map id="qml_register_types_ViewSolutions" name="qml_register_types_ViewSolutions">
+<area shape="rect" id="Node000001" title=" " alt="" coords="353,29,499,74"/>
+<area shape="poly" id="edge5_Node000001_Node000001" title=" " alt="" coords="453,13,443,10,426,8,410,10,400,14,396,21,397,30,392,27,391,19,397,10,409,5,426,3,445,5,458,14"/>
+<area shape="rect" id="Node000002" href="$viewsolutions_8h.html#ac574253826b0b2a23c4c9bcf2ec89f62" title="initResources loads the QML resources of the ViewSolutions module." alt="" coords="196,38,305,66"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="334,52,305,54,305,49,340,52"/>
+<area shape="poly" id="edge4_Node000002_Node000002" title=" " alt="" coords="278,22,269,19,250,16,233,18,223,23,220,29,225,38,220,36,215,29,219,19,231,13,250,11,271,14,284,23"/>
+<area shape="rect" id="Node000003" href="$namespaceViewSolutions.html#a249933ed1822a57b6982f08bcd462e17" title="init this method import all qml resources to your project and creates the central model storage of th..." alt="" coords="5,38,148,66"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="178,52,148,54,148,49,183,51"/>
+<area shape="poly" id="edge3_Node000003_Node000003" title=" " alt="" coords="104,23,96,19,76,16,59,18,49,23,47,29,51,37,46,37,41,29,45,19,57,13,77,11,97,14,110,22"/>
+</map>

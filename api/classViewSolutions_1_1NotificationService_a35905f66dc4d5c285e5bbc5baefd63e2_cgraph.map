@@ -1,4 +1,4 @@
 <map id="ViewSolutions::NotificationService::questionChanged" name="ViewSolutions::NotificationService::questionChanged">
-<area shape="rect" id="Node000001" title="questionChanged This signal emited whet the notificator (Ths object) received a new question message." alt="" coords="5,29,202,74"/>
+<area shape="rect" id="Node000001" title="questionChanged This signal emitted when the notificator (This object) received a new question messag..." alt="" coords="5,29,202,74"/>
 <area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="66,28,64,19,71,10,84,5,104,3,124,5,139,14,133,14,123,10,103,8,85,10,74,15,70,21,71,30"/>
 </map>

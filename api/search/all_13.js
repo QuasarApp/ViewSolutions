@@ -1,10 +1,7 @@
 var searchData=
 [
-  ['variantlistmodel_0',['VariantListModel',['../classViewSolutions_1_1VariantListModel.html',1,'ViewSolutions::VariantListModel'],['../classViewSolutions_1_1VariantListModel.html#a370ad5ec05f89100ffb803fd60db0601',1,'ViewSolutions::VariantListModel::VariantListModel()']]],
-  ['variantlistmodel_2eh_1',['variantlistmodel.h',['../variantlistmodel_8h.html',1,'']]],
-  ['viewsolution_5fexport_2',['VIEWSOLUTION_EXPORT',['../viewsolutions__global_8h.html#a3d9c07b0fef7a1bec2bb3c751cb801c6',1,'viewsolutions_global.h']]],
-  ['viewsolutions_3',['ViewSolutions',['../namespaceViewSolutions.html',1,'ViewSolutions'],['../index.html',1,'ViewSolutions']]],
-  ['viewsolutions_2ecpp_4',['viewsolutions.cpp',['../viewsolutions_8cpp.html',1,'']]],
-  ['viewsolutions_2eh_5',['viewsolutions.h',['../viewsolutions_8h.html',1,'']]],
-  ['viewsolutions_5fglobal_2eh_6',['viewsolutions_global.h',['../viewsolutions__global_8h.html',1,'']]]
+  ['uiisdisplay_0',['uiIsDisplay',['../classViewSolutions_1_1NotificationService.html#aad726328aef25dd1e744034b47d8ee20',1,'ViewSolutions::NotificationService::uiIsDisplay'],['../classViewSolutions_1_1NotificationService.html#a6e8c743d7401c5553575cf5209a12e93',1,'ViewSolutions::NotificationService::uiIsDisplay() const']]],
+  ['uiisdisplaychanged_1',['uiIsDisplayChanged',['../classViewSolutions_1_1NotificationService.html#a272d613827ff78c4adf6ab9ec0b576dc',1,'ViewSolutions::NotificationService']]],
+  ['uitimeout_2',['uiTimeOut',['../classViewSolutions_1_1NotificationService.html#adb28d9b173a354a3d77a131bdd809ce4',1,'ViewSolutions::NotificationService']]],
+  ['updatetext_3',['updateText',['../classStackTextModel.html#a79c5af741307af811900f403f7beb469',1,'StackTextModel']]]
 ];

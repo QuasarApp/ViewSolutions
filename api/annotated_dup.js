@@ -15,5 +15,6 @@ var annotated_dup =
       [ "NotificationService", "classViewSolutions_1_1NotificationService.html", "classViewSolutions_1_1NotificationService" ],
       [ "QMLColorPicker", "classViewSolutions_1_1QMLColorPicker.html", "classViewSolutions_1_1QMLColorPicker" ],
       [ "VariantListModel", "classViewSolutions_1_1VariantListModel.html", "classViewSolutions_1_1VariantListModel" ]
-    ] ]
+    ] ],
+    [ "StackTextModel", "classStackTextModel.html", "classStackTextModel" ]
 ];

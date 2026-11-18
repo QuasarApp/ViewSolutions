@@ -1,10 +1,16 @@
 <map id="ViewSolutions::NotificationData::title" name="ViewSolutions::NotificationData::title">
-<area shape="rect" id="Node000001" title="title This method return title of a question/notification object." alt="" coords="738,5,935,50"/>
-<area shape="rect" id="Node000002" href="$classViewSolutions_1_1NotificationData.html#a38e5af4087a9cb74b81750463f2caa9e" title="NotificationData creates a new notification data object." alt="" coords="494,5,690,50"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="720,28,691,30,691,25,726,28"/>
-<area shape="rect" id="Node000003" href="$classViewSolutions_1_1NotificationData.html#af8240b8b2ae03a2056ccf464401acf77" title=" " alt="" coords="5,5,202,50"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="475,23,446,25,250,25,203,26,202,21,250,20,446,20,481,23"/>
-<area shape="rect" id="Node000004" href="$classViewSolutions_1_1NotificationData.html#adea154a3c067c963dac6eb92eead1a92" title=" " alt="" coords="250,35,446,79"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="481,41,447,48,446,43,476,42"/>
-<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="232,44,202,42,202,37,237,43"/>
+<area shape="rect" id="Node000001" title="title This method return title of a question/notification object." alt="" coords="738,107,935,151"/>
+<area shape="rect" id="Node000002" href="$classViewSolutions_1_1NotificationData.html#a38e5af4087a9cb74b81750463f2caa9e" title="NotificationData creates a new notification data object." alt="" coords="494,107,690,151"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="720,129,691,132,691,126,726,129"/>
+<area shape="rect" id="Node000003" href="$classViewSolutions_1_1NotificationData.html#ad6aa84790f65d8079f01d77cc725511b" title=" " alt="" coords="5,8,202,53"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="555,96,506,58,477,41,445,28,384,14,320,9,259,10,203,15,201,10,258,4,321,3,385,8,447,22,479,36,509,54,560,96"/>
+<area shape="rect" id="Node000004" href="$classViewSolutions_1_1NotificationData.html#a52619549d6f9369ab291bec142452bfb" title=" " alt="" coords="250,37,446,82"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="494,102,429,85,429,80,499,102"/>
+<area shape="rect" id="Node000005" href="$classViewSolutions_1_1NotificationService.html#a8b6f37ceb8636aa9c64e2edd4b83a095" title="setNotify This method set new notify message for user. When notify changed on main application window..." alt="" coords="250,107,446,151"/>
+<area shape="poly" id="edge5_Node000002_Node000005" title=" " alt="" coords="476,130,447,132,446,126,481,129"/>
+<area shape="rect" id="Node000006" href="$classViewSolutions_1_1NotificationService.html#a39e481645c3a63ad3a1d555c8ef16b55" title="setQuestion This method set new question for user. When question changed on main application windows ..." alt="" coords="250,176,446,221"/>
+<area shape="poly" id="edge6_Node000002_Node000006" title=" " alt="" coords="499,155,430,178,428,173,494,157"/>
+<area shape="rect" id="Node000007" href="$classViewSolutions_1_1NotificationService.html#ad2b5c95e9da7c858a355a9904494d87b" title="setQuestion This method set new question for user. When question changed on main application windows ..." alt="" coords="250,245,446,290"/>
+<area shape="poly" id="edge7_Node000002_Node000007" title=" " alt="" coords="555,160,505,200,447,235,421,247,420,242,445,231,502,196,550,162"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="232,47,203,45,201,40,237,45"/>
 </map>

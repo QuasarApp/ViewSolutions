@@ -1,4 +1,10 @@
 <map id="ViewSolutions::NotificationService::getService" name="ViewSolutions::NotificationService::getService">
-<area shape="rect" id="Node000001" title="getService This method return instance to notify service." alt="" coords="5,29,202,74"/>
-<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="66,28,64,19,71,10,84,5,104,3,124,5,139,14,133,14,123,10,103,8,85,10,74,15,70,21,71,30"/>
+<area shape="rect" id="Node000001" title="getService This method return instance to notify service." alt="" coords="5,64,202,109"/>
+<area shape="rect" id="Node000002" href="$classViewSolutions_1_1NotificationService.html#af220e6c39e423a6f922d53597f39c7bc" title=" " alt="" coords="250,64,450,109"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="202,84,237,86,232,87,202,89"/>
+<area shape="rect" id="Node000003" href="$classViewSolutions_1_1NotificationService.html#a518b8841d34137afa693a18f87ee9410" title="countNotificationsChanged This signal is emitted when the count of history notifications was changed." alt="" coords="498,29,750,74"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="450,71,485,69,480,70,451,76"/>
+<area shape="rect" id="Node000004" href="$classViewSolutions_1_1HistoryNotificationsModel.html#a80a2ceb0f5fe715581a604a62bae4e39" title=" " alt="" coords="499,99,749,143"/>
+<area shape="poly" id="edge4_Node000002_Node000004" title=" " alt="" coords="450,96,486,103,481,103,450,102"/>
+<area shape="poly" id="edge3_Node000003_Node000003" title=" " alt="" coords="573,27,571,19,580,10,597,5,624,3,653,5,673,14,667,14,652,10,624,8,598,10,582,15,576,21,577,30"/>
 </map>

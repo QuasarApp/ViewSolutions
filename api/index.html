@@ -27,7 +27,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">ViewSolutions<span id="projectnumber">&#160;1.0.106.5750bc8</span>
+   <div id="projectname">ViewSolutions<span id="projectnumber">&#160;1.0.164.321088c</span>
    </div>
    <div id="projectbrief">View solutions of qml for quasarapp projects</div>
   </td>
@@ -126,8 +126,8 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('index.html',''
 <div class="line">ImageView {</div>
 <div class="line"> </div>
 <div class="line">    anchors.fill: parent</div>
-<div class="line">    soucre:  &quot;qrc:/img/images/example.png&quot;</div>
-<div class="line">    text: &quot;exampele&quot;</div>
+<div class="line">    source:  &quot;qrc:/img/images/example.png&quot;</div>
+<div class="line">    text: &quot;example&quot;</div>
 <div class="line">    anchors.margins: 100</div>
 <div class="line">    borderColor: &quot;red&quot;</div>
 <div class="line">}</div>
@@ -174,7 +174,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('index.html',''
 <li>git submodule update &ndash;init &ndash;recursive</li>
 <li>Include in your CMakeLists.txt file the main CMakeLists.txt file of QSimpleQmlNotify library <div class="fragment"><div class="line">include(QmlNotyfyService)</div>
 </div><!-- fragment --></li>
-<li>Rebuild yuor project</li>
+<li>Rebuild your project</li>
 </ul>
 <h3>For other build system</h3>
 <ul>
@@ -183,7 +183,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('index.html',''
 <li>git submodule update &ndash;init &ndash;recursive</li>
 <li>Add the rule for build QmlNotyfyService</li>
 <li>Add INCLUDEPATH and LIBS for your build system</li>
-<li>Rebuild yuor project</li>
+<li>Rebuild your project</li>
 </ul>
 <h2>Using</h2>
 <h3>Notification</h3>
@@ -209,11 +209,11 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('index.html',''
 <div class="line">    QmlNotificationService::init();</div>
 <div class="line">    <span class="keyword">auto</span> service = QmlNotificationService::NotificationService::getService();</div>
 <div class="line"> </div>
-<div class="line">    QmlNotificationService::Listner listner = [] (<span class="keywordtype">bool</span> accepted) {</div>
+<div class="line">    QmlNotificationService::Listener listener = [] (<span class="keywordtype">bool</span> accepted) {</div>
 <div class="line">                           <span class="comment">// your action here.</span></div>
 <div class="line">    };</div>
 <div class="line"> </div>
-<div class="line">    service-&gt;setQuestion(listner, <span class="stringliteral">&quot;title&quot;</span>, <span class="stringliteral">&quot;some text&quot;</span>);</div>
+<div class="line">    service-&gt;setQuestion(listener, <span class="stringliteral">&quot;title&quot;</span>, <span class="stringliteral">&quot;some text&quot;</span>);</div>
 <div class="line"> </div>
 <div class="line">    </div>
 <div class="line">}</div>

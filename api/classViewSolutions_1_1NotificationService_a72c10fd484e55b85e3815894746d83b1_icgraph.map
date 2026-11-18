@@ -1,0 +1,5 @@
+<map id="ViewSolutions::NotificationService::setUiIsDisplay" name="ViewSolutions::NotificationService::setUiIsDisplay">
+<area shape="rect" id="Node000001" title="setUiIsDisplay this method used for set notify service display state." alt="" coords="250,5,446,50"/>
+<area shape="rect" id="Node000002" href="$classViewSolutions_1_1NotificationService.html#af847982c325e8836e78516782ada85b2" title="notificationHidden this method should invoked every time when the current notification is hidden,..." alt="" coords="5,5,202,50"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="232,28,202,30,202,25,237,27"/>
+</map>

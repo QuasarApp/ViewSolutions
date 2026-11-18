@@ -27,7 +27,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">ViewSolutions<span id="projectnumber">&#160;1.0.106.5750bc8</span>
+   <div id="projectname">ViewSolutions<span id="projectnumber">&#160;1.0.164.321088c</span>
    </div>
    <div id="projectbrief">View solutions of qml for quasarapp projects</div>
   </td>
@@ -115,7 +115,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('viewsolutions_
 </div><!--header-->
 <div class="contents">
 <a href="viewsolutions_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">//#</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">//# Copyright (C) 2020-2025 QuasarApp.</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">//# Copyright (C) 2020-2026 QuasarApp.</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">//# Distributed under the GPLv3 software license, see the accompanying</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">//# Everyone is permitted to copy and distribute verbatim copies</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">//# of this license document, but changing it is not allowed.</span></div>
@@ -128,24 +128,30 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('viewsolutions_
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;<a class="code" href="viewsolutions__global_8h.html">viewsolutions_global.h</a>&quot;</span></div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keyword">class </span>QQmlApplicationEngine;</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span></div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment">//#define INIT_VIEW_SOLUTIONS(result, engine) \</span></div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment">//    Q_INIT_RESOURCE(ViewSolutionsResources); \</span></div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment">//    result = ViewSolutions::init(engine)</span></div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span></div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="viewsolutions_8h.html#ac574253826b0b2a23c4c9bcf2ec89f62">   32</a></span><span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="viewsolutions_8h.html#ac574253826b0b2a23c4c9bcf2ec89f62">initResources</a>() { <span class="comment">/*Q_INIT_RESOURCE(ViewSolutionsResources);*/</span> }</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span></div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceViewSolutions.html">ViewSolutions</a> {</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span></div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>[[nodiscard(<span class="stringliteral">&quot;The ViewSolutions create model storage space for all QML. This is central model for fast acces to models of your App.&quot;</span>) ]]</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>QSharedPointer&lt;ModelStorage&gt; <a class="code hl_define" href="viewsolutions__global_8h.html#a3d9c07b0fef7a1bec2bb3c751cb801c6">VIEWSOLUTION_EXPORT</a> <a class="code hl_function" href="namespaceViewSolutions.html#a249933ed1822a57b6982f08bcd462e17">init</a>(QQmlEngine *engine);</div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>}</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span> </div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span><span class="preprocessor">#endif </span><span class="comment">// VIEWSOLUTIONS_H</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="viewsolutions_8h.html#a10509ab1d5ebfa6837106185299b0b19">   15</a></span><span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code hl_function" href="viewsolutions_8h.html#a10509ab1d5ebfa6837106185299b0b19">qml_register_types_ViewSolutions</a>();</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment">//#define INIT_VIEW_SOLUTIONS(result, engine) \</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment">//    Q_INIT_RESOURCE(ViewSolutionsResources); \</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment">//    result = ViewSolutions::init(engine)</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span></div>
+<div class="foldopen" id="foldopen00033" data-start="{" data-end="}">
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="viewsolutions_8h.html#ac574253826b0b2a23c4c9bcf2ec89f62">   33</a></span><span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="viewsolutions_8h.html#ac574253826b0b2a23c4c9bcf2ec89f62">initResources</a>() {</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <a class="code hl_function" href="viewsolutions_8h.html#a10509ab1d5ebfa6837106185299b0b19">qml_register_types_ViewSolutions</a>();</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>}</div>
+</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span></div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceViewSolutions.html">ViewSolutions</a> {</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span></div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>[[nodiscard(<span class="stringliteral">&quot;The ViewSolutions create model storage space for all QML. This is central model for fast access to models of your App.&quot;</span>) ]]</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>QSharedPointer&lt;ModelStorage&gt; <a class="code hl_define" href="viewsolutions__global_8h.html#a3d9c07b0fef7a1bec2bb3c751cb801c6">VIEWSOLUTION_EXPORT</a> <a class="code hl_function" href="namespaceViewSolutions.html#a249933ed1822a57b6982f08bcd462e17">init</a>(QQmlEngine *engine);</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>}</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span> </div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span><span class="preprocessor">#endif </span><span class="comment">// VIEWSOLUTIONS_H</span></div>
 <div class="ttc" id="amodelstorage_8h_html"><div class="ttname"><a href="modelstorage_8h.html">modelstorage.h</a></div></div>
 <div class="ttc" id="anamespaceViewSolutions_html"><div class="ttname"><a href="namespaceViewSolutions.html">ViewSolutions</a></div><div class="ttdoc">The ViewSolutions namespace.</div><div class="ttdef"><b>Definition</b> <a href="avatargenerator_8cpp_source.html#l00014">avatargenerator.cpp:14</a></div></div>
-<div class="ttc" id="anamespaceViewSolutions_html_a249933ed1822a57b6982f08bcd462e17"><div class="ttname"><a href="namespaceViewSolutions.html#a249933ed1822a57b6982f08bcd462e17">ViewSolutions::init</a></div><div class="ttdeci">QSharedPointer&lt; ModelStorage &gt; init(QQmlEngine *engine)</div><div class="ttdoc">init this method import all qml resources to your project and creates the central model storage of th...</div><div class="ttdef"><b>Definition</b> <a href="viewsolutions_8cpp_source.html#l00018">viewsolutions.cpp:18</a></div></div>
-<div class="ttc" id="aviewsolutions_8h_html_ac574253826b0b2a23c4c9bcf2ec89f62"><div class="ttname"><a href="viewsolutions_8h.html#ac574253826b0b2a23c4c9bcf2ec89f62">initResources</a></div><div class="ttdeci">void initResources()</div><div class="ttdoc">initResources loads the QML resources of the ViewSolutions module.</div><div class="ttdef"><b>Definition</b> <a href="#l00032">viewsolutions.h:32</a></div></div>
+<div class="ttc" id="anamespaceViewSolutions_html_a249933ed1822a57b6982f08bcd462e17"><div class="ttname"><a href="namespaceViewSolutions.html#a249933ed1822a57b6982f08bcd462e17">ViewSolutions::init</a></div><div class="ttdeci">QSharedPointer&lt; ModelStorage &gt; init(QQmlEngine *engine)</div><div class="ttdoc">init this method import all qml resources to your project and creates the central model storage of th...</div><div class="ttdef"><b>Definition</b> <a href="viewsolutions_8cpp_source.html#l00019">viewsolutions.cpp:19</a></div></div>
+<div class="ttc" id="aviewsolutions_8h_html_a10509ab1d5ebfa6837106185299b0b19"><div class="ttname"><a href="viewsolutions_8h.html#a10509ab1d5ebfa6837106185299b0b19">qml_register_types_ViewSolutions</a></div><div class="ttdeci">void qml_register_types_ViewSolutions()</div></div>
+<div class="ttc" id="aviewsolutions_8h_html_ac574253826b0b2a23c4c9bcf2ec89f62"><div class="ttname"><a href="viewsolutions_8h.html#ac574253826b0b2a23c4c9bcf2ec89f62">initResources</a></div><div class="ttdeci">void initResources()</div><div class="ttdoc">initResources loads the QML resources of the ViewSolutions module.</div><div class="ttdef"><b>Definition</b> <a href="#l00033">viewsolutions.h:33</a></div></div>
 <div class="ttc" id="aviewsolutions__global_8h_html"><div class="ttname"><a href="viewsolutions__global_8h.html">viewsolutions_global.h</a></div></div>
 <div class="ttc" id="aviewsolutions__global_8h_html_a3d9c07b0fef7a1bec2bb3c751cb801c6"><div class="ttname"><a href="viewsolutions__global_8h.html#a3d9c07b0fef7a1bec2bb3c751cb801c6">VIEWSOLUTION_EXPORT</a></div><div class="ttdeci">#define VIEWSOLUTION_EXPORT</div><div class="ttdoc">VIEWSOLUTION_EXPORT marks a symbol as part of the public ViewSolutions API.</div><div class="ttdef"><b>Definition</b> <a href="viewsolutions__global_8h_source.html#l00033">viewsolutions_global.h:33</a></div></div>
 </div><!-- fragment --></div><!-- contents -->

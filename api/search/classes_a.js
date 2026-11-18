@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['variantlistmodel_0',['VariantListModel',['../classViewSolutions_1_1VariantListModel.html',1,'ViewSolutions']]]
+  ['stacktextmodel_0',['StackTextModel',['../classStackTextModel.html',1,'']]]
 ];

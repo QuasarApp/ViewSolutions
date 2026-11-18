@@ -1,0 +1,20 @@
+<map id="ViewSolutions::NotificationService::setQuestion" name="ViewSolutions::NotificationService::setQuestion">
+<area shape="rect" id="Node000001" title="setQuestion This method set new question for user. When question changed on main application windows ..." alt="" coords="5,225,202,270"/>
+<area shape="rect" id="Node000002" href="$classViewSolutions_1_1NotificationData.html#a38e5af4087a9cb74b81750463f2caa9e" title="NotificationData creates a new notification data object." alt="" coords="250,144,446,189"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="172,222,266,193,262,196,174,227"/>
+<area shape="rect" id="Node000008" href="$classViewSolutions_1_1NotificationService.html#aeb9cb37ee6bcb9f5bd03fbe887f263cc" title="setQuestion This method sets information of the users question." alt="" coords="250,260,446,305"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="202,259,237,266,231,267,202,264"/>
+<area shape="rect" id="Node000003" href="$classViewSolutions_1_1NotificationData.html#a415d2401db8749a0b32873faa1a80296" title="img This method return url to image of a question/notification object if url is empty then return def..." alt="" coords="494,5,690,50"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="374,141,427,101,493,60,508,55,503,58,495,65,430,105,377,146"/>
+<area shape="rect" id="Node000005" href="$classViewSolutions_1_1NotificationData.html#a98c151be63c1ccc2ba243adec8c56030" title="text This method return main text message of a question/notification object." alt="" coords="494,75,690,119"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="428,141,499,123,494,125,430,146"/>
+<area shape="rect" id="Node000006" href="$classViewSolutions_1_1NotificationData.html#a14aaa82dc6d013376b43bf5b32b0ee1d" title="title This method return title of a question/notification object." alt="" coords="494,144,690,189"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="446,164,481,166,476,167,447,169"/>
+<area shape="rect" id="Node000007" href="$classViewSolutions_1_1NotificationData.html#ae3f1c00c5ec3c63164f5a6a172ab6cb6" title="type This method return type of the notification message or code of the question." alt="" coords="494,213,690,258"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="429,187,499,208,494,209,429,192"/>
+<area shape="rect" id="Node000004" href="$classViewSolutions_1_1NotificationData.html#a608b6be2a7c881b6cf6c680798eb8ca8" title="imgSrc This method return url to image of a question/notification object." alt="" coords="738,5,935,50"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="690,25,725,27,720,28,691,30"/>
+<area shape="rect" id="Node000009" href="$classViewSolutions_1_1NotificationService.html#a35905f66dc4d5c285e5bbc5baefd63e2" title="questionChanged This signal emitted when the notificator (This object) received a new question messag..." alt="" coords="494,307,690,351"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="447,298,481,307,476,307,446,304"/>
+<area shape="poly" id="edge9_Node000009_Node000009" title=" " alt="" coords="546,305,544,297,552,288,568,282,592,280,619,283,636,292,631,291,617,288,592,285,569,287,555,292,549,298,550,308"/>
+</map>

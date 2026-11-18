@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['modeldata_0',['ModelData',['../namespaceViewSolutions.html#af1f09aa632b04876adc990092ce6fbc6aceea85535f82a1d80febb8488e986d88',1,'ViewSolutions']]]
+  ['error_0',['Error',['../classViewSolutions_1_1NotificationData.html#a65e9b345564ff2b6edaa16f4150290e5a0636675e3a9e0ad1e8a3435135cd4449',1,'ViewSolutions::NotificationData']]]
 ];

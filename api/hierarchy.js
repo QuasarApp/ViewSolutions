@@ -1,5 +1,11 @@
 var hierarchy =
 [
+    [ "__PrivateBaseListModel", null, [
+      [ "ViewSolutions::BaseListModel< QVariant >", "classViewSolutions_1_1BaseListModel.html", [
+        [ "ViewSolutions::VariantListModel", "classViewSolutions_1_1VariantListModel.html", null ]
+      ] ],
+      [ "ViewSolutions::BaseListModel< TYPE >", "classViewSolutions_1_1BaseListModel.html", null ]
+    ] ],
     [ "ViewSolutions::AvatarGenerator", "classViewSolutions_1_1AvatarGenerator.html", null ],
     [ "ViewSolutions::ColorPicker", "classViewSolutions_1_1ColorPicker.html", [
       [ "ViewSolutions::QMLColorPicker", "classViewSolutions_1_1QMLColorPicker.html", null ]
@@ -14,12 +20,7 @@ var hierarchy =
       [ "ViewSolutions::BaseHashModel< KEY, DATA >", "classViewSolutions_1_1BaseHashModel.html", null ],
       [ "ViewSolutions::HistoryNotificationsModel", "classViewSolutions_1_1HistoryNotificationsModel.html", null ],
       [ "ViewSolutions::ListViewModel", "classViewSolutions_1_1ListViewModel.html", null ],
-      [ "ViewSolutions::__PrvateBaseListModel", "classViewSolutions_1_1____PrvateBaseListModel.html", [
-        [ "ViewSolutions::BaseListModel< QVariant >", "classViewSolutions_1_1BaseListModel.html", [
-          [ "ViewSolutions::VariantListModel", "classViewSolutions_1_1VariantListModel.html", null ]
-        ] ],
-        [ "ViewSolutions::BaseListModel< TYPE >", "classViewSolutions_1_1BaseListModel.html", null ]
-      ] ]
+      [ "ViewSolutions::__PrvateBaseListModel", "classViewSolutions_1_1____PrvateBaseListModel.html", null ]
     ] ],
     [ "QEnableSharedFromThis", null, [
       [ "ViewSolutions::ModelStorage", "classViewSolutions_1_1ModelStorage.html", null ]
@@ -29,5 +30,8 @@ var hierarchy =
       [ "ViewSolutions::NotificationService", "classViewSolutions_1_1NotificationService.html", null ],
       [ "ViewSolutions::QMLColorPicker", "classViewSolutions_1_1QMLColorPicker.html", null ],
       [ "ViewSolutions::iGUITokensModel", "classViewSolutions_1_1iGUITokensModel.html", null ]
+    ] ],
+    [ "QStringListModel", null, [
+      [ "StackTextModel", "classStackTextModel.html", null ]
     ] ]
 ];

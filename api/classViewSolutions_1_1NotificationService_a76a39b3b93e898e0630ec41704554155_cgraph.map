@@ -1,7 +1,6 @@
 <map id="ViewSolutions::NotificationService::questionComplete" name="ViewSolutions::NotificationService::questionComplete">
-<area shape="rect" id="Node000001" title="questionComplete This method is main responce method of the users questions." alt="" coords="5,29,202,74"/>
-<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="56,28,55,19,63,10,79,5,104,3,130,5,148,14,143,14,129,10,103,8,80,10,66,15,60,21,61,29"/>
-<area shape="rect" id="Node000002" href="$classViewSolutions_1_1NotificationService.html#aaeca12d3f52c027e37bcac03f3dd4ea1" title="questionCompleted This signal emited when youser clcik any buttons on question popup." alt="" coords="250,29,454,74"/>
-<area shape="poly" id="edge2_Node000001_Node000002" title=" " alt="" coords="202,49,237,51,231,52,202,54"/>
-<area shape="poly" id="edge3_Node000002_Node000002" title=" " alt="" coords="305,27,303,19,311,10,327,5,352,3,379,5,396,14,391,14,377,10,352,8,329,10,314,15,308,21,309,30"/>
+<area shape="rect" id="Node000001" title="questionComplete This method is main response method of the users questions." alt="" coords="5,29,202,74"/>
+<area shape="rect" id="Node000002" href="$classViewSolutions_1_1NotificationService.html#aaeca12d3f52c027e37bcac03f3dd4ea1" title="questionCompleted This signal emitted when user clicks any buttons on question popup." alt="" coords="250,29,454,74"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="202,49,237,51,231,52,202,54"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="305,27,303,19,311,10,327,5,352,3,379,5,396,14,391,14,377,10,352,8,329,10,314,15,308,21,309,30"/>
 </map>
