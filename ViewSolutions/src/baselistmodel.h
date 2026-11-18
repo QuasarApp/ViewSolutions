@@ -15,14 +15,14 @@
 namespace ViewSolutions {
 
 /**
- * @brief The __PrvateBaseListModel class is the private QObject base class
+ * @brief The __PrivateBaseListModel class is the private QObject base class
  * of the @a BaseListModel template.
  *
  * This class is not intended to be used directly. It exists only to make
  * the Q_OBJECT macro (and its signals) available to the BaseListModel
  * template class, which cannot use Q_OBJECT itself.
  */
-class VIEWSOLUTION_EXPORT __PrvateBaseListModel : public QAbstractListModel{
+class VIEWSOLUTION_EXPORT __PrivateBaseListModel : public QAbstractListModel{
     Q_OBJECT
 protected:
     __PrivateBaseListModel(QObject* parent = nullptr): QAbstractListModel(parent){}
