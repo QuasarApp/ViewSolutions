@@ -22,7 +22,7 @@ namespace ViewSolutions {
  * the Q_OBJECT macro (and its signals) available to the BaseListModel
  * template class, which cannot use Q_OBJECT itself.
  */
-class VIEWSOLUTION_EXPORT __PrvateBaseListModel : public QAbstractListModel{
+class VIEWSOLUTION_EXPORT __PrivateBaseListModel : public QAbstractListModel{
     Q_OBJECT
 protected:
     __PrivateBaseListModel(QObject* parent = nullptr): QAbstractListModel(parent){}
