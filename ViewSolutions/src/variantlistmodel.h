@@ -1,6 +1,7 @@
 #ifndef VARIANTLISTMODEL_H
 #define VARIANTLISTMODEL_H
 
+#include "viewsolutions_global.h"
 #include "baselistmodel.h"
 
 
@@ -21,7 +22,7 @@ namespace ViewSolutions {
  * model.setDataList(items);
  * ```
  */
-class VariantListModel: public BaseListModel<QVariant>
+class VIEWSOLUTION_EXPORT VariantListModel: public BaseListModel<QVariant>
 {
     Q_OBJECT
     BASE_LIST_MODEL_DATA_PROPERTY(QVariant)

@@ -1,5 +1,5 @@
 //#
-//# Copyright (C) 2024-2025 QuasarApp.
+//# Copyright (C) 2024-2026 QuasarApp.
 //# Distributed under the GPLv3 software license, see the accompanying
 //# Everyone is permitted to copy and distribute verbatim copies
 //# of this license document, but changing it is not allowed.
@@ -15,11 +15,11 @@ QString iGUITokensModel::modelId() const {
     return "GUITokens";
 }
 
-QColor iGUITokensModel::addTransporent(QColor input, float alpha) const {
-    return addTransporentImpl(input, alpha);
+QColor iGUITokensModel::addTransparent(QColor input, float alpha) const {
+    return addTransparentImpl(input, alpha);
 }
 
-QColor &iGUITokensModel::addTransporentImpl(QColor &input, float alpha) const {
+QColor &iGUITokensModel::addTransparentImpl(QColor &input, float alpha) const {
     input.setAlphaF(alpha);
     return input;
 }

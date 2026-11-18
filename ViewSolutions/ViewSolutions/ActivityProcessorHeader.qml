@@ -1,5 +1,5 @@
 //#
-//# Copyright (C) 2020-2025 QuasarApp.
+//# Copyright (C) 2020-2026 QuasarApp.
 //# Distributed under the GPLv3 software license, see the accompanying
 //# Everyone is permitted to copy and distribute verbatim copies
 //# of this license document, but changing it is not allowed.
@@ -13,7 +13,7 @@ import QtQuick.Layouts
 ToolBar {
 
     id: root
-    property int titlesAligh: Text.AlignHCenter
+    property int titlesAlign: Text.AlignHCenter
 
     property string title: ""
     property bool titleUppercase: true
@@ -39,7 +39,7 @@ ToolBar {
         Text {
             id: centralTitle
             text: (root.titleUppercase)? root.title.toUpperCase(): root.title
-            horizontalAlignment: root.titlesAligh
+            horizontalAlignment: root.titlesAlign
             Layout.fillWidth: true;
 
         }

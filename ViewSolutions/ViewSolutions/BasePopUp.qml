@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2018-2024 QuasarApp.
+ * Copyright (C) 2018-2026 QuasarApp.
  * Distributed under the GPLv3 software license, see the accompanying
  * Everyone is permitted to copy and distribute verbatim copies
  * of this license document, but changing it is not allowed.
@@ -22,16 +22,16 @@ Dialog {
     property int margin : 0
     property color backgroundColor: Material.background
 
-    property alias autoClosePasused: progressAnimation.paused
+    property alias autoClosePaused: progressAnimation.paused
 
     background: Item {
-        id: bacground
+        id: background
 
         Rectangle{
             anchors.fill: parent
             id: backCorner
             color: backgroundColor
-            radius: metrix.mm
+            radius: matrix.mm
         }
     }
 

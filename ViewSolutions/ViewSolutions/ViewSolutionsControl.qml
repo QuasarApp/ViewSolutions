@@ -1,5 +1,5 @@
 //#
-//# Copyright (C) 2020-2025 QuasarApp.
+//# Copyright (C) 2020-2026 QuasarApp.
 //# Distributed under the GPLv3 software license, see the accompanying
 //# Everyone is permitted to copy and distribute verbatim copies
 //# of this license document, but changing it is not allowed.
@@ -13,12 +13,12 @@ import QtQuick.Controls.Universal
 
 
 Item {
-    property alias background: backgroudFrame.contentItem
+    property alias background: backgroundFrame.contentItem
     property alias bloor: bloorFrame.contentItem
     property alias content: contentFrame.contentItem
 
     Control {
-        id: backgroudFrame
+        id: backgroundFrame
         anchors.fill: parent;
         z: 0
     }

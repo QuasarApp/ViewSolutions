@@ -1,5 +1,5 @@
 //#
-//# Copyright (C) 2020-2025 QuasarApp.
+//# Copyright (C) 2020-2026 QuasarApp.
 //# Distributed under the GPLv3 software license, see the accompanying
 //# Everyone is permitted to copy and distribute verbatim copies
 //# of this license document, but changing it is not allowed.
@@ -12,6 +12,7 @@
 #include "viewsolutions_global.h"
 
 class QQmlApplicationEngine;
+extern void qml_register_types_ViewSolutions();
 
 //// Use This macros for init all library resources.
 //#define INIT_VIEW_SOLUTIONS(result, engine) \
@@ -29,7 +30,9 @@ class QQmlApplicationEngine;
  * ViewSolutions::initResources();
  * ```
  */
-inline void initResources() { /*Q_INIT_RESOURCE(ViewSolutionsResources);*/ }
+inline void initResources() {
+    qml_register_types_ViewSolutions();
+}
 
 /**
  * @brief The ViewSolutions namespace
@@ -89,7 +92,7 @@ namespace ViewSolutions {
  * auto picker = models->get<ViewSolutions::QMLColorPicker>("ColorPicker");
  * ```
  */
-[[nodiscard("The ViewSolutions create model storage space for all QML. This is central model for fast acces to models of your App.") ]]
+[[nodiscard("The ViewSolutions create model storage space for all QML. This is central model for fast access to models of your App.") ]]
 QSharedPointer<ModelStorage> VIEWSOLUTION_EXPORT init(QQmlEngine *engine);
 }
 

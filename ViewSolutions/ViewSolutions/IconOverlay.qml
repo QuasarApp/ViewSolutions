@@ -1,29 +1,31 @@
 //#
-//# Copyright (C) 2025-2025 QuasarApp.
+//# Copyright (C) 2025-2026 QuasarApp.
 //# Distributed under the lgplv3 software license, see the accompanying
 //# Everyone is permitted to copy and distribute verbatim copies
 //# of this license document, but changing it is not allowed.
 //#
+pragma ComponentBehavior: Bound
 
 
 import QtQuick
 import QtQuick.Controls
 import QtQuick.Effects
 
-Control {
+Image {
+
     id: root
-    property alias source: image.source
-    property alias color: effect.colorizationColor
-    property alias colorization: effect.colorization
+    property color color: "White"
+    property real colorization: 1
+    fillMode: Image.PreserveAspectFit
 
-    contentItem: Image {
-        id: image
+    sourceSize.width: root.width
+    sourceSize.height: root.height
 
-        MultiEffect {
-            id: effect
-            anchors.fill: image
-            colorization: 1
+    layer.enabled: true
+    layer.effect : MultiEffect {
+        id: effect
+        colorizationColor: root.color
+        colorization: root.colorization
 
-        }
     }
 }

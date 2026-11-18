@@ -1,6 +1,6 @@
 
 //#
-//# Copyright (C) 2020-2025 QuasarApp.
+//# Copyright (C) 2020-2026 QuasarApp.
 //# Distributed under the GPLv3 software license, see the accompanying
 //# Everyone is permitted to copy and distribute verbatim copies
 //# of this license document, but changing it is not allowed.
@@ -34,29 +34,29 @@ QColor QMLColorPicker::pick(const QString &img) const {
 
             if (provider->imageType() & QQmlImageProviderBase::ImageResponse) {
                 auto async = static_cast<QQuickAsyncImageProvider*>(provider);
-                auto textureFacrory = async->requestImageResponse(url, {})->textureFactory();
+                auto textureFactory = async->requestImageResponse(url, {})->textureFactory();
 
-                if (!textureFacrory) {
+                if (!textureFactory) {
                     return {};
                 }
 
-                QColor responce = ColorPicker::pick(textureFacrory->image());
+                QColor response = ColorPicker::pick(textureFactory->image(), 5, _alpha);
 
-                delete textureFacrory;
+                delete textureFactory;
 
-                return responce;
+                return response;
             }
 
             if (provider->imageType() == QQmlImageProviderBase::Texture) {
-                return ColorPicker::pick(provider->requestTexture(url, nullptr, {})->image());
+                return ColorPicker::pick(provider->requestTexture(url, nullptr, {})->image(), 5, _alpha);
             }
 
             if (provider->imageType() == QQmlImageProviderBase::Pixmap) {
-                return ColorPicker::pick(provider->requestPixmap(url, nullptr, {}).toImage());
+                return ColorPicker::pick(provider->requestPixmap(url, nullptr, {}).toImage(), 5, _alpha);
             }
 
             if (provider->imageType() == QQmlImageProviderBase::Image) {
-                return ColorPicker::pick(provider->requestImage(url, nullptr, {}));
+                return ColorPicker::pick(provider->requestImage(url, nullptr, {}), 5, _alpha);
             }
 
             return {};
@@ -64,11 +64,24 @@ QColor QMLColorPicker::pick(const QString &img) const {
 
     }
 
-    return ColorPicker::pick(img);
+    return ColorPicker::pick(img, _alpha);
 }
 
 QString QMLColorPicker::modelId() const {
     return "ColorPicker";
+}
+
+bool QMLColorPicker::alpha() const
+{
+    return _alpha;
+}
+
+void QMLColorPicker::setAlpha(bool newAlpha)
+{
+    if (_alpha == newAlpha)
+        return;
+    _alpha = newAlpha;
+    emit alphaChanged();
 }
 
 }
