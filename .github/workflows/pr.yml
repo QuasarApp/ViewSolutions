@@ -1,0 +1,120 @@
+name: ViewSolutions PR Builder
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-2025, ubuntu-24.04, ubuntu-24.04-arm, macos-15]
+        build_type: [Release]
+        c_compiler: [gcc]
+
+    steps:
+    - name: Install Qt (Windows)
+      uses: jurplel/install-qt-action@v4.3.0
+      if: runner.os == 'Windows'
+      with:
+        version: '6.10.3'
+        target: 'desktop'
+        arch: 'win64_mingw'
+        cache: true
+        tools: 'tools_mingw1310'
+        aqtversion: ==3.2.*
+
+    - name: Install Qt (Linux)
+      uses: jurplel/install-qt-action@v4.3.0
+      if: runner.os == 'Linux' && runner.arch == 'X64'
+      with:
+        version: '6.10.3'
+        target: 'desktop'
+        arch: 'linux_gcc_64'
+        cache: true
+        aqtversion: ==3.2.*
+
+    - name: Install Qt (Linux ARM)
+      uses: jurplel/install-qt-action@v4.3.0
+      if: runner.os == 'Linux' && runner.arch == 'ARM64'
+      with:
+        version: '6.10.3'
+        target: 'desktop'
+        arch: 'linux_gcc_arm64'
+        cache: true
+        aqtversion: ==3.2.*
+
+    - name: Install Qt (macOS)
+      uses: jurplel/install-qt-action@v4.3.0
+      if: runner.os == 'macOS'
+      with:
+        version: '6.10.3'
+        target: 'desktop'
+        arch: 'clang_64'
+        cache: true
+        aqtversion: ==3.2.*
+
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        submodules: recursive
+        fetch-tags: true
+        fetch-depth: 0
+
+    - name: Set reusable strings
+      id: strings
+      shell: bash
+      run: |
+        echo "build-output-dir=${{ github.workspace }}/build" >> "$GITHUB_OUTPUT"
+
+    - name: ccache
+      uses: hendrikmuhs/ccache-action@v1.2
+      with:
+        key: ${{ matrix.os }}-${{ matrix.build_type }}
+
+    - name: Configure CMake (Windows)
+      if: runner.os == 'Windows'
+      run: >
+        cmake -B ${{ steps.strings.outputs.build-output-dir }}
+        -G Ninja
+        -DBUILD_SHARED_LIBS=ON
+        -DCMAKE_PREFIX_PATH='${{ steps.sdl.outputs.prefix }};${{ env.QT_ROOT_DIR }}'
+        -DCMAKE_BUILD_TYPE=${{ matrix.build_type }}
+        -S ${{ github.workspace }}
+
+    - name: Configure CMake (Linux)
+      if: runner.os == 'Linux'
+      run: >
+        cmake -B ${{ steps.strings.outputs.build-output-dir }}
+        -G Ninja
+        -DBUILD_SHARED_LIBS=ON
+        -DCMAKE_PREFIX_PATH='${{ steps.sdl.outputs.prefix }};${{ env.QT_ROOT_DIR }}'
+        -DCMAKE_BUILD_TYPE=${{ matrix.build_type }}
+        -S ${{ github.workspace }}
+
+    - name: Configure CMake (macOS)
+      if: runner.os == 'macOS'
+      run: >
+        cmake -B ${{ steps.strings.outputs.build-output-dir }}
+        -G Ninja
+        -DBUILD_SHARED_LIBS=ON
+        -DCMAKE_PREFIX_PATH='${{ env.QT_ROOT_DIR }}'
+        -DCMAKE_BUILD_TYPE=${{ matrix.build_type }}
+        -S ${{ github.workspace }}
+
+    - name: Build
+      run: cmake --build ${{ steps.strings.outputs.build-output-dir }} --config ${{ matrix.build_type }} --parallel 16
+
+    - name: Run unit tests
+      run: cmake --build ${{ steps.strings.outputs.build-output-dir }} --config ${{ matrix.build_type }} --parallel 16 --target test
+
+    - name: Upload unit test reports
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: unit-test-reports-${{ matrix.os }}
+        path: ${{ github.workspace }}/Testing/*/test_report.txt*
+        if-no-files-found: ignore
