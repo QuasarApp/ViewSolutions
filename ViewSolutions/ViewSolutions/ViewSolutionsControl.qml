@@ -13,12 +13,12 @@ import QtQuick.Controls.Universal
 
 
 Item {
-    property alias background: backgroudFrame.contentItem
+    property alias background: backgroundFrame.contentItem
     property alias bloor: bloorFrame.contentItem
     property alias content: contentFrame.contentItem
 
     Control {
-        id: backgroudFrame
+        id: backgroundFrame
         anchors.fill: parent;
         z: 0
     }

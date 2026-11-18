@@ -13,7 +13,7 @@ import QtQuick.Layouts
 ToolBar {
 
     id: root
-    property int titlesAligh: Text.AlignHCenter
+    property int titlesAlign: Text.AlignHCenter
 
     property string title: ""
     property bool titleUppercase: true
@@ -39,7 +39,7 @@ ToolBar {
         Text {
             id: centralTitle
             text: (root.titleUppercase)? root.title.toUpperCase(): root.title
-            horizontalAlignment: root.titlesAligh
+            horizontalAlignment: root.titlesAlign
             Layout.fillWidth: true;
 
         }

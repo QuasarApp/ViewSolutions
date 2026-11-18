@@ -19,9 +19,9 @@
 namespace ViewSolutions {
 
 /**
- * @brief Listner This is listner lyambda function of user ansver. This function has next signature: void(bool accept)
+ * @brief Listener This is listener lambda function of user answer. This function has next signature: void(bool accept)
  */
-using Listner = std::function<void(bool accept)>;
+using Listener = std::function<void(bool accept)>;
 
 /**
  * @brief The NotificationService class. This class used for working with notify.
@@ -62,16 +62,16 @@ public:
 
     /**
      * @brief setQuestion This method sets information of the users question.
-     * @param listner This is listner lyambda function.
+     * @param listener This is listener lambda function.
      * @param question are data of the question.
-     * @return return question code. You must be save this code for check ansver of your qestion.
+     * @return return question code. You must be save this code for check answer of your question.
      */
-    int setQuestion(const Listner &listner, const NotificationData& question);
+    int setQuestion(const Listener &listener, const NotificationData& question);
 
     /**
-     * @brief questionComplete This method is main responce method of the users questions.
+     * @brief questionComplete This method is main response method of the users questions.
      * @param accepted are boolean option. Set this option to true if user click on accept button.
-     * @param code are automaticly generated code fo the question.
+     * @param code are automatically generated code for the question.
      */
     Q_INVOKABLE void questionComplete(bool accepted, int code = 0);
 
@@ -89,15 +89,15 @@ public:
 
     /**
      * @brief setQuestion This method set new question for user. When question changed on main application windows shows question.
-     * @param listnerObject This is qml object with listner function.
-     * @param listnerMethod This is listner method name. Method signature : void(bool)
+     * @param listenerObject This is qml object with listener function.
+     * @param listenerMethod This is listener method name. Method signature : void(bool)
      * @param title are title of a question window.
      * @param text are text value of a question window.
-     * @param img are url to image of a queston window.
-     * @param code are code of question. This code must be sendet to the questionComplete method after buttons clik.
+     * @param img are url to image of a question window.
+     * @param code are code of question. This code must be sent to the questionComplete method after buttons click.
      */
-    Q_INVOKABLE int setQuestion(QObject *listnerObject,
-                                const QString &listnerMethod,
+    Q_INVOKABLE int setQuestion(QObject *listenerObject,
+                                const QString &listenerMethod,
                                 const QString& title = "",
                                 const QString& text = "",
                                 const QString& img = "",
@@ -105,13 +105,13 @@ public:
 
     /**
      * @brief setQuestion This method set new question for user. When question changed on main application windows shows question.
-     * @param listner This is listner lyambda function.
+     * @param listener This is listener lambda function.
      * @param title are title of a question window.
      * @param text are text value of a question window.
-     * @param img are url to image of a queston window.
-     * @param code are code of question. This code must be sendet to the questionComplete method after buttons clik.
+     * @param img are url to image of a question window.
+     * @param code are code of question. This code must be sent to the questionComplete method after buttons click.
      */
-    int setQuestion(const Listner &listner,
+    int setQuestion(const Listener &listener,
                     const QString& title = "",
                     const QString& text = "",
                     const QString& img = "",
@@ -136,9 +136,9 @@ public:
     Q_INVOKABLE void showHistory();
 
     /**
-     * @brief notificationHiden this method should invoked every time when the current notification is hiden, automaticaly or by user.
+     * @brief notificationHidden this method should invoked every time when the current notification is hidden, automatically or by user.
      */
-    Q_INVOKABLE void notificationHiden();
+    Q_INVOKABLE void notificationHidden();
 
     /**
      * @brief notificationsCount - This method used for return count of history notifications.
@@ -171,7 +171,7 @@ public:
 
 
     /**
-     * @brief uiTimeOut this is maximu time that notify service can be loked fo display.
+     * @brief uiTimeOut this is maximum time that notify service can be locked for display.
      * @return
      */
     int uiTimeOut() const;
@@ -179,19 +179,19 @@ public:
 
 signals:
     /**
-     * @brief notifyChanged This signal emited whet the notificator (Ths object) received a new notification message.
+     * @brief notifyChanged This signal emitted when the notificator (This object) received a new notification message.
      */
     void notifyChanged();
 
     /**
-     * @brief questionChanged This signal emited whet the notificator (Ths object) received a new question message.
+     * @brief questionChanged This signal emitted when the notificator (This object) received a new question message.
      */
     void questionChanged();
 
     /**
-     * @brief questionCompleted This signal emited when youser clcik any buttons on question popup.
+     * @brief questionCompleted This signal emitted when user clicks any buttons on question popup.
      * @param accepted are bool option with "true" value if the yesr click to accept button.
-     * @param questionCode are automaticly generated code of the question.
+     * @param questionCode are automatically generated code of the question.
      *  For more information about code option see the setQuestion method.
      */
     void questionCompleted(bool accepted, int questionCode);
@@ -208,7 +208,7 @@ private:
 
 
 
-    QHash<int, Listner> _listners;
+    QHash<int, Listener> _listeners;
     NotificationData _question;
     NotificationData _notify;
     bool _uiIsDisplay = false;

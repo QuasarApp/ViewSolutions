@@ -14,10 +14,10 @@
 
 namespace ViewSolutions {
 
-class VIEWSOLUTION_EXPORT __PrvateBaseListModel : public QAbstractListModel{
+class VIEWSOLUTION_EXPORT __PrivateBaseListModel : public QAbstractListModel{
     Q_OBJECT
 protected:
-    __PrvateBaseListModel(QObject* parent = nullptr): QAbstractListModel(parent){}
+    __PrivateBaseListModel(QObject* parent = nullptr): QAbstractListModel(parent){}
 signals:
     void listDateChanged();
 };
@@ -51,11 +51,11 @@ public:
  * ```
  */
 template<class TYPE>
-class BaseListModel: public __PrvateBaseListModel
+class BaseListModel: public __PrivateBaseListModel
 {
 
 public:
-    BaseListModel(QObject* parent = nullptr): __PrvateBaseListModel(parent) {
+    BaseListModel(QObject* parent = nullptr): __PrivateBaseListModel(parent) {
 
     }
 

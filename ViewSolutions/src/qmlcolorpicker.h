@@ -40,8 +40,8 @@ public:
     QString modelId() const override;
 
     /**
-     * @brief alpha the alpha swith display color picer mod to alpha mode. in this mode picker will calculate alpha channel also with RGB hannels.
-     *  set to false to disable calculate alpha hannel.
+     * @brief alpha the alpha switch display color picker mode to alpha mode. in this mode picker will calculate alpha channel also with RGB channels.
+     *  set to false to disable calculate alpha channel.
      * @return
      */
     bool alpha() const;
