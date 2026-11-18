@@ -57,6 +57,14 @@ jobs:
         cache: true
         aqtversion: ==3.2.*
 
+    - name: Install SDL3 (Linux)
+      if: runner.os == 'Linux'
+      run: |
+        echo "Installing SDL3 dependencies..."
+        sudo apt-get update
+        sudo apt-get install -y libsdl3-dev
+      shell: bash
+
     - name: Checkout repository
       uses: actions/checkout@v4
       with:
