@@ -15,6 +15,21 @@ namespace ViewSolutions {
 
 /**
  * @brief The ColorPicker class - This class provide methods of get generals colors from images.
+ *
+ * The picker can extract the color of a single pixel or a general color of
+ * a whole image (by sampling pixels of an image grid).
+ *
+ * Example:
+ * ```cpp
+ * ViewSolutions::ColorPicker picker;
+ * QImage image(":/res/icon.png");
+ *
+ * // Color of a single pixel:
+ * QColor pixelColor = picker.pick(10, 10, image);
+ *
+ * // General color of a whole image:
+ * QColor generalColor = picker.pick(image);
+ * ```
  */
 class VIEWSOLUTION_EXPORT ColorPicker
 {

@@ -17,7 +17,30 @@
 namespace ViewSolutions {
 
 /**
- * @brief The ModelStorage class main model storage object. Provide access to all models in the application.
+ * @brief The ModelStorage class is the main model storage object.
+ *
+ * It provides access to all models in the application. Models that are
+ * added to the storage get access to the QML engine and can find any
+ * other model that is located in the same storage.
+ *
+ * Example:
+ * ```cpp
+ * auto models = QSharedPointer<ViewSolutions::ModelStorage>::create(&engine);
+ *
+ * auto notify = QSharedPointer<ViewSolutions::NotificationService>::create();
+ * models->addModel(notify);
+ *
+ * // Access a model from C++:
+ * auto service = models->get<ViewSolutions::NotificationService>("NotificationService");
+ * ```
+ *
+ * In QML the storage is available as the `modelsStorage` context property
+ * (set by ViewSolutions::init):
+ * ```qml
+ * Item {
+ *     property var picker: modelsStorage.getModel("ColorPicker")
+ * }
+ * ```
  */
 class VIEWSOLUTION_EXPORT ModelStorage: public QObject, public QEnableSharedFromThis<ModelStorage>
 {
@@ -40,6 +63,13 @@ public:
      */
     Q_INVOKABLE QObject* getModel(const QString& modeId) const;
 
+    /**
+     * @brief get returns a typed shared pointer to the model with the given id.
+     * @tparam Type is the expected type of the model.
+     * @param modeId is the id of the required model.
+     * @return shared pointer to the model, nullptr if the model does not exist
+     *         or does not match the expected type.
+     */
     template <class Type>
     QSharedPointer<Type> get(const QString& modeId) const {
         return _storage.value(modeId).staticCast<Type>();

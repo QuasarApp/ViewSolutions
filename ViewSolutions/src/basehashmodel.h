@@ -13,30 +13,46 @@
 namespace ViewSolutions {
 
 /**
+ * @brief The BaseHashModel class is the base class of all GUI hash models.
+ *
+ * A BaseHashModel stores its items in a hash table and exposes them to QML
+ * as a list model. Every item can be accessed by a unique key.
+ *
  * @tparam KEY - is type of hash table key,
  * @tparam DATA - is main stored delegate model of all list items.
-
- * @brief The BaseHashModel class is base class of all GUI list models
  *
- * Conceptions and using rooles
- * * All models should provides delegate models base of qobject
- * * If model require fast solution just implement BaseListModel<int> model
+ * Concepts and usage rules:
+ *  - All models should provide delegate models based on QObject
+ *  - If the model requires a fast solution, just implement a BaseListModel<T> model instead
  *
  *
- * @note to access to delegate model use Qt::EditRole role: available in qml by delegateModel keyword
- * **example:** :
+ * @note To access the delegate model use the Qt::EditRole role:
+ *       it is available in QML by the `delegateModel` keyword.
+ *
+ * @note The BaseHashModel does not support the QML space directly,
+ *       for short access in QML use the @a BaseListModel instead.
+ *
+ * Example of a model based on the BaseHashModel:
+ * ```cpp
+ * class IntStringModel: public ViewSolutions::BaseHashModel<int, QString>
+ * {
+ *     Q_OBJECT
+ *
+ * public:
+ *     IntStringModel(QObject* parent = nullptr):
+ *         ViewSolutions::BaseHashModel<int, QString>(parent) {}
+ * };
  * ```
- * class VariantListModel: public BaseHashModel<QVariant>
-{
-    Q_OBJECT
-
-public:
-    VariantListModel(QObject* ptr = nullptr): BaseListModel<QString, QVariant>(ptr){};
-};
-}
- * ```
  *
- * @note The BaseHashModel is not support Qml space, to short access in qml use the @a BaseListModel
+ * C++ usage:
+ * ```cpp
+ * IntStringModel model;
+ * model.setByKey(1, "first");
+ * model.setByKey(2, "second");
+ *
+ * QString value = model.getByKey(1).toString(); // "first"
+ * model.removeByKey(1);
+ * ```
  */
 template<class KEY, class DATA>
 class BaseHashModel: public QAbstractListModel

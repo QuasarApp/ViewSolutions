@@ -2,6 +2,8 @@
 
 View solutions of qml for quasarapp projects
 
+For more information, see the ViewSolutions [documentation](https://quasarapp.github.io/ViewSolutions/) and the [API reference](https://quasarapp.github.io/ViewSolutions/api/).
+
 ## QML classes:
 
 #### ImageView
