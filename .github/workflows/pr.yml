@@ -121,9 +121,5 @@ jobs:
       with:
         name: unit-test-reports-${{ matrix.os }}
         path: ${{ github.workspace }}/Testing/*/test_report.txt*
-<<<<<<< HEAD
         if-no-files-found: ignore
 
-=======
-        if-no-files-found: ignore
->>>>>>> origin/task_23
