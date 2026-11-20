@@ -69,6 +69,12 @@ jobs:
       run: |
         echo "build-output-dir=${{ github.workspace }}/build" >> "$GITHUB_OUTPUT"
 
+    - name: ccache
+      uses: hendrikmuhs/ccache-action@v1.2
+      with:
+        key: ${{ matrix.os }}-${{ matrix.build_type }}
+        verbose: false
+
     - name: Configure CMake (Windows)
       if: runner.os == 'Windows'
       run: >
