@@ -25,6 +25,7 @@ jobs:
         tools: 'tools_mingw1310'
         cache: true
         aqtversion: ==3.2.*
+        modules: 'qtshadertools'
 
     - name: Install Qt (Linux)
       uses: jurplel/install-qt-action@v4.3.0
