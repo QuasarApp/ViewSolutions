@@ -35,6 +35,8 @@ jobs:
         arch: 'linux_gcc_64'
         cache: true
         aqtversion: ==3.2.*
+        modules: 'qtshadertools'
+        
 
     - name: Install Qt (Linux ARM)
       uses: jurplel/install-qt-action@v4.3.0
@@ -45,6 +47,7 @@ jobs:
         arch: 'linux_gcc_arm64'
         cache: true
         aqtversion: ==3.2.*
+        modules: 'qtshadertools'
 
     - name: Install Qt (macOS)
       uses: jurplel/install-qt-action@v4.3.0
@@ -55,6 +58,7 @@ jobs:
         arch: 'clang_64'
         cache: true
         aqtversion: ==3.2.*
+        modules: 'qtshadertools'
 
     - name: Checkout repository
       uses: actions/checkout@v4
