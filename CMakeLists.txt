@@ -27,8 +27,8 @@ include(CMake/QuasarApp.cmake)
 updateGitVarsWithHash("c8f0b3222d1811e3467a2fa46645c720e31b2860")
 set(VIEWSOLUTIONS_VERSION 1.0.${GIT_COMMIT_COUNT_FROM}.${GIT_COMMIT_HASH})
 
-find_package(QT NAMES Qt6 COMPONENTS Core Quick QuickControls2 REQUIRED)
-find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Core Quick QuickControls2 REQUIRED)
+find_package(QT NAMES Qt6 COMPONENTS Core Quick QuickControls2 Gui ShaderTools REQUIRED)
+find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Core Quick QuickControls2 Gui ShaderTools REQUIRED)
 
 qt_standard_project_setup()
 qt_policy(SET QTP0001 NEW)
